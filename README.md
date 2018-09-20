@@ -1,4 +1,4 @@
-![alt tag](https://raw.githubusercontent.com/MatterOverdrive/MatterOverdrive/1.12.2/.github/MatterOverdriveLogo.png)
+![alt tag](https://bitbucket.org/hrznstudio/mo-legacy-edition/raw/1.12.2/.github/MatterOverdriveLogo.png)
 
 [![Jenkins](https://img.shields.io/jenkins/s/http/jenkins.k-4u.nl/job/MatterOverdrive/.svg?style=for-the-badge)](http://jenkins.k-4u.nl/job/MatterOverdrive/)
 [![GitHub issues](https://img.shields.io/github/issues-raw/MatterOverdrive/MatterOverdrive.svg?style=for-the-badge)](https://github.com/MatterOverdrive/MatterOverdrive/issues)
@@ -24,7 +24,7 @@ Although it may seem overpowered, Matter Overdrive takes a more realistic approa
 ## Contacts
 * [Email](mailto:contact@hrznstudio.com)
 * [Website](https://hrzn.studio/mo)
-* [Discord](https://discord.gg/PC5GXyQ)
+* [Discord](https://discord.gg/758eCD7)
 
 ## Features
 * [Matter Scanner](https://mo.simeonradivoev.com/items/matter_scanner/), for scanning matter patterns for replication.
@@ -39,20 +39,3 @@ Although it may seem overpowered, Matter Overdrive takes a more realistic approa
 
 
 ![Matter Overdrive Blocks and Items](https://media-elerium.cursecdn.com/attachments/210/237/main_screenshot.png)
-
-## Issues
-If you have any crashes, problems or suggestions just open a [new Issue](https://github.com/MatterOverdrive/MatterOverdrive/issues/new).
-If your crash or problem was fixed, but is not yet released as a public download you can always download the latest [Dev Build](http://jenkins.k-4u.nl/job/MatterOverdrive/).
-
-## Building
-1. Clone this repository via 
-  - SSH `git clone git@github.com:MatterOverdrive/MatterOverdrive.git` or 
-  - HTTPS `git clone https://github.com/MatterOverdrive/MatterOverdrive.git`
-2. Setup workspace (This currently does not work due to a ping timeout on rx14's mvn server.)
-  - Decompiled source `gradlew setupDecompWorkspace`
-  - Obfuscated source `gradlew setupDevWorkspace`
-  - CI server `gradlew setupCIWorkspace`
-3. Build `gradlew build`. Jar will be in `build/libs`
-4. For core developer: Setup IDE
-  - IntelliJ: Import into IDE and execute `gradlew genIntellijRuns` afterwards
-  - Eclipse: execute `gradlew eclipse`
