@@ -74,9 +74,9 @@ compileJava {
 }
 
 minecraft {
-    version = "1.12.2-14.23.1.2607"
+    version = "1.12.2-14.23.4.2765"
     runDir = "run"
-    mappings = "snapshot_20171003"
+    mappings = "stable_39"
 
     replaceIn "Reference.java"
     replace "@VERSION@", mod_version

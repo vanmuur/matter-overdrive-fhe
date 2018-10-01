@@ -65,7 +65,7 @@ public class EntityRougeAndroidMob extends EntityMob implements IEntityAdditiona
     public EntityRougeAndroidMob(World world) {
         super(world);
         if (!world.isRemote) {
-            setAndroidLevel((int) (MathHelper.clamp(Math.abs(rand.nextGaussian() * (1 + world.getDifficulty().getDifficultyId() * 0.25)), 0, 3)));
+            setAndroidLevel((int) (MathHelper.clamp(Math.abs(rand.nextGaussian() * (1 + world.getDifficulty().getId() * 0.25)), 0, 3)));
             boolean isLegendary = rand.nextDouble() < EntityRogueAndroid.LEGENDARY_SPAWN_CHANCE * getAndroidLevel();
             setLegendary(isLegendary);
             init();
@@ -199,7 +199,7 @@ public class EntityRougeAndroidMob extends EntityMob implements IEntityAdditiona
     }
 
     public boolean hasToManyAndroids() {
-        Chunk chunk = world.getChunkFromChunkCoords(chunkCoordX, chunkCoordZ);
+        Chunk chunk = world.getChunk(chunkCoordX, chunkCoordZ);
         int androidCount = 0;
         for (int i = 0; i < chunk.getEntityLists().length; i++) {
             for (Entity entity : chunk.getEntityLists()[i]) {

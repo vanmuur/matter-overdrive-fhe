@@ -83,7 +83,7 @@ public class RenderWeaponsBeam extends RenderBeam<EntityPlayer> {
                 .forEach(o -> {
                     EntityPlayer player = (EntityPlayer) o;
                     if (shouldRenderBeam(player)) {
-                        renderRaycastedBeam(player.getPositionEyes(ticks).addVector(0, player.getEyeHeight(), 0), player.getLook(0), new Vec3d(-0.5, -0.3, 1), player);
+                        renderRaycastedBeam(player.getPositionEyes(ticks).add(0, player.getEyeHeight(), 0), player.getLook(0), new Vec3d(-0.5, -0.3, 1), player);
                     } else {
                         stopWeaponSound(player);
                     }

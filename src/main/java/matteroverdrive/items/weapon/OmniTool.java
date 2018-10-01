@@ -191,6 +191,11 @@ public class OmniTool extends EnergyWeapon {
     }
 
     @Override
+    public boolean onBlockDestroyed(ItemStack p_onBlockDestroyed_1_, World p_onBlockDestroyed_2_, IBlockState p_onBlockDestroyed_3_, BlockPos p_onBlockDestroyed_4_, EntityLivingBase p_onBlockDestroyed_5_) {
+        return super.onBlockDestroyed(p_onBlockDestroyed_1_, p_onBlockDestroyed_2_, p_onBlockDestroyed_3_, p_onBlockDestroyed_4_, p_onBlockDestroyed_5_);
+    }
+
+    @Override
     public EnumActionResult onItemUseFirst(EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ, EnumHand hand) {
         return EnumActionResult.FAIL;
     }
@@ -332,7 +337,7 @@ public class OmniTool extends EnergyWeapon {
     private Vec3d getFirePosition(EntityPlayer entityPlayer, Vec3d dir, boolean isAiming) {
         Vec3d pos = entityPlayer.getPositionEyes(1);
         pos = pos.subtract((double) (MathHelper.cos(entityPlayer.rotationYaw / 180.0F * (float) Math.PI) * 0.16F), 0, (double) (MathHelper.cos(entityPlayer.rotationYaw / 180.0F * (float) Math.PI) * 0.16F));
-        pos = pos.addVector(dir.x, dir.y, dir.z);
+        pos = pos.add(dir.x, dir.y, dir.z);
         return pos;
     }
 

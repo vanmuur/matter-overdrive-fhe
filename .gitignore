@@ -36,6 +36,7 @@ hs_err_pid*
 /*.iml
 /*.ipr
 /*.iws
+classes/
 
 # secret curse shiz
 curse.json

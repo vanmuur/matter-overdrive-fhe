@@ -92,9 +92,9 @@ public class ItemUpgrade extends MOBaseItem implements IUpgrade, IAdvancedModelP
     }*/
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getTranslationKey(ItemStack stack) {
         int i = MathHelper.clamp(stack.getItemDamage(), 0, (subItemNames.length - 1));
-        return super.getUnlocalizedName() + "." + subItemNames[i];
+        return super.getTranslationKey() + "." + subItemNames[i];
     }
 
     /*@SideOnly(Side.CLIENT)

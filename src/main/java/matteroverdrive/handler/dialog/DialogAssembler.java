@@ -46,7 +46,7 @@ public class DialogAssembler {
     }
 
     public void loadDialogs(DialogRegistry dialogRegistry) {
-        String path = "/assets/" + dialogLocation.getResourceDomain() + "/" + dialogLocation.getResourcePath();
+        String path = "/assets/" + dialogLocation.getNamespace() + "/" + dialogLocation.getPath();
         InputStream inputStream = DialogAssembler.class.getResourceAsStream(path);
         loadDialogs(inputStream, dialogRegistry);
     }

@@ -64,7 +64,7 @@ public class MOBlock extends Block implements ItemModelProvider {
         this.setDefaultState(getBlockState().getBaseState());
         this.fullBlock = getDefaultState().isOpaqueCube();
         this.lightOpacity = fullBlock ? 255 : 0;
-        this.setUnlocalizedName(name);
+        this.setTranslationKey(name);
         setCreativeTab(MatterOverdrive.TAB_OVERDRIVE);
         rotationType = RotationType.FOUR_WAY;
     }
@@ -103,7 +103,7 @@ public class MOBlock extends Block implements ItemModelProvider {
     @Deprecated
     public IBlockState getStateFromMeta(int meta) {
         if (hasRotation) {
-            return getDefaultState().withProperty(PROPERTY_DIRECTION, EnumFacing.getHorizontal(meta));
+            return getDefaultState().withProperty(PROPERTY_DIRECTION, EnumFacing.byHorizontalIndex(meta));
         } else {
             return getDefaultState();
         }

@@ -84,7 +84,7 @@ public class QuestAssembler {
     }
 
     public void loadQuests(Quests quests) {
-        String path = "/assets/" + questsLocation.getResourceDomain() + "/" + questsLocation.getResourcePath();
+        String path = "/assets/" + questsLocation.getNamespace() + "/" + questsLocation.getPath();
         InputStream inputStream = QuestAssembler.class.getResourceAsStream(path);
         loadQuests(inputStream, quests);
     }

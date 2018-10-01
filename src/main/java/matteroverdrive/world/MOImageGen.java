@@ -250,7 +250,7 @@ public abstract class MOImageGen<T extends MOImageGen.ImageGenWorker> {
     private void loadTexture(ResourceLocation textureLocation) throws RuntimeException {
         try {
 
-            String path = "/assets/" + textureLocation.getResourceDomain() + "/" + textureLocation.getResourcePath();
+            String path = "/assets/" + textureLocation.getNamespace() + "/" + textureLocation.getPath();
             InputStream imageStream = getClass().getResourceAsStream(path);
             BufferedImage image = ImageIO.read(imageStream);
 

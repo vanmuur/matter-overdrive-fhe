@@ -281,7 +281,7 @@ public class PlasmaShotgun extends EnergyWeapon {
             //pos.x -= (double)(MathHelper.cos(entityPlayer.rotationYaw / 180.0F * (float) Math.PI) * 0.16F);
             //pos.z -= (double)(MathHelper.sin(entityPlayer.rotationYaw / 180.0F * (float) Math.PI) * 0.16F);
         }
-        pos = pos.addVector(dir.x, dir.y, dir.z);
+        pos = pos.add(dir.x, dir.y, dir.z);
         return pos;
     }
 

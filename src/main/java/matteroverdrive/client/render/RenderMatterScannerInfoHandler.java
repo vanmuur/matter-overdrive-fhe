@@ -208,7 +208,7 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
             List<String> infos = new ArrayList<>();
             if (entity instanceof EntityLivingBase) {
                 entityPos = entity.getPositionEyes(ticks);
-                entityPos = entityPos.addVector(0, entity.getEyeHeight(), 0);
+                entityPos = entityPos.add(0, entity.getEyeHeight(), 0);
                 infos.add("Health: " + (healthFormater.format(((EntityLivingBase) entity).getHealth()) + " / " + ((EntityLivingBase) entity).getMaxHealth()));
 
                 GlStateManager.pushMatrix();

@@ -92,7 +92,7 @@ public class BioticStatAirDash extends AbstractBioticStat {
 
     @SideOnly(Side.CLIENT)
     private void dash(EntityPlayerSP playerSP) {
-        Vec3d look = playerSP.getLookVec().addVector(0, 0.75, 0).normalize();
+        Vec3d look = playerSP.getLookVec().add(0, 0.75, 0).normalize();
         playerSP.addVelocity(look.x, look.y, look.z);
         for (int i = 0; i < 30; i++) {
             playerSP.world.spawnParticle(EnumParticleTypes.CLOUD, playerSP.posX + playerSP.getRNG().nextGaussian() * 0.5, playerSP.posY + playerSP.getRNG().nextFloat() * playerSP.getEyeHeight(), playerSP.posZ + playerSP.getRNG().nextGaussian() * 0.5, -look.x, -look.z, -look.z);

@@ -84,7 +84,7 @@ public class TileEntityMachineChargingStation extends MOTileEntityMachineEnergy 
     }
 
     private int getRequiredEnergy(EntityPlayer player, int maxRange) {
-        return (int) (ENERGY_TRANSFER * (1.0D - MathHelper.clamp((new Vec3d(player.posX, player.posY, player.posZ).subtract(new Vec3d(getPos())).lengthVector() / (double) maxRange), 0, 1)));
+        return (int) (ENERGY_TRANSFER * (1.0D - MathHelper.clamp((new Vec3d(player.posX, player.posY, player.posZ).subtract(new Vec3d(getPos())).length() / (double) maxRange), 0, 1)));
     }
 
     @Override

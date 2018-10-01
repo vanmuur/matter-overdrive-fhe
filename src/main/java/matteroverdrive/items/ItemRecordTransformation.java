@@ -35,7 +35,7 @@ public class ItemRecordTransformation extends ItemRecord implements ItemModelPro
 
     public ItemRecordTransformation() {
         super("matteroverdrive.transformation", MatterOverdriveSounds.musicTransformation);
-        setUnlocalizedName("record");
+        setTranslationKey("record");
         setRegistryName("record_transformation");
         setCreativeTab(MatterOverdrive.TAB_OVERDRIVE);
     }

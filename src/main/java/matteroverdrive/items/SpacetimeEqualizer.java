@@ -40,7 +40,7 @@ import java.util.List;
 public class SpacetimeEqualizer extends ItemArmor implements ItemModelProvider {
     public SpacetimeEqualizer(String name) {
         super(ItemArmor.ArmorMaterial.IRON, 0, EntityEquipmentSlot.CHEST);
-        setUnlocalizedName(Reference.MOD_ID + "." + name);
+        setTranslationKey(Reference.MOD_ID + "." + name);
         setRegistryName(new ResourceLocation(Reference.MOD_ID, name));
         this.setCreativeTab(MatterOverdrive.TAB_OVERDRIVE);
     }
@@ -59,14 +59,14 @@ public class SpacetimeEqualizer extends ItemArmor implements ItemModelProvider {
     }
 
     public void addDetails(ItemStack itemstack, EntityPlayer player, List infos) {
-        if (MOStringHelper.hasTranslation(getUnlocalizedName() + ".details")) {
-            infos.add(TextFormatting.GRAY + MOStringHelper.translateToLocal(getUnlocalizedName() + ".details"));
+        if (MOStringHelper.hasTranslation(getTranslationKey() + ".details")) {
+            infos.add(TextFormatting.GRAY + MOStringHelper.translateToLocal(getTranslationKey() + ".details"));
         }
     }
 
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EntityEquipmentSlot slot, String type) {
-        return Reference.PATH_ARMOR + this.getUnlocalizedName().substring(5) + "_" + (this.armorType == EntityEquipmentSlot.CHEST ? "2" : "1") + ".png";
+        return Reference.PATH_ARMOR + this.getTranslationKey().substring(5) + "_" + (this.armorType == EntityEquipmentSlot.CHEST ? "2" : "1") + ".png";
     }
 
     @Override

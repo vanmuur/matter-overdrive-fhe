@@ -32,7 +32,7 @@ public class ItemBase extends Item implements ItemModelProvider {
     public ItemBase(String name) {
         this.name = name;
         this.setRegistryName(name);
-        this.setUnlocalizedName(getRegistryName().toString().replace(':', '.'));
+        this.setTranslationKey(getRegistryName().toString().replace(':', '.'));
     }
 
     @Override

@@ -50,7 +50,7 @@ public class MatterConnectionElement extends MOElementBase {
 
     @Override
     public void addTooltip(List<String> list, int mouseX, int mouseY) {
-        list.add(MOStringHelper.translateToLocal(Item.getItemById(id).getUnlocalizedName() + ".name") + " [" + count + "]");
+        list.add(MOStringHelper.translateToLocal(Item.getItemById(id).getTranslationKey() + ".name") + " [" + count + "]");
     }
 
     @Override

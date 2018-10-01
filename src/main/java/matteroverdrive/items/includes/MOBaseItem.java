@@ -54,8 +54,8 @@ public class MOBaseItem extends ItemBase {
 
     @SideOnly(Side.CLIENT)
     public void addDetails(ItemStack itemstack, EntityPlayer player, @Nullable World worldIn, List<String> infos) {
-        if (MOStringHelper.hasTranslation(getUnlocalizedName(itemstack) + ".details")) {
-            String[] infoList = MOStringHelper.translateToLocal(getUnlocalizedName(itemstack) + ".details").split("/n");
+        if (MOStringHelper.hasTranslation(getTranslationKey(itemstack) + ".details")) {
+            String[] infoList = MOStringHelper.translateToLocal(getTranslationKey(itemstack) + ".details").split("/n");
             for (String info : infoList) {
                 infos.add(TextFormatting.GRAY + info);
             }

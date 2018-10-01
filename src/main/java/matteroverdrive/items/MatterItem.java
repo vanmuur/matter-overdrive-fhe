@@ -56,7 +56,7 @@ public class MatterItem extends MOBaseItem implements IAdvancedModelProvider {
 
     public String getUnlocalizedName(ItemStack stack) {
         int i = MathHelper.clamp(stack.getMetadata(), 0, subItemNames.length);
-        return super.getUnlocalizedName() + "." + subItemNames[i];
+        return super.getTranslationKey() + "." + subItemNames[i];
     }
 
     public enum MatterType {

@@ -91,8 +91,8 @@ public class TileEntityBoundingBox extends TileEntity implements IMOTileEntity, 
 
         if (ownerBlock != null) {
             ResourceLocation id = ownerBlock.getRegistryName();
-            tag.setString("owner_block_modid", id.getResourceDomain());
-            tag.setString("owner_block_name", id.getResourcePath());
+            tag.setString("owner_block_modid", id.getNamespace());
+            tag.setString("owner_block_name", id.getPath());
         }
         return tag;
     }

@@ -22,7 +22,6 @@ import matteroverdrive.util.StackUtils;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
-import javax.annotation.Nonnull;
 import java.util.concurrent.Callable;
 
 public class OverdriveTab extends CreativeTabs {
@@ -35,8 +34,12 @@ public class OverdriveTab extends CreativeTabs {
     }
 
     @Override
-    @Nonnull
-    public ItemStack getTabIconItem() {
+    public ItemStack createIcon() {
+        return null;
+    }
+
+    @Override
+    public ItemStack getIcon() {
         if (StackUtils.isNullOrEmpty(itemstack)) {
             if (stackCallable != null) {
                 try {

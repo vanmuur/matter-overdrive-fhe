@@ -92,13 +92,13 @@ public class GuiReplicator extends MOGuiNetworkMachine<TileEntityMachineReplicat
 
     @Override
     protected void renderToolTip(ItemStack stack, int x, int y) {
-        List list = stack.getTooltip(this.mc.player, Minecraft.getMinecraft().gameSettings.advancedItemTooltips ? ITooltipFlag.TooltipFlags.ADVANCED : ITooltipFlag.TooltipFlags.NORMAL);
+        List<String> list = stack.getTooltip(this.mc.player, Minecraft.getMinecraft().gameSettings.advancedItemTooltips ? ITooltipFlag.TooltipFlags.ADVANCED : ITooltipFlag.TooltipFlags.NORMAL);
 
         for (int k = 0; k < list.size(); ++k) {
-            String info = (String) list.get(k);
+            String info = list.get(k);
 
             if (k == 0) {
-                list.set(k, stack.getRarity().rarityColor + info);
+                list.set(k, stack.getRarity().color + info);
             } else {
                 list.set(k, TextFormatting.GRAY + info);
             }

@@ -111,7 +111,7 @@ public class BioticStatShockwave extends AbstractBioticStat {
                                 if (entityLivingBase instanceof EntityPlayer && entityPlayer.world.getMinecraftServer() != null && !entityPlayer.world.getMinecraftServer().isPVPEnabled())
                                     continue;
                                 Vec3d dir = entityLivingBase.getPositionVector().subtract(entityPlayer.getPositionVector());
-                                double localDistance = dir.lengthVector();
+                                double localDistance = dir.length();
                                 double distanceMultiply = range / Math.max(1, localDistance);
                                 dir = dir.normalize();
                                 entityLivingBase.addVelocity(dir.x * power * distanceMultiply, power * 0.2f, dir.z * power * distanceMultiply);

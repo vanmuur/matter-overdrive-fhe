@@ -140,8 +140,8 @@ public class MOWorldGen implements IWorldGenerator, IConfigSubscriber {
     }
 
     private boolean shouldGenerate(Block block, ConfigurationHandler config) {
-        Property p = config.config.get(ConfigurationHandler.CATEGORY_WORLD_GEN, ConfigurationHandler.CATEGORY_WORLD_SPAWN + "." + block.getUnlocalizedName(), true);
-        p.setLanguageKey(block.getUnlocalizedName() + ".name");
+        Property p = config.config.get(ConfigurationHandler.CATEGORY_WORLD_GEN, ConfigurationHandler.CATEGORY_WORLD_SPAWN + "." + block.getTranslationKey(), true);
+        p.setLanguageKey(block.getTranslationKey() + ".name");
         return p.getBoolean(true);
     }
 

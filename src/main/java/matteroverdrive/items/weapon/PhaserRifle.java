@@ -219,7 +219,7 @@ public class PhaserRifle extends EnergyWeapon {
         if (!isAiming) {
             pos = pos.subtract((double) (MathHelper.cos(entityPlayer.rotationYaw / 180.0F * (float) Math.PI) * 0.16F), 0, (double) (MathHelper.sin(entityPlayer.rotationYaw / 180.0F * (float) Math.PI) * 0.16F));
         }
-        pos = pos.addVector(dir.x, dir.y, dir.z);
+        pos = pos.add(dir.x, dir.y, dir.z);
         return pos;
     }
 

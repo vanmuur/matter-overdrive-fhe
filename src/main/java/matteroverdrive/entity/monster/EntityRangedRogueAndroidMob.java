@@ -170,9 +170,9 @@ public class EntityRangedRogueAndroidMob extends EntityRougeAndroidMob implement
                 Vec3d pos = new Vec3d(this.posX, this.posY + getEyeHeight(), this.posZ);
                 Vec3d dir = lastSeenPosition.subtract(this.getPositionVector());
                 WeaponShot shot = energyWeapon.createServerShot(weapon, this, true);
-                float difficulty = MathHelper.clamp((0.6f / 3f) * world.getDifficulty().getDifficultyId(), 0, 0.6f) + getAndroidLevel() * (0.4f / 3f) + (getIsLegendary() ? 0.3f : 0);
+                float difficulty = MathHelper.clamp((0.6f / 3f) * world.getDifficulty().getId(), 0, 0.6f) + getAndroidLevel() * (0.4f / 3f) + (getIsLegendary() ? 0.3f : 0);
                 shot.setDamage(shot.getDamage() * difficulty);
-                difficulty = (3 - world.getDifficulty().getDifficultyId()) * 4f;
+                difficulty = (3 - world.getDifficulty().getId()) * 4f;
                 shot.setAccuracy(shot.getAccuracy() + difficulty);
                 energyWeapon.onServerFire(weapon, this, shot, pos, dir, 0);
                 energyWeapon.setHeat(weapon, 0);
@@ -181,7 +181,7 @@ public class EntityRangedRogueAndroidMob extends EntityRougeAndroidMob implement
                 }
                 MatterOverdrive.NETWORK.sendToAllAround(new PacketFirePlasmaShot(this.getEntityId(), pos, dir, shot), world.provider.getDimension(), posX, posY, posZ, 64);
 
-                difficulty = 1 + (3 - world.getDifficulty().getDifficultyId()) * 0.5f;
+                difficulty = 1 + (3 - world.getDifficulty().getId()) * 0.5f;
                 this.aiBoltAttack.setMaxRangedAttackDelay((int) (((EnergyWeapon) weapon.getItem()).getShootCooldown(weapon) * difficulty));
             }
         }

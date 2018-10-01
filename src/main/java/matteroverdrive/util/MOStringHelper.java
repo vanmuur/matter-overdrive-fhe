@@ -148,7 +148,7 @@ public class MOStringHelper {
     public static String readTextFile(ResourceLocation location) {
         StringBuilder text = new StringBuilder();
         try {
-            String path = "/assets/" + location.getResourceDomain() + "/" + location.getResourcePath();
+            String path = "/assets/" + location.getNamespace() + "/" + location.getPath();
             InputStream descriptionStream = MOStringHelper.class.getResourceAsStream(path);
             if (descriptionStream == null)
                 return text.toString();

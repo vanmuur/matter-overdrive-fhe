@@ -57,7 +57,7 @@ public class FlyNodeProcessor extends NodeProcessor {
         int i = 0;
 
         for (EnumFacing enumfacing : EnumFacing.values()) {
-            PathPoint pathpoint = this.func_186328_b(currentPoint.x + enumfacing.getFrontOffsetX(), currentPoint.y + enumfacing.getFrontOffsetY(), currentPoint.z + enumfacing.getFrontOffsetZ());
+            PathPoint pathpoint = this.func_186328_b(currentPoint.x + enumfacing.getXOffset(), currentPoint.y + enumfacing.getYOffset(), currentPoint.z + enumfacing.getZOffset());
 
             if (pathpoint != null && !pathpoint.visited && pathpoint.distanceTo(targetPoint) < maxDistance) {
                 pathOptions[i++] = pathpoint;
@@ -82,7 +82,7 @@ public class FlyNodeProcessor extends NodeProcessor {
         int i = 0;
 
         for (EnumFacing enumfacing : EnumFacing.values()) {
-            PathPoint pathpoint = this.func_186328_b(currentPoint.x + enumfacing.getFrontOffsetX(), currentPoint.y + enumfacing.getFrontOffsetY(), currentPoint.z + enumfacing.getFrontOffsetZ());
+            PathPoint pathpoint = this.func_186328_b(currentPoint.x + enumfacing.getXOffset(), currentPoint.y + enumfacing.getYOffset(), currentPoint.z + enumfacing.getZOffset());
 
             if (pathpoint != null && !pathpoint.visited && pathpoint.distanceTo(nextPoint) < maxDistance) {
                 options[i++] = pathpoint;

@@ -19,7 +19,7 @@
 <entry stylesheet="matteroverdrive:info/styles/guide.css">
     <page class="padded-page">
         <title size="2" class="matter-text small-title">$itemName</title>
-        <image width="128" height="64" src="guide/fusion_reactor.png" style="margin-right:8px;margin-bottom:8px"></image>
+        <image width="128" height="64" src="guide/fusion_reactor.png" style="margin-right:8px;margin-bottom:8px"/>
         <text class="matter-text text-block">These are naturally occurring Gravitational Anomalies. They attract Entities and break blocks.
             Each anomaly has it’s own mass and can feed on entities near its event horizon.
             Matter from each entity is added to the anomaly’s mass. Once the anomaly becomes massive enough it begins destroying the terrain around it.</text>
@@ -30,7 +30,7 @@
         <text class="matter-text text-block">The radius of the anomaly can be seen on the [block name=gravitational_stabilizer guide=fusion_reactor] used to stabilize it. The further the block is, the less likely it is to be broken and consumed.
             The hardness of the block determines if the block will be broken by the anomaly.
             Dirt or redstone will be broken almost immediately but Obsidian will be broken by only the largest of anomalies.</text>
-        <preview size="3" style="text-align:center;margin-bottom:10px;"></preview>
+        <preview size="3" style="text-align:center;margin-bottom:10px;"/>
         <text class="matter-text">Gravitational anomalies can spawn from (4,64).</text>
         <text class="matter-text text-block">To collapse an anomaly throw a [item mod=minecraft name=nether_star]. Be careful though, the $itemName will explode.</text>
     </page>

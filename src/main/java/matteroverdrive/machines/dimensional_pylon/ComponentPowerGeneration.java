@@ -171,7 +171,7 @@ public class ComponentPowerGeneration extends MachineComponentAbstract<TileEntit
                             dirX = random.nextGaussian() * 0.2;
                             dirZ = random.nextGaussian() * 0.2;
                             Vec3d start = new Vec3d(getPos().getX() + dirX, y, getPos().getZ() + dirZ);
-                            Vec3d destination = new Vec3d(((TileEntityMachineDimensionalPylon) tileEntity).mainBlock).addVector(0, 1, 0);
+                            Vec3d destination = new Vec3d(((TileEntityMachineDimensionalPylon) tileEntity).mainBlock).add(0, 1, 0);
                             spawnSpark(color, start, destination);
                             machine.removeCharge(MathHelper.ceil(CHARGE_DECREASE_ON_HIT * dimValue));
                             dimensionalPylon.addCharge(MathHelper.ceil(CHARGE_INCREASE_RATE * dimValue));
@@ -183,7 +183,7 @@ public class ComponentPowerGeneration extends MachineComponentAbstract<TileEntit
                 dirX = random.nextGaussian() * 0.2;
                 dirZ = random.nextGaussian() * 0.2;
                 Vec3d start = new Vec3d(getPos().getX() + dirX, y, getPos().getZ() + dirZ);
-                Vec3d destination = new Vec3d(destPos).addVector(0.5, 0.5, 0.5);
+                Vec3d destination = new Vec3d(destPos).add(0.5, 0.5, 0.5);
                 spawnSpark(color, start, destination);
             }
         }

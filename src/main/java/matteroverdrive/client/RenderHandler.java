@@ -381,7 +381,7 @@ public class RenderHandler {
             model = (OBJModel) model.process(customOptions);
             return model;
         } catch (Exception e) {
-            MOLog.log(Level.ERROR, e, "There was a problem while baking %s model", location.getResourcePath());
+            MOLog.log(Level.ERROR, e, "There was a problem while baking %s model", location.getPath());
         }
         return null;
     }

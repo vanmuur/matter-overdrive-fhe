@@ -176,7 +176,7 @@ public class PlasmaBolt extends Entity implements IProjectile, IGravityEntity, I
             return;
         }
 
-        distanceTraveled += new Vec3d(motionX, motionY, motionZ).lengthVector();
+        distanceTraveled += new Vec3d(motionX, motionY, motionZ).length();
         float motionLeway = 0.0f;
         Vec3d vec31 = new Vec3d(this.posX - this.motionX * motionLeway, this.posY - this.motionY * motionLeway, this.posZ - this.motionZ * motionLeway);
         Vec3d vec3 = new Vec3d(this.posX + this.motionX, this.posY + this.motionY, this.posZ + this.motionZ);
@@ -295,7 +295,7 @@ public class PlasmaBolt extends Entity implements IProjectile, IGravityEntity, I
                 this.blockState = this.world.getBlockState(blockPos);
 
                 if (this.blockState.getMaterial() != Material.AIR) {
-                    this.blockState.getBlock().onEntityCollidedWithBlock(this.world, blockPos, this.blockState, this);
+                    this.blockState.getBlock().onEntityCollision(this.world, blockPos, this.blockState, this);
                     if (this.blockState instanceof BlockTNT) {
                         world.setBlockToAir(blockPos);
                         EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(world, (double) ((float) blockPos.getX() + 0.5F), (double) ((float) blockPos.getY() + 0.5F), (double) ((float) blockPos.getZ() + 0.5F), shootingEntity instanceof EntityLivingBase ? (EntityLivingBase) shootingEntity : null);

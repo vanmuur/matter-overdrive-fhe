@@ -60,7 +60,7 @@ public class AndroidPill extends MOItemFood {
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack itemstack, @Nullable World worldIn, List<String> infos, ITooltipFlag flagIn) {
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
-            String[] infoList = MOStringHelper.translateToLocal(getUnlocalizedName(itemstack) + ".details").split("/n");
+            String[] infoList = MOStringHelper.translateToLocal(getTranslationKey(itemstack) + ".details").split("/n");
             for (String info : infoList) {
                 infos.add(TextFormatting.GRAY + info);
             }
@@ -79,8 +79,8 @@ public class AndroidPill extends MOItemFood {
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack itemStack) {
-        return getUnlocalizedName() + "_" + names[MathHelper.clamp(itemStack.getItemDamage(), 0, names.length - 1)];
+    public String getTranslationKey(ItemStack itemStack) {
+        return getTranslationKey() + "_" + names[MathHelper.clamp(itemStack.getItemDamage(), 0, names.length - 1)];
     }
 
     @Override
@@ -115,7 +115,7 @@ public class AndroidPill extends MOItemFood {
 
     public void register() {
         setCreativeTab(MatterOverdrive.TAB_OVERDRIVE);
-        setRegistryName(new ResourceLocation(Reference.MOD_ID, this.getUnlocalizedName().substring(5)));
+        setRegistryName(new ResourceLocation(Reference.MOD_ID, this.getTranslationKey().substring(5)));
         GameData.register_impl(this);
     }
 

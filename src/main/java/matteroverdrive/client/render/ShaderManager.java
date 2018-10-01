@@ -83,7 +83,7 @@ public class ShaderManager {
         private final Map<ResourceLocation, String> loadedData = new HashMap<>();
 
         protected boolean validPath(ResourceLocation location) {
-            return location.getResourceDomain().equals(Reference.MOD_ID) && location.getResourcePath().startsWith("shaders/");
+            return location.getNamespace().equals(Reference.MOD_ID) && location.getPath().startsWith("shaders/");
         }
 
         @Override
@@ -95,7 +95,7 @@ public class ShaderManager {
         public InputStream getInputStream(ResourceLocation location) throws IOException {
             if (validPath(location)) {
                 String s = loadedData.computeIfAbsent(location, loc -> {
-                    InputStream in = ShaderManager.class.getResourceAsStream("/" + location.getResourcePath());
+                    InputStream in = ShaderManager.class.getResourceAsStream("/" + location.getPath());
                     StringBuilder data = new StringBuilder();
                     try (Scanner scan = new Scanner(in)) {
                         while (scan.hasNextLine()) {
@@ -112,7 +112,7 @@ public class ShaderManager {
 
         @Override
         public boolean resourceExists(ResourceLocation location) {
-            return validPath(location) && ShaderManager.class.getResource("/" + location.getResourcePath()) != null;
+            return validPath(location) && ShaderManager.class.getResource("/" + location.getPath()) != null;
         }
 
         @Override

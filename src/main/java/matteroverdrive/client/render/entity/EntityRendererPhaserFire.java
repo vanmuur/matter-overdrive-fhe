@@ -70,7 +70,7 @@ public class EntityRendererPhaserFire extends Render {
         float f9 = (float) (10 + b0 * 10) / 32.0F;
         float f10 = 0.05625F;
         float renderSize = plasmaBolt.getRenderSize();
-        double length = 6 * new Vec3d(plasmaBolt.motionX, plasmaBolt.motionY, plasmaBolt.motionZ).lengthVector() + 10;
+        double length = 6 * new Vec3d(plasmaBolt.motionX, plasmaBolt.motionY, plasmaBolt.motionZ).length() + 10;
         GlStateManager.enableRescaleNormal();
         GlStateManager.disableCull();
 

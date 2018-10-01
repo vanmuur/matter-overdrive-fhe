@@ -34,7 +34,7 @@ public abstract class MOBlockContainer<TE extends TileEntity> extends MOBlock im
     public abstract Class<TE> getTileEntityClass();
 
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 }

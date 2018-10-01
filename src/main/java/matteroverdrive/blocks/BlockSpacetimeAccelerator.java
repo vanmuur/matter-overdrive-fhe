@@ -70,6 +70,6 @@ public class BlockSpacetimeAccelerator extends MOBlockMachine<TileEntityMachineS
     @Override
     public void onConfigChanged(ConfigurationHandler config) {
         super.onConfigChanged(config);
-        showWave = config.getMachineBool(getUnlocalizedName(), "wave_particle", true, "Show the wave particle when the machine is active");
+        showWave = config.getMachineBool(getTranslationKey(), "wave_particle", true, "Show the wave particle when the machine is active");
     }
 }

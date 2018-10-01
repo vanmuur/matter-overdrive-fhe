@@ -42,7 +42,7 @@ public class BlockHandler {
     public void onBlockPlaceEvent(BlockEvent.PlaceEvent event) {
         if (event.getPlayer() != null) {
             ResourceLocation blockName = event.getState().getBlock().getRegistryName();
-            if (blockName.getResourceDomain().equals(Reference.MOD_ID)) {
+            if (blockName.getNamespace().equals(Reference.MOD_ID)) {
             }
             OverdriveExtendedProperties extendedProperties = MOPlayerCapabilityProvider.GetExtendedCapability(event.getPlayer());
             if (extendedProperties != null) {

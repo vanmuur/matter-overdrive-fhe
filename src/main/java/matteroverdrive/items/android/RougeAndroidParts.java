@@ -91,9 +91,9 @@ public class RougeAndroidParts extends BionicPart implements IBionicPart, IAdvan
     }*/
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getTranslationKey(ItemStack stack) {
         int i = MathHelper.clamp(stack.getItemDamage(), 0, 3);
-        return super.getUnlocalizedName() + "." + names[MathHelper.clamp(i, 0, names.length - 1)];
+        return super.getTranslationKey() + "." + names[MathHelper.clamp(i, 0, names.length - 1)];
     }
 
     @Override

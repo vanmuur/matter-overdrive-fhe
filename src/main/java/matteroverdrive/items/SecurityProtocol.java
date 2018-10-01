@@ -72,7 +72,7 @@ public class SecurityProtocol extends MOBaseItem implements IAdvancedModelProvid
                     infos.add(TextFormatting.YELLOW + "Owner: " + owner);
                 }
             } catch (Exception e) {
-                infos.add(TextFormatting.RED + MOStringHelper.translateToLocal(getUnlocalizedName() + ".invalid"));
+                infos.add(TextFormatting.RED + MOStringHelper.translateToLocal(getTranslationKey() + ".invalid"));
             }
         }
     }
@@ -97,8 +97,8 @@ public class SecurityProtocol extends MOBaseItem implements IAdvancedModelProvid
     }*/
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
-        return super.getUnlocalizedName(stack) + "." + types[MathHelper.clamp(stack.getItemDamage(), 0, types.length)];
+    public String getTranslationKey(ItemStack stack) {
+        return super.getTranslationKey(stack) + "." + types[MathHelper.clamp(stack.getItemDamage(), 0, types.length)];
     }
 
     @Override

@@ -230,7 +230,7 @@ public abstract class GuideElementTextAbstract extends GuideElementAbstract {
             if (guideEntryName != null) {
                 entry = MatterOverdriveGuide.findGuide(guideEntryName);
             } else {
-                entry = MatterOverdriveGuide.findGuide(stack.getUnlocalizedName());
+                entry = MatterOverdriveGuide.findGuide(stack.getTranslationKey());
             }
             if (entry != null) {
                 ((GuiDataPad) gui).getGuideDescription().OpenGuide(entry.getId(), page, true);

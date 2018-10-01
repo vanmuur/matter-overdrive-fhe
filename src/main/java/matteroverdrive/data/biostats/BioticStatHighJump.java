@@ -76,7 +76,7 @@ public class BioticStatHighJump extends AbstractBioticStat implements IConfigSub
                     }
 
                     Vec3d motion = new Vec3d(event.getEntityLiving().motionX, event.getEntityLiving().motionY, event.getEntityLiving().motionZ);
-                    motion = motion.normalize().addVector(0, 1, 0).normalize();
+                    motion = motion.normalize().add(0, 1, 0).normalize();
                     event.getEntityLiving().addVelocity(motion.x * 0.25 * level, motion.y * 0.25 * level, motion.z * 0.25 * level);
                 }
             }

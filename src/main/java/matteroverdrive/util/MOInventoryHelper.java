@@ -54,7 +54,7 @@ public class MOInventoryHelper {
 
     @Nonnull
     public static ItemStack decrStackSize(ItemStack container, int slot, int amount) {
-        if (container.getTagCompound().getCompoundTag("Slot" + slot) == null || container.getTagCompound().getCompoundTag("Slot" + slot).hasNoTags()) {
+        if (container.getTagCompound().getCompoundTag("Slot" + slot).isEmpty()) {
             return ItemStack.EMPTY;
         }
         ItemStack stack = new ItemStack(container.getTagCompound().getCompoundTag("Slot" + slot));
@@ -71,7 +71,7 @@ public class MOInventoryHelper {
 
     @Nonnull
     public static ItemStack getStackInSlot(ItemStack container, int slot) {
-        if (!container.hasTagCompound() || container.getTagCompound().getCompoundTag("Slot" + slot) == null || container.getTagCompound().getCompoundTag("Slot" + slot).hasNoTags()) {
+        if (!container.hasTagCompound() || container.getTagCompound().getCompoundTag("Slot" + slot).isEmpty()) {
             return ItemStack.EMPTY;
         }
         return new ItemStack(container.getTagCompound().getCompoundTag("Slot" + slot));

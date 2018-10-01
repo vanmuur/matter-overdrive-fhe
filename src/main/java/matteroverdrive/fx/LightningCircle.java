@@ -61,7 +61,7 @@ public class LightningCircle extends MOEntityFX {
             Vec3d pos = new Vec3d(Math.sin(i) * particleScale, 0, Math.cos(i) * particleScale).add(randomDir);
             worldRendererIn.pos(pos.x + tickX, pos.y + tickY, pos.z + tickZ).tex(0, 0).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
 
-            randomDir = randomDir.addVector(rand.nextGaussian() * randomness, rand.nextGaussian() * randomness, rand.nextGaussian() * randomness);
+            randomDir = randomDir.add(rand.nextGaussian() * randomness, rand.nextGaussian() * randomness, rand.nextGaussian() * randomness);
             pos = new Vec3d(Math.sin(i + 0.1) * particleScale, 0, Math.cos(i + 0.1) * particleScale).add(randomDir);
             worldRendererIn.pos(pos.x + tickX, pos.y + tickY, pos.z + tickZ).tex(0, 0).color(this.particleRed, this.particleGreen, this.particleBlue, this.particleAlpha).lightmap(j, k).endVertex();
         }

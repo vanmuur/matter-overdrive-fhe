@@ -40,7 +40,7 @@ import java.util.List;
  * Created by Simeon on 2/18/2016.
  */
 public class ModuleSniperScopeRender extends ModuleRenderAbstract {
-    private ResourceLocation scopeModelLocation = new ResourceLocation(Reference.PATH_MODEL + "item/sniper_scope.obj");
+    private ResourceLocation scopeModelLocation = new ResourceLocation(Reference.PATH_MODEL_ITEMS + "sniper_scope.obj");
     private OBJModel scopeModel;
     private IBakedModel scopeBakedModelBase;
     private IBakedModel scopeBakedModelWindow;

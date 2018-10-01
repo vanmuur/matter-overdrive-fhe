@@ -64,7 +64,7 @@ public class TileEntityRendererStarMap extends TileEntityRendererStation<TileEnt
         GlStateManager.disableLighting();
         RenderUtils.disableLightmap();
         GlStateManager.blendFunc(GL_ONE, GL_ONE);
-        float distance = (float) new Vec3d(x, y, z).lengthVector();
+        float distance = (float) new Vec3d(x, y, z).length();
 
         if (starMap.getActiveSpaceBody() != null) {
             Collection<ISpaceBodyHoloRenderer> renderers = ClientProxy.renderHandler.getStarmapRenderRegistry().getStarmapRendererCollection(starMap.getActiveSpaceBody().getClass());

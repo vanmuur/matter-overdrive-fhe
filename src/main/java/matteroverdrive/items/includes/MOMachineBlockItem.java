@@ -48,8 +48,8 @@ public class MOMachineBlockItem extends ItemBlock {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> infos, ITooltipFlag flagIn) {
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
-            if (MOStringHelper.hasTranslation(getUnlocalizedName() + ".details")) {
-                infos.add(TextFormatting.GRAY + MOStringHelper.translateToLocal(getUnlocalizedName() + ".details"));
+            if (MOStringHelper.hasTranslation(getTranslationKey() + ".details")) {
+                infos.add(TextFormatting.GRAY + MOStringHelper.translateToLocal(getTranslationKey() + ".details"));
             }
 
             if (stack.hasTagCompound()) {

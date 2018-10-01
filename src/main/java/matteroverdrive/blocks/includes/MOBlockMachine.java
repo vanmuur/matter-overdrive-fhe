@@ -157,7 +157,7 @@ public abstract class MOBlockMachine<TE extends TileEntity> extends MOBlockConta
         super.breakBlock(world, pos, blockState);
 
         if (flag) {
-            blockState.getBlock().onBlockDestroyedByPlayer(world, pos, blockState);
+            blockState.getBlock().onPlayerDestroy(world, pos, blockState);
         }
 
         if (!returnDrops) {
@@ -201,7 +201,7 @@ public abstract class MOBlockMachine<TE extends TileEntity> extends MOBlockConta
 
     @Override
     public void onConfigChanged(ConfigurationHandler config) {
-        config.initMachineCategory(getUnlocalizedName());
-        volume = (float) config.getMachineDouble(getUnlocalizedName(), "volume", 1, "The volume of the Machine");
+        config.initMachineCategory(getTranslationKey());
+        volume = (float) config.getMachineDouble(getTranslationKey(), "volume", 1, "The volume of the Machine");
     }
 }

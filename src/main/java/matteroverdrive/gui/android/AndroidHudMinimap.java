@@ -89,7 +89,7 @@ public class AndroidHudMinimap extends AndroidHudElement {
 
                 if (AndroidPlayer.isVisibleOnMinimap((EntityLivingBase) entityObj, mc.player, pos)) {
 
-                    if (pos.lengthVector() < Math.min(256, (RADIUS + 16 / ZOOM))) {
+                    if (pos.length() < Math.min(256, (RADIUS + 16 / ZOOM))) {
 
 
                         GlStateManager.pushMatrix();

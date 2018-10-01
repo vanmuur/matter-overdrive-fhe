@@ -66,7 +66,7 @@ public class ConfigurationHandler {
     public static final String KEY_GRAVITATIONAL_ANOMALY_VANILLA_FLUIDS = "gravitational anomaly vanilla fluids";
     public static final String KEY_GRAVITATIONAL_ANOMALY_FORGE_FLUIDS = "gravitational anomaly forge fluids";
     public static final String KEY_ANDROID_ENERGY_WATCH_ID = "android energy watch id";
-    public static final String KEY_MATTER_REGISTRATION_DEBUG = "matter registation";
+    public static final String KEY_MATTER_REGISTRATION_DEBUG = "matter registration";
     public static final String KEY_MATTER_CALCULATION_DEBUG = "matter calculation";
 
     public final File configDir;
@@ -76,7 +76,7 @@ public class ConfigurationHandler {
 
     public ConfigurationHandler(File configDir) {
         this.configDir = configDir;
-        config = new Configuration(new File(configDir, "MatterOverdrive" + File.separator + Reference.MOD_NAME + ".cfg"), Reference.VERSION);
+        config = new Configuration(new File(configDir, "MatterOverdrive/MatterOverdrive.cfg"), "1.0");
         subscribers = new HashSet<>();
     }
 
@@ -124,8 +124,8 @@ public class ConfigurationHandler {
         updateCategoryLang(category);
 
         config.get(CATEGORY_WORLD_GEN, CATEGORY_WORLD_SPAWN_ORES, true, "Should ores such as dilithium and tritanium ore spawn in the world. This applies for all ores !").setLanguageKey(String.format("config.%s.name", CATEGORY_WORLD_SPAWN_ORES.replace(' ', '_')));
-        config.get(CATEGORY_WORLD_GEN, String.format("%s.%s", CATEGORY_WORLD_SPAWN, MatterOverdrive.BLOCKS.dilithium_ore.getUnlocalizedName()), true).setLanguageKey(String.format("%s.name", MatterOverdrive.BLOCKS.dilithium_ore.getUnlocalizedName()));
-        config.get(CATEGORY_WORLD_GEN, String.format("%s.%s", CATEGORY_WORLD_SPAWN, MatterOverdrive.BLOCKS.tritaniumOre.getUnlocalizedName()), true).setLanguageKey(String.format("%s.name", MatterOverdrive.BLOCKS.tritaniumOre.getUnlocalizedName()));
+        config.get(CATEGORY_WORLD_GEN, String.format("%s.%s", CATEGORY_WORLD_SPAWN, MatterOverdrive.BLOCKS.dilithium_ore.getTranslationKey()), true).setLanguageKey(String.format("%s.name", MatterOverdrive.BLOCKS.dilithium_ore.getTranslationKey()));
+        config.get(CATEGORY_WORLD_GEN, String.format("%s.%s", CATEGORY_WORLD_SPAWN, MatterOverdrive.BLOCKS.tritaniumOre.getTranslationKey()), true).setLanguageKey(String.format("%s.name", MatterOverdrive.BLOCKS.tritaniumOre.getTranslationKey()));
 
         config.getBoolean(KEY_AUTOMATIC_RECIPE_CALCULATION, CATEGORY_MATTER, true, "Shoud Matter be automaticly calculated from Recipes");
 

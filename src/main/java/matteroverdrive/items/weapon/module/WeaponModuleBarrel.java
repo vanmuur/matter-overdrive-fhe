@@ -99,8 +99,8 @@ public class WeaponModuleBarrel extends WeaponModuleBase implements IAdvancedMod
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack itemStack) {
+    public String getTranslationKey(ItemStack itemStack) {
         int damage = itemStack.getItemDamage();
-        return this.getUnlocalizedName() + "." + names[damage];
+        return this.getTranslationKey() + "." + names[damage];
     }
 }

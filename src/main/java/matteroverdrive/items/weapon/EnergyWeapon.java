@@ -498,7 +498,7 @@ public abstract class EnergyWeapon extends MOItemEnergyContainer implements IWea
     public float getAccuracy(ItemStack weapon, EntityLivingBase shooter, boolean zoomed) {
         float accuracy = getWeaponBaseAccuracy(weapon, zoomed);
         accuracy = getCustomFloatStat(weapon, CUSTOM_ACCURACY_TAG, accuracy);
-        accuracy += (float) new Vec3d(shooter.motionX, shooter.motionY * 0.1, shooter.motionZ).lengthVector() * 10;
+        accuracy += (float) new Vec3d(shooter.motionX, shooter.motionY * 0.1, shooter.motionZ).length() * 10;
         accuracy *= shooter.isSneaking() ? 0.6f : 1;
         accuracy = modifyStatFromModules(WeaponStats.ACCURACY, weapon, accuracy);
         if (WeaponHelper.hasModule(Reference.MODULE_SIGHTS, weapon)) {

@@ -25,7 +25,7 @@ import net.minecraft.item.ItemStack;
  */
 public class MOGuideEntryBlock extends MOGuideEntry {
     public MOGuideEntryBlock(Block block) {
-        super(block.getUnlocalizedName());
+        super(block.getTranslationKey());
         setStackIcons(block);
     }
 

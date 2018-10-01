@@ -150,7 +150,7 @@ public class RegisterItemsFromRecipes implements Runnable {
             for (int i = 0; i < params.length; i++) {
                 if (params[i] instanceof ItemStack) {
                     try {
-                        params[i] = ((ItemStack) params[i]).getUnlocalizedName();
+                        params[i] = ((ItemStack) params[i]).getTranslationKey();
                     } catch (Exception e) {
                         MOLog.log(Level.ERROR, e, "There was a problem getting the name of item %s", ((ItemStack) params[i]).getItem());
                     }
@@ -165,7 +165,7 @@ public class RegisterItemsFromRecipes implements Runnable {
             for (int i = 0; i < params.length; i++) {
                 if (params[i] instanceof ItemStack) {
                     try {
-                        params[i] = ((ItemStack) params[i]).getUnlocalizedName();
+                        params[i] = ((ItemStack) params[i]).getTranslationKey();
                     } catch (Exception e) {
                         MOLog.log(Level.ERROR, e, "There was a problem getting the name of item %s", ((ItemStack) params[i]).getItem());
                     }

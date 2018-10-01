@@ -120,7 +120,7 @@ public class ElementBioStat extends MOElementButton {
             GlStateManager.pushMatrix();
             GlStateManager.translate(posX, posY, 0);
             GlStateManager.translate(sizeX / 2, sizeY / 2, 0);
-            GlStateManager.translate(direction.getFrontOffsetX() * (sizeX * 0.75), -direction.getFrontOffsetY() * (sizeY * 0.75), 0);
+            GlStateManager.translate(direction.getXOffset() * (sizeX * 0.75), -direction.getYOffset() * (sizeY * 0.75), 0);
             if (direction == EnumFacing.EAST) {
                 GlStateManager.rotate(90, 0, 0, 1);
             } else if (direction == EnumFacing.WEST) {

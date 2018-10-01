@@ -68,9 +68,10 @@ public class IsolinearCircuit extends MOBaseItem implements IAdvancedModelProvid
      * Returns the unlocalized name of this item. This version accepts an ItemStack so different stacks can have
      * different names based on their damage or NBT.
      */
-    public String getUnlocalizedName(ItemStack stack) {
+    @Override
+    public String getTranslationKey(ItemStack stack) {
         int i = MathHelper.clamp(stack.getItemDamage(), 0, 3);
-        return super.getUnlocalizedName() + "." + subItemNames[i];
+        return super.getTranslationKey() + "." + subItemNames[i];
     }
 
     /*@SideOnly(Side.CLIENT)

@@ -68,7 +68,7 @@ public abstract class RenderBeam<T extends EntityLivingBase> implements IWorldLa
             onBeamRaycastHit(hit, caster);
             return true;
         } else {
-            renderBeam(position.add(direction.scale(0.2)), position.addVector(direction.x * maxDistance, direction.y * maxDistance, direction.z * maxDistance), offset, getBeamColor(caster), getBeamTexture(caster), getBeamThickness(caster), caster);
+            renderBeam(position.add(direction.scale(0.2)), position.add(direction.x * maxDistance, direction.y * maxDistance, direction.z * maxDistance), offset, getBeamColor(caster), getBeamTexture(caster), getBeamThickness(caster), caster);
             onBeamRender(caster);
         }
         return false;
@@ -84,7 +84,7 @@ public abstract class RenderBeam<T extends EntityLivingBase> implements IWorldLa
         //GlStateManager.enableBlend();
         //GlStateManager.blendFunc(GL_ONE, GL_ONE);
         //GlStateManager.disableLighting();
-        double distance = from.subtract(to).lengthVector();
+        double distance = from.subtract(to).length();
         double v = -viewer.world.getWorldTime() * 0.2;
 
         GlStateManager.pushMatrix();

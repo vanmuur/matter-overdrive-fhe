@@ -70,7 +70,7 @@ public class DecorativeBlockItem extends ItemBlock {
                 return super.getItemStackDisplayName(itemStack) + " [Rotated]";
             }
         } else if (block instanceof BlockDecorativeColored) {
-            return MOStringHelper.translateToLocal("color." + EnumDyeColor.byMetadata(MathHelper.clamp(itemStack.getItemDamage(), 0, ItemDye.DYE_COLORS.length - 1)).getUnlocalizedName() + " " + super.getItemStackDisplayName(itemStack));
+            return MOStringHelper.translateToLocal("color." + EnumDyeColor.byMetadata(MathHelper.clamp(itemStack.getItemDamage(), 0, ItemDye.DYE_COLORS.length - 1)).getTranslationKey() + " " + super.getItemStackDisplayName(itemStack));
         }
         return super.getItemStackDisplayName(itemStack);
     }

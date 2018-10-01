@@ -48,7 +48,7 @@ public class MatterOverdriveGuide {
     }
 
     public static MOGuideEntry registerEntry(ItemStack itemStack, int guiX, int guiY) {
-        MOGuideEntry entry = new MOGuideEntry(++idCounter, itemStack.getUnlocalizedName(), itemStack);
+        MOGuideEntry entry = new MOGuideEntry(++idCounter, itemStack.getTranslationKey(), itemStack);
         entry.setGuiPos(guiX, guiY);
         registerEntry(entry);
         return entry;

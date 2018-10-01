@@ -105,8 +105,8 @@ public class MOMathHelper {
         Matrix4f.transform(rot, left, left);
 
         return new Vec3d(foward.x, foward.y, foward.z)
-                .addVector(left.x * tanf * aspectRatio * a, left.y * tanf * aspectRatio * a, left.z * tanf * aspectRatio * a)
-                .addVector(up.x * tanf * b, up.y * tanf * b, up.z * tanf * b)
+                .add(left.x * tanf * aspectRatio * a, left.y * tanf * aspectRatio * a, left.z * tanf * aspectRatio * a)
+                .add(up.x * tanf * b, up.y * tanf * b, up.z * tanf * b)
                 .normalize();
     }
 

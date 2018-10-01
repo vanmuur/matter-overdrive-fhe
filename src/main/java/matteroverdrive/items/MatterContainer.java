@@ -77,9 +77,9 @@ public class MatterContainer extends MOBaseItem {
     }
 
     @Override
-    public String getUnlocalizedName(ItemStack stack) {
+    public String getTranslationKey(ItemStack stack) {
         FluidStack result = stack.getCapability(FLUID_HANDLER_CAPABILITY, null).drain(1000, false);
-        return super.getUnlocalizedName(stack) + (result == null ? "_empty" : "_full");
+        return super.getTranslationKey(stack) + (result == null ? "_empty" : "_full");
     }
 
     @Override

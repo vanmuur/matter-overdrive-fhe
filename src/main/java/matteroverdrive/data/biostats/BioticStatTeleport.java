@@ -131,7 +131,7 @@ public class BioticStatTeleport extends AbstractBioticStat implements IConfigSub
         for (int i = pos.getY(); i < height; i++) {
             BlockPos blockPos = new BlockPos(pos.getX(), i, pos.getZ());
             block = world.getBlockState(blockPos);
-            String unlocalizedName = block.getBlock().getUnlocalizedName().substring(5);
+            String unlocalizedName = block.getBlock().getTranslationKey().substring(5);
             if (blackListedBlocks.contains(unlocalizedName)) {
                 return null;
             }

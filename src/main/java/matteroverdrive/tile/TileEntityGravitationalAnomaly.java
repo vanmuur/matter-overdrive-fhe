@@ -27,7 +27,6 @@ import matteroverdrive.entity.player.MOPlayerCapabilityProvider;
 import matteroverdrive.fx.GravitationalAnomalyParticle;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.init.OverdriveBioticStats;
-import matteroverdrive.items.MatterItem;
 import matteroverdrive.items.SpacetimeEqualizer;
 import matteroverdrive.machines.MachineNBTCategory;
 import matteroverdrive.util.MOLog;
@@ -44,6 +43,7 @@ import net.minecraft.entity.item.EntityFallingBlock;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -161,7 +161,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
         double rangeSq = getMaxRange() + 1;
         rangeSq *= rangeSq;
         Vec3d blockPos = new Vec3d(getPos());
-        blockPos.addVector(0.5, 0.5, 0.5);
+        blockPos.add(0.5, 0.5, 0.5);
         Vec3d entityPos = Minecraft.getMinecraft().player.getPositionVector();
 
         double distanceSq = entityPos.squareDistanceTo(blockPos);
@@ -186,7 +186,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
         double range = getMaxRange() + 1;
         AxisAlignedBB bb = new AxisAlignedBB(getPos().getX() - range, getPos().getY() - range, getPos().getZ() - range, getPos().getX() + range, getPos().getY() + range, getPos().getZ() + range);
         List entities = world.getEntitiesWithinAABB(Entity.class, bb);
-        Vec3d blockPos = new Vec3d(getPos()).addVector(0.5, 0.5, 0.5);
+        Vec3d blockPos = new Vec3d(getPos()).add(0.5, 0.5, 0.5);
 
         for (Object entityObject : entities) {
             if (entityObject instanceof Entity) {
@@ -231,7 +231,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
             return true;
         } else {
             Vec3d intersectDir = origin.subtract(anomaly);
-            double c = intersectDir.lengthVector();
+            double c = intersectDir.length();
             double v = intersectDir.dotProduct(dir);
             double d = radius * radius - (c * c - v * v);
 
@@ -453,7 +453,13 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
             entityItem.setDead();
             world.removeEntity(entityItem);
 
-            if (entityItem.getItem().getItem() instanceof MatterItem && MatterItem.getType(entityItem.getItem()) == MatterItem.MatterType.ANTIMATTER) {
+            if (entityItem.getItem().getItem() == Items.NETHER_STAR) {
+                collapse();
+            }
+            // Just for darkosto
+            if (entityItem.getItem().getItem().getRegistryName().toString().equalsIgnoreCase("extendedcrafting:storage") && entityItem.getItem().getMetadata() == 2) {
+                collapse();
+            } else if (entityItem.getItem().getItem().getItemStackDisplayName(entityItem.getItem()).toLowerCase().contains("nether star")) {
                 collapse();
             }
             return true;

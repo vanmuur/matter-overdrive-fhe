@@ -143,7 +143,7 @@ public class BlockHoloSign extends BlockMonitor<TileEntityHoloSign> implements I
         super.breakBlock(world, pos, blockState);
 
         if (flag) {
-            blockState.getBlock().onBlockDestroyedByPlayer(world, pos, blockState);
+            blockState.getBlock().onPlayerDestroy(world, pos, blockState);
         }
 
         if (!returnDrops) {

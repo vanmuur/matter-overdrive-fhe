@@ -38,12 +38,12 @@ public class DialogShotClose extends DialogShot {
     @Override
     public boolean positionCamera(EntityLivingBase active, EntityLivingBase other, float ticks, EntityRendererConversation rendererConversation) {
         Vec3d look = rendererConversation.getLook(other, active, ticks);
-        double distance = look.lengthVector();
+        double distance = look.length();
         double clammpedDistance = MathHelper.clamp(distance, minZoom, maxZoom);
         look = new Vec3d(look.x, 0, look.z);
         look = look.normalize();
 
-        Vec3d pos = rendererConversation.getPosition(active, ticks).subtract(0, 0.1, 0).addVector(look.x * clammpedDistance, look.y * clammpedDistance, look.z * clammpedDistance);
+        Vec3d pos = rendererConversation.getPosition(active, ticks).subtract(0, 0.1, 0).add(look.x * clammpedDistance, look.y * clammpedDistance, look.z * clammpedDistance);
         RayTraceResult movingObjectPosition = MOPhysicsHelper.rayTrace(rendererConversation.getPosition(active, ticks), active.world, maxZoom, ticks, new Vec3d(0, active.getEyeHeight(), 0), true, true, look.normalize(), active);
         if (movingObjectPosition != null) {
             pos = movingObjectPosition.hitVec;
