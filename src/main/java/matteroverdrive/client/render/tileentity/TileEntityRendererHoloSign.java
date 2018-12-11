@@ -45,7 +45,7 @@ public class TileEntityRendererHoloSign extends TileEntitySpecialRenderer<TileEn
         String text = tile.getText();
         if (text != null) {
             for (TextFormatting formatting : TextFormatting.values()) {
-                text = text.replaceAll(formatting.toString().replace('§', '&'), formatting.toString());
+                text = text.replaceAll(formatting.toString().replace('\u00a7', '&'), formatting.toString());
             }
             String[] infos = text.split("\n");
             int leftMargin = 10;

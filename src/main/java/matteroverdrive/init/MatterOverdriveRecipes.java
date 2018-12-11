@@ -19,6 +19,7 @@ package matteroverdrive.init;
 
 import matteroverdrive.MatterOverdrive;
 import matteroverdrive.data.recipes.InscriberRecipeManager;
+import matteroverdrive.util.Platform;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;

@@ -28,7 +28,9 @@ import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.config.Property;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Random;
 
 /**
@@ -37,6 +39,7 @@ import java.util.Random;
 public class WorldGenGravitationalAnomaly extends WorldGenerator implements IConfigSubscriber {
     private final HashSet<Integer> blacklist = new HashSet<>();
     private final HashSet<Integer> whitelist = new HashSet<>();
+    private final Map<Integer,Integer> yLevelMap = new HashMap<>();
     private float defaultChance;
     private float chance;
     private int minMatter;
@@ -53,11 +56,13 @@ public class WorldGenGravitationalAnomaly extends WorldGenerator implements ICon
 
     @Override
     public boolean generate(World world, Random random, BlockPos pos) {
-        if (isWorldValid(world) && random.nextFloat() < chance && world.setBlockState(pos, MatterOverdrive.BLOCKS.gravitational_anomaly.getDefaultState())) {
-            TileEntityGravitationalAnomaly anomaly = new TileEntityGravitationalAnomaly(minMatter + random.nextInt(maxMatter - minMatter));
-            world.setTileEntity(pos, anomaly);
-            GenPositionWorldData data = MOWorldGen.getWorldPositionData(world);
-            data.addPosition(name, new WorldPosition2D(pos.getX(), pos.getZ()));
+        if (isWorldValid(world) && yLevelMap.getOrDefault(world.provider.getDimension(), 0) <= pos.getY()) {
+            if (random.nextFloat() < chance && world.setBlockState(pos, MatterOverdrive.BLOCKS.gravitational_anomaly.getDefaultState())) {
+                TileEntityGravitationalAnomaly anomaly = new TileEntityGravitationalAnomaly(minMatter + random.nextInt(maxMatter - minMatter));
+                world.setTileEntity(pos, anomaly);
+                GenPositionWorldData data = MOWorldGen.getWorldPositionData(world);
+                data.addPosition(name, new WorldPosition2D(pos.getX(), pos.getZ()));
+            }
         }
         return false;
     }
@@ -73,6 +78,12 @@ public class WorldGenGravitationalAnomaly extends WorldGenerator implements ICon
     @Override
     public void onConfigChanged(ConfigurationHandler config) {
         chance = config.config.getFloat(ConfigurationHandler.KEY_GRAVITATIONAL_ANOMALY_SPAWN_CHANCE, String.format("%s.gravitational_anomaly", ConfigurationHandler.CATEGORY_WORLD_GEN), defaultChance, 0, 1, "Spawn Chance of Gravity Anomaly pre chunk");
+        yLevelMap.clear();
+        String[] strings = config.config.getStringList(ConfigurationHandler.KEY_GRAVITATIONAL_ANOMALY_SPAWN_LEVEL, String.format("%s.gravitational_anomaly", ConfigurationHandler.CATEGORY_WORLD_GEN), new String[0], "Spawn Y level of the Gravity Anomaly");
+        for (String s : strings) {
+            String[] split = s.split(":");
+            yLevelMap.put(Integer.parseInt(split[0]), Integer.parseInt(split[1]));
+        }
         loadWhitelist(config);
         loadBlacklist(config);
     }

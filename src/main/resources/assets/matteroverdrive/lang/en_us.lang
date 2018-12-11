@@ -250,10 +250,20 @@ entity.matteroverdrive.failed_chicken.name=Failed Chicken
 entity.matteroverdrive.failed_cow.name=Failed Cow
 entity.matteroverdrive.failed_sheep.name=Failed Sheep
 entity.matteroverdrive.mad_scientist.name=Mad Scientist
-entity.mad_scientist.name=Mad Scientist
+entitymatteroverdrive..mad_scientist.name=Mad Scientist
 entity.matteroverdrive.mad_scientist.junkie.name=Mad Scientist Junkie
 entity.matteroverdrive.ranged_rogue_android.name=Ranged Rogue Android
 entity.matteroverdrive.mutant_scientist.name=Mutant Scientist
+
+entity.rogue_android.name=Melee Rogue Android
+entity.failed_pig.name=Failed Pig
+entity.failed_chicken.name=Failed Chicken
+entity.failed_cow.name=Failed Cow
+entity.failed_sheep.name=Failed Sheep
+entity.mad_scientist.name=Mad Scientist
+entity.mad_scientist.junkie.name=Mad Scientist Junkie
+entity.ranged_rogue_android.name=Ranged Rogue Android
+entity.mutant_scientist.name=Mutant Scientist
 
 #///////////// Decorative ////////////////////
 tile.decorative.stripes.name=Yellow Stripes

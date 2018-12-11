@@ -132,7 +132,7 @@ public class MOWorldGen implements IWorldGenerator, IConfigSubscriber {
 
     private void generateGravitationalAnomalies(World world, Random random, int chunkX, int chunkZ) {
         if (generateAnomalies) {
-            BlockPos pos = new BlockPos(chunkX + random.nextInt(16), chunkZ + random.nextInt(16), random.nextInt(60) + 4);
+            BlockPos pos = new BlockPos(chunkX + random.nextInt(16), random.nextInt(60) + 4, chunkZ + random.nextInt(16));
 
             if (anomalyGen.generate(world, random, pos) && Platform.isDev())
                 MOLog.debug("Generated Anomaly at %s", pos);
