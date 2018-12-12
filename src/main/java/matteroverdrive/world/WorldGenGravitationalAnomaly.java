@@ -39,7 +39,7 @@ import java.util.Random;
 public class WorldGenGravitationalAnomaly extends WorldGenerator implements IConfigSubscriber {
     private final HashSet<Integer> blacklist = new HashSet<>();
     private final HashSet<Integer> whitelist = new HashSet<>();
-    private final Map<Integer,Integer> yLevelMap = new HashMap<>();
+    public final Map<Integer,Integer> yLevelMap = new HashMap<>();
     private float defaultChance;
     private float chance;
     private int minMatter;
@@ -56,13 +56,11 @@ public class WorldGenGravitationalAnomaly extends WorldGenerator implements ICon
 
     @Override
     public boolean generate(World world, Random random, BlockPos pos) {
-        if (isWorldValid(world) && yLevelMap.getOrDefault(world.provider.getDimension(), 0) <= pos.getY()) {
-            if (random.nextFloat() < chance && world.setBlockState(pos, MatterOverdrive.BLOCKS.gravitational_anomaly.getDefaultState())) {
-                TileEntityGravitationalAnomaly anomaly = new TileEntityGravitationalAnomaly(minMatter + random.nextInt(maxMatter - minMatter));
-                world.setTileEntity(pos, anomaly);
-                GenPositionWorldData data = MOWorldGen.getWorldPositionData(world);
-                data.addPosition(name, new WorldPosition2D(pos.getX(), pos.getZ()));
-            }
+        if (isWorldValid(world) && random.nextFloat() < chance && world.setBlockState(pos, MatterOverdrive.BLOCKS.gravitational_anomaly.getDefaultState())) {
+            TileEntityGravitationalAnomaly anomaly = new TileEntityGravitationalAnomaly(minMatter + random.nextInt(maxMatter - minMatter));
+            world.setTileEntity(pos, anomaly);
+            GenPositionWorldData data = MOWorldGen.getWorldPositionData(world);
+            data.addPosition(name, new WorldPosition2D(pos.getX(), pos.getZ()));
         }
         return false;
     }
