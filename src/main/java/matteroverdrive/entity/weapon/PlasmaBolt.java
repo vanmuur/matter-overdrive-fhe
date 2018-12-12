@@ -41,6 +41,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.IProjectile;
+import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
@@ -190,13 +191,11 @@ public class PlasmaBolt extends Entity implements IProjectile, IGravityEntity, I
 
         Entity entity = null;
         Vec3d hit = null;
-        List list = this.world.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox().expand(this.motionX, this.motionY, this.motionZ).expand(1.0D, 1.0D, 1.0D));
+        List<Entity> list = this.world.getEntitiesWithinAABBExcludingEntity(this, this.getEntityBoundingBox().expand(this.motionX, this.motionY, this.motionZ).expand(1.0D, 1.0D, 1.0D));
         double d0 = 0.0D;
 
-        for (Object aList : list) {
-            Entity entity1 = (Entity) aList;
-
-            if (entity1 != null && entity1.canBeCollidedWith() && !entity1.isDead && entity1 instanceof EntityLivingBase && ((EntityLivingBase) entity1).deathTime == 0) {
+        for (Entity entity1 : list) {
+            if (entity1 != null && entity1.canBeAttackedWithItem() && !entity1.isDead && entity1 instanceof EntityLivingBase && ((EntityLivingBase) entity1).deathTime == 0) {
                 float f1 = 0.3f;
                 if (this.shootingEntity != null) {
                     if (this.shootingEntity instanceof EntityLivingBase) {
@@ -251,7 +250,12 @@ public class PlasmaBolt extends Entity implements IProjectile, IGravityEntity, I
                 double lastMotionY = movingobjectposition.entityHit.motionY;
                 double lastMotionZ = movingobjectposition.entityHit.motionZ;
 
-                if (movingobjectposition.entityHit.attackEntityFrom(damagesource, this.damage)) {
+                boolean attack = movingobjectposition.entityHit.attackEntityFrom(damagesource, this.damage);
+                if (!attack && movingobjectposition.entityHit instanceof EntityDragon) {
+                    attack = ((EntityDragon) movingobjectposition.entityHit).attackEntityFromPart(((EntityDragon) movingobjectposition.entityHit).dragonPartBody, damagesource, this.damage);
+                }
+
+                if (attack) {
                     movingobjectposition.entityHit.motionX = lastMotionX + (movingobjectposition.entityHit.motionX - lastMotionX) * knockback;
                     movingobjectposition.entityHit.motionY = lastMotionY + (movingobjectposition.entityHit.motionY - lastMotionY) * knockback;
                     movingobjectposition.entityHit.motionZ = lastMotionZ + (movingobjectposition.entityHit.motionZ - lastMotionZ) * knockback;
