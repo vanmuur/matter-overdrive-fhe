@@ -69,10 +69,10 @@ public class TileEntityWeaponStation extends MOTileEntityMachine {
     }
 
     public IInventory getActiveInventory() {
-        if (itemInventory == null && !inventory.getSlot(INPUT_SLOT).getItem().isEmpty() && WeaponHelper.isWeapon(inventory.getSlot(INPUT_SLOT).getItem())){
+        if (itemInventory == null && !inventory.getSlot(INPUT_SLOT).getItem().isEmpty() && WeaponHelper.isWeapon(inventory.getSlot(INPUT_SLOT).getItem())) {
             itemInventory = new ItemInventoryWrapper(inventory.getSlot(INPUT_SLOT).getItem(), 6);
         }
-        if (inventory.getSlot(INPUT_SLOT).getItem().isEmpty() || !WeaponHelper.isWeapon(inventory.getSlot(INPUT_SLOT).getItem())){
+        if (inventory.getSlot(INPUT_SLOT).getItem().isEmpty() || !WeaponHelper.isWeapon(inventory.getSlot(INPUT_SLOT).getItem())) {
             itemInventory = null;
         }
         return itemInventory == null ? inventory : itemInventory;

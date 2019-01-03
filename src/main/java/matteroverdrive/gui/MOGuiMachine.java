@@ -19,7 +19,6 @@
 package matteroverdrive.gui;
 
 import matteroverdrive.Reference;
-import matteroverdrive.client.data.Color;
 import matteroverdrive.container.ContainerMachine;
 import matteroverdrive.container.MOBaseContainer;
 import matteroverdrive.data.inventory.Slot;
@@ -113,7 +112,7 @@ public class MOGuiMachine<T extends MOTileEntityMachine> extends MOGuiBase {
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         if (name != null && !name.isEmpty()) {
             String n = MOStringHelper.translateToLocal("gui." + name + ".name");
-            fontRenderer.drawString(n, 11+xSize / 2 - (fontRenderer.getStringWidth(n) / 2), 7, Reference.COLOR_MATTER.getColor());
+            fontRenderer.drawString(n, 11 + xSize / 2 - (fontRenderer.getStringWidth(n) / 2), 7, Reference.COLOR_MATTER.getColor());
         }
 
         drawElements(0, true);

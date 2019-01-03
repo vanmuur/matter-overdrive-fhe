@@ -38,9 +38,9 @@ import java.util.Random;
  * Created by Simeon on 5/18/2015.
  */
 public class WorldGenGravitationalAnomaly extends WorldGenerator implements IConfigSubscriber {
+    public final Map<Integer, Integer> yLevelMap = new HashMap<>();
     private final HashSet<Integer> blacklist = new HashSet<>();
     private final HashSet<Integer> whitelist = new HashSet<>();
-    public final Map<Integer,Integer> yLevelMap = new HashMap<>();
     private float defaultChance;
     private float chance;
     private int minMatter;

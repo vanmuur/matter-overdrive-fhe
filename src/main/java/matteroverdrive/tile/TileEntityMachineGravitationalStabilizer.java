@@ -50,11 +50,10 @@ import static matteroverdrive.util.MOBlockHelper.getAboveSide;
  * Created by Simeon on 5/12/2015.
  */
 public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachineEnergy implements IMOTickable {
-    RayTraceResult hit;
-
     public static Color color1 = new Color(0xFFFFFF);
     public static Color color2 = new Color(0xFF0000);
     public static Color color3 = new Color(0x115A84);
+    RayTraceResult hit;
 
     public TileEntityMachineGravitationalStabilizer() {
         super(4);
@@ -158,21 +157,21 @@ public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachin
         float percent = getPercentage();
         if (percent == -1)
             return color3.getRed();
-        return (color2.getRed() * percent + color1.getRed() * (1 - percent))/255;
+        return (color2.getRed() * percent + color1.getRed() * (1 - percent)) / 255;
     }
 
     public double getBeamColorG() {
         float percent = getPercentage();
         if (percent == -1)
             return color3.getGreen();
-        return (color2.getGreen() * percent + color1.getGreen() * (1 - percent))/255;
+        return (color2.getGreen() * percent + color1.getGreen() * (1 - percent)) / 255;
     }
 
     public double getBeamColorB() {
         float percent = getPercentage();
         if (percent == -1)
             return color3.getBlue();
-        return (color2.getBlue() * percent + color1.getBlue() * (1 - percent))/255;
+        return (color2.getBlue() * percent + color1.getBlue() * (1 - percent)) / 255;
     }
 
     public double getParticleColorR() {

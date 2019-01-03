@@ -33,8 +33,6 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-import static matteroverdrive.util.MOBlockHelper.RotationType;
-
 /**
  * Created by Simeon on 3/15/2015.
  */

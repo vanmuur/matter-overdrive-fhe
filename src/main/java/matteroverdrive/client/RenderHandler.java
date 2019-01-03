@@ -309,8 +309,8 @@ public class RenderHandler {
         if (event.getEntity() != null && AndroidPlayer.DISABLE_ANDROID_FOV) {
             AndroidPlayer androidPlayer = MOPlayerCapabilityProvider.GetAndroidCapability(event.getEntity());
             if (androidPlayer != null && androidPlayer.isAndroid()) {
-                double attributeValue = (1-androidPlayer.getSpeedMultiply())/2;
-                event.setNewfov(event.getFov()+(float) attributeValue);
+                double attributeValue = (1 - androidPlayer.getSpeedMultiply()) / 2;
+                event.setNewfov(event.getFov() + (float) attributeValue);
             }
         }
     }
