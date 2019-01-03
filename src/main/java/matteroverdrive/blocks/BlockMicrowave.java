@@ -18,18 +18,15 @@
 package matteroverdrive.blocks;
 
 import matteroverdrive.blocks.includes.MOBlock;
+import matteroverdrive.util.MOBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 public class BlockMicrowave extends MOBlock {
     public BlockMicrowave(Material material, String name) {
         super(material, name);
         setHasRotation();
+        setRotationType(MOBlockHelper.RotationType.FOUR_WAY);
     }
 
     @Override
@@ -45,10 +42,5 @@ public class BlockMicrowave extends MOBlock {
     @Override
     public boolean isOpaqueCube(IBlockState state) {
         return false;
-    }
-
-    @Override
-    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
-        return getDefaultState().withProperty(PROPERTY_DIRECTION, placer.getHorizontalFacing());
     }
 }

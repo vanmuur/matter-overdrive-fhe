@@ -68,6 +68,7 @@ public class TileEntityRendererGravitationalStabilizer extends TileEntitySpecial
             RenderUtils.disableLightmap();
 
             GlStateManager.blendFunc(GL_ONE, GL_ONE);
+            GlStateManager.color(1,1,1,1);
             GlStateManager.color((float) stabilizer.getBeamColorR(), (float) stabilizer.getBeamColorG(), (float) stabilizer.getBeamColorB());
             bindTexture(beam);
 

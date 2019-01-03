@@ -28,6 +28,7 @@ import matteroverdrive.machines.events.MachineEvent;
 import matteroverdrive.proxy.ClientProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -49,6 +50,10 @@ import static matteroverdrive.util.MOBlockHelper.getAboveSide;
  */
 public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachineEnergy implements IMOTickable {
     RayTraceResult hit;
+
+    public static Color color1 = new Color(0xFFFFFF);
+    public static Color color2 = new Color(0xFF0000);
+    public static Color color3 = new Color(0x115A84);
 
     public TileEntityMachineGravitationalStabilizer() {
         super(4);
@@ -87,14 +92,24 @@ public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachin
         }
     }
 
+    public float getPercentage() {
+        if (hit != null) {
+            TileEntity tile = world.getTileEntity(hit.getBlockPos());
+            if (tile instanceof TileEntityGravitationalAnomaly) {
+                return Math.max(0, Math.min((float) (((TileEntityGravitationalAnomaly) tile).getEventHorizon() - 0.3f) / 2.3f, 1f));
+            }
+        }
+        return -1;
+    }
+
     @SideOnly(Side.CLIENT)
     void spawnParticles(World world) {
         if (hit != null && world.getTileEntity(hit.getBlockPos()) instanceof TileEntityGravitationalAnomaly) {
             if (random.nextFloat() < 0.3f) {
 
-                float r = (float) getBeamColorR();
-                float g = (float) getBeamColorG();
-                float b = (float) getBeamColorB();
+                float r = (float) getParticleColorR();
+                float g = (float) getParticleColorG();
+                float b = (float) getParticleColorB();
                 EnumFacing up = getAboveSide(world.getBlockState(getPos()).getValue(MOBlock.PROPERTY_DIRECTION)).getOpposite();
                 GravitationalStabilizerBeamParticle particle = new GravitationalStabilizerBeamParticle(world, new Vector3f(getPos().getX() + 0.5f, getPos().getY() + 0.5f, getPos().getZ() + 0.5f), new Vector3f(hit.getBlockPos().getX() + 0.5f, hit.getBlockPos().getY() + 0.5f, hit.getBlockPos().getZ() + 0.5f), new Vector3f(up.getXOffset(), up.getYOffset(), up.getZOffset()), 1f, 0.3f, 80);
                 particle.setColor(r, g, b, 1);
@@ -139,15 +154,36 @@ public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachin
     }
 
     public double getBeamColorR() {
-        return Color.getHSBColor((world.getWorldTime() % 400) / 400f, 1.0f, 1.0f).getRed() / 255f;
+        float percent = getPercentage();
+        if (percent == -1)
+            return color3.getRed();
+        return (color2.getRed() * percent + color1.getRed() * (1 - percent))/255;
     }
 
     public double getBeamColorG() {
-        return Color.getHSBColor((world.getWorldTime() % 400) / 400f, 1.0f, 1.0f).getGreen() / 255f;
+        float percent = getPercentage();
+        if (percent == -1)
+            return color3.getGreen();
+        return (color2.getGreen() * percent + color1.getGreen() * (1 - percent))/255;
     }
 
     public double getBeamColorB() {
-        return Color.getHSBColor((world.getWorldTime() % 400) / 400f, 1.0f, 1.0f).getBlue() / 255f;
+        float percent = getPercentage();
+        if (percent == -1)
+            return color3.getBlue();
+        return (color2.getBlue() * percent + color1.getBlue() * (1 - percent))/255;
+    }
+
+    public double getParticleColorR() {
+        return getBeamColorR();
+    }
+
+    public double getParticleColorG() {
+        return getBeamColorG();
+    }
+
+    public double getParticleColorB() {
+        return getBeamColorB();
     }
 
     public RayTraceResult getHit() {

@@ -23,6 +23,7 @@ import matteroverdrive.util.MOBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -65,11 +66,20 @@ public class BlockGravitationalStabilizer extends MOBlockMachine<TileEntityMachi
         return TileEntityMachineGravitationalStabilizer.class;
     }
 
+    @Override
+    public boolean hasComparatorInputOverride(IBlockState state) {
+        return true;
+    }
+
+    @Override
+    public int getComparatorInputOverride(IBlockState blockState, World worldIn, BlockPos pos) {
+        return (int) getTileEntity(worldIn, pos).getPercentage() * 15;
+    }
+
     @Nonnull
     @Override
     public TileEntity createTileEntity(@Nonnull World world, @Nonnull IBlockState state) {
         return new TileEntityMachineGravitationalStabilizer();
-
     }
 
 }

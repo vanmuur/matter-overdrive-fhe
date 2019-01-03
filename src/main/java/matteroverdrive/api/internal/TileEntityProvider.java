@@ -39,7 +39,6 @@ public interface TileEntityProvider<T extends TileEntity> extends ITileEntityPro
         }
     }
 
-    @SuppressWarnings("unchecked")
     default T getTileEntity(IBlockAccess world, BlockPos pos) {
         return TileUtils.getNullableTileEntity(world, pos, getTileEntityClass());
     }

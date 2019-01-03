@@ -43,7 +43,6 @@ public class BlockNetworkPipe extends BlockPipe<TileEntityNetworkPipe> implement
         super(material, name);
         setHardness(10.0F);
         this.setResistance(9.0f);
-        setRotationType(RotationType.PREVENT);
     }
 
     @Override

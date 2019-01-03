@@ -63,21 +63,9 @@ public class MOBlockHelper {
         }
     }
 
-    public static final class RotationType {
-        public static final int PREVENT = -1;
-        public static final int FOUR_WAY = 1;
-        public static final int SIX_WAY = 2;
-        public static final int RAIL = 3;
-        public static final int PUMPKIN = 4;
-        public static final int STAIRS = 5;
-        public static final int REDSTONE = 6;
-        public static final int LOG = 7;
-        public static final int SLAB = 8;
-        public static final int CHEST = 9;
-        public static final int LEVER = 10;
-        public static final int SIGN = 11;
-
-        public RotationType() {
-        }
+    public enum RotationType {
+        PREVENT,
+        FOUR_WAY,
+        SIX_WAY;
     }
 }

@@ -34,7 +34,6 @@ public class BlockMatterPipe extends BlockPipe<TileEntityMatterPipe> {
         super(material, name);
         setHardness(10.0F);
         this.setResistance(5.0f);
-        setRotationType(MOBlockHelper.RotationType.PREVENT);
     }
 
     @Override

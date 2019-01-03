@@ -51,11 +51,11 @@ import static matteroverdrive.util.MOBlockHelper.SIDE_LEFT;
  * Created by Simeon on 3/24/2015.
  */
 public class MOBlock extends Block implements ItemModelProvider {
-    public static final PropertyDirection PROPERTY_DIRECTION = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+    public static final PropertyDirection PROPERTY_DIRECTION = PropertyDirection.create("facing");
     protected AxisAlignedBB boundingBox = FULL_BLOCK_AABB;
     private BlockStateContainer blockState;
     private boolean hasRotation;
-    private int rotationType;
+    private RotationType rotationType;
 
     public MOBlock(Material material, String name) {
         super(material);
@@ -103,7 +103,7 @@ public class MOBlock extends Block implements ItemModelProvider {
     @Deprecated
     public IBlockState getStateFromMeta(int meta) {
         if (hasRotation) {
-            return getDefaultState().withProperty(PROPERTY_DIRECTION, EnumFacing.byHorizontalIndex(meta));
+            return getDefaultState().withProperty(PROPERTY_DIRECTION, EnumFacing.byIndex(meta));
         } else {
             return getDefaultState();
         }
@@ -113,7 +113,7 @@ public class MOBlock extends Block implements ItemModelProvider {
     public int getMetaFromState(IBlockState state) {
         if (hasRotation) {
             EnumFacing facing = state.getValue(PROPERTY_DIRECTION);
-            return facing.getHorizontalIndex();
+            return facing.getIndex();
         } else {
             return 0;
         }
@@ -143,13 +143,14 @@ public class MOBlock extends Block implements ItemModelProvider {
 
     @Override
     public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
-        if (hasRotation)
-            return getDefaultState().withProperty(PROPERTY_DIRECTION, placer.getHorizontalFacing().getOpposite());
+        if (hasRotation) {
+            return getDefaultState().withProperty(PROPERTY_DIRECTION, rotationType == RotationType.FOUR_WAY ? placer.getHorizontalFacing().getOpposite() : EnumFacing.getDirectionFromEntityLiving(pos, placer));
+        }
         return super.getStateForPlacement(world, pos, facing, hitX, hitY, hitZ, meta, placer, hand);
     }
 
     public boolean rotateBlock(World world, BlockPos pos, EnumFacing axis) {
-        if (rotationType >= 0) {
+        if (rotationType != RotationType.PREVENT) {
             IBlockState state = world.getBlockState(pos);
             for (IProperty prop : state.getProperties().keySet()) {
                 if (prop.getName().equals(PROPERTY_DIRECTION)) {
@@ -179,7 +180,7 @@ public class MOBlock extends Block implements ItemModelProvider {
         super.breakBlock(worldIn, pos, state);
     }
 
-    public void setRotationType(int type) {
+    public void setRotationType(RotationType type) {
         rotationType = type;
     }
 

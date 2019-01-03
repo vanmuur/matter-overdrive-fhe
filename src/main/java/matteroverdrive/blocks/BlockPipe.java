@@ -23,6 +23,7 @@ import matteroverdrive.raytrace.Cuboid;
 import matteroverdrive.raytrace.DistanceRayTraceResult;
 import matteroverdrive.tile.pipes.TileEntityPipe;
 import matteroverdrive.util.AABBUtils;
+import matteroverdrive.util.MOBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -64,7 +65,7 @@ public abstract class BlockPipe<TE extends TileEntity> extends MOBlockContainer<
     public BlockPipe(Material material, String name) {
         super(material, name);
         this.useNeighborBrightness = true;
-        this.setRotationType(-1);
+        this.setRotationType(MOBlockHelper.RotationType.PREVENT);
     }
 
     protected static DistanceRayTraceResult rayTraceBox(BlockPos pos, Vec3d start, Vec3d end, Cuboid box) {

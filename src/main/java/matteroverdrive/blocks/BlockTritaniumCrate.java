@@ -22,6 +22,7 @@ import matteroverdrive.blocks.includes.MOBlockMachine;
 import matteroverdrive.data.Inventory;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.tile.TileEntityTritaniumCrate;
+import matteroverdrive.util.MOBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -50,6 +51,7 @@ public class BlockTritaniumCrate extends MOBlockMachine<TileEntityTritaniumCrate
         this.setResistance(9.0f);
         this.setHarvestLevel("pickaxe", 2);
         setHasRotation();
+        setRotationType(MOBlockHelper.RotationType.FOUR_WAY);
     }
 
     @Override
