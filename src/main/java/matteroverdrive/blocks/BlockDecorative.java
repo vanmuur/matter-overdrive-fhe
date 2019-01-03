@@ -20,11 +20,13 @@ package matteroverdrive.blocks;
 import matteroverdrive.MatterOverdrive;
 import matteroverdrive.blocks.includes.IImageGenBlock;
 import matteroverdrive.blocks.includes.MOBlock;
+import matteroverdrive.util.MOBlockHelper;
 import matteroverdrive.world.MOImageGen;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -50,12 +52,12 @@ public class BlockDecorative extends MOBlock implements IImageGenBlock {
         this.mapColor = mapColor;
         decorativeBlocks.add(this);
         MOImageGen.worldGenerationBlockColors.put(this, getBlockColor(0));
-        setRotationType(-1);
+        setRotationType(MOBlockHelper.RotationType.PREVENT);
     }
 
     @Override
     public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-        //worldIn.setBlockState(pos,state.withProperty(MOBlock.PROPERTY_DIRECTION, EnumFacing.VALUES[stack.getItemDamage()]));
+        worldIn.setBlockState(pos, state.withProperty(MOBlock.PROPERTY_DIRECTION, EnumFacing.VALUES[stack.getItemDamage()]));
     }
 
     @Override
