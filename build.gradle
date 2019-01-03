@@ -1,5 +1,3 @@
-import java.util.function.Consumer
-
 buildscript {
     repositories {
         jcenter()
@@ -15,11 +13,13 @@ buildscript {
     }
 }
 plugins {
-        id "com.github.hierynomus.license" version "0.14.0"
+    id 'net.minecrell.licenser' version '0.4.1'
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.selesse.git.changelog'
 apply plugin: 'java'
+
+defaultTasks 'licenseFormat'
 
 def BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: "0"
 def mod_version = "0.6.3.$BUILD_NUMBER"
@@ -29,16 +29,22 @@ version = "1.12.2-$mod_version"
 group= "matteroverdrive"
 archivesBaseName = "MatterOverdrive"
 
+static def getCurrentYear() {
+    def date = new Date()
+    return date.format('yyyy')
+}
+
 license {
-    header rootProject.file('HEADER')
-    include "**/*.java"
-    ext.year = Calendar.getInstance().get(Calendar.YEAR)
-    ext.name = 'Horizon Studio'
-    ext.email = 'contact@hrznstudio.com'
-    ignoreFailures = true
-    mapping {
-        java='SLASHSTAR_STYLE'
+    ext {
+        name = "MatterOverdrive: Legacy Edition"
+        organization = "Horizon Studio"
+        email = "contact@hrznstudio.com"
+        url = "https://hrznstudio.com"
+        year = getCurrentYear()
     }
+
+    header = file('HEADER')
+    include '**/*.java'
 }
 
 changelog {
