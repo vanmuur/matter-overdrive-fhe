@@ -122,14 +122,18 @@ processResources {
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+    rename '(.+_at.cfg)', 'META-INF/$1'
 }
 
 
 jar {
     classifier = "universal"
-    manifest {
-        attributes 'FMLAT': 'mo_at.cfg'
-    }
+    manifest.mainAttributes(
+            "Built-By": System.properties['user.name'],
+            "Created-By": "${System.properties['java.vm.version']} (${System.properties['java.vm.vendor']})",
+            'Maven-Artifact': "$group:$archivesBaseName:$version",
+            "FMLAT": "mo_at.cfg"
+    )
 }
 
 task deobfJar(type: Jar) {
@@ -157,48 +161,41 @@ artifacts {
     archives apiJar
 }
 
-task("uploadCurse") {
-    description = "upload build to curse"
-
+curseforge {
+    if(System.getenv('HRZN_CURSE_KEY'))
+        apiKey = System.getenv('HRZN_CURSE_KEY')
+    else
+        apiKey = "NONE"
+    project {
+        apiUrl="https://minecraft.curseforge.com"
+        id = '308192'
+        changelog = file('CHANGELOG.md')
+        releaseType = 'release'
+        mainArtifact jar
+        addArtifact apiJar
+        addGameVersion '1.12.2'
+    }
 }
 
-task("uploadJars") {
-    description = "uploads JARs"
-    if (System.getenv("local_maven") != null) {
-        apply plugin: 'maven'
-        uploadArchives {
-            repositories {
-                mavenDeployer {
-                    repository(url: "file://" + System.getenv("local_maven"))
-                    pom {
-                        groupId = project.group
-                        version = project.version
-                        artifactId = project.archivesBaseName
-                        project {
-                            name project.archivesBaseName
-                            packaging 'jar'
-                            description project.archivesBaseName
-                            issueManagement {
-                                system 'github'
-                                url 'https://github.com/MatterOverdrive/MatterOverdrive/issues'
-                            }
-                            developers {
-                                developer {
-                                    id 'TheCodedOne'
-                                    name 'TheCodedOne'
-                                    roles { role 'developer' }
-                                }
-                                developer {
-                                    id 'Buuz135'
-                                    name 'Buuz135'
-                                    roles { role 'developer' }
-                                }
-                                developer {
-                                    id 'Dev-Osmium'
-                                    name 'Dev-Osmium'
-                                    roles { role 'developer' }
-                                }
-                            }
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://$buildDir/repo")
+
+            pom {
+                groupId = project.group
+                version = project.version
+                artifactId = 'matteroverdrive-legacy-edition'
+                project {
+                    name "Matter Overdrive: Legacy Edition"
+                    packaging 'jar'
+                    description 'Legacy Edition of Matter Overdrive'
+                    url 'https://hrzn.studio/mo/le'
+                    developers {
+                        developer {
+                            id 'coded'
+                            name 'Coded'
+                            roles {role 'developer'}
                         }
                     }
                 }
