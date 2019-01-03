@@ -13,11 +13,14 @@ buildscript {
     }
 }
 plugins {
+    id 'maven'
+    id 'maven-publish'
+    id 'java'
     id 'net.minecrell.licenser' version '0.4.1'
+    id "com.hrznstudio.cursegradle" version "1.1.0"
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.selesse.git.changelog'
-apply plugin: 'java'
 
 defaultTasks 'licenseFormat'
 
@@ -52,7 +55,7 @@ changelog {
 
     outputDirectory = file("$projectDir")
 
-    since = 'beginning'
+    since = "beginning"
 
     commitFormat = '%s (%an)'
 
