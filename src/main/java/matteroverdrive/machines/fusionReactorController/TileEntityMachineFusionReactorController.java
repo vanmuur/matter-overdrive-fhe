@@ -86,6 +86,7 @@ public class TileEntityMachineFusionReactorController extends MOTileEntityMachin
     private float matterPerTick;
     private float matterDrain;
     private ComponentComputers componentComputers;
+    private long worldTickLast = 0;
 
     public TileEntityMachineFusionReactorController() {
         super(4);
@@ -133,12 +134,15 @@ public class TileEntityMachineFusionReactorController extends MOTileEntityMachin
 
     @Override
     public void update() {
-        super.update();
-        if (!world.isRemote) {
-            //System.out.println("Fusion Reactor Update in chunk that is loaded:" + world.getChunkFromBlocks(x,z).isChunkLoaded);
-            manageStructure();
-            manageEnergyGeneration();
-            manageEnergyExtract();
+        if (worldTickLast != getWorld().getTotalWorldTime()) {
+            worldTickLast = getWorld().getTotalWorldTime();
+            super.update();
+            if (!world.isRemote) {
+                //System.out.println("Fusion Reactor Update in chunk that is loaded:" + world.getChunkFromBlocks(x,z).isChunkLoaded);
+                manageStructure();
+                manageEnergyGeneration();
+                manageEnergyExtract();
+            }
         }
     }
 
