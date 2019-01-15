@@ -18,7 +18,6 @@
 
 package matteroverdrive;
 
-import matteroverdrive.api.internal.OreDictItem;
 import matteroverdrive.commands.AndoidCommands;
 import matteroverdrive.commands.CommandMatterRegistry;
 import matteroverdrive.commands.QuestCommands;
@@ -170,8 +169,6 @@ public class MatterOverdrive {
 
         PROXY.init(event);
 
-        MatterOverdriveItems.items.stream().filter(item -> item instanceof OreDictItem).forEach(item -> ((OreDictItem) item).registerOreDict());
-        MatterOverdriveBlocks.blocks.stream().filter(block -> block instanceof OreDictItem).forEach(block -> ((OreDictItem) block).registerOreDict());
         MatterOverdriveRecipes.registerMachineRecipes(event);
 
         WEAPON_FACTORY.initModules();
