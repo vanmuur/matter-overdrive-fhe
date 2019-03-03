@@ -28,9 +28,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 1/30/2016.
- */
 public class PacketClearPatterns extends PacketAbstract {
     private int windowID;
     private BlockPos database;

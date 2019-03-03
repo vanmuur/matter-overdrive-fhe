@@ -37,9 +37,6 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 2/18/2016.
- */
 public class ModuleSniperScopeRender extends ModuleRenderAbstract {
     private ResourceLocation scopeModelLocation = new ResourceLocation(Reference.PATH_MODEL_ITEMS + "sniper_scope.obj");
     private OBJModel scopeModel;

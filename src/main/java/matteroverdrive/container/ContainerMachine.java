@@ -36,9 +36,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 4/9/2015.
- */
 public class ContainerMachine<T extends MOTileEntityMachine> extends MOBaseContainer implements IMachineWatcher {
     protected T machine;
     EntityPlayer entityPlayer;

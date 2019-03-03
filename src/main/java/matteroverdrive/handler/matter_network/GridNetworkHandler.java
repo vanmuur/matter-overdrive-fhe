@@ -27,9 +27,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
-/**
- * Created by Simeon on 1/28/2016.
- */
 public abstract class GridNetworkHandler<K extends IGridNode, T extends IGridNetwork<K>> {
     public Stack<T> networkPool;
     public Set<T> activeNetworkList;

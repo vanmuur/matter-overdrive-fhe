@@ -39,9 +39,6 @@ import org.lwjgl.opengl.GL11;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 6/21/2015.
- */
 public abstract class ElementAbstractStarMapEntry<T extends SpaceBody> extends MOElementButton {
     public static final ScaleTexture BG = new ScaleTexture(new ResourceLocation(Reference.PATH_ELEMENTS + "holo_list_entry.png"), 32, 32).setOffsets(18, 12, 15, 15);
     public static final ScaleTexture BG_FLIPPED = new ScaleTexture(new ResourceLocation(Reference.PATH_ELEMENTS + "holo_list_entry_flipped.png"), 32, 32).setOffsets(12, 18, 15, 15);

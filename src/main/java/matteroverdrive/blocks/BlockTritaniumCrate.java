@@ -38,9 +38,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 11/5/2015.
- */
 public class BlockTritaniumCrate extends MOBlockMachine<TileEntityTritaniumCrate> {
 
     private static final AxisAlignedBB BOX_NORTH_SOUTH = new AxisAlignedBB(0, 0, 2 / 16d, 1, 12 / 16d, 14 / 16d);

@@ -25,9 +25,6 @@ import matteroverdrive.api.dialog.IDialogOption;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 1/27/2016.
- */
 public class DialogOptionReference implements IDialogOption {
     ResourceLocation dialogOptionName;
 

@@ -33,9 +33,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Simeon on 7/25/2015.
- */
 public class EntityRendererPhaserFire extends Render {
     private static final ResourceLocation arrowTextures = new ResourceLocation(Reference.PATH_ENTITIES + "plasmafire.png");
 

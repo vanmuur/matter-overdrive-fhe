@@ -39,9 +39,6 @@ import java.text.DecimalFormat;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 9/9/2015.
- */
 public class AndroidHudStats extends AndroidHudElement {
     public static final ResourceLocation top_element_bg = new ResourceLocation(Reference.PATH_ELEMENTS + "android_bg_element.png");
 

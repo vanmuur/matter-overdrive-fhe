@@ -33,9 +33,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 11/20/2015.
- */
 public class PacketUpdateQuest extends PacketAbstract {
     public static final byte UPDATE_QUEST = 0;
     public static final byte ADD_QUEST = 1;

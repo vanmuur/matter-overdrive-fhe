@@ -39,9 +39,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class TileEntityMachineSpacetimeAccelerator extends MOTileEntityMachineMatter {
     private static final IUpgradeHandler upgradeHandler = new UpgradeHandlerGeneric(0.05, Double.MAX_VALUE).addUpgradeMinimum(UpgradeTypes.Speed, 0.2).addUpgradeMaximum(UpgradeTypes.Range, 6);
     private static EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerStorage, UpgradeTypes.PowerUsage, UpgradeTypes.Range, UpgradeTypes.MatterStorage, UpgradeTypes.MatterTransfer, UpgradeTypes.Speed, UpgradeTypes.MatterUsage);

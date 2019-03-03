@@ -39,9 +39,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 6/1/2015.
- */
 public class PacketTeleportPlayer extends PacketAbstract {
 
     double x, y, z;

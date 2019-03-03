@@ -18,9 +18,6 @@
 
 package matteroverdrive.api.quest;
 
-/**
- * Created by Simeon on 3/1/2016.
- */
 public class QuestState {
     private final Type type;
     private final int[] objectiveIds;

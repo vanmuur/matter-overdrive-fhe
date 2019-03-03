@@ -20,9 +20,6 @@ package matteroverdrive.util;
 
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 12/22/2015.
- */
 public class TimeTracker {
     private long lastMark = -9223372036854775808L;
 

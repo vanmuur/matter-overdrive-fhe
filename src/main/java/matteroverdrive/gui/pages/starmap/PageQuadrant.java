@@ -31,9 +31,6 @@ import matteroverdrive.starmap.data.Star;
 import matteroverdrive.tile.TileEntityMachineStarMap;
 import net.minecraft.client.Minecraft;
 
-/**
- * Created by Simeon on 6/18/2015.
- */
 public class PageQuadrant extends ElementBaseGroup implements IListHandler {
 
     private static int scroll;

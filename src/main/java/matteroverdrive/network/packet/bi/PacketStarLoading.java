@@ -32,9 +32,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 12/19/2015.
- */
 public class PacketStarLoading extends PacketAbstract {
     int quadrantID;
     int starID;

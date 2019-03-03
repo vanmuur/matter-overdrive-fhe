@@ -23,9 +23,6 @@ import matteroverdrive.gui.element.MOElementEnergy;
 import matteroverdrive.tile.TileEntityMachineSolarPanel;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 4/9/2015.
- */
 public class GuiSolarPanel extends MOGuiMachine<TileEntityMachineSolarPanel> {
     MOElementEnergy energy;
 

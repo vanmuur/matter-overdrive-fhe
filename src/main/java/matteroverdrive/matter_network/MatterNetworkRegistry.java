@@ -26,9 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-/**
- * Created by Simeon on 4/27/2015.
- */
 public class MatterNetworkRegistry {
     public static final List<Class> taskTypes = new ArrayList<>();
 

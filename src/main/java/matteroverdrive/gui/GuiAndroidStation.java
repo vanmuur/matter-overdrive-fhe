@@ -44,9 +44,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.text.TextFormatting;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public class GuiAndroidStation extends MOGuiMachine<TileEntityAndroidStation> {
     private static int scrollX;
     private static int scrollY = 65;

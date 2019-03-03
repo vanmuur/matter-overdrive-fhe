@@ -28,9 +28,6 @@ import net.minecraft.util.math.MathHelper;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 4/25/2015.
- */
 public class ScaleTexture {
     int texW;
     int texH;

@@ -24,9 +24,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Simeon on 5/10/2015.
- */
 public class ElementStates extends MOElementButtonScaled {
     String[] states;
     int selectedState;

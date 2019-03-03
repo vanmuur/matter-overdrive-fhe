@@ -34,9 +34,6 @@ import org.w3c.dom.Element;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public abstract class GuideElementAbstract implements IGuideElement {
     protected MOGuiBase gui;
     protected int x;

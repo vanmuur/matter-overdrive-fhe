@@ -23,9 +23,6 @@ import net.minecraft.client.audio.PositionedSound;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 
-/**
- * Created by Simeon on 4/16/2015.
- */
 public class WeaponSound extends PositionedSound implements ITickableSound {
     private boolean donePlaying;
 

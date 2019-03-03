@@ -23,9 +23,6 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 3/6/2015.
- */
 public class TileEntityUpdatePacket extends PacketAbstract {
     public BlockPos pos;
 

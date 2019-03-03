@@ -35,9 +35,6 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/30/2015.
- */
 public class MOWorldGenCargoShip extends MOWorldGenBuilding<MOWorldGenCargoShip.Worker> {
     private static final int MIN_DISTANCE_APART = 4096;
 

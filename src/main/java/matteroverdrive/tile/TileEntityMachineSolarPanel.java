@@ -31,9 +31,6 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-/**
- * Created by Simeon on 4/9/2015.
- */
 public class TileEntityMachineSolarPanel extends MOTileEntityMachineEnergy {
     public static final int CHARGE_AMOUNT = 8;
     public static final int ENERGY_STORAGE = 64000;

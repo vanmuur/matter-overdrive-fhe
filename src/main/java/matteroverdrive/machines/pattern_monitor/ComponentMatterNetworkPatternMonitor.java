@@ -24,9 +24,6 @@ import matteroverdrive.data.matter_network.IMatterNetworkEvent;
 import matteroverdrive.data.matter_network.MatterDatabaseEvent;
 import matteroverdrive.matter_network.components.MatterNetworkComponentClient;
 
-/**
- * Created by Simeon on 7/13/2015.
- */
 public class ComponentMatterNetworkPatternMonitor extends MatterNetworkComponentClient<TileEntityMachinePatternMonitor> {
     public ComponentMatterNetworkPatternMonitor(TileEntityMachinePatternMonitor patternMonitor) {
         super(patternMonitor);

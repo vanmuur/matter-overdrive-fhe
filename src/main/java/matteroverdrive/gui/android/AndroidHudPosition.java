@@ -18,9 +18,6 @@
 
 package matteroverdrive.gui.android;
 
-/**
- * Created by Simeon on 9/9/2015.
- */
 public enum AndroidHudPosition {
     TOP_LEFT(0, 0, "Top Left"),
     TOP_CENTER(0.5f, 0, "Top Center"),

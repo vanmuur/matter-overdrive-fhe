@@ -18,9 +18,6 @@
 
 package matteroverdrive.api.network;
 
-/**
- * Created by Simeon on 7/15/2015.
- */
 public enum MatterNetworkTaskState {
     INVALID,
     UNKNOWN,

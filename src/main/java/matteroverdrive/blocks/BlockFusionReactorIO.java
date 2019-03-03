@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 10/30/2015.
- */
 public class BlockFusionReactorIO extends MOBlockMachine<TileEntityFusionReactorPart> {
     public BlockFusionReactorIO(Material material, String name) {
         super(material, name);

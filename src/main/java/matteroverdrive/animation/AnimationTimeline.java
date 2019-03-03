@@ -23,9 +23,6 @@ import matteroverdrive.util.math.MOMathHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 5/31/2015.
- */
 public class AnimationTimeline<T extends AnimationSegment> {
     protected int time;
     private boolean loopable;

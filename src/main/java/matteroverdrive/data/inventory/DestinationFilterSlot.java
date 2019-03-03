@@ -24,9 +24,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 7/19/2015.
- */
 public class DestinationFilterSlot extends Slot {
     public DestinationFilterSlot(boolean isMainSlot) {
         super(isMainSlot);

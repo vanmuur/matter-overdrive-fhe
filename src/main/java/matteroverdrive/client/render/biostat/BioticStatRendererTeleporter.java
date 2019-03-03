@@ -35,9 +35,6 @@ import net.minecraftforge.client.event.RenderWorldLastEvent;
 
 import static org.lwjgl.opengl.GL11.GL_ONE;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 public class BioticStatRendererTeleporter implements IBioticStatRenderer<BioticStatTeleport> {
     public static final ResourceLocation glow = new ResourceLocation(Reference.PATH_FX + "teleport_glow.png");
 

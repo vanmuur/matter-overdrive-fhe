@@ -27,9 +27,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 
-/**
- * Created by Simeon on 3/1/2016.
- */
 public class SoundReward implements IQuestReward {
     String soundName;
     float volume;

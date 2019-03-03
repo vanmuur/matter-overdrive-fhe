@@ -23,9 +23,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/17/2015.
- */
 @SideOnly(Side.CLIENT)
 public class VentParticle extends Particle {
     public VentParticle(World world, double x, double y, double z, double dirX, double dirY, double dirZ) {

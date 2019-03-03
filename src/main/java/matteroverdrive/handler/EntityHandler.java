@@ -41,9 +41,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class EntityHandler {
    /* @SubscribeEvent
 	public void onEntityConstructing(EntityEvent.EntityConstructing event)

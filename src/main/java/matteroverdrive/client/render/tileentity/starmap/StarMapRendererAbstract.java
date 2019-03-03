@@ -31,9 +31,6 @@ import org.lwjgl.util.glu.Sphere;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 6/17/2015.
- */
 @SideOnly(Side.CLIENT)
 public abstract class StarMapRendererAbstract implements ISpaceBodyHoloRenderer {
     protected final Sphere sphere;

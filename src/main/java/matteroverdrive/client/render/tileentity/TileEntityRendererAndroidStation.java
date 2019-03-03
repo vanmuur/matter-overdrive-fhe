@@ -26,9 +26,6 @@ import matteroverdrive.util.RenderUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public class TileEntityRendererAndroidStation extends TileEntityRendererStation<TileEntityAndroidStation> {
     EntityMeleeRougeAndroidMob mob;
 

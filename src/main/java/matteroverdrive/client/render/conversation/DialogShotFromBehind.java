@@ -23,9 +23,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 8/12/2015.
- */
 public class DialogShotFromBehind extends DialogShot {
     private final float distance;
     private final float sideOffset;

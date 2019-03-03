@@ -38,9 +38,6 @@ import java.io.InputStream;
 import java.util.*;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/17/2015.
- */
 public abstract class MOImageGen<T extends MOImageGen.ImageGenWorker> {
     public static final HashMap<Block, Integer> worldGenerationBlockColors = new HashMap<>();
     protected final int layerWidth;

@@ -36,9 +36,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 1/24/2016.
- */
 public class BlockDecorativeColored extends BlockDecorative {
     public static final PropertyEnum<EnumDyeColor> COLOR = PropertyEnum.create("color", EnumDyeColor.class);
 

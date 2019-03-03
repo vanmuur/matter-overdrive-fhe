@@ -42,9 +42,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import javax.annotation.Nonnull;
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 11/5/2015.
- */
 public class TileEntityTritaniumCrate extends MOTileEntity implements IInventory, IInteractionObject {
     final TileEntityInventory inventory;
 

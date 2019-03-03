@@ -61,9 +61,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 2/18/2016.
- */
 @SideOnly(Side.CLIENT)
 public class WeaponRenderHandler {
     private final Minecraft mc = Minecraft.getMinecraft();

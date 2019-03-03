@@ -32,9 +32,6 @@ import org.lwjgl.util.vector.Vector4f;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 7/2/2015.
- */
 public class StarMapRenderPlanetStats extends StarMapRendererPlanet {
     @Override
     public void renderBody(Galaxy galaxy, SpaceBody spaceBody, TileEntityMachineStarMap starMap, float partialTicks, float viewerDistance) {

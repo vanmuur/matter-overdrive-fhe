@@ -21,9 +21,6 @@ package matteroverdrive.api.entity;
 import net.minecraft.entity.EntityCreature;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 12/13/2015.
- */
 public interface IPathableMob<T extends EntityCreature> {
     Vec3d getCurrentTarget();
 

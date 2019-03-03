@@ -28,9 +28,6 @@ import net.minecraft.util.ResourceLocation;
 import javax.vecmath.Matrix4f;
 import javax.vecmath.Vector3f;
 
-/**
- * Created by Simeon on 3/11/2015.
- */
 public class ItemRendererPhaser extends WeaponItemRenderer {
     public static final String MODEL = Reference.PATH_MODEL + "item/phaser2.obj";
     private static final String TEXTURE_COLOR_MASK = Reference.PATH_ITEM + "phaser_color_mask.png";

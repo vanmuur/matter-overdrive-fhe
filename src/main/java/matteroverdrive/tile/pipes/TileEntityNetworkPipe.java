@@ -34,9 +34,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * Created by Simeon on 3/15/2015.
- */
 public class TileEntityNetworkPipe extends TileEntityPipe implements IMatterNetworkConnection {
 
     private MatterNetwork matterNetwork;

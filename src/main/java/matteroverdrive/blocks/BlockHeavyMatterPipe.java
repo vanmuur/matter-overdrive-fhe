@@ -26,9 +26,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 8/20/2015.
- */
 public class BlockHeavyMatterPipe extends BlockMatterPipe {
 
     public BlockHeavyMatterPipe(Material material, String name) {

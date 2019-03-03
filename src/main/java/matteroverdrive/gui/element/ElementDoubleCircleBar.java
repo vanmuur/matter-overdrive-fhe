@@ -28,9 +28,6 @@ import java.util.List;
 
 import static org.lwjgl.opengl.GL11.GL_GREATER;
 
-/**
- * Created by Simeon on 5/17/2015.
- */
 public class ElementDoubleCircleBar extends MOElementBase {
     public static final ResourceLocation BG = new ResourceLocation(Reference.PATH_ELEMENTS + "circle_bar.png");
     public static final ResourceLocation OVERLAY = new ResourceLocation(Reference.PATH_ELEMENTS + "circle_bar_top.png");

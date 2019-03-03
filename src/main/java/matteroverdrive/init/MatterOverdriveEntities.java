@@ -37,9 +37,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 @Mod.EventBusSubscriber
 public class MatterOverdriveEntities {
     public static final int ENTITY_STARTING_ID = 171;

@@ -22,9 +22,6 @@ import matteroverdrive.api.exceptions.CoreInaccessibleException;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by Simeon on 7/20/2015.
- */
 final class MOApi {
     private static final String CORE_API_CLASS = "matteroverdrive.core.MOAPIInternal";
     private static final String CORE_API_FIELD = "INSTANCE";

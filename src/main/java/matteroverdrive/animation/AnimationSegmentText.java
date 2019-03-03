@@ -20,9 +20,6 @@ package matteroverdrive.animation;
 
 import matteroverdrive.util.MOStringHelper;
 
-/**
- * Created by Simeon on 5/31/2015.
- */
 public class AnimationSegmentText extends AnimationSegment {
     private String string;
     private int animationType;

@@ -25,9 +25,6 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 3/19/2015.
- */
 public class TileEntityRendererReplicator extends TileEntitySpecialRenderer<TileEntityMachineReplicator> {
     EntityItem itemEntity;
 

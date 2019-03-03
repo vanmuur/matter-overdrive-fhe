@@ -36,9 +36,6 @@ import org.lwjgl.util.vector.Vector3f;
 
 import static org.lwjgl.opengl.GL11.GL_ONE;
 
-/**
- * Created by Simeon on 6/7/2015.
- */
 public class BioticStatRendererShield implements IBioticStatRenderer<BioticStatShield> {
     public static final ResourceLocation model_path = new ResourceLocation(Reference.PATH_MODEL + "shield_sphere.obj");
     private static final ResourceLocation forcefield_damage_tex = new ResourceLocation(Reference.PATH_FX + "shield_damage.png");

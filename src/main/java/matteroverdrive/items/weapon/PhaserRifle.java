@@ -48,9 +48,6 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 7/25/2015.
- */
 public class PhaserRifle extends EnergyWeapon {
 
     public static final int RANGE = 32;
@@ -270,7 +267,8 @@ public class PhaserRifle extends EnergyWeapon {
 
     @Override
     public int getBaseEnergyUse(ItemStack item) {
-        return ENERGY_PER_SHOT / getShootCooldown(item);
+        int cooldown = getShootCooldown(item);
+        return ENERGY_PER_SHOT / cooldown==0?1:cooldown;
     }
 
     @Override

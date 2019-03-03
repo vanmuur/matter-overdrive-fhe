@@ -33,9 +33,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public abstract class AbstractBioticStat implements IBioticStat {
     protected String name;
     boolean showOnHud;

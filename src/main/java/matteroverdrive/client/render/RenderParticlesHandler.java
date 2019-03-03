@@ -53,9 +53,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 5/13/2015.
- */
 @SideOnly(Side.CLIENT)
 public class RenderParticlesHandler implements IWorldLastRenderer, ITextureMapPopulator {
     public static ResourceLocation star = new ResourceLocation(Reference.MOD_ID, "sprite_star");

@@ -22,9 +22,6 @@ import matteroverdrive.starmap.data.Planet;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 6/21/2015.
- */
 public class PlanetDwarfGen extends PlanetAbstractGen {
     public PlanetDwarfGen() {
         super((byte) 2, 4, 4);

@@ -23,9 +23,6 @@ import matteroverdrive.tile.TileEntityWeaponStation;
 import matteroverdrive.util.MOContainerHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 4/13/2015.
- */
 public class ContainerWeaponStation extends ContainerMachine<TileEntityWeaponStation> {
     public ContainerWeaponStation(InventoryPlayer playerInventory, TileEntityWeaponStation machine) {
         this.machine = machine;

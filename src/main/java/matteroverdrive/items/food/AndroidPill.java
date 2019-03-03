@@ -40,9 +40,6 @@ import org.lwjgl.input.Keyboard;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Simeon on 7/12/2015.
- */
 public class AndroidPill extends MOItemFood {
     public static final String[] names = new String[]{"red", "blue", "yellow"};
 

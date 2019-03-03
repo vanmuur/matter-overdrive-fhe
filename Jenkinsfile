@@ -28,51 +28,17 @@ pipeline {
       }
     }
     stage('Deploy To Maven') {
-      parallel {
-        stage('Deploy To Release Maven') {
           when {
             allOf {
-              branch 'release'
+              branch '1.12.2'
               expression {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS'
               }
             }
           }
           steps {
-            sh 'aws s3 cp build/repo/ s3://hrznstudio.com/maven/release/ --recursive --acl public-read'
+            sh 'aws s3 cp build/repo/ s3://hrznstudio.com/maven/ --recursive --acl public-read'
           }
-        }
-        stage('Deploy To Snapshot Maven') {
-          when {
-            allOf {
-              branch 'snapshot'
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS'
-              }
-            }
-          }
-          steps {
-            sh 'aws s3 cp build/repo/ s3://hrznstudio.com/maven/snapshot/ --recursive --acl public-read'
-          }
-        }
-      }
-    }
-    stage('Deploy Release') {
-      parallel {
-        stage('Deploy To CurseForge') {
-          when {
-            allOf {
-              branch 'release'
-              expression {
-                currentBuild.result == null || currentBuild.result == 'SUCCESS'
-              }
-            }
-          }
-          steps {
-            sh './gradlew curseforge'
-          }
-        }
-      }
     }
   }
   post {

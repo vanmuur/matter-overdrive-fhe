@@ -30,9 +30,6 @@ import net.minecraft.world.IBlockAccess;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-/**
- * Created by Simeon on 3/23/2015.
- */
 public class DilithiumOre extends MOBlockOre {
 
     private final Random rand = new Random();

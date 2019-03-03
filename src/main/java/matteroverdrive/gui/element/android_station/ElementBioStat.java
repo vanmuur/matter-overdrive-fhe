@@ -40,9 +40,6 @@ import java.util.List;
 import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
 import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public class ElementBioStat extends MOElementButton {
     private IBioticStat stat;
     private AndroidPlayer player;

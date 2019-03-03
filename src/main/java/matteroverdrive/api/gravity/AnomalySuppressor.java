@@ -21,9 +21,6 @@ package matteroverdrive.api.gravity;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Created by Simeon on 10/23/2015.
- */
 public class AnomalySuppressor {
     private BlockPos pos;
     private int time;

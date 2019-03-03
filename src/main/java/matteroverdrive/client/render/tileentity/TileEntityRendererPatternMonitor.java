@@ -28,9 +28,6 @@ import net.minecraft.util.ResourceLocation;
 
 import static org.lwjgl.opengl.GL11.glColor3f;
 
-/**
- * Created by Simeon on 4/29/2015.
- */
 public class TileEntityRendererPatternMonitor extends TileEntityRendererMonitor<TileEntityMachinePatternMonitor> {
     public static final ResourceLocation screenTexture = new ResourceLocation(Reference.PATH_BLOCKS + "pattern_monitor_holo.png");
 

@@ -47,9 +47,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 11/15/2015.
- */
 public class EntityRangedRogueAndroidMob extends EntityRougeAndroidMob implements IRangedEnergyWeaponAttackMob {
     public static boolean DROP_NORMAL_WEAPONS = true;
     public static boolean DROP_LEGENDARY_WEAPONS = true;

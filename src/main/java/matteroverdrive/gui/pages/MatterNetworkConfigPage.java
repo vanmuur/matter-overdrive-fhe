@@ -26,9 +26,6 @@ import matteroverdrive.gui.element.MOElementTextField;
 import matteroverdrive.gui.events.ITextHandler;
 import matteroverdrive.machines.components.ComponentMatterNetworkConfigs;
 
-/**
- * Created by Simeon on 7/17/2015.
- */
 public class MatterNetworkConfigPage extends AutoConfigPage implements ITextHandler {
     private ComponentMatterNetworkConfigs componentMatterNetworkConfigs;
     private ElementInventorySlot filterSlot;

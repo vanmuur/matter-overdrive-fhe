@@ -38,9 +38,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 12/30/2015.
- */
 public class ContainerPatternMonitor extends ContainerTaskQueueMachine<TileEntityMachinePatternMonitor> implements IMatterDatabaseWatcher {
 
     public ContainerPatternMonitor(InventoryPlayer inventory, TileEntityMachinePatternMonitor machine) {

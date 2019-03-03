@@ -23,9 +23,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 1/20/2016.
- */
 public interface IGridNode<T extends IGridNetwork> {
     T getNetwork();
 

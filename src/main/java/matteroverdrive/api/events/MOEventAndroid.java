@@ -21,9 +21,6 @@ package matteroverdrive.api.events;
 import matteroverdrive.api.android.IAndroid;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
-/**
- * Created by Simeon on 1/9/2016.
- */
 public class MOEventAndroid extends PlayerEvent {
     public final IAndroid android;
 

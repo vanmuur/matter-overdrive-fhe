@@ -25,9 +25,6 @@ import net.minecraftforge.fml.client.config.IConfigElement;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Created by Simeon on 9/10/2015.
- */
 public class EnumConfigProperty extends GuiConfigEntries.SelectValueEntry {
     public EnumConfigProperty(GuiConfig owningScreen, GuiConfigEntries owningEntryList, IConfigElement configElement) {
         super(owningScreen, owningEntryList, configElement, getSelectableValues(configElement));

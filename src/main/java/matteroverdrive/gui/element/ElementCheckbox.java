@@ -22,9 +22,6 @@ import matteroverdrive.container.IButtonHandler;
 import matteroverdrive.gui.MOGuiBase;
 import matteroverdrive.proxy.ClientProxy;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public class ElementCheckbox extends MOElementButtonScaled {
     String checkboxLabel;
     boolean state;

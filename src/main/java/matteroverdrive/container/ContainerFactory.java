@@ -22,9 +22,6 @@ import matteroverdrive.machines.MOTileEntityMachine;
 import matteroverdrive.util.MOContainerHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 7/23/2015.
- */
 public class ContainerFactory {
     public static <T extends MOTileEntityMachine> ContainerMachine<T> createMachineContainer(T machine, InventoryPlayer inventoryPlayer) {
         ContainerMachine<T> containerMachine = new ContainerMachine<>(inventoryPlayer, machine);

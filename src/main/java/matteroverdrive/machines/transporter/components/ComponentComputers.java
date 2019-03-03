@@ -28,9 +28,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/21/2015.
- */
 /*@Optional.InterfaceList({
 		@Optional.Interface(modid = "ComputerCraft", iface = "dan200.computercraft.api.peripheral.IPeripheral"),
 })*/

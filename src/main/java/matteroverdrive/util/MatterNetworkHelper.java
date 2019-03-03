@@ -25,9 +25,6 @@ import net.minecraft.nbt.NBTTagLong;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.util.Constants;
 
-/**
- * Created by Simeon on 3/11/2015.
- */
 public class MatterNetworkHelper {
     public static NBTTagCompound getFilterFromPositions(BlockPos... positions) {
         NBTTagCompound tagCompound = new NBTTagCompound();

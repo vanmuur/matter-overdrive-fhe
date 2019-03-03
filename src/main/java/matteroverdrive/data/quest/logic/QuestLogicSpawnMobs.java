@@ -34,9 +34,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/30/2015.
- */
 public class QuestLogicSpawnMobs extends AbstractQuestLogic {
     private String customSpawnName;
     private Class<? extends Entity>[] mobClasses;

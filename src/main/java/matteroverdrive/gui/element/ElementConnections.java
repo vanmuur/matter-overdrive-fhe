@@ -23,9 +23,6 @@ import matteroverdrive.tile.TileEntityMachinePacketQueue;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 5/10/2015.
- */
 public class ElementConnections extends MOElementBase {
     TileEntityMachinePacketQueue machine;
 

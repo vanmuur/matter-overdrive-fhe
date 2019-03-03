@@ -22,9 +22,6 @@ import matteroverdrive.api.transport.IGridNetwork;
 import matteroverdrive.handler.matter_network.FluidNetworkHandler;
 import net.minecraftforge.fluids.Fluid;
 
-/**
- * Created by Simeon on 12/28/2015.
- */
 public class FluidPipeNetwork extends AbstractGridNetwork<IFluidPipe> {
     private Fluid fluidType;
     private int fluidReqiest;

@@ -23,9 +23,6 @@ import matteroverdrive.gui.MOGuiBase;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class ElementPlayerSlots extends MOElementBase {
     public ElementPlayerSlots(MOGuiBase gui, int posX, int posY) {
         super(gui, posX, posY);

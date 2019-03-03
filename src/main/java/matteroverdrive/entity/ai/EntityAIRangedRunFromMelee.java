@@ -23,9 +23,6 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 12/11/2015.
- */
 public class EntityAIRangedRunFromMelee extends EntityAIBase {
     Vec3d destinaton;
     private double minDistanceSq;

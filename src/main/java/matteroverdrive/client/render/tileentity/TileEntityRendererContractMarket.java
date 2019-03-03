@@ -26,9 +26,6 @@ import net.minecraft.util.ResourceLocation;
 
 import static org.lwjgl.opengl.GL11.glColor3f;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class TileEntityRendererContractMarket extends TileEntityRendererMonitor<TileEntityMachineContractMarket> {
     public static final ResourceLocation screenTexture = new ResourceLocation(Reference.PATH_BLOCKS + "contract_station_holo.png");
 

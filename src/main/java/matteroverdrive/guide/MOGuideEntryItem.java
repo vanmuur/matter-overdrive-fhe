@@ -21,9 +21,6 @@ package matteroverdrive.guide;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 8/30/2015.
- */
 public class MOGuideEntryItem extends MOGuideEntry {
     public MOGuideEntryItem(Item item) {
         super(item.getTranslationKey());

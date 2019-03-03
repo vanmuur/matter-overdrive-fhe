@@ -33,9 +33,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 public class Galaxy extends SpaceBody {
     //region Static Vars
     public static final float GALAXY_SIZE_TO_LY = 8000;

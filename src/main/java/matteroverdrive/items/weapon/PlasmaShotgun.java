@@ -50,9 +50,6 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 12/6/2015.
- */
 public class PlasmaShotgun extends EnergyWeapon {
     public static final int RANGE = 16;
     private static final int MAX_CHARGE_TIME = 20;

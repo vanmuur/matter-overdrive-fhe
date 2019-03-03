@@ -25,9 +25,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.apache.logging.log4j.Level;
 
-/**
- * Created by Simeon on 4/26/2015.
- */
 public class MatterNetworkTickHandler implements IConfigSubscriber {
     int id_count;
     int last_ID;

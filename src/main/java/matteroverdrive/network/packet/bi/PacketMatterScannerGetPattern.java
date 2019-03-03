@@ -22,9 +22,6 @@ import io.netty.buffer.ByteBuf;
 import matteroverdrive.network.packet.TileEntityUpdatePacket;
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Created by Simeon on 6/12/2015.
- */
 public class PacketMatterScannerGetPattern extends TileEntityUpdatePacket {
     int id;
     short damage;

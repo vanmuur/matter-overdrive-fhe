@@ -21,9 +21,6 @@ package matteroverdrive.client.render.item;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 
-/**
- * Created by Simeon on 3/8/2015.
- */
 public class ItemRendererPipe {
     private TileEntitySpecialRenderer renderer;
     private TileEntity pipe;

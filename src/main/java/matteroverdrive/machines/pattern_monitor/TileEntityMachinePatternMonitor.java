@@ -44,9 +44,6 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * Created by Simeon on 4/26/2015.
- */
 public class TileEntityMachinePatternMonitor extends MOTileEntityMachine implements IMatterNetworkClient, IMatterDatabaseMonitor, IMatterNetworkDispatcher, IMatterNetworkConnection {
     private ComponentMatterNetworkPatternMonitor networkComponent;
     private ComponentMatterNetworkConfigs componentMatterNetworkConfigs;

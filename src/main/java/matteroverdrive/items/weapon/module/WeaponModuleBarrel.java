@@ -28,9 +28,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/15/2015.
- */
 public class WeaponModuleBarrel extends WeaponModuleBase implements IAdvancedModelProvider {
     public static final int DAMAGE_BARREL_ID = 0;
     public static final int FIRE_BARREL_ID = 1;

@@ -27,9 +27,6 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-/**
- * Created by Simeon on 1/17/2016.
- */
 public class MatterEntryOre extends MatterEntryAbstract<String, ItemStack> {
     public MatterEntryOre() {
         super();

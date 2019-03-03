@@ -37,9 +37,6 @@ import net.minecraft.util.SoundCategory;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 2/7/2016.
- */
 public class ComponentTaskProcessingAnalyzer extends TaskQueueComponent<MatterNetworkTaskStorePattern, TileEntityMachineMatterAnalyzer> implements ITickable {
     public static final int PROGRESS_AMOUNT_PER_ITEM = 20;
     public static final int ANALYZE_SPEED = 800;
@@ -67,7 +64,7 @@ public class ComponentTaskProcessingAnalyzer extends TaskQueueComponent<MatterNe
         }
 
         if (isAnalyzing() && hasEnoughPower()) {
-            ((MachineEnergyStorage) machine.getEnergyStorage()).modifyEnergyStored(-getEnergyDrainPerTick());
+            machine.getEnergyStorage().extractEnergy(getEnergyDrainPerTick(), false);
             machine.UpdateClientPower();
 
             if (analyzeTime < getSpeed()) {

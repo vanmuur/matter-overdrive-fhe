@@ -24,9 +24,6 @@ import matteroverdrive.gui.element.MOElementListBox;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class ListElementQuest implements IMOListBoxElement {
     private QuestStack questStack;
     private EntityPlayer entityPlayer;

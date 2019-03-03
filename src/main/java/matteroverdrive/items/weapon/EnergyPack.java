@@ -31,9 +31,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Simeon on 8/2/2015.
- */
 public class EnergyPack extends MOBaseItem implements IEnergyPack {
 
     public EnergyPack(String name) {

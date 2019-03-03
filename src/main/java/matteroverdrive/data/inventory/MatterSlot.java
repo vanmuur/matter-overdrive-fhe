@@ -25,9 +25,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class MatterSlot extends Slot {
     public MatterSlot(boolean isMainSlot) {
         super(isMainSlot);

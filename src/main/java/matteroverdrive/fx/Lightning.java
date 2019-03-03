@@ -28,9 +28,6 @@ import net.minecraft.world.World;
 
 import javax.vecmath.Vector3d;
 
-/**
- * Created by Simeon on 2/11/2016.
- */
 public class Lightning extends MOEntityFX {
     private float randomness;
     private Vector3d destination;

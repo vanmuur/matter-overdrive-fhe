@@ -26,9 +26,6 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * Created by Simeon on 1/28/2016.
- */
 public class MachineEvent {
     public static class Destroyed extends MachineEvent {
         public final World world;

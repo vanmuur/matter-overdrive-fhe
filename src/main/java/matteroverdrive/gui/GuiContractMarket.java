@@ -27,9 +27,6 @@ import matteroverdrive.tile.TileEntityMachineContractMarket;
 import matteroverdrive.util.MOStringHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class GuiContractMarket extends MOGuiMachine<TileEntityMachineContractMarket> {
     public GuiContractMarket(InventoryPlayer inventoryPlayer, TileEntityMachineContractMarket machine) {
         super(ContainerFactory.createMachineContainer(machine, inventoryPlayer), machine);

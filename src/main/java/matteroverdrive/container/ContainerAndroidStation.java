@@ -27,9 +27,6 @@ import matteroverdrive.tile.TileEntityAndroidStation;
 import matteroverdrive.util.MOContainerHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public class ContainerAndroidStation extends ContainerMachine<TileEntityAndroidStation> {
     public ContainerAndroidStation(InventoryPlayer playerInventory, TileEntityAndroidStation machine) {
         super(playerInventory, machine);

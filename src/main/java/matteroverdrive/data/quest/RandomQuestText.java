@@ -26,9 +26,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class RandomQuestText extends GenericQuest {
     int variationsCount;
 

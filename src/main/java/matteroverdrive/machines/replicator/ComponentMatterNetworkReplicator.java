@@ -24,9 +24,6 @@ import matteroverdrive.matter_network.components.MatterNetworkComponentClient;
 import matteroverdrive.matter_network.events.MatterNetworkEventReplicate;
 import matteroverdrive.matter_network.tasks.MatterNetworkTaskReplicatePattern;
 
-/**
- * Created by Simeon on 7/13/2015.
- */
 public class ComponentMatterNetworkReplicator extends MatterNetworkComponentClient<TileEntityMachineReplicator> {
     public ComponentMatterNetworkReplicator(TileEntityMachineReplicator replicator) {
         super(replicator);

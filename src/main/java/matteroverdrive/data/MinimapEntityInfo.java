@@ -23,9 +23,6 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 9/7/2015.
- */
 public class MinimapEntityInfo {
     private boolean isAttacking;
     private int entityID;

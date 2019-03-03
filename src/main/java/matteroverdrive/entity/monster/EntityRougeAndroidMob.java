@@ -47,9 +47,6 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 
-/**
- * Created by Simeon on 11/15/2015.
- */
 public class EntityRougeAndroidMob extends EntityMob implements IEntityAdditionalSpawnData, IPathableMob<EntityRougeAndroidMob> {
     private static final ResourceLocation androidNames = new ResourceLocation(Reference.PATH_INFO + "android_names.txt");
     private static final String[] names = MOStringHelper.readTextFile(androidNames).split(",");

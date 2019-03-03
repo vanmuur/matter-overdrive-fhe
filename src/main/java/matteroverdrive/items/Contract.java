@@ -39,9 +39,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class Contract extends MOBaseItem {
     public Contract(String name) {
         super(name);

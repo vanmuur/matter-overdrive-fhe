@@ -29,9 +29,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 6/15/2015.
- */
 public class PacketUpdateGalaxy extends PacketAbstract {
 
     Galaxy galaxy;

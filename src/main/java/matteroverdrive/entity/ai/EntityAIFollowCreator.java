@@ -30,9 +30,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class EntityAIFollowCreator<T extends EntityLiving & IEntityOwnable> extends EntityAIBase {
     World world;
     float maxDist;

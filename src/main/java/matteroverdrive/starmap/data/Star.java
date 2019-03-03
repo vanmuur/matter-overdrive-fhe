@@ -32,9 +32,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 public class Star extends SpaceBody {
     //region Private Vars
     private Quadrant quadrant;

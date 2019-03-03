@@ -28,9 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 8/31/2015.
- */
 public class GuideElementPage extends GuideElementAbstract {
     List<IGuideElement> elements;
 

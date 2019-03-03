@@ -31,9 +31,6 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.UUID;
 
-/**
- * Created by Simeon on 9/8/2015.
- */
 public class TritaniumSpine extends BionicPart {
     public final UUID healthModifierID = UUID.fromString("208b4d4c-50ef-4b45-a097-4bed633cdbff");
     public final UUID glitchModifierID = UUID.fromString("83e92f1b-12af-4302-98b2-422c16a06c89");

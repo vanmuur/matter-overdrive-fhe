@@ -26,9 +26,6 @@ import net.minecraft.util.ResourceLocation;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 8/13/2015.
- */
 public class DialogRegistry implements IDialogRegistry {
     private final Map<Integer, IDialogMessage> messageMap;
     private final Map<IDialogMessage, Integer> messageIntegerMap;

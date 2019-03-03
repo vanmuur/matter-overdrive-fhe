@@ -26,9 +26,6 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-/**
- * Created by Simeon on 1/18/2016.
- */
 public class MatterEntryBlock extends MatterEntryAbstract<Block, IBlockState> {
     public MatterEntryBlock(Block block) {
         super(block);

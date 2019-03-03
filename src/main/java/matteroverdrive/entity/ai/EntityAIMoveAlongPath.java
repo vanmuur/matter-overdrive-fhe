@@ -23,9 +23,6 @@ import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 12/10/2015.
- */
 public class EntityAIMoveAlongPath extends EntityAIBase {
     private IPathableMob pathableMob;
     private double movePosX;

@@ -21,9 +21,6 @@ package matteroverdrive.client.render.weapons;
 import matteroverdrive.Reference;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 12/8/2015.
- */
 public class ItemRendererIonSniper extends WeaponItemRenderer {
     public static final String MODEL = Reference.PATH_MODEL + "item/ion_sniper.obj";
 

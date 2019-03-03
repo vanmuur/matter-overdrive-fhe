@@ -21,9 +21,6 @@ package matteroverdrive.util.animation;
 //penner's easing equations on processing
 //Gotten from https://github.com/jesusgollonet/processing-penner-easing
 
-/**
- * Created by Simeon on 7/29/2015.
- */
 public class MOEasing {
     // t - time
     // b - from value

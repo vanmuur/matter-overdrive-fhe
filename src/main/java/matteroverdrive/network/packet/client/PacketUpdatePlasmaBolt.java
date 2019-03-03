@@ -29,9 +29,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 1/16/2016.
- */
 public class PacketUpdatePlasmaBolt extends PacketAbstract {
     int boltID;
     double posX;

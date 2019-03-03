@@ -48,9 +48,6 @@ import net.minecraftforge.fml.relauncher.Side;
 
 import java.util.*;
 
-/**
- * Created by Simeon on 12/10/2015.
- */
 public class TileEntityAndroidSpawner extends MOTileEntityMachine {
     public static final int FLASH_DRIVE_COUNT = 6;
     private final Set<EntityRougeAndroidMob> spawnedAndroids;

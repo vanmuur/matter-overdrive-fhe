@@ -28,9 +28,6 @@ import matteroverdrive.starmap.data.Planet;
 import matteroverdrive.starmap.data.Star;
 import matteroverdrive.tile.TileEntityMachineStarMap;
 
-/**
- * Created by Simeon on 6/21/2015.
- */
 public class PageStar extends ElementBaseGroup implements IListHandler {
     private TileEntityMachineStarMap starMap;
     private ElementGroupList planetList;

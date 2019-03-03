@@ -24,9 +24,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraftforge.fml.common.Loader;
 
-/**
- * Created by Simeon on 12/24/2015.
- */
 public class QuestBlock {
     IBlockState block;
     String blockName;

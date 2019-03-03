@@ -42,9 +42,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 1/24/2016.
- */
 public class QuestLogicConversation extends AbstractQuestLogic {
     String regex;
     String npcType;
@@ -54,7 +51,7 @@ public class QuestLogicConversation extends AbstractQuestLogic {
     public QuestLogicConversation() {
     }
 
-    public QuestLogicConversation(String npcType, DialogMessage targetOption, DialogMessage[] given) {
+    public QuestLogicConversation(String npcType, DialogMessage targetOption, DialogMessage... given) {
         this.npcType = npcType;
         this.targetOption = targetOption;
         this.given = given;

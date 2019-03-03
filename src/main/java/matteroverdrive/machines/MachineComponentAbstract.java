@@ -21,9 +21,6 @@ package matteroverdrive.machines;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 7/19/2015.
- */
 public abstract class MachineComponentAbstract<T extends MOTileEntityMachine> implements IMachineComponent {
     protected final T machine;
 

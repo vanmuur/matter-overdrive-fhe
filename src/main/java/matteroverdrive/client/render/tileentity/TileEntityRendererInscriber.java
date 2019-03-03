@@ -32,9 +32,6 @@ import net.minecraft.util.EnumFacing;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/9/2015.
- */
 public class TileEntityRendererInscriber extends TileEntitySpecialRenderer<TileEntityInscriber> {
     private final Random random;
     private float nextHeadX, nextHeadY;

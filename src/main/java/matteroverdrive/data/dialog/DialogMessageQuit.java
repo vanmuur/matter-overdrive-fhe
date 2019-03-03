@@ -22,9 +22,6 @@ import com.google.gson.JsonObject;
 import matteroverdrive.api.dialog.IDialogNpc;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 8/9/2015.
- */
 public class DialogMessageQuit extends DialogMessage {
     public DialogMessageQuit(JsonObject object) {
         super(object);

@@ -33,9 +33,6 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-/**
- * Created by Simeon on 3/15/2015.
- */
 public class BlockNetworkPipe extends BlockPipe<TileEntityNetworkPipe> implements IDismantleable {
 
     public BlockNetworkPipe(Material material, String name) {

@@ -25,9 +25,6 @@ import matteroverdrive.util.MOStringHelper;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 4/8/2015.
- */
 public class ElementInventorySlot extends ElementSlot {
     MOSlot slot;
 

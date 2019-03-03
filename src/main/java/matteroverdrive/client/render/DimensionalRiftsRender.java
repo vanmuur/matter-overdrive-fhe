@@ -39,9 +39,6 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 2/3/2016.
- */
 public class DimensionalRiftsRender implements IWorldLastRenderer {
     Random random = new Random();
     double lastY;

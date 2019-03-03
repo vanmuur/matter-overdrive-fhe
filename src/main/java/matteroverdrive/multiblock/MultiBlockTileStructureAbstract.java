@@ -18,8 +18,5 @@
 
 package matteroverdrive.multiblock;
 
-/**
- * Created by Simeon on 10/30/2015.
- */
 public abstract class MultiBlockTileStructureAbstract implements IMultiBlockTileStructure {
 }

@@ -28,9 +28,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 
-/**
- * Created by Simeon on 9/12/2015.
- */
 public class OverdriveBioticStats {
     public static BioticStatTeleport teleport;
     public static BiostatNanobots nanobots;

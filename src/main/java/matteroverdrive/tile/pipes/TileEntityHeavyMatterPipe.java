@@ -20,9 +20,6 @@ package matteroverdrive.tile.pipes;
 
 import matteroverdrive.util.TimeTracker;
 
-/**
- * Created by Simeon on 8/20/2015.
- */
 public class TileEntityHeavyMatterPipe extends TileEntityMatterPipe {
     public TileEntityHeavyMatterPipe() {
         t = new TimeTracker();

@@ -42,9 +42,6 @@ import java.text.DecimalFormat;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 9/10/2015.
- */
 public abstract class BionicPart extends MOBaseItem implements IBionicPart {
     public BionicPart(String name) {
         super(name);

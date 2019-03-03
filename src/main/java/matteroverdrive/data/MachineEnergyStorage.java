@@ -22,9 +22,6 @@ import matteroverdrive.api.inventory.UpgradeTypes;
 import matteroverdrive.items.includes.EnergyContainer;
 import matteroverdrive.tile.MOTileEntityMachineEnergy;
 
-/**
- * Created by Simeon on 8/7/2015.
- */
 public class MachineEnergyStorage<T extends MOTileEntityMachineEnergy> extends EnergyContainer {
     protected final T machine;
 

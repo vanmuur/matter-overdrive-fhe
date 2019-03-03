@@ -20,9 +20,6 @@ package matteroverdrive.data.matter;
 
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 1/17/2016.
- */
 public class DamageAwareStackHandler extends MatterEntryHandlerAbstract<ItemStack> {
     private final int damage;
     private final int matter;

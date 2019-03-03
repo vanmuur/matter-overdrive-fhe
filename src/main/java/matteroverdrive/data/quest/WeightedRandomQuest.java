@@ -21,9 +21,6 @@ package matteroverdrive.data.quest;
 import matteroverdrive.api.quest.Quest;
 import net.minecraft.util.WeightedRandom;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class WeightedRandomQuest extends WeightedRandom.Item {
     final Quest quest;
 

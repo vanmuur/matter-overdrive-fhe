@@ -24,9 +24,6 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 12/6/2015.
- */
 public class ElementQuestRewards extends MOElementBase {
     List<ItemStack> itemStacks;
 

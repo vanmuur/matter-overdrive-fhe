@@ -20,9 +20,6 @@ package matteroverdrive.container.slot;
 
 import net.minecraft.inventory.IInventory;
 
-/**
- * Created by Simeon on 4/8/2015.
- */
 public class SlotPlayerInventory extends MOSlot {
     boolean isHotbar;
 

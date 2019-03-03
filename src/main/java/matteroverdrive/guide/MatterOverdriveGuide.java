@@ -29,9 +29,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 4/4/2015.
- */
 @SideOnly(Side.CLIENT)
 public class MatterOverdriveGuide {
     private static final Map<Integer, MOGuideEntry> entries = new HashMap<>();

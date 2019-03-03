@@ -29,9 +29,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 2/2/2016.
- */
 public class BioticStatWirelessCharger extends AbstractBioticStat {
     public static final int CHARGE_SPEED = 32;
 

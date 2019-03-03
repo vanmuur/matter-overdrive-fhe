@@ -29,9 +29,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 12/7/2015.
- */
 public class CommonWeaponHandler {
     private static final PacketFirePlasmaShot.BiHandler firePlasmaShotHandler = new PacketFirePlasmaShot.BiHandler();
     private final Map<EntityPlayer, Long> weaponTimestamps;

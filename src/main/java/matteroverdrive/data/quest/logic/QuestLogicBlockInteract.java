@@ -37,9 +37,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 1/24/2016.
- */
 public class QuestLogicBlockInteract extends AbstractQuestLogic {
     private String regex;
     private boolean mustBeInteractable;

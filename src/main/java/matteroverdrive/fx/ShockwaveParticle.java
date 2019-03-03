@@ -27,9 +27,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 1/2/2016.
- */
 public class ShockwaveParticle extends MOEntityFX {
     private float maxScale;
 

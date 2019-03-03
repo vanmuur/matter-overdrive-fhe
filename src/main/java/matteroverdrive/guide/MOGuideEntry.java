@@ -38,9 +38,6 @@ import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 4/4/2015.
- */
 public class MOGuideEntry {
     public String name;
     private MOGuideEntry parent;

@@ -26,9 +26,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-/**
- * Created by Simeon on 2/1/2016.
- */
 public class BioticStatAutoShield extends AbstractBioticStat {
     public BioticStatAutoShield(String name, int xp) {
         super(name, xp);

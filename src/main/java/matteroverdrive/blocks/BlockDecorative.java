@@ -24,21 +24,10 @@ import matteroverdrive.blocks.includes.MOBlock;
 import matteroverdrive.util.MOBlockHelper;
 import matteroverdrive.world.MOImageGen;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 10/6/2015.
- *
- * @since 0.4.0
- */
 public class BlockDecorative extends MOBlock implements IImageGenBlock {
 
     public static final List<BlockDecorative> decorativeBlocks = new ArrayList<>();
@@ -54,11 +43,6 @@ public class BlockDecorative extends MOBlock implements IImageGenBlock {
         decorativeBlocks.add(this);
         MOImageGen.worldGenerationBlockColors.put(this, getBlockColor(0));
         setRotationType(MOBlockHelper.RotationType.PREVENT);
-    }
-
-    @Override
-    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
-        worldIn.setBlockState(pos, state.withProperty(MOBlock.PROPERTY_DIRECTION, EnumFacing.VALUES[stack.getItemDamage()]));
     }
 
     @Override

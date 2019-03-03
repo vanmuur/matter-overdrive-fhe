@@ -25,9 +25,6 @@ import matteroverdrive.init.MatterOverdriveItems;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 11/1/2015.
- */
 public class TritaniumPickaxe extends ItemPickaxe implements ItemModelProvider {
     public TritaniumPickaxe(String name) {
         super(MatterOverdriveItems.TOOL_MATERIAL_TRITANIUM);

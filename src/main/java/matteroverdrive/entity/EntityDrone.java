@@ -43,9 +43,6 @@ import net.minecraft.world.World;
 
 import java.util.UUID;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class EntityDrone extends EntityCreature implements IEntityOwnable {
     protected static final DataParameter<Optional<UUID>> OWNER_UNIQUE_ID = EntityDataManager.createKey(EntityDrone.class, DataSerializers.OPTIONAL_UNIQUE_ID);
 

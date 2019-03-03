@@ -18,9 +18,6 @@
 
 package matteroverdrive.machines.configs;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public class ConfigPropertyStringList extends ConfigPropertyInteger {
     private final String[] names;
 

@@ -36,9 +36,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 3/21/2015.
- */
 public abstract class MOTileEntity extends TileEntity implements IMOTileEntity {
     public MOTileEntity() {
         super();

@@ -36,9 +36,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class PacketSyncQuests extends PacketAbstract {
     int questTypes;
     NBTTagCompound data;

@@ -40,9 +40,11 @@ import net.minecraft.item.ItemColored;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -134,6 +136,13 @@ public class MatterOverdriveBlocks {
     public static void registerItems(RegistryEvent.Register<Item> event) {
         items.forEach(i -> event.getRegistry().register(i));
         MatterOverdriveItems.items.stream().filter(item -> item instanceof OreDictItem).forEach(item -> ((OreDictItem) item).registerOreDict());
+    }
+
+    @SubscribeEvent
+    public static void registerItems(ItemTooltipEvent event) {
+        for (int i : OreDictionary.getOreIDs(event.getItemStack())) {
+            event.getToolTip().add("- " + OreDictionary.getOreName(i));
+        }
     }
 
     public void init() {

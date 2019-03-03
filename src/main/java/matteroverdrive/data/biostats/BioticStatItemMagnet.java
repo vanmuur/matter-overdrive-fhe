@@ -30,9 +30,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-/**
- * Created by Simeon on 2/9/2016.
- */
 public class BioticStatItemMagnet extends AbstractBioticStat {
     public static final float ITEM_SPEED = 0.1f;
     public static final int ENERGY_PULL_PER_ITEM = 8;

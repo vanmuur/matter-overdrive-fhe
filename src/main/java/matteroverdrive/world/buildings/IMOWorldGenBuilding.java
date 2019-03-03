@@ -25,9 +25,6 @@ import net.minecraft.world.gen.IChunkGenerator;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/26/2015.
- */
 public interface IMOWorldGenBuilding<T extends MOWorldGenBuilding.ImageGenWorker> {
     String getName();
 

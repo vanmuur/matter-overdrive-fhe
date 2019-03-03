@@ -52,9 +52,6 @@ import javax.vecmath.Vector3f;
 import java.io.IOException;
 import java.util.*;
 
-/**
- * Created by Simeon on 11/8/2015.
- */
 @SideOnly(Side.CLIENT)
 public abstract class WeaponItemRenderer implements IBakedModel {
     protected ResourceLocation weaponModelLocation;

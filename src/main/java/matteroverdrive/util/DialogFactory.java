@@ -24,9 +24,6 @@ import matteroverdrive.client.render.conversation.DialogShot;
 import matteroverdrive.data.dialog.DialogMessage;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 11/21/2015.
- */
 public class DialogFactory {
     private final IDialogRegistry registry;
 

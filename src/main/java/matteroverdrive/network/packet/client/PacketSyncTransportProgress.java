@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 5/4/2015.
- */
 public class PacketSyncTransportProgress extends TileEntityUpdatePacket {
     int progress;
 

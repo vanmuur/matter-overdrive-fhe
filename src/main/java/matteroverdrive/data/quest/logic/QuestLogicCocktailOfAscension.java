@@ -40,9 +40,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class QuestLogicCocktailOfAscension extends AbstractQuestLogic {
     public static final int MAX_CREEPER_KILS = 5;
     public static final int MAX_GUNPOWDER_COUNT = 5;

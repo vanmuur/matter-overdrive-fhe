@@ -20,9 +20,6 @@ package matteroverdrive.client.render.conversation;
 
 import matteroverdrive.api.renderer.IDialogShot;
 
-/**
- * Created by Simeon on 8/10/2015.
- */
 public abstract class DialogShot implements IDialogShot {
     public static final DialogShotClose closeUp = new DialogShotClose(1.5f, 0.3f);
     public static final DialogShotClose dramaticCloseUp = new DialogShotClose(1.2f, 0.3f);

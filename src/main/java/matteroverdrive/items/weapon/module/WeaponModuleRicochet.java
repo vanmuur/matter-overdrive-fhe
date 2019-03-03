@@ -23,9 +23,6 @@ import matteroverdrive.api.weapon.WeaponStats;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 2/16/2016.
- */
 public class WeaponModuleRicochet extends WeaponModuleBase {
     public WeaponModuleRicochet(String name) {
         super(name);

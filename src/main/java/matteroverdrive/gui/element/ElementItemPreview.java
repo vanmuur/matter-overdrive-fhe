@@ -31,9 +31,6 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 3/26/2015.
- */
 public class ElementItemPreview extends MOElementBase {
     ScaleTexture background = new ScaleTexture(new ResourceLocation(Reference.PATH_ELEMENTS + "item_preview_bg.png"), 40, 48).setOffsets(22, 22, 18, 18);
     ItemStack itemStack;

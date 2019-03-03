@@ -30,9 +30,6 @@ import net.minecraft.entity.ai.*;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class EntityMeleeRougeAndroidMob extends EntityRougeAndroidMob {
     public EntityMeleeRougeAndroidMob(World world) {
         super(world);

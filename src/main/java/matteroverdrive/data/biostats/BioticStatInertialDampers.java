@@ -28,9 +28,6 @@ import net.minecraftforge.event.entity.living.LivingFallEvent;
 
 import java.text.DecimalFormat;
 
-/**
- * Created by Simeon on 2/9/2016.
- */
 public class BioticStatInertialDampers extends AbstractBioticStat {
     public BioticStatInertialDampers(String name, int xp) {
         super(name, xp);

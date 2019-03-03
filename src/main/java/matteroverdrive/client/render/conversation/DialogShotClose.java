@@ -24,9 +24,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 8/9/2015.
- */
 public class DialogShotClose extends DialogShot {
     private final float maxZoom;
     private final float minZoom;

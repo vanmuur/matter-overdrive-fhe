@@ -34,9 +34,6 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 @SideOnly(Side.CLIENT)
 public class EntityRendererRougeAndroid<T extends EntityRougeAndroidMob> extends RenderBiped<T> {
 

@@ -38,9 +38,6 @@ import java.text.DecimalFormat;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 6/17/2015.
- */
 @SideOnly(Side.CLIENT)
 public class StarMapRendererPlanet extends StarMapRendererAbstract {
 

@@ -33,9 +33,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 1/24/2016.
- */
 public class BlockDecorativeRotated extends BlockDecorative {
     private static final PropertyBool ROTATED = PropertyBool.create("rotated");
 

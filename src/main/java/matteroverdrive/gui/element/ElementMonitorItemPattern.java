@@ -28,9 +28,6 @@ import net.minecraft.util.text.TextFormatting;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Simeon on 4/29/2015.
- */
 public class ElementMonitorItemPattern extends ElementItemPattern {
     IButtonHandler buttonHandler;
     boolean expanded;

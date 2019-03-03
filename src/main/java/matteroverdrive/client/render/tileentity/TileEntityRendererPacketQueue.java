@@ -28,9 +28,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Simeon on 8/22/2015.
- */
 public class TileEntityRendererPacketQueue extends TileEntitySpecialRenderer<TileEntityMachinePacketQueue> {
     final Block fakeBlock = new BlockNetworkSwitch(Material.IRON, "fake_block");
 

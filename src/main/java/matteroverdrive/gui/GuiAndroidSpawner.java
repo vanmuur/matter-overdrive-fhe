@@ -28,9 +28,6 @@ import matteroverdrive.tile.TileEntityAndroidSpawner;
 import matteroverdrive.util.MOStringHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 12/10/2015.
- */
 public class GuiAndroidSpawner extends MOGuiMachine<TileEntityAndroidSpawner> {
     private MOElementButtonScaled deleteAllBt;
 

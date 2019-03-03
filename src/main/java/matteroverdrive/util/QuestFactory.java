@@ -31,9 +31,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class QuestFactory {
     public QuestStack generateQuestStack(Random random, IQuest quest) {
         QuestStack questStack = new QuestStack(quest);

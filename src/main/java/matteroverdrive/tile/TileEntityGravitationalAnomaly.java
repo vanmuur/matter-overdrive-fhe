@@ -73,9 +73,6 @@ import java.text.DecimalFormat;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/**
- * Created by Simeon on 5/11/2015.
- */
 public class TileEntityGravitationalAnomaly extends MOTileEntity implements IScannable, IMOTickable, IGravitationalAnomaly, ITickable {
     public static final float MAX_VOLUME = 0.5f;
     public static final int BLOCK_DESTORY_DELAY = 6;
@@ -102,21 +99,19 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
 
 
     public TileEntityGravitationalAnomaly() {
-        blockDestoryTimer = new TimeTracker();
-        this.mass = 2048 + Math.round(Math.random() * 8192);
-        supressors = new ArrayList<>();
+        this(2048 + Math.round(Math.random() * 8192));
     }
 
-    public TileEntityGravitationalAnomaly(int mass) {
-        this();
+    public TileEntityGravitationalAnomaly(long mass) {
+        blockDestoryTimer = new TimeTracker();
         this.mass = mass;
+        supressors = new ArrayList<>();
     }
 
     @Override
     public BlockPos getPosition() {
         return getPos();
     }
-
 
     @Override
     public void update() {
@@ -125,6 +120,10 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
             manageSound();
             manageClientEntityGravitation(world);
         }
+    }
+
+    public void setMass(long mass) {
+        this.mass = mass;
     }
 
     @Override
@@ -169,6 +168,7 @@ public class TileEntityGravitationalAnomaly extends MOTileEntity implements ISca
         if (distanceSq < rangeSq) {
             if ((!Minecraft.getMinecraft().player.inventory.armorItemInSlot(2).isEmpty() && Minecraft.getMinecraft().player.inventory.armorItemInSlot(2).getItem() instanceof SpacetimeEqualizer)
                     || Minecraft.getMinecraft().player.capabilities.isCreativeMode
+                    || Minecraft.getMinecraft().player.isSpectator()
                     || MOPlayerCapabilityProvider.GetAndroidCapability(Minecraft.getMinecraft().player).isUnlocked(OverdriveBioticStats.equalizer, 0))
                 return;
 

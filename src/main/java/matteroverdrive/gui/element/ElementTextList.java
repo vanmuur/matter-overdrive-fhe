@@ -25,9 +25,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/21/2015.
- */
 public class ElementTextList extends MOElementBase {
     boolean isUnicode;
     List<String> lines;

@@ -29,9 +29,6 @@ import javax.annotation.Nonnull;
 
 import static matteroverdrive.util.MOBlockHelper.RotationType;
 
-/**
- * Created by Simeon on 5/1/2015.
- */
 public class BlockNetworkSwitch extends MOBlockMachine<TileEntityMachineNetworkSwitch> {
     public BlockNetworkSwitch(Material material, String name) {
         super(material, name);

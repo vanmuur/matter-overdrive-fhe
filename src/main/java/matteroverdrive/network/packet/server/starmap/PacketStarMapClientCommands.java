@@ -27,9 +27,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 6/19/2015.
- */
 public class PacketStarMapClientCommands extends TileEntityUpdatePacket {
 
     int zoomLevel;

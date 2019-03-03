@@ -18,9 +18,6 @@
 
 package matteroverdrive.client.data;
 
-/**
- * Created by Simeon on 12/22/2015.
- */
 public class Color extends Number {
     public static final Color WHITE = new Color(255, 255, 255);
     public static final Color RED = new Color(255, 0, 0);

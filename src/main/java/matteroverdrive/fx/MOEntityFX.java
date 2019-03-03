@@ -24,9 +24,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 1/18/2016.
- */
 @SideOnly(Side.CLIENT)
 public abstract class MOEntityFX extends Particle {
     protected float renderDistanceWeight;

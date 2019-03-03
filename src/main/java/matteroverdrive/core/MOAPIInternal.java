@@ -30,9 +30,6 @@ import matteroverdrive.proxy.ClientProxy;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 7/20/2015.
- */
 public class MOAPIInternal implements MatterOverdriveAPI {
     public static final MOAPIInternal INSTANCE = new MOAPIInternal();
 

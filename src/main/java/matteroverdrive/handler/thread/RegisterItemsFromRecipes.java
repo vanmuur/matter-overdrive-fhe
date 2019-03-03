@@ -38,9 +38,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by Simeon on 5/7/2015.
- */
 public class RegisterItemsFromRecipes implements Runnable {
 
     private final File file;

@@ -40,9 +40,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Simeon on 7/21/2015.
- */
 public class NetworkFlashDrive extends MOBaseItem implements IMatterNetworkFilter {
 
     public NetworkFlashDrive(String name) {

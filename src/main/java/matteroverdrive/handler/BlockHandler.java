@@ -25,9 +25,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-/**
- * Created by Simeon on 12/24/2015.
- */
 public class BlockHandler {
     @SubscribeEvent
     public void onHarvestDropsEvent(BlockEvent.HarvestDropsEvent event) {

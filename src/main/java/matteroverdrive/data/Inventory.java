@@ -33,9 +33,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class Inventory implements IInventory {
     final NonNullList<Slot> slots;
     String name;

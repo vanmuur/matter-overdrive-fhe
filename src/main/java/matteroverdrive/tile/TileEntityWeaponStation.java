@@ -37,9 +37,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 4/13/2015.
- */
 public class TileEntityWeaponStation extends MOTileEntityMachine {
     public int INPUT_SLOT;
     public int BATTERY_MODULE;

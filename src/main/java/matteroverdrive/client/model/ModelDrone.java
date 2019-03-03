@@ -22,9 +22,6 @@ import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class ModelDrone extends ModelBase {
     ModelRenderer Main_head;
     ModelRenderer FlapUpper;

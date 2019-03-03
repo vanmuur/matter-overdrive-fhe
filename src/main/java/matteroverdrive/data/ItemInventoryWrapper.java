@@ -27,9 +27,6 @@ import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 4/14/2015.
- */
 public class ItemInventoryWrapper implements IInventory {
     ItemStack inventory;
     int size;

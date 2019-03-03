@@ -33,9 +33,6 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Level;
 
-/**
- * Created by Simeon on 4/26/2015.
- */
 public class TickHandler {
     private final MatterNetworkTickHandler matterNetworkTickHandler;
     private final PlayerEventHandler playerEventHandler;

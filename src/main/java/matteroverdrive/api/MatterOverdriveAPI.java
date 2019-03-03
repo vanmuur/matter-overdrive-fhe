@@ -27,9 +27,6 @@ import matteroverdrive.api.starmap.IStarmapRenderRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 7/20/2015.
- */
 public interface MatterOverdriveAPI {
     static MatterOverdriveAPI getInstance() {
         return MOApi.instance();

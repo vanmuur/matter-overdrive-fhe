@@ -24,9 +24,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
 
-/**
- * Created by Simeon on 8/7/2015.
- */
 public class MatterStorage extends FluidTank implements IMatterHandler {
 
     private int maxExtract;

@@ -24,9 +24,6 @@ import matteroverdrive.gui.element.MOElementEnergy;
 import matteroverdrive.tile.TileEntityMachineChargingStation;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 11/8/2015.
- */
 public class GuiChargingStation extends MOGuiMachine<TileEntityMachineChargingStation> {
     MOElementEnergy energy;
 

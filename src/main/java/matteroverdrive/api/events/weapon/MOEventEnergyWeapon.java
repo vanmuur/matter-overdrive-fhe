@@ -23,9 +23,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-/**
- * Created by Simeon on 1/1/2016.
- */
 public class MOEventEnergyWeapon extends LivingEvent {
     public final ItemStack weaponStack;
     public final EnergyWeapon energyWeapon;

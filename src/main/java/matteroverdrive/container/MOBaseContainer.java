@@ -25,9 +25,6 @@ import net.minecraft.inventory.Slot;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public abstract class MOBaseContainer extends Container {
     public MOBaseContainer() {
     }

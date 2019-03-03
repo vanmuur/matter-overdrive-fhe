@@ -49,9 +49,6 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * Created by Simeon on 1/1/2016.
- */
 public class BioticStatShockwave extends AbstractBioticStat {
     private static final int DELAY = 20 * 12;
     private static final int ENERGY = 512;

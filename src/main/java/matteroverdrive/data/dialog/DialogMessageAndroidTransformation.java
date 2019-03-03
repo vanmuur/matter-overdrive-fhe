@@ -27,9 +27,6 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 
-/**
- * Created by Simeon on 8/10/2015.
- */
 public class DialogMessageAndroidTransformation extends DialogMessage {
     public DialogMessageAndroidTransformation() {
         super();

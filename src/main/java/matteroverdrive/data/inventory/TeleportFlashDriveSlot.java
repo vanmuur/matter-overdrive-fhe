@@ -25,9 +25,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 8/5/2015.
- */
 public class TeleportFlashDriveSlot extends Slot {
     public TeleportFlashDriveSlot(boolean isMainSlot) {
         super(isMainSlot);

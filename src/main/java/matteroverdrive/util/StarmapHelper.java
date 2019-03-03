@@ -22,9 +22,6 @@ import matteroverdrive.starmap.GalaxyClient;
 import matteroverdrive.starmap.data.Planet;
 import net.minecraft.client.Minecraft;
 
-/**
- * Created by Simeon on 12/19/2015.
- */
 public class StarmapHelper {
     public static void drawPlanetInfo(Planet planet, String text, int x, int y) {
         drawPlanetInfo(planet, text, x, y, 1);

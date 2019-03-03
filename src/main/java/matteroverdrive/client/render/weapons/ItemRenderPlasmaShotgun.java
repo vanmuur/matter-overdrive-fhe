@@ -21,9 +21,6 @@ package matteroverdrive.client.render.weapons;
 import matteroverdrive.Reference;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 12/6/2015.
- */
 public class ItemRenderPlasmaShotgun extends WeaponItemRenderer {
     public static final String TEXTURE = Reference.PATH_ITEM + "plasma_shotgun.png";
     public static final String MODEL = Reference.PATH_MODEL + "item/plasma_shotgun.obj";

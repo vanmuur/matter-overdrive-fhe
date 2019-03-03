@@ -25,9 +25,6 @@ import matteroverdrive.machines.components.ComponentConfigs;
 import matteroverdrive.machines.configs.*;
 import matteroverdrive.util.MOStringHelper;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public class AutoConfigPage extends ElementBaseGroup {
     final MOGuiMachine machineGui;
     private final ComponentConfigs componentConfigs;

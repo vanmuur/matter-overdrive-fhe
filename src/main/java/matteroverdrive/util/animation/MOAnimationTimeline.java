@@ -24,9 +24,6 @@ import net.minecraft.util.math.MathHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/20/2015.
- */
 public class MOAnimationTimeline {
     final List<Slice> slices = new ArrayList<>();
     boolean autoLength;

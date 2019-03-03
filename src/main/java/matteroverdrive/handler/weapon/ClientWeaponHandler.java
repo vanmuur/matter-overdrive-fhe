@@ -43,9 +43,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Created by Simeon on 7/31/2015.
- */
 @SideOnly(Side.CLIENT)
 public class ClientWeaponHandler extends CommonWeaponHandler {
     private static final float RECOIL_RESET_SPEED = 0.03f;

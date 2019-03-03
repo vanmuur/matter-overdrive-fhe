@@ -29,9 +29,6 @@ import net.minecraft.item.ItemStack;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-/**
- * Created by Simeon on 4/14/2015.
- */
 public class WeaponHelper {
     @Nonnull
     public static ItemStack getModuleAtSlot(int slot, ItemStack weapon) {

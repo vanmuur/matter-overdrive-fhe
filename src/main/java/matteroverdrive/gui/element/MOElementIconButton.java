@@ -26,9 +26,6 @@ import matteroverdrive.proxy.ClientProxy;
 import matteroverdrive.util.RenderUtils;
 import net.minecraft.client.renderer.GlStateManager;
 
-/**
- * Created by Simeon on 6/17/2015.
- */
 public class MOElementIconButton extends MOElementButton {
     HoloIcon icon;
     Color iconColor;

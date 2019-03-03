@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 8/22/2015.
- */
 public class PacketSendQueueFlash extends TileEntityUpdatePacket {
     public PacketSendQueueFlash() {
         super();

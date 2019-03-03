@@ -39,9 +39,6 @@ import net.minecraft.util.text.TextFormatting;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 6/20/2015.
- */
 public class ElementStarEntry extends ElementAbstractStarMapEntry<Star> {
 
     public ElementStarEntry(GuiStarMap gui, ElementGroupList groupList, int width, int height, Star star) {

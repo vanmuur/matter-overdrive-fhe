@@ -22,9 +22,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.MathHelper;
 
-/**
- * Created by Simeon on 12/22/2015.
- */
 public class MOBlockHelper {
     public static final int[][] SIDE__MOD = new int[][]{{0, -1, 0}, {0, 1, 0}, {0, 0, -1}, {0, 0, 1}, {-1, 0, 0}, {1, 0, 0}};
     public static final byte[] SIDE_LEFT = new byte[]{(byte) 4, (byte) 5, (byte) 5, (byte) 4, (byte) 2, (byte) 3};

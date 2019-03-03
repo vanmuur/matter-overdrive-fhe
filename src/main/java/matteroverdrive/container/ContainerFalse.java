@@ -21,9 +21,6 @@ package matteroverdrive.container;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 5/1/2015.
- */
 public class ContainerFalse extends MOBaseContainer {
 
     public ContainerFalse() {

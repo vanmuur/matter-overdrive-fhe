@@ -22,9 +22,6 @@ import matteroverdrive.data.matter_network.IMatterNetworkEvent;
 import matteroverdrive.data.matter_network.ItemPattern;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 2/5/2016.
- */
 public class MatterNetworkEventReplicate implements IMatterNetworkEvent {
     public final ItemPattern pattern;
     public int amount;

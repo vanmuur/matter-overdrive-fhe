@@ -32,9 +32,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import java.util.UUID;
 
-/**
- * Created by Simeon on 5/29/2015.
- */
 public class BiostatNanobots extends AbstractBioticStat implements IConfigSubscriber {
     private final static float REGEN_AMOUNT_PER_TICK = 0.05f;
     private static int ENERGY_PER_REGEN = 32;

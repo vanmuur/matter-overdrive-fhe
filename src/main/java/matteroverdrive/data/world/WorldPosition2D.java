@@ -23,9 +23,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.io.Serializable;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class WorldPosition2D implements Serializable {
 
     public int x, z;

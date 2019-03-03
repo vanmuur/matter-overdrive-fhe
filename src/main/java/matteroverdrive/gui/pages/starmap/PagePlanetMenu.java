@@ -25,9 +25,6 @@ import matteroverdrive.tile.TileEntityMachineStarMap;
 import matteroverdrive.util.StarmapHelper;
 import net.minecraft.client.renderer.GlStateManager;
 
-/**
- * Created by Simeon on 6/15/2015.
- */
 public class PagePlanetMenu extends ElementBaseGroup {
 
     private TileEntityMachineStarMap starMap;

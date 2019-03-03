@@ -25,9 +25,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public interface IQuestLogic {
     void loadFromJson(JsonObject jsonObject);
 

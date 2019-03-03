@@ -21,9 +21,6 @@ package matteroverdrive.api.dialog;
 import matteroverdrive.api.quest.QuestStack;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public interface IDialogQuestGiver {
     void giveQuest(IDialogMessage message, QuestStack questStack, EntityPlayer entityPlayer);
 }

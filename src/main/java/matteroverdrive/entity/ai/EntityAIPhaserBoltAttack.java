@@ -27,9 +27,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.pathfinding.Path;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 11/15/2015.
- */
 public class EntityAIPhaserBoltAttack extends EntityAIBase {
     /**
      * The entity the AI instance has been applied to

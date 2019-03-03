@@ -23,9 +23,6 @@ import matteroverdrive.util.RenderUtils;
 import matteroverdrive.util.math.MOMathHelper;
 import net.minecraft.client.renderer.GlStateManager;
 
-/**
- * Created by Simeon on 12/6/2015.
- */
 public class ElementScrollGroup extends ElementBaseGroup {
     int contentTotalHeight;
     int scroll;

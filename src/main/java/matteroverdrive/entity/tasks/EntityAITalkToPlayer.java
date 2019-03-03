@@ -22,9 +22,6 @@ import matteroverdrive.api.dialog.IDialogNpc;
 import net.minecraft.entity.ai.EntityAIBase;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 8/11/2015.
- */
 public class EntityAITalkToPlayer extends EntityAIBase {
     private IDialogNpc npc;
 

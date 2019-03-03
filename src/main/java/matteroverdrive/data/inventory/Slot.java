@@ -25,9 +25,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class Slot {
     @Nonnull
     private ItemStack item = ItemStack.EMPTY;

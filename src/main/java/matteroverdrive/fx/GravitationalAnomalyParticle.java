@@ -26,9 +26,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 5/13/2015.
- */
 @SideOnly(Side.CLIENT)
 public class GravitationalAnomalyParticle extends Particle {
     float smokeParticleScale;

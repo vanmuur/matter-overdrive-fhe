@@ -25,9 +25,6 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class PathNavigateFly extends PathNavigate {
     public PathNavigateFly(EntityLiving entity, World world) {
         super(entity, world);

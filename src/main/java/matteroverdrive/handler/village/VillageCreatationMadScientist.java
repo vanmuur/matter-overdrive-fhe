@@ -29,9 +29,6 @@ import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 5/30/2015.
- */
 public class VillageCreatationMadScientist implements VillagerRegistry.IVillageCreationHandler {
     public VillageCreatationMadScientist() {
         MapGenStructureIO.registerStructureComponent(MadScientistHouse.class, "ViBHMS");

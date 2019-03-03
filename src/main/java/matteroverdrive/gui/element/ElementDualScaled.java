@@ -23,9 +23,6 @@ import matteroverdrive.util.RenderUtils;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 12/23/2015.
- */
 public class ElementDualScaled extends MOElementBase {
     public int quantity;
     public int mode;

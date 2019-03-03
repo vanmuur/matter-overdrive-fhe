@@ -82,9 +82,6 @@ import javax.annotation.Nonnull;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class AndroidPlayer implements IEnergyStorage, IAndroid {
     public static final int EFFECT_GLITCH_TIME = 0;
     public static final int EFFECT_CLOAKED = 1;

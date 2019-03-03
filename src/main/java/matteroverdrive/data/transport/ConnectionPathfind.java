@@ -29,9 +29,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Simeon on 1/20/2016.
- */
 public class ConnectionPathfind<T extends IGridNode> {
     private final Set<T> burned;
     private final T target;

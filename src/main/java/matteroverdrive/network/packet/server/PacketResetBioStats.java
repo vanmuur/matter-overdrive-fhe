@@ -25,9 +25,6 @@ import matteroverdrive.network.packet.PacketAbstract;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 9/30/2015.
- */
 public class PacketResetBioStats extends PacketAbstract {
     @Override
     public void fromBytes(ByteBuf buf) {

@@ -23,9 +23,6 @@ import matteroverdrive.api.quest.Quest;
 
 import java.util.*;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class Quests {
     private static final int MIN_QUEST_BIT = 0;
     private static final int MAX_QUEST_IDS = Short.MAX_VALUE;

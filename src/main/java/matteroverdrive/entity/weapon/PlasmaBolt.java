@@ -63,9 +63,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 7/25/2015.
- */
 public class PlasmaBolt extends Entity implements IProjectile, IGravityEntity, IEntityAdditionalSpawnData {
     public Entity shootingEntity;
     private BlockPos blockPos;

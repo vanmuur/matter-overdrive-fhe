@@ -24,9 +24,6 @@ import net.minecraft.util.math.BlockPos;
 
 import java.util.Iterator;
 
-/**
- * Created by Simeon on 4/27/2015.
- */
 public class ElementPatternsGrid extends ElementGrid {
     String filter = "";
 

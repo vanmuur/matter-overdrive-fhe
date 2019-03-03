@@ -24,9 +24,6 @@ import matteroverdrive.entity.android_player.AndroidPlayer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 
-/**
- * Created by Simeon on 9/8/2015.
- */
 public abstract class AndroidHudElement implements IAndroidHudElement {
     protected Minecraft mc;
     protected String name;

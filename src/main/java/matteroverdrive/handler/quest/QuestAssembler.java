@@ -46,9 +46,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 1/25/2016.
- */
 public class QuestAssembler {
     private static final ResourceLocation questsLocation = new ResourceLocation(Reference.MOD_ID + ":" + "quests/quests.json");
     private static final String customQuestsLocation = "custom_quests.json";

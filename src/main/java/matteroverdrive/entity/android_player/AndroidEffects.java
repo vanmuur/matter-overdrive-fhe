@@ -42,9 +42,6 @@ import java.util.Map;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/**
- * Created by Simeon on 2/8/2016.
- */
 public class AndroidEffects {
     private static final Map<Class<?>, Integer> typeMap = Maps.newHashMap();
 

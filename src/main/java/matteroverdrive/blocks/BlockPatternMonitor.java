@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 4/26/2015.
- */
 public class BlockPatternMonitor extends BlockMonitor<TileEntityMachinePatternMonitor> {
     public BlockPatternMonitor(Material material, String name) {
         super(material, name);

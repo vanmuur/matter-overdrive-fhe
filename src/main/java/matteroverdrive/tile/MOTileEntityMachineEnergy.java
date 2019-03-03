@@ -37,9 +37,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 3/18/2015.
- */
 public abstract class MOTileEntityMachineEnergy extends MOTileEntityMachine {
     public static final int ENERGY_CLIENT_SYNC_RANGE = 16;
     protected MachineEnergyStorage energyStorage;

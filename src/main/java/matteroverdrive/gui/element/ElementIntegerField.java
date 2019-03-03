@@ -27,9 +27,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import org.lwjgl.input.Keyboard;
 
-/**
- * Created by Simeon on 5/3/2015.
- */
 public class ElementIntegerField extends ElementBaseGroup implements IButtonHandler {
     private IButtonHandler buttonHandler;
     private MOElementButtonScaled incBtn;

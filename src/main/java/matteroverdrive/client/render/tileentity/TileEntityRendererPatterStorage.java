@@ -26,9 +26,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.client.model.obj.OBJLoader;
 
-/**
- * Created by Simeon on 3/19/2015.
- */
 public class TileEntityRendererPatterStorage extends TileEntitySpecialRenderer<TileEntityMachinePatternStorage> {
     EntityItem itemEntity;
     private IModel model;

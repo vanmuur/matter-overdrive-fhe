@@ -37,9 +37,6 @@ import net.minecraft.util.text.TextFormatting;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class GuiQuestPreview extends MOGuiBase {
     public static final ResourceLocation backgroundTexture = new ResourceLocation(Reference.PATH_GUI + "contract.png");
     ElementTextList questInfo;

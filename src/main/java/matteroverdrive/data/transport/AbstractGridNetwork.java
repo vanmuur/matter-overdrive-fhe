@@ -29,9 +29,6 @@ import net.minecraft.util.math.BlockPos;
 
 import java.util.*;
 
-/**
- * Created by Simeon on 1/20/2016.
- */
 public abstract class AbstractGridNetwork<T extends IGridNode> implements IGridNetwork<T> {
     private final Class<T> nodeTypes;
     private final Set<T> nodes;

@@ -28,9 +28,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 4/13/2015.
- */
 public class BlockWeaponStation extends MOBlockMachine<TileEntityWeaponStation> {
 
     public BlockWeaponStation(Material material, String name) {

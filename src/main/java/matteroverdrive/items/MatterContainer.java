@@ -50,9 +50,6 @@ import java.util.List;
 
 import static net.minecraftforge.fluids.capability.CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY;
 
-/**
- * Created by Simeon on 8/20/2015.
- */
 public class MatterContainer extends MOBaseItem {
 
     public MatterContainer(String name) {

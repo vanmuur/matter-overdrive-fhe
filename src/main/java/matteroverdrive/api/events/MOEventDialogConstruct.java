@@ -23,9 +23,6 @@ import matteroverdrive.api.dialog.IDialogNpc;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
-/**
- * Created by Simeon on 1/25/2016.
- */
 public class MOEventDialogConstruct extends PlayerEvent {
     public final IDialogNpc npc;
     public final IDialogMessage mainMessage;

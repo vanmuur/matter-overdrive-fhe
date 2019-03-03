@@ -49,9 +49,6 @@ import java.util.Map;
 import static org.lwjgl.opengl.GL11.GL_DEPTH_BUFFER_BIT;
 import static org.lwjgl.opengl.GL11.GL_LEQUAL;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public class PageGuideEntries extends ElementBaseGroup implements ITextHandler {
     private static int scrollX;
     private static int scrollY;

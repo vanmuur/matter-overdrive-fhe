@@ -35,9 +35,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 1/5/2016.
- */
 public class QuestLogicScanBlock extends AbstractQuestLogicBlock {
     private int minBlockScan;
     private int maxBlockScan;

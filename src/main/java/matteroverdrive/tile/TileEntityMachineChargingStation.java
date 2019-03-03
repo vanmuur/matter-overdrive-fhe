@@ -35,9 +35,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 7/8/2015.
- */
 public class TileEntityMachineChargingStation extends MOTileEntityMachineEnergy implements IMultiBlockTileEntity {
 
     public static final int ENERGY_CAPACITY = 512000;

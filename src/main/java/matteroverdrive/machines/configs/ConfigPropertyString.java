@@ -22,9 +22,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.regex.Pattern;
 
-/**
- * Created by Simeon on 12/10/2015.
- */
 public class ConfigPropertyString extends ConfigPropertyAbstract {
     private String value;
     private short maxLength = Short.MAX_VALUE;

@@ -23,9 +23,6 @@ import matteroverdrive.gui.element.ElementConnections;
 import matteroverdrive.tile.TileEntityMachineNetworkRouter;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 3/13/2015.
- */
 public class GuiNetworkRouter extends MOGuiMachine<TileEntityMachineNetworkRouter> {
     ElementConnections connections;
 

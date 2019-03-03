@@ -42,9 +42,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Simeon on 5/11/2015.
- */
 public class BlockGravitationalAnomaly extends MOBlockContainer<TileEntityGravitationalAnomaly> implements IScannable, IConfigSubscriber {
     public BlockGravitationalAnomaly(Material material, String name) {
         super(material, name);

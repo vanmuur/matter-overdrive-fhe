@@ -42,9 +42,6 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 4/13/2015.
- */
 public class GuiWeaponStation extends MOGuiMachine<TileEntityWeaponStation> {
     public static final ScaleTexture BG = new ScaleTexture(new ResourceLocation(Reference.PATH_GUI + "weapon_station.png"), 255, 141).setOffsets(213, 34, 42, 94);
 

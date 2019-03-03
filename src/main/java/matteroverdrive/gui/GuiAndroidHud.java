@@ -62,9 +62,6 @@ import java.util.Random;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 @SideOnly(Side.CLIENT)
 public class GuiAndroidHud extends Gui implements IConfigSubscriber {
     public static final ResourceLocation glitch_tex = new ResourceLocation(Reference.PATH_GUI + "glitch.png");

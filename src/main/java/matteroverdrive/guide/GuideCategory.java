@@ -25,9 +25,6 @@ import matteroverdrive.util.MOStringHelper;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by Simeon on 8/30/2015.
- */
 public class GuideCategory {
     private String name;
     private Set<MOGuideEntry> entries;

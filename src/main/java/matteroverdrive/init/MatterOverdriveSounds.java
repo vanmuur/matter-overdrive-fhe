@@ -25,9 +25,6 @@ import net.minecraftforge.registries.GameData;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by Simeon on 4/7/2016.
- */
 public class MatterOverdriveSounds {
     public final static SoundEvent weaponsPhaserBeam = newEvent("weapons.phaser_beam");
     public final static SoundEvent weaponsPhaserSwitchMode = newEvent("weapons.phaser_switch_mode");

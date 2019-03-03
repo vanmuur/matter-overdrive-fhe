@@ -38,9 +38,6 @@ import net.minecraft.util.WeightedRandom;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class TileEntityMachineContractMarket extends MOTileEntityMachine {
     public static final int QUEST_GENERATE_DELAY_MIN = 20 * 60 * 30;
     public static final int QUEST_GENERATE_DELAY_PER_SLOT = 20 * 60 * 5;

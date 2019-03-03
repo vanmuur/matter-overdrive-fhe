@@ -32,9 +32,6 @@ import matteroverdrive.machines.MOTileEntityMachine;
 import matteroverdrive.proxy.ClientProxy;
 import matteroverdrive.util.MOStringHelper;
 
-/**
- * Created by Simeon on 4/8/2015.
- */
 public class MOGuiMachine<T extends MOTileEntityMachine> extends MOGuiBase {
     T machine;
     ElementSlotsList slotsList;

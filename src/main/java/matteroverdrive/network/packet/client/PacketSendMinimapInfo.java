@@ -31,9 +31,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 9/7/2015.
- */
 public class PacketSendMinimapInfo extends PacketAbstract {
     List<MinimapEntityInfo> entityInfos;
 

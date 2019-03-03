@@ -23,9 +23,6 @@ import matteroverdrive.entity.android_player.AndroidPlayer;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-/**
- * Created by Simeon on 5/30/2015.
- */
 public class BioticStatFlotation extends AbstractBioticStat {
     public BioticStatFlotation(String name, int xp) {
         super(name, xp);

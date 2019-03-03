@@ -24,9 +24,6 @@ import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 10/18/2015
- */
 public class PhaserBoltRecoil extends Particle {
     private float lavaParticleScale;
 

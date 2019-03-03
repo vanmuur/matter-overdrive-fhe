@@ -34,9 +34,6 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 4/3/2015.
- */
 public class PageScanInfo extends ElementBaseGroup {
     public static final String backgroundPath = Reference.PATH_GUI + "matter_scanner.png";
     public static final String LIST_ELEMENT_NAME = "list";

@@ -36,9 +36,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 1/3/2016.
- */
 public class QuestLogicPlaceBlock extends AbstractQuestLogicBlock {
     String namePattern;
     int minBlockPlace;

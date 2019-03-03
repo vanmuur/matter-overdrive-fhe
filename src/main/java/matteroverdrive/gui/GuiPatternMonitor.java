@@ -36,9 +36,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Created by Simeon on 4/26/2015.
- */
 public class GuiPatternMonitor extends MOGuiNetworkMachine<TileEntityMachinePatternMonitor> {
     MOElementButton refreshButton;
     MOElementButton requestButton;

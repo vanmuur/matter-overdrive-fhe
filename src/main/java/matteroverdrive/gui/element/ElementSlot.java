@@ -29,9 +29,6 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 3/20/2015.
- */
 public class ElementSlot extends MOElementBase {
     protected HoloIcon icon;
     protected String type = "small";

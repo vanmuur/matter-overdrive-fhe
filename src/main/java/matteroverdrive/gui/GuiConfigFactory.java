@@ -26,9 +26,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Set;
 
-/**
- * Created by Simeon on 5/9/2015.
- */
 @SideOnly(Side.CLIENT)
 public class GuiConfigFactory implements IModGuiFactory {
     @Override

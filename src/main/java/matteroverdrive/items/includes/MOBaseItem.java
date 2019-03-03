@@ -45,7 +45,7 @@ public class MOBaseItem extends ItemBase {
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         if (hasDetails(stack)) {
-            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT) || flagIn.isAdvanced()) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)) {
                 addDetails(stack, Minecraft.getMinecraft().player, worldIn, tooltip);
             } else {
                 tooltip.add(MOStringHelper.MORE_INFO);

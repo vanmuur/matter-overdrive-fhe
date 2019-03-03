@@ -21,9 +21,6 @@ package matteroverdrive.data.inventory;
 import matteroverdrive.init.MatterOverdriveRecipes;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 11/12/2015.
- */
 public class InscriberSlot extends Slot {
     boolean isSecSlot;
 

@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 5/15/2015.
- */
 public class BlockMatterRecycler extends MOMatterEnergyStorageBlock<TileEntityMachineMatterRecycler> {
 
     public BlockMatterRecycler(Material material, String name) {

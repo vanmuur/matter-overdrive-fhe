@@ -24,9 +24,6 @@ import matteroverdrive.util.RenderUtils;
 import matteroverdrive.util.math.MOMathHelper;
 import net.minecraft.util.math.MathHelper;
 
-/**
- * Created by Simeon on 6/20/2015.
- */
 public class ElementGroupList extends ElementBaseGroup {
 
     private int selectedIndex;

@@ -25,9 +25,6 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * Created by Simeon on 3/23/2015.
- */
 public class MatterOverdriveWorld {
     public final MOWorldGen worldGen;
     private final DimensionalRifts dimensionalRifts;

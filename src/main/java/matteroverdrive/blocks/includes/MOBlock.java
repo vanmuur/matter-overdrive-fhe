@@ -48,9 +48,6 @@ import javax.annotation.Nonnull;
 import static matteroverdrive.util.MOBlockHelper.RotationType;
 import static matteroverdrive.util.MOBlockHelper.SIDE_LEFT;
 
-/**
- * Created by Simeon on 3/24/2015.
- */
 public class MOBlock extends Block implements ItemModelProvider {
     public static final PropertyDirection PROPERTY_DIRECTION = PropertyDirection.create("facing");
     protected AxisAlignedBB boundingBox = FULL_BLOCK_AABB;
@@ -188,7 +185,7 @@ public class MOBlock extends Block implements ItemModelProvider {
     public void setHasRotation() {
         this.hasRotation = true;
         this.blockState = createBlockState();
-        this.setDefaultState(this.blockState.getBaseState());
+        setDefaultState(blockState.getBaseState().withProperty(PROPERTY_DIRECTION, rotationType == RotationType.PREVENT ? EnumFacing.DOWN : rotationType == RotationType.FOUR_WAY ? EnumFacing.NORTH : EnumFacing.UP));
     }
 
     @Override

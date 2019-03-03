@@ -18,9 +18,6 @@
 
 package matteroverdrive.machines.configs;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public abstract class ConfigPropertyAbstract implements IConfigProperty {
     private final String key;
     private final String unlocalizedName;

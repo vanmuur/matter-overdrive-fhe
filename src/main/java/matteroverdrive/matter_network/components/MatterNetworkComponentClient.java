@@ -39,9 +39,6 @@ import net.minecraft.world.World;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/15/2015.
- */
 public abstract class MatterNetworkComponentClient<T extends MOTileEntityMachine & IMatterNetworkConnection> implements IMachineComponent, IMatterNetworkConnection, ITickable, IMatterNetworkComponent {
     //protected static final PacketHandlerBasicConnections BASIC_CONNECTIONS_HANDLER = new PacketHandlerBasicConnections();
     //protected final List<AbstractMatterNetworkPacketHandler> handlers;

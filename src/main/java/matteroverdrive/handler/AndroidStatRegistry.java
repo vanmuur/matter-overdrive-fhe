@@ -29,9 +29,6 @@ import net.minecraftforge.common.MinecraftForge;
 import java.util.Collection;
 import java.util.HashMap;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public class AndroidStatRegistry implements IAndroidStatRegistry {
     private final HashMap<String, IBioticStat> stats = new HashMap<>();
 

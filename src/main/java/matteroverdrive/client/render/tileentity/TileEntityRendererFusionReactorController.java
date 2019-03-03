@@ -34,9 +34,6 @@ import java.text.DecimalFormat;
 
 import static org.lwjgl.opengl.GL11.GL_ONE;
 
-/**
- * Created by Simeon on 5/14/2015.
- */
 public class TileEntityRendererFusionReactorController extends TileEntitySpecialRenderer<TileEntityMachineFusionReactorController> {
     public TileEntityRendererFusionReactorController() {
 

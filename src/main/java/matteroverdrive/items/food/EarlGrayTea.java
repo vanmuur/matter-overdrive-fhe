@@ -25,9 +25,6 @@ import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 4/24/2015.
- */
 public class EarlGrayTea extends MOItemFood {
     public EarlGrayTea(String name) {
         super(name, 4, 0.8F, false);

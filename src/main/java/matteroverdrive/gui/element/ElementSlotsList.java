@@ -22,9 +22,6 @@ import matteroverdrive.container.slot.MOSlot;
 import matteroverdrive.data.Inventory;
 import matteroverdrive.gui.MOGuiBase;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class ElementSlotsList extends ElementBaseGroup {
     ElementInventorySlot mainSlot;
     int margin = 0;

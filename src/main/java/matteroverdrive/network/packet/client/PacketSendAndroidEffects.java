@@ -33,9 +33,6 @@ import org.apache.logging.log4j.Level;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by Simeon on 2/8/2016.
- */
 public class PacketSendAndroidEffects extends PacketAbstract {
     int androidId;
     List<AndroidEffects.Effect> effects;

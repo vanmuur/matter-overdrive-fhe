@@ -47,9 +47,6 @@ import org.lwjgl.util.vector.Vector2f;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 12/8/2015.
- */
 public class IonSniper extends EnergyWeapon {
     public static final int RANGE = 96;
     private static final int MAX_HEAT = 100;

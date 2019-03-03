@@ -26,9 +26,6 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 9/10/2015.
- */
 public class GuideElementDetails extends GuideElementAbstract {
     List<String> details;
 

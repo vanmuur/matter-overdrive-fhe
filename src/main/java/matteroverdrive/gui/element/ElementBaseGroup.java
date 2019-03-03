@@ -28,9 +28,6 @@ import org.lwjgl.opengl.GL11;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 4/3/2015.
- */
 public class ElementBaseGroup extends MOElementBase implements IButtonHandler, GuiElementList, ITextHandler {
     protected final ArrayList<MOElementBase> elements = new ArrayList<>();
 

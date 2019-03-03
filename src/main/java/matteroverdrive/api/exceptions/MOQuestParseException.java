@@ -18,9 +18,6 @@
 
 package matteroverdrive.api.exceptions;
 
-/**
- * Created by Simeon on 1/25/2016.
- */
 public class MOQuestParseException extends MORuntimeException {
     public MOQuestParseException() {
     }

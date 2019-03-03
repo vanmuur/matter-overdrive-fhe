@@ -32,9 +32,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 8/11/2015.
- */
 public class PacketManageConversation extends PacketAbstract {
     public boolean start;
     public int npcID;

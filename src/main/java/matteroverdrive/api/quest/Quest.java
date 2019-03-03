@@ -27,9 +27,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public abstract class Quest implements IQuest {
     protected String title;
     protected int xpReward;

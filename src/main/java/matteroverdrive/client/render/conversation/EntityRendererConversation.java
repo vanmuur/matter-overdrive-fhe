@@ -32,9 +32,6 @@ import net.minecraft.util.math.Vec3d;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 8/9/2015.
- */
 public class EntityRendererConversation extends EntityRenderer {
 
     final Minecraft mc;

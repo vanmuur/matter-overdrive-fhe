@@ -24,9 +24,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 2/10/2016.
- */
 public class DimensionalRifts {
     private double noiseScale;
 

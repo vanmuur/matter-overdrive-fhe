@@ -25,9 +25,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraftforge.client.event.RenderWorldLastEvent;
 
-/**
- * Created by Simeon on 8/10/2015.
- */
 public class RenderDialogSystem implements IWorldLastRenderer {
     private final EntityRendererConversation entityRendererConversation;
     EntityRenderer lastEntityRenderer;

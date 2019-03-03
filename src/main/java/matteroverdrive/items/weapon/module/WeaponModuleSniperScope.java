@@ -24,9 +24,6 @@ import matteroverdrive.api.weapon.WeaponStats;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 12/8/2015.
- */
 public class WeaponModuleSniperScope extends WeaponModuleBase implements IWeaponScope {
     public WeaponModuleSniperScope(String name) {
         super(name);

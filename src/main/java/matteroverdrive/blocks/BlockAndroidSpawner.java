@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 12/10/2015.
- */
 public class BlockAndroidSpawner extends MOBlockMachine<TileEntityAndroidSpawner> {
     public BlockAndroidSpawner(Material material, String name) {
         super(material, name);

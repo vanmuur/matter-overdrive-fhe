@@ -48,9 +48,6 @@ import javax.annotation.Nullable;
 import java.util.EnumSet;
 import java.util.Random;
 
-/**
- * Created by Simeon on 3/7/2015.
- */
 public class TileEntityMatterPipe extends TileEntityPipe implements IFluidPipe {
     public static Random rand = new Random();
     protected final MatterStorage storage;

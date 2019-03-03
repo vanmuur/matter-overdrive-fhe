@@ -25,9 +25,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/19/2015.
- */
 public interface IMachineComponent {
     void readFromNBT(NBTTagCompound nbt, EnumSet<MachineNBTCategory> categories);
 

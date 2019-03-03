@@ -28,9 +28,6 @@ import net.minecraftforge.common.util.Constants;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class QuestStack {
     boolean completed;
     private NBTTagCompound tagCompound;

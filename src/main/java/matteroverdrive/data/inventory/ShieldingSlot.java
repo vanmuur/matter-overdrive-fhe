@@ -25,9 +25,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/6/2015.
- */
 public class ShieldingSlot extends Slot {
     public ShieldingSlot(boolean isMainSlot) {
         super(isMainSlot);

@@ -28,9 +28,6 @@ import matteroverdrive.gui.element.MOElementEnergy;
 import matteroverdrive.tile.TileEntityMachineMatterRecycler;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 5/15/2015.
- */
 public class GuiRecycler extends MOGuiMachine<TileEntityMachineMatterRecycler> {
     MOElementEnergy energyElement;
     ElementDualScaled recycle_progress;

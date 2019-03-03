@@ -25,9 +25,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 2/11/2016.
- */
 public class LightningCircle extends MOEntityFX {
     private float randomness;
     private float speed;

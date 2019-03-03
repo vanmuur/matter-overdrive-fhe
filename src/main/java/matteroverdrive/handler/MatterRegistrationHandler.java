@@ -32,9 +32,6 @@ import org.apache.logging.log4j.Level;
 import java.io.File;
 import java.util.concurrent.Future;
 
-/**
- * Created by Simeon on 8/22/2015.
- */
 public class MatterRegistrationHandler {
     private Future matterCalculationThread;
 

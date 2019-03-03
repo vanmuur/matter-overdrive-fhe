@@ -58,9 +58,6 @@ import java.util.EnumSet;
 import static java.lang.Math.round;
 import static matteroverdrive.util.MOBlockHelper.getAboveSide;
 
-/**
- * Created by Simeon on 5/14/2015.
- */
 /*@Optional.InterfaceList({
 		@Optional.Interface(modid = "ComputerCraft", iface = "dan200.computercraft.api.peripheral.IPeripheral"),
 		@Optional.Interface(modid = "OpenComputers", iface = "li.cil.oc.api.network.SimpleComponent"),

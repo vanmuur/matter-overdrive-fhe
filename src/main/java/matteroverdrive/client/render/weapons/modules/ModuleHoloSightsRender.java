@@ -36,9 +36,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.client.model.obj.OBJModel;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Simeon on 2/18/2016.
- */
 public class ModuleHoloSightsRender extends ModuleRenderAbstract {
     private ResourceLocation sightsModelLocation = new ResourceLocation(Reference.PATH_MODEL + "item/weapon_module_holo_sights.obj");
     private OBJModel sightsModel;

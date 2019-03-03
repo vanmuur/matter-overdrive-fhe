@@ -26,9 +26,6 @@ import org.w3c.dom.Element;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 12/4/2015.
- */
 public class GuideElementTooltip extends GuideElementAbstract {
     ItemStack itemStack;
     List<String> lines;

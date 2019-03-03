@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 7/9/2015.
- */
 @SideOnly(Side.CLIENT)
 public class MouseHandler {
 

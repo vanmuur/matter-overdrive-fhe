@@ -25,9 +25,6 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-/**
- * Created by Simeon on 1/18/2016.
- */
 public class MatterEntryEntity extends MatterEntryAbstract<Class<? extends Entity>, Entity> {
     public MatterEntryEntity(Class<? extends Entity> aClass) {
         super(aClass);

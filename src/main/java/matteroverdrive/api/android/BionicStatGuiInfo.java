@@ -20,9 +20,6 @@ package matteroverdrive.api.android;
 
 import net.minecraft.util.EnumFacing;
 
-/**
- * Created by Simeon on 2/1/2016.
- */
 public class BionicStatGuiInfo {
     EnumFacing direction;
     private int posX;

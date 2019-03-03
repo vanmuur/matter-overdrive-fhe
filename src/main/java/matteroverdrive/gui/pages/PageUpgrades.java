@@ -42,9 +42,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 4/11/2015.
- */
 public class PageUpgrades extends ElementBaseGroup {
     private Container container;
     private MOGuiMachine guiMachine;

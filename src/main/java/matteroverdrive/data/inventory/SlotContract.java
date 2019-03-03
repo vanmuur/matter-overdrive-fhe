@@ -21,9 +21,6 @@ package matteroverdrive.data.inventory;
 import matteroverdrive.items.Contract;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class SlotContract extends Slot {
     public SlotContract(boolean isMainSlot) {
         super(isMainSlot);

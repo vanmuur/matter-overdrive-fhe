@@ -20,9 +20,6 @@ package matteroverdrive.api.dialog;
 
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 1/27/2016.
- */
 public interface IDialogOption {
     /**
      * Called when the option is chosen from all the option of the patten from {@link matteroverdrive.api.dialog.IDialogMessage#getOptions(IDialogNpc, EntityPlayer)}.

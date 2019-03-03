@@ -34,9 +34,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/5/2015.
- */
 public abstract class AbstractQuestLogic implements IQuestLogic {
     protected List<IQuestReward> rewards;
     protected boolean autoComplete;

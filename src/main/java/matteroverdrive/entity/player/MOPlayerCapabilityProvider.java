@@ -29,9 +29,6 @@ import net.minecraftforge.common.capabilities.ICapabilitySerializable;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 3/24/2016.
- */
 public class MOPlayerCapabilityProvider implements ICapabilitySerializable<NBTTagCompound> {
     AndroidPlayer androidPlayer;
     OverdriveExtendedProperties extendedProperties;

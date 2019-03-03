@@ -33,9 +33,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 5/14/2015.
- */
 public class BlockFusionReactorController extends MOBlockMachine<TileEntityMachineFusionReactorController> {
     public BlockFusionReactorController(Material material, String name) {
         super(material, name);

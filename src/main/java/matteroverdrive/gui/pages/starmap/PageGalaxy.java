@@ -27,9 +27,6 @@ import matteroverdrive.starmap.GalaxyClient;
 import matteroverdrive.starmap.data.Quadrant;
 import matteroverdrive.tile.TileEntityMachineStarMap;
 
-/**
- * Created by Simeon on 6/27/2015.
- */
 public class PageGalaxy extends ElementBaseGroup implements IListHandler {
     private static int scroll;
     private TileEntityMachineStarMap starMap;

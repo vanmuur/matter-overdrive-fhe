@@ -32,9 +32,6 @@ import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public class ComponentConfigs extends MachineComponentAbstract<MOTileEntityMachine> implements IConfigurable {
     private final Map<String, IConfigProperty> propertyMap;
 

@@ -35,9 +35,6 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class PlayerQuestData {
     final List<QuestStack> activeQuests;
     final List<QuestStack> completedQuests;

@@ -34,9 +34,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.Event;
 
-/**
- * Created by Simeon on 5/19/2015.
- */
 public class Wrench extends MOBaseItem {
     public Wrench(String name) {
         super(name);

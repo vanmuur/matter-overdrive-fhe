@@ -26,9 +26,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/28/2015.
- */
 public class PacketReplicationComplete extends TileEntityUpdatePacket {
     public PacketReplicationComplete() {
         super();

@@ -24,9 +24,6 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Created by Simeon on 3/18/2015.
- */
 public class MachineSound extends PositionedSound implements ITickableSound {
     private boolean donePlaying;
 

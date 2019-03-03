@@ -24,9 +24,6 @@ import matteroverdrive.tile.TileEntityMachineStarMap;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 6/17/2015.
- */
 @SideOnly(Side.CLIENT)
 public interface ISpaceBodyHoloRenderer {
     void renderBody(Galaxy galaxy, SpaceBody spaceBody, TileEntityMachineStarMap starMap, float partialTicks, float viewerDistance);

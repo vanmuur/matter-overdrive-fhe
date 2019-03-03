@@ -33,9 +33,6 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Simeon on 3/27/2015.
- */
 public class PatternDrive extends MOBaseItem implements IMatterPatternStorage {
     /*private IIcon storageFull;
     private IIcon storagePartiallyFull;*/

@@ -28,9 +28,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public class BlockAndroidStation extends MOBlockMachine<TileEntityAndroidStation> {
     public BlockAndroidStation(Material material, String name) {
         super(material, name);

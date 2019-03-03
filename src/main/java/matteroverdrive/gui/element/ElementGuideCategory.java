@@ -22,9 +22,6 @@ import matteroverdrive.container.IButtonHandler;
 import matteroverdrive.gui.MOGuiBase;
 import matteroverdrive.guide.GuideCategory;
 
-/**
- * Created by Simeon on 8/30/2015.
- */
 public class ElementGuideCategory extends MOElementButtonScaled {
     private final GuideCategory category;
 

@@ -27,9 +27,6 @@ import matteroverdrive.handler.matter_network.MatterNetworkHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 1/27/2016.
- */
 public class MatterNetwork extends AbstractGridNetwork<IMatterNetworkConnection> {
     List<IMatterNetworkClient> clients;
 

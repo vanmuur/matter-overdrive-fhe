@@ -34,9 +34,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/25/2015.
- */
 public class QuestLogicCollectItem extends AbstractQuestLogicRandomItem {
     int dimensionID;
     boolean inSpecificDimension;

@@ -32,9 +32,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 2/6/2016.
- */
 public class TaskQueueComponent<T extends MatterNetworkTask, M extends MOTileEntityMachine & IMatterNetworkDispatcher> extends MachineComponentAbstract<M> {
     private final int queueId;
     private MatterNetworkTaskQueue<T> taskQueue;

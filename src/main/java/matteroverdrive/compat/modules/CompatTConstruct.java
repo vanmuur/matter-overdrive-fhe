@@ -24,9 +24,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-/**
- * Created by Simeon on 11/1/2015.
- */
 @Compat(CompatTConstruct.ID)
 public class CompatTConstruct {
 

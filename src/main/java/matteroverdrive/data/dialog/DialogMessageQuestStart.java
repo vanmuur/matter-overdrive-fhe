@@ -24,9 +24,6 @@ import matteroverdrive.entity.player.MOPlayerCapabilityProvider;
 import matteroverdrive.entity.player.OverdriveExtendedProperties;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class DialogMessageQuestStart extends DialogMessage {
     QuestStack questStack;
 

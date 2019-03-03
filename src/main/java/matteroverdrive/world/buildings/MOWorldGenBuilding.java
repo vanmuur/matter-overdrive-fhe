@@ -35,9 +35,6 @@ import org.apache.logging.log4j.Level;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/26/2015.
- */
 public abstract class MOWorldGenBuilding<T extends MOWorldGenBuilding.WorldGenBuildingWorker> extends MOImageGen<T> implements IMOWorldGenBuilding<T> {
 
     protected Block[] validSpawnBlocks;

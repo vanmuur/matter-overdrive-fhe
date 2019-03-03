@@ -30,9 +30,6 @@ import org.apache.logging.log4j.Level;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 7/15/2015.
- */
 public class MatterNetworkTaskQueue<T extends MatterNetworkTask> {
     protected final List<T> elements;
     int capacity = 0;

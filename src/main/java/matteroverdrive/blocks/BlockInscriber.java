@@ -33,9 +33,6 @@ import net.minecraftforge.fml.common.Loader;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 11/9/2015.
- */
 public class BlockInscriber extends MOBlockMachine<TileEntityInscriber> {
     public static final PropertyBool CTM = PropertyBool.create("ctm");
 

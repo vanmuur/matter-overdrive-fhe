@@ -45,9 +45,6 @@ import javax.annotation.Nonnull;
 import java.io.File;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 @SuppressWarnings("unused")
 public class Planet extends SpaceBody implements IInventory {
     //region Static Vars

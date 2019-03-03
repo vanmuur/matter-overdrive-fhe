@@ -25,9 +25,6 @@ import matteroverdrive.init.MatterOverdriveCapabilities;
 import matteroverdrive.tile.TileEntityMachineSpacetimeAccelerator;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class GuiSpacetimeAccelerator extends MOGuiMachine<TileEntityMachineSpacetimeAccelerator> {
     private final ElementMatterStored matterStored;
     private final MOElementEnergy energy;

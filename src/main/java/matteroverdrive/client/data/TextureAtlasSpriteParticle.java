@@ -20,9 +20,6 @@ package matteroverdrive.client.data;
 
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 
-/**
- * Created by Simeon on 2/20/2016.
- */
 public class TextureAtlasSpriteParticle extends TextureAtlasSprite {
     private int frameSize;
     private int speed;

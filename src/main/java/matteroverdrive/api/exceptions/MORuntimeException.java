@@ -18,9 +18,6 @@
 
 package matteroverdrive.api.exceptions;
 
-/**
- * Created by Simeon on 1/18/2016.
- */
 public class MORuntimeException extends RuntimeException {
     public MORuntimeException() {
     }

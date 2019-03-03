@@ -29,9 +29,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 8/15/2015.
- */
 public class GuiHoloSign extends MOGuiMachine<TileEntityHoloSign> {
     MOElementTextField textField;
     AutoConfigPage configPage;

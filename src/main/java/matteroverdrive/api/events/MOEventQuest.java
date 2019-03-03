@@ -25,9 +25,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class MOEventQuest extends PlayerEvent {
     public final QuestStack questStack;
 

@@ -26,9 +26,6 @@ import net.minecraft.inventory.IContainerListener;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/9/2015.
- */
 public class ContainerSolarPanel extends ContainerMachine<TileEntityMachineSolarPanel> {
     private int lastChargeAmount;
 

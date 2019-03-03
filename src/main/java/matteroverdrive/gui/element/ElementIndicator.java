@@ -25,9 +25,6 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 4/12/2015.
- */
 public class ElementIndicator extends MOElementBase {
     public static final ResourceLocation BG = new ResourceLocation(Reference.PATH_ELEMENTS + "indicator.png");
     private int indication;

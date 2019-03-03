@@ -22,9 +22,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.Vec3d;
 
-/**
- * Created by Simeon on 11/15/2015.
- */
 public interface IRangedEnergyWeaponAttackMob {
     ItemStack getWeapon();
 

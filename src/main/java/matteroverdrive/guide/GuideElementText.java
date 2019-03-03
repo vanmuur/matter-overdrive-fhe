@@ -26,9 +26,6 @@ import org.w3c.dom.Element;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public class GuideElementText extends GuideElementTextAbstract {
     TextLine[] lines;
 

@@ -23,9 +23,6 @@ import net.minecraft.util.WeightedRandom;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 12/23/2015.
- */
 public class WeightedRandomItemStack extends WeightedRandom.Item {
     private final ItemStack stack;
 

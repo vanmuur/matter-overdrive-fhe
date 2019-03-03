@@ -31,9 +31,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 6/24/2015.
- */
 public class StarGen implements ISpaceBodyGen<Star> {
     public static final ResourceLocation starNamesFile = new ResourceLocation(Reference.PATH_INFO + "star_names.txt");
     public static final ResourceLocation starPrefixesFile = new ResourceLocation(Reference.PATH_INFO + "star_prefixes.txt");

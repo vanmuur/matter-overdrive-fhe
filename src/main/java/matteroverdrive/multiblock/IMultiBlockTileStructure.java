@@ -18,9 +18,6 @@
 
 package matteroverdrive.multiblock;
 
-/**
- * Created by Simeon on 10/30/2015.
- */
 public interface IMultiBlockTileStructure {
     boolean addMultiBlockTile(IMultiBlockTile block);
 

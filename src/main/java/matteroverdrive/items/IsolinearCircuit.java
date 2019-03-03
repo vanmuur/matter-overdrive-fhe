@@ -24,9 +24,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 
-/**
- * Created by Simeon on 3/15/2015.
- */
 public class IsolinearCircuit extends MOBaseItem implements IAdvancedModelProvider {
     public static final String[] subItemNames = {"mk1", "mk2", "mk3", "mk4"};
 

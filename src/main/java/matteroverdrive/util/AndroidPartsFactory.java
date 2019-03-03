@@ -36,9 +36,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/31/2015.
- */
 public class AndroidPartsFactory {
     private static final Random random = new Random();
     private final List<WeightedRandomItemStack> parts;

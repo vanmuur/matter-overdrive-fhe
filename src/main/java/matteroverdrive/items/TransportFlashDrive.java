@@ -38,9 +38,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nullable;
 import java.util.List;
 
-/**
- * Created by Simeon on 8/5/2015.
- */
 public class TransportFlashDrive extends MOBaseItem {
     public TransportFlashDrive(String name) {
         super(name);

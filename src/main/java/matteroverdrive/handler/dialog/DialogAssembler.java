@@ -34,9 +34,6 @@ import org.apache.logging.log4j.Level;
 
 import java.io.*;
 
-/**
- * Created by Simeon on 1/26/2016.
- */
 public class DialogAssembler {
     private static final ResourceLocation dialogLocation = new ResourceLocation(Reference.MOD_ID + ":" + "dialog/dialog.json");
     private static final String customDialogPath = "custom_dialog.json";

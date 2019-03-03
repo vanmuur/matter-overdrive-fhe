@@ -25,9 +25,6 @@ import net.minecraft.inventory.IContainerListener;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 2/12/2016.
- */
 public class ContainerDimensionalPylon extends ContainerMachine<TileEntityMachineDimensionalPylon> {
     private int energyGenPerTick;
     private int matterDrainPerSec;

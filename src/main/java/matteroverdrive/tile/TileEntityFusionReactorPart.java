@@ -38,9 +38,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 10/30/2015.
- */
 public class TileEntityFusionReactorPart extends MOTileEntityMachineMatter implements IMultiBlockTile {
     private IMultiBlockTileStructure structure;
     private TileEntityMachineFusionReactorController fusionReactorController;

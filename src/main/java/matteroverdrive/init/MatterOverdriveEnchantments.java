@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-/**
- * Created by Simeon on 8/7/2015.
- */
 @Mod.EventBusSubscriber
 public class MatterOverdriveEnchantments implements IConfigSubscriber {
     public static Enchantment overclock;

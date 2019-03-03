@@ -18,9 +18,6 @@
 
 package matteroverdrive.animation;
 
-/**
- * Created by Simeon on 5/31/2015.
- */
 public class AnimationTextTyping extends AnimationTimeline<AnimationSegmentText> {
     public AnimationTextTyping(boolean loopable, int duration) {
         super(loopable, duration);

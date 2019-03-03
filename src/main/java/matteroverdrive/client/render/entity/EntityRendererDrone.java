@@ -27,9 +27,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 @SideOnly(Side.CLIENT)
 public class EntityRendererDrone extends RenderLiving<EntityDrone> {
     private final ResourceLocation texture = new ResourceLocation(Reference.PATH_ENTITIES + "drone_default.png");

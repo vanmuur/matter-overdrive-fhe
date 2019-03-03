@@ -28,9 +28,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by Simeon on 1/18/2016.
- */
 public abstract class MatterEntryAbstract<KEY, MAT> implements IMatterEntry<KEY, MAT> {
     protected final List<IMatterEntryHandler<MAT>> handlers;
     protected KEY key;

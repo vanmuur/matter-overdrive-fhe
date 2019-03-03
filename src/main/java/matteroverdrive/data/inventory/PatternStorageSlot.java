@@ -26,9 +26,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 3/27/2015.
- */
 public class PatternStorageSlot extends Slot {
     private IMatterDatabase database;
     private int storageId;

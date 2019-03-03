@@ -24,9 +24,6 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 5/28/2015.
- */
 public class EntityRendererFailedChicken extends RenderChicken {
     private static final ResourceLocation chickenTextures = new ResourceLocation(Reference.PATH_ENTITIES + "failed_chicken.png");
 

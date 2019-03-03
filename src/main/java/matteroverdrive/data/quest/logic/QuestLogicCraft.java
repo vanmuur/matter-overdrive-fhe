@@ -33,9 +33,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/9/2015.
- */
 public class QuestLogicCraft extends AbstractQuestLogicRandomItem {
     int minCraftCount;
     int maxCraftCount;

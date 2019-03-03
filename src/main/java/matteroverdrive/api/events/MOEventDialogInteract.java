@@ -24,9 +24,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class MOEventDialogInteract extends PlayerEvent {
     public final IDialogNpc npc;
     public final IDialogOption dialogOption;

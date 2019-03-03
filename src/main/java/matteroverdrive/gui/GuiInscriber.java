@@ -28,9 +28,6 @@ import matteroverdrive.gui.element.MOElementEnergy;
 import matteroverdrive.tile.TileEntityInscriber;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 11/12/2015.
- */
 public class GuiInscriber extends MOGuiMachine<TileEntityInscriber> {
     MOElementEnergy energyElement;
     ElementDualScaled inscribe_progress;

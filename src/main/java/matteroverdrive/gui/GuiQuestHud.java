@@ -35,9 +35,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import java.util.ArrayDeque;
 import java.util.Queue;
 
-/**
- * Created by Simeon on 11/20/2015.
- */
 public class GuiQuestHud {
     private static final float QUEST_NOTIFICATION_TIME = 400;
     private static final float QUEST_FADE_IN_TIME = 30;

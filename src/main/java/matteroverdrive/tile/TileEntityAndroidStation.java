@@ -37,9 +37,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public class TileEntityAndroidStation extends MOTileEntityMachine {
     public int HEAD_SLOT;
     public int ARMS_SLOT;

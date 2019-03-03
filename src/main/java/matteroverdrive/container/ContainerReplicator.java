@@ -26,9 +26,6 @@ import net.minecraft.inventory.IContainerListener;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 12/27/2015.
- */
 public class ContainerReplicator extends ContainerTaskQueueMachine<TileEntityMachineReplicator> {
     private int patternReplicateCount;
 

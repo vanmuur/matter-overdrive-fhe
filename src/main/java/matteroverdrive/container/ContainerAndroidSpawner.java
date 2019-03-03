@@ -26,9 +26,6 @@ import net.minecraft.inventory.IContainerListener;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 12/11/2015.
- */
 public class ContainerAndroidSpawner extends ContainerMachine<TileEntityAndroidSpawner> {
     private int spawnedAndroids;
 

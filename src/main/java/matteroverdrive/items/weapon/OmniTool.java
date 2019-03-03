@@ -143,7 +143,7 @@ public class OmniTool extends EnergyWeapon {
                                 MatterOverdrive.NETWORK.sendToServer(new PacketDigBlock(hit.getBlockPos(), PacketDigBlock.Type.CLICK, hit.sideHit));
                             }
 
-                            BLOCK_DAMAGE = MathHelper.clamp(modifyStatFromModules(WeaponStats.BLOCK_DAMAGE, stack, BLOCK_DAMAGE + state.getPlayerRelativeBlockHardness((EntityPlayer) player, player.world, hit.getBlockPos())), 0, 1);
+                            BLOCK_DAMAGE = MathHelper.clamp(modifyStatFromModules(WeaponStats.BLOCK_DAMAGE, stack, (BLOCK_DAMAGE + state.getPlayerRelativeBlockHardness((EntityPlayer) player, player.world, hit.getBlockPos()))*2), 0, 1);
                             player.world.sendBlockBreakProgress(player.getEntityId(), hit.getBlockPos(), (int) (BLOCK_DAMAGE * 10));
                         } else {
                             stopMiningLastBlock((EntityPlayer) player, player.world);

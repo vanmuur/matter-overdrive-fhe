@@ -44,9 +44,6 @@ import net.minecraft.util.text.TextFormatting;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class PageActiveQuests extends ElementBaseGroup implements IListHandler {
     EnumHand hand;
     ItemStack dataPadStack;

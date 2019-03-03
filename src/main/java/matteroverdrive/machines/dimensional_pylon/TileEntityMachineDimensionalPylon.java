@@ -66,9 +66,6 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * Created by Simeon on 2/4/2016.
- */
 public class TileEntityMachineDimensionalPylon extends MOTileEntityMachineMatter {
     public static int MAX_CHARGE = 2048;
     BlockPos mainBlock;

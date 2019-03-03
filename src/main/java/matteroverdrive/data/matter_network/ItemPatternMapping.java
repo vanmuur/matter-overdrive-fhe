@@ -21,9 +21,6 @@ package matteroverdrive.data.matter_network;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Created by Simeon on 1/30/2016.
- */
 public class ItemPatternMapping {
     private ItemPattern itemPattern;
     private BlockPos databaseId;

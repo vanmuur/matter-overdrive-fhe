@@ -25,9 +25,6 @@ import matteroverdrive.api.renderer.IBionicPartRenderer;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 9/10/2015.
- */
 public class AndroidBionicPartRenderRegistry implements IBionicPartRenderRegistry {
     private final Map<Class<? extends IBionicPart>, IBionicPartRenderer> rendererMap;
 

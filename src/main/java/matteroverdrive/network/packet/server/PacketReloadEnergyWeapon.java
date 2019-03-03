@@ -25,9 +25,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.EnumHand;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 8/2/2015.
- */
 public class PacketReloadEnergyWeapon extends PacketAbstract {
     public PacketReloadEnergyWeapon() {
     }

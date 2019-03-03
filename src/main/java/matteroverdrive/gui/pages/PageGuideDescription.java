@@ -52,9 +52,6 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Simeon on 4/3/2015.
- */
 public class PageGuideDescription extends ElementBaseGroup {
     private static final String SCROLL_RIGHT_ELEMENT_NAME = "scroll_right";
     private static final String SCROLL_LEFT_ELEMENT_NAME = "scroll_left";

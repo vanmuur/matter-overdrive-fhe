@@ -26,9 +26,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class BlockContractMarket extends BlockMonitor<TileEntityMachineContractMarket> {
     public BlockContractMarket(Material material, String name) {
         super(material, name);

@@ -26,9 +26,6 @@ import matteroverdrive.util.MOStringHelper;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 3/13/2015.
- */
 public class SidePannel extends ElementBaseGroup {
     private static boolean isOpen;
     public final ScaleTexture BACKGROUND_TEXTURE = new ScaleTexture(new ResourceLocation(Reference.PATH_ELEMENTS + "right_side_bar_panel_bg.png"), 15, 18).setOffsets(7, 7, 8, 9);

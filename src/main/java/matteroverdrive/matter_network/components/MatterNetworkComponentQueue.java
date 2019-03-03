@@ -21,9 +21,6 @@ package matteroverdrive.matter_network.components;
 import matteroverdrive.data.matter_network.IMatterNetworkEvent;
 import matteroverdrive.tile.TileEntityMachinePacketQueue;
 
-/**
- * Created by Simeon on 7/15/2015.
- */
 public class MatterNetworkComponentQueue extends MatterNetworkComponentClient<TileEntityMachinePacketQueue> {
 
     public static final int[] directions = {0, 1, 2, 3, 4, 5};

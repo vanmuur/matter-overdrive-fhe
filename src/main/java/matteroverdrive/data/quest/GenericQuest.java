@@ -29,9 +29,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class GenericQuest extends Quest {
     protected IQuestLogic questLogic;
 

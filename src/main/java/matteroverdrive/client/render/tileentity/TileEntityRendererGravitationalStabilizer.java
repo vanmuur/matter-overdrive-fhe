@@ -38,9 +38,6 @@ import java.util.List;
 
 import static org.lwjgl.opengl.GL11.GL_ONE;
 
-/**
- * Created by Simeon on 5/12/2015.
- */
 public class TileEntityRendererGravitationalStabilizer extends TileEntitySpecialRenderer<TileEntityMachineGravitationalStabilizer> {
     public static final ResourceLocation beam = new ResourceLocation(Reference.PATH_FX + "physbeam.png");
 

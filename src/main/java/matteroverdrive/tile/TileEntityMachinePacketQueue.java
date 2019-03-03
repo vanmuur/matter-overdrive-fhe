@@ -35,9 +35,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/30/2015.
- */
 public abstract class TileEntityMachinePacketQueue extends MOTileEntityMachine implements IMatterNetworkClient, IMatterNetworkConnection {
     public static int BROADCAST_DELAY = 2;
     public static int TASK_QUEUE_SIZE = 16;

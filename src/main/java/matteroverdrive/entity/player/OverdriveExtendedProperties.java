@@ -25,12 +25,14 @@ import matteroverdrive.api.quest.QuestStack;
 import matteroverdrive.api.quest.QuestState;
 import matteroverdrive.data.quest.PlayerQuestData;
 import matteroverdrive.gui.GuiDataPad;
+import matteroverdrive.items.DataPad;
 import matteroverdrive.network.packet.client.quest.PacketSyncQuests;
 import matteroverdrive.network.packet.client.quest.PacketUpdateQuest;
 import matteroverdrive.proxy.ClientProxy;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
@@ -48,9 +50,6 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class OverdriveExtendedProperties {
     public static final String EXT_PROP_NAME = "MOPlayer";
     @CapabilityInject(value = OverdriveExtendedProperties.class)
@@ -106,7 +105,13 @@ public class OverdriveExtendedProperties {
         if (!MinecraftForge.EVENT_BUS.post(new MOEventQuest.Added(questStack, player))) {
             if (isServer()) {
                 if (questData.getActiveQuests().size() <= 0 && questData.getCompletedQuests().size() <= 0) {
-                    player.inventory.addItemStackToInventory(new ItemStack(MatterOverdrive.ITEMS.dataPad));
+                    ItemStack scanner = new ItemStack(MatterOverdrive.ITEMS.dataPad);
+                    scanner.setStackDisplayName("Scientist's Data Pad");
+                    MatterOverdrive.ITEMS.dataPad.addToScanWhitelist(scanner, Blocks.CARROTS);
+                    MatterOverdrive.ITEMS.dataPad.addToScanWhitelist(scanner, Blocks.POTATOES);
+                    MatterOverdrive.ITEMS.dataPad.addToScanWhitelist(scanner, Blocks.WHEAT);
+                    scanner.getTagCompound().setBoolean("Destroys", true);
+                    player.addItemStackToInventory(scanner);
                 }
                 QuestStack addedQuest = questData.addQuest(questStack);
                 if (addedQuest != null) {

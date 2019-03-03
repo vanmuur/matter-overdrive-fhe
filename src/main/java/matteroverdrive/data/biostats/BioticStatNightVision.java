@@ -41,9 +41,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/11/2015.
- */
 public class BioticStatNightVision extends AbstractBioticStat implements IConfigSubscriber {
     private static int ENERGY_PER_TICK = 16;
 

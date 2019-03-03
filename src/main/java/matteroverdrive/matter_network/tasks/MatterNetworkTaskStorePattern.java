@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 
 import java.text.DecimalFormat;
 
-/**
- * Created by Simeon on 4/20/2015.
- */
 public class MatterNetworkTaskStorePattern extends MatterNetworkTask {
     ItemStack itemStack;
     int progress;

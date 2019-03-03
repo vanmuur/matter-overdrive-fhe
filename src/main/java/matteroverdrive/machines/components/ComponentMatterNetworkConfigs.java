@@ -31,9 +31,6 @@ import net.minecraftforge.common.util.Constants;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/19/2015.
- */
 public class ComponentMatterNetworkConfigs extends MachineComponentAbstract<MOTileEntityMachine> {
     private String destinationFilter;
     private int destinationFilterSlot;

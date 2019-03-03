@@ -31,9 +31,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/31/2015.
- */
 public class QuestLogicSingleEvent extends AbstractQuestLogic {
     Class<? extends Event> event;
 

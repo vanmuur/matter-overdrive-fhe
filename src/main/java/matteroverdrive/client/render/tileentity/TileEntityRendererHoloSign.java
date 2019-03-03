@@ -30,9 +30,6 @@ import net.minecraft.util.text.TextFormatting;
 import static matteroverdrive.util.MOBlockHelper.getLeftSide;
 import static matteroverdrive.util.MOBlockHelper.getRightSide;
 
-/**
- * Created by Simeon on 8/15/2015.
- */
 public class TileEntityRendererHoloSign extends TileEntitySpecialRenderer<TileEntityHoloSign> {
     @Override
     public void render(TileEntityHoloSign tile, double x, double y, double z, float ticks, int destoryStage, float a) {

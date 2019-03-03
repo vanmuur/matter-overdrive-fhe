@@ -27,9 +27,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.client.FMLClientHandler;
 
-/**
- * Created by Simeon on 5/12/2015.
- */
 public class GravitationalAnomalySound extends PositionedSound implements ITickableSound {
 
     boolean donePlaying = false;

@@ -24,9 +24,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-/**
- * Created by Simeon on 12/27/2015.
- */
 public class ItemPattern {
     private int itemID;
     private int damage;

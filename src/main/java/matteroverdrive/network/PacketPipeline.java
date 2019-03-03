@@ -48,9 +48,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * Created by Simeon on 3/5/2015.
- */
 @ChannelHandler.Sharable
 public class PacketPipeline {
     public final SimpleNetworkWrapper dispatcher;

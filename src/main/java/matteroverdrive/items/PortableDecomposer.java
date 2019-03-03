@@ -46,9 +46,6 @@ import javax.annotation.Nullable;
 import java.text.DecimalFormat;
 import java.util.List;
 
-/**
- * Created by Simeon on 1/9/2016.
- */
 public class PortableDecomposer extends MOItemEnergyContainer {
     private int defaultMatter;
     private float defaultMatterRatio;

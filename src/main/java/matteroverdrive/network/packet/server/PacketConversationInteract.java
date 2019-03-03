@@ -27,9 +27,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 8/11/2015.
- */
 public class PacketConversationInteract extends PacketAbstract {
     int npcID;
     int dialogMessageID;

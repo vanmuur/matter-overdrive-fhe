@@ -28,9 +28,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 4/9/2015.
- */
 public class BlockSolarPanel extends MOMatterEnergyStorageBlock<TileEntityMachineSolarPanel> {
     public BlockSolarPanel(Material material, String name) {
         super(material, name, true, false);

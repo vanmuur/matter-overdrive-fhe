@@ -26,9 +26,6 @@ import org.w3c.dom.Element;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 8/31/2015.
- */
 public class GuideElementPreview extends GuideElementAbstract {
     private static Random random = new Random();
     double size = 1;

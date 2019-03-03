@@ -39,9 +39,6 @@ import org.apache.logging.log4j.Level;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 6/15/2015.
- */
 @SideOnly(Side.CLIENT)
 public class HoloIcons implements ITextureMapPopulator {
     public final TextureMapMO textureMap;

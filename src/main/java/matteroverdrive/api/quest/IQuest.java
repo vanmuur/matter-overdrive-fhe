@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.eventhandler.Event;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/5/2015.
- */
 public interface IQuest {
     /**
      * Returns the identification name of the quest

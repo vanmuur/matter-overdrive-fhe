@@ -23,9 +23,6 @@ import matteroverdrive.starmap.data.SpaceBody;
 
 import java.util.Collection;
 
-/**
- * Created by Simeon on 7/25/2015.
- */
 public interface IStarmapRenderRegistry {
     boolean registerRenderer(Class<? extends SpaceBody> spaceBodyType, ISpaceBodyHoloRenderer renderer);
 

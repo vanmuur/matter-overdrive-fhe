@@ -24,9 +24,6 @@ import net.minecraft.util.math.Vec3d;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 12/9/2015.
- */
 public class WeaponMetadataSection implements IMetadataSection {
     private final Map<String, Vec3d> modulePositions;
 

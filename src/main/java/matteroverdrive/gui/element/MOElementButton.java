@@ -32,9 +32,6 @@ import org.lwjgl.opengl.GL11;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 4/8/2015.
- */
 public class MOElementButton extends MOElementBase {
     public static final ScaleTexture NORMAL_TEXTURE = new ScaleTexture(new ResourceLocation(Reference.PATH_ELEMENTS + "button_normal.png"), 18, 18).setOffsets(7, 7, 7, 7);
     public static final ScaleTexture HOVER_TEXTURE = new ScaleTexture(new ResourceLocation(Reference.PATH_ELEMENTS + "button_over.png"), 18, 18).setOffsets(7, 7, 7, 7);

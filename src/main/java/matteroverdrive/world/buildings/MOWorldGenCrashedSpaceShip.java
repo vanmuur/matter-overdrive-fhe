@@ -41,9 +41,6 @@ import net.minecraft.world.storage.loot.LootTableList;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/26/2015.
- */
 public class MOWorldGenCrashedSpaceShip extends MOWorldGenBuilding {
     private static final int MIN_DISTANCE_APART = 256;
     private final String[] holoTexts;

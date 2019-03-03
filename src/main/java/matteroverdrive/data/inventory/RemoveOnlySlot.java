@@ -20,9 +20,6 @@ package matteroverdrive.data.inventory;
 
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 3/17/2015.
- */
 public class RemoveOnlySlot extends Slot {
     public RemoveOnlySlot(boolean isMainSlot) {
         super(isMainSlot);

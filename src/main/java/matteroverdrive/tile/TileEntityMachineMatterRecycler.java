@@ -33,9 +33,6 @@ import net.minecraft.util.SoundEvent;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 5/15/2015.
- */
 public class TileEntityMachineMatterRecycler extends MOTileEntityMachineEnergy {
 
     public static final int ENERGY_STORAGE = 512000;

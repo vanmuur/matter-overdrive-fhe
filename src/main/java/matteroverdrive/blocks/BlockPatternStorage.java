@@ -28,9 +28,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 3/27/2015.
- */
 public class BlockPatternStorage extends MOBlockMachine<TileEntityMachinePatternStorage> {
     public boolean hasVentParticles;
 

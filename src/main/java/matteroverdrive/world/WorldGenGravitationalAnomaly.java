@@ -24,6 +24,7 @@ import matteroverdrive.data.world.WorldPosition2D;
 import matteroverdrive.handler.ConfigurationHandler;
 import matteroverdrive.tile.TileEntityGravitationalAnomaly;
 import matteroverdrive.util.IConfigSubscriber;
+import matteroverdrive.util.TileUtils;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
@@ -34,9 +35,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
 
-/**
- * Created by Simeon on 5/18/2015.
- */
 public class WorldGenGravitationalAnomaly extends WorldGenerator implements IConfigSubscriber {
     public final Map<Integer, Integer> yLevelMap = new HashMap<>();
     private final HashSet<Integer> blacklist = new HashSet<>();
@@ -57,15 +55,24 @@ public class WorldGenGravitationalAnomaly extends WorldGenerator implements ICon
 
     @Override
     public boolean generate(World world, Random random, BlockPos pos) {
-        if (isWorldValid(world) && random.nextFloat() < chance && world.setBlockState(pos, MatterOverdrive.BLOCKS.gravitational_anomaly.getDefaultState())) {
-            TileEntityGravitationalAnomaly anomaly = new TileEntityGravitationalAnomaly(minMatter + random.nextInt(maxMatter - minMatter));
-            world.setTileEntity(pos, anomaly);
+        if (isWorldValid(world) && isPosValid(world,pos) && random.nextFloat() < chance && world.setBlockState(pos, MatterOverdrive.BLOCKS.gravitational_anomaly.getDefaultState())) {
+            TileEntityGravitationalAnomaly anomaly = TileUtils.getNullableTileEntity(world, pos, TileEntityGravitationalAnomaly.class);
+            if (anomaly == null) {
+                anomaly = new TileEntityGravitationalAnomaly(minMatter + random.nextInt(maxMatter - minMatter));
+                world.setTileEntity(pos, anomaly);
+            } else {
+                anomaly.setMass(minMatter + random.nextInt(maxMatter - minMatter));
+                anomaly.markDirty();
+            }
             GenPositionWorldData data = MOWorldGen.getWorldPositionData(world);
             data.addPosition(name, new WorldPosition2D(pos.getX(), pos.getZ()));
         }
         return false;
     }
 
+    private boolean isPosValid(World world, BlockPos pos) {
+        return world.getBlockState(pos).getBlock().isReplaceable(world, pos);
+    }
     private boolean isWorldValid(World world) {
         if (!whitelist.isEmpty()) {
             return whitelist.contains(world.provider.getDimension()) && !blacklist.contains(world.provider.getDimension());

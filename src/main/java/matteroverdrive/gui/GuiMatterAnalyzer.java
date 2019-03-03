@@ -30,9 +30,6 @@ import matteroverdrive.proxy.ClientProxy;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.Item;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class GuiMatterAnalyzer extends MOGuiNetworkMachine<TileEntityMachineMatterAnalyzer> {
     MOElementEnergy energyElement;
     ElementScanProgress scanProgress;

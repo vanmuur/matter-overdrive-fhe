@@ -25,9 +25,6 @@ import matteroverdrive.network.packet.server.AbstractServerPacketHandler;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 12/7/2015.
- */
 public class PacketWeaponTick extends PacketAbstract {
 
     long timestamp;

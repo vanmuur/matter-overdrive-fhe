@@ -29,9 +29,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import org.w3c.dom.Element;
 
-/**
- * Created by Simeon on 8/29/2015.
- */
 public class GuideElementRecipe extends GuideElementAbstract {
     private static final ResourceLocation background = new ResourceLocation(Reference.PATH_ELEMENTS + "guide_recipe.png");
     private IRecipe recipe;

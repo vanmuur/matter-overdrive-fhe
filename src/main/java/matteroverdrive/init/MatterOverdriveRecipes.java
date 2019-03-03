@@ -29,9 +29,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * Created by Simeon on 8/29/2015.
- */
 public class MatterOverdriveRecipes {
     public static final InscriberRecipeManager INSCRIBER = new InscriberRecipeManager();
 

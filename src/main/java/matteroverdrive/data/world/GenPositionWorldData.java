@@ -29,9 +29,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class GenPositionWorldData extends WorldSavedData {
     final Map<String, List<WorldPosition2D>> positions;
 

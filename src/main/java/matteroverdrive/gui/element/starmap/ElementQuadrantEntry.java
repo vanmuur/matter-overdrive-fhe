@@ -37,9 +37,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 6/27/2015.
- */
 public class ElementQuadrantEntry extends ElementAbstractStarMapEntry<Quadrant> {
     public ElementQuadrantEntry(GuiStarMap gui, ElementGroupList groupList, int width, int height, Quadrant spaceBody) {
         super(gui, groupList, width, height, spaceBody);

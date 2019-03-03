@@ -27,9 +27,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 3/9/2015.
- */
 public class PacketMatterScannerUpdate extends PacketAbstract {
     private ItemPattern selected;
     private short page;

@@ -32,9 +32,6 @@ import org.apache.logging.log4j.Level;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 1/25/2016.
- */
 public class MOJsonHelper {
     private static String currentParentObject;
 

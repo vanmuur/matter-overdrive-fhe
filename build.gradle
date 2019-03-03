@@ -25,7 +25,7 @@ apply plugin: 'com.selesse.git.changelog'
 defaultTasks 'licenseFormat'
 
 def BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: "0"
-def mod_version = "0.6.3.$BUILD_NUMBER"
+def mod_version = "0.7.0.$BUILD_NUMBER"
 
 version = "1.12.2-$mod_version"
 
@@ -192,7 +192,7 @@ uploadArchives {
                     name "Matter Overdrive: Legacy Edition"
                     packaging 'jar'
                     description 'Legacy Edition of Matter Overdrive'
-                    url 'https://hrzn.studio/mo/le'
+                    url 'https://hrznstudio.com/mo'
                     developers {
                         developer {
                             id 'coded'

@@ -25,9 +25,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 6/2/2015.
- */
 @SideOnly(Side.CLIENT)
 public class AndroidTeleportParticle extends MOEntityFX {
     public AndroidTeleportParticle(World world, double x, double y, double z) {

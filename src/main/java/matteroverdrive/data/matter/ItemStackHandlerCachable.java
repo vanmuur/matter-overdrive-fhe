@@ -25,9 +25,6 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-/**
- * Created by Simeon on 1/17/2016.
- */
 public class ItemStackHandlerCachable extends MatterEntryHandlerAbstract<ItemStack> {
     private boolean metadataAware;
     private boolean isFinalHandler;

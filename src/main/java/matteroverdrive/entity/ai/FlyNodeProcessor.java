@@ -31,9 +31,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class FlyNodeProcessor extends NodeProcessor {
 
     public void postProcess() {

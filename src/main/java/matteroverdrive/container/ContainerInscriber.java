@@ -27,9 +27,6 @@ import matteroverdrive.util.MOContainerHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IInventory;
 
-/**
- * Created by Simeon on 11/12/2015.
- */
 public class ContainerInscriber extends ContainerMachine<TileEntityInscriber> {
     public ContainerInscriber() {
         super();

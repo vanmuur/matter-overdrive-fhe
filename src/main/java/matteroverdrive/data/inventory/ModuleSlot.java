@@ -31,9 +31,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 4/13/2015.
- */
 public class ModuleSlot extends Slot {
     int type;
     WeaponSlot weaponSlot;

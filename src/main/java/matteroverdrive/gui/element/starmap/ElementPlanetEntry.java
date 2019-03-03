@@ -38,9 +38,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 6/21/2015.
- */
 public class ElementPlanetEntry extends ElementAbstractStarMapEntry<Planet> {
     public ElementPlanetEntry(GuiStarMap gui, ElementGroupList groupList, int width, int height, Planet spaceBody) {
         super(gui, groupList, width, height, spaceBody);

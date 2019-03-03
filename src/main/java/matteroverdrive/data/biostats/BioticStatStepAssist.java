@@ -23,9 +23,6 @@ import matteroverdrive.entity.android_player.AndroidPlayer;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-/**
- * Created by Simeon on 2/1/2016.
- */
 public class BioticStatStepAssist extends AbstractBioticStat {
     public BioticStatStepAssist(String name, int xp) {
         super(name, xp);

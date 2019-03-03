@@ -25,6 +25,7 @@ import matteroverdrive.world.MOImageGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -34,9 +35,6 @@ import net.minecraft.world.gen.NoiseGeneratorSimplex;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/26/2015.
- */
 public class MOWorldGenUnderwaterBase extends MOWorldGenBuilding {
     private static final int MIN_DISTANCE_APART = 2048;
     final NoiseGeneratorSimplex noise;
@@ -53,13 +51,13 @@ public class MOWorldGenUnderwaterBase extends MOWorldGenBuilding {
         addMapping(0x77d1b6, Blocks.RED_FLOWER);
         //addMapping(0xd2fb50, MatterOverdrive.BLOCKS.forceGlass);
         addMapping(0xc1e4e, Blocks.FARMLAND);
-        addMapping(0xa7ac65, MatterOverdrive.BLOCKS.tritaniumCrate); //orange crate
+        addMapping(0xa7ac65, MatterOverdrive.BLOCKS.tritaniumCrateColored[EnumDyeColor.ORANGE.getMetadata()]); //orange crate
         addMapping(0xd6a714, Blocks.STAINED_GLASS);
         addMapping(0x2c5ae9, MatterOverdrive.BLOCKS.weapon_station);
         addMapping(0xacd8c, MatterOverdrive.BLOCKS.androidStation);
-        addMapping(0x7018f9, MatterOverdrive.BLOCKS.tritaniumCrate); //light blue
-        addMapping(0x4657cc, MatterOverdrive.BLOCKS.tritaniumCrate); //lime
-        addMapping(0x1f2312, MatterOverdrive.BLOCKS.tritaniumCrate); //white
+        addMapping(0x7018f9, MatterOverdrive.BLOCKS.tritaniumCrateColored[EnumDyeColor.LIGHT_BLUE.getMetadata()]); //light blue
+        addMapping(0x4657cc, MatterOverdrive.BLOCKS.tritaniumCrateColored[EnumDyeColor.LIME.getMetadata()]); //lime
+        addMapping(0x1f2312, MatterOverdrive.BLOCKS.tritaniumCrateColored[EnumDyeColor.WHITE.getMetadata()]); //white
         addMapping(0xd3371d, MatterOverdrive.BLOCKS.machine_hull);
         addMapping(0x3640f9, Blocks.STONE_BUTTON);
         addMapping(0xeff73d, MatterOverdrive.BLOCKS.network_switch);

@@ -42,9 +42,6 @@ import java.util.Random;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 8/9/2015.
- */
 public class GuiDialog extends GuiScreen {
     public static final ResourceLocation separator_texture = new ResourceLocation(Reference.PATH_ELEMENTS + "dialog_separator.png");
     private static final int INTERACTION_DELAY = 20;

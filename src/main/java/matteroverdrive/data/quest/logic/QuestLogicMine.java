@@ -35,9 +35,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/9/2015.
- */
 public class QuestLogicMine extends AbstractQuestLogic {
     QuestBlock[] blocks;
     int minMineCount;

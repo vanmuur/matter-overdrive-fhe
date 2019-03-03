@@ -24,9 +24,6 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * Created by Simeon on 1/5/2016.
- */
 public class MOEventScan extends PlayerEvent {
     public final ItemStack scannerStack;
     public final RayTraceResult position;

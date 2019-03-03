@@ -26,9 +26,6 @@ import matteroverdrive.network.packet.client.task_queue.PacketSyncTaskQueue;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 2/6/2016.
- */
 public class ContainerTaskQueueMachine<T extends MOTileEntityMachine & IMatterNetworkDispatcher> extends ContainerMachine<T> implements ITaskQueueWatcher {
     public ContainerTaskQueueMachine(InventoryPlayer inventory, T machine) {
         super(inventory, machine);

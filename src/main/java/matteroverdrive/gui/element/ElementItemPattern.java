@@ -31,9 +31,6 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 4/27/2015.
- */
 public class ElementItemPattern extends ElementSlot {
     protected ScaleTexture texture;
     protected ItemPatternMapping patternMapping;

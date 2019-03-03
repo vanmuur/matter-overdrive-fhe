@@ -25,9 +25,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.Callable;
 
-/**
- * Created by Simeon on 7/13/2015.
- */
 public class VersionCheckThread implements Callable<String> {
     final String url;
 

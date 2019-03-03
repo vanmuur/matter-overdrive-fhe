@@ -34,9 +34,6 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Simeon on 8/31/2015.
- */
 @SideOnly(Side.CLIENT)
 public abstract class GuideElementTextAbstract extends GuideElementAbstract {
     private static String shortcodePattern = "\\[(.*?)\\]";

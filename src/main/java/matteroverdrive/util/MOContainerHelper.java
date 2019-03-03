@@ -22,9 +22,6 @@ import matteroverdrive.container.MOBaseContainer;
 import matteroverdrive.container.slot.SlotPlayerInventory;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class MOContainerHelper {
     public static void AddPlayerSlots(InventoryPlayer inventory, MOBaseContainer container, int x, int y, boolean main, boolean hotbar) {
         if (main) {

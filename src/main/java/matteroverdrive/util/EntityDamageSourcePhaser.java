@@ -26,9 +26,6 @@ import net.minecraft.util.EntityDamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 
-/**
- * Created by Simeon on 4/16/2015.
- */
 public class EntityDamageSourcePhaser extends EntityDamageSource {
     protected final Entity damageSourceEntity;
 

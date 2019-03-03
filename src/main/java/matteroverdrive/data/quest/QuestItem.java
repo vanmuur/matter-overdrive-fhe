@@ -25,9 +25,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.Loader;
 
-/**
- * Created by Simeon on 12/24/2015.
- */
 public class QuestItem {
     ItemStack itemStack;
     int itemAmount;

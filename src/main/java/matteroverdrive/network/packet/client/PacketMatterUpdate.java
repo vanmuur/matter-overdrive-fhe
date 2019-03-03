@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/22/2015.
- */
 public class PacketMatterUpdate extends TileEntityUpdatePacket {
     private int matter = 0;
 

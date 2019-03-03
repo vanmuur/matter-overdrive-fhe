@@ -26,9 +26,6 @@ import matteroverdrive.util.RenderUtils;
 import net.minecraft.client.renderer.GlStateManager;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Simeon on 5/3/2015.
- */
 public class MOElementButtonScaled extends MOElementButton {
     private ScaleTexture normalTexture;
     private ScaleTexture overTexture;

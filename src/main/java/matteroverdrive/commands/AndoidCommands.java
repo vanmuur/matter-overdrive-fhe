@@ -39,9 +39,6 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class AndoidCommands extends CommandBase {
     public static String[] subCommands = new String[]{
             "set", "stats", "unlock", "forget"

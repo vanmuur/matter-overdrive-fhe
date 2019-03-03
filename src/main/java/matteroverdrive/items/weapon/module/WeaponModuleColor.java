@@ -29,9 +29,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 4/14/2015.
- */
 public class WeaponModuleColor extends WeaponModuleBase implements IWeaponColor {
     public static final Color defaultColor = new Color(255, 255, 255);
     public static final Color colors[] = {

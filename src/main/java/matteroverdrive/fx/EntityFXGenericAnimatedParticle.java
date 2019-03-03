@@ -26,9 +26,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 2/20/2016.
- */
 public class EntityFXGenericAnimatedParticle extends MOEntityFX {
     private boolean bottomPivot;
 

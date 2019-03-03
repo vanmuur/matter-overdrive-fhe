@@ -28,9 +28,6 @@ import net.minecraft.util.EnumHand;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public class PacketDataPadCommands extends PacketAbstract {
     public static final int COMMAND_ORDERING = 1;
     NBTTagCompound data;

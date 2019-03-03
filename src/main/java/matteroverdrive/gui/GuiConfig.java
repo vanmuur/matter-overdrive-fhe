@@ -27,9 +27,6 @@ import net.minecraftforge.fml.client.config.IConfigElement;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 5/9/2015.
- */
 public class GuiConfig extends net.minecraftforge.fml.client.config.GuiConfig {
 
     public GuiConfig(GuiScreen parent) {

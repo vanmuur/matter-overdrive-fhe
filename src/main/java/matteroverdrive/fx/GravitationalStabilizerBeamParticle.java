@@ -23,9 +23,6 @@ import matteroverdrive.proxy.ClientProxy;
 import net.minecraft.world.World;
 import org.lwjgl.util.vector.Vector3f;
 
-/**
- * Created by Simeon on 5/13/2015.
- */
 public class GravitationalStabilizerBeamParticle extends MOEntityFX {
     float smokeParticleScale;
     Vector3f from;

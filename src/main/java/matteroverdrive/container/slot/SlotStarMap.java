@@ -22,9 +22,6 @@ import matteroverdrive.tile.TileEntityMachineStarMap;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 6/23/2015.
- */
 public class SlotStarMap extends MOSlot {
     EntityPlayer player;
     TileEntityMachineStarMap starMap;

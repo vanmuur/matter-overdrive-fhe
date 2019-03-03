@@ -22,9 +22,6 @@ import matteroverdrive.gui.MOGuiBase;
 import matteroverdrive.util.RenderUtils;
 import net.minecraft.util.math.MathHelper;
 
-/**
- * Created by Simeon on 1/31/2016.
- */
 public class ElementGroup2DScroll extends ElementBaseGroup {
     int scrollX;
     int scrollY;

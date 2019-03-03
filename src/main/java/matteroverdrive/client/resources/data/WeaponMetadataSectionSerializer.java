@@ -26,9 +26,6 @@ import net.minecraft.util.math.Vec3d;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-/**
- * Created by Simeon on 12/9/2015.
- */
 public class WeaponMetadataSectionSerializer extends BaseMetadataSectionSerializer implements JsonSerializer<WeaponMetadataSection> {
     @Override
     public String getSectionName() {

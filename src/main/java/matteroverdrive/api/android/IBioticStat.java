@@ -32,9 +32,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public interface IBioticStat {
     /**
      * The unlocalized name of the Bionic Stat.

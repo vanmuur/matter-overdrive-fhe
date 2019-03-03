@@ -23,9 +23,6 @@ import matteroverdrive.starmap.GalaxyGenerator;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 public abstract class SpaceBody {
     //region Protected Vars
     protected int id;

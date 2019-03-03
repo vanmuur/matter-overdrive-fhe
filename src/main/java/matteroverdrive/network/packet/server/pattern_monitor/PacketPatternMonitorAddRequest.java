@@ -30,9 +30,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 4/26/2015.
- */
 public class PacketPatternMonitorAddRequest extends TileEntityUpdatePacket {
     private ItemPattern pattern;
     private int amount;

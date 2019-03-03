@@ -25,9 +25,6 @@ import matteroverdrive.util.MatterHelper;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 4/27/2015.
- */
 public class MatterNetworkTaskReplicatePattern extends MatterNetworkTask {
     ItemPattern pattern;
     int amount;

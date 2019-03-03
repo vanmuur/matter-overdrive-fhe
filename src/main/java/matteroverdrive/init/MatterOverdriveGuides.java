@@ -28,9 +28,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 8/29/2015.
- */
 @SideOnly(Side.CLIENT)
 public class MatterOverdriveGuides {
     public static GuideCategory androidCategory;

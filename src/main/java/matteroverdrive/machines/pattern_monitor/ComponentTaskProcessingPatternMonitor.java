@@ -24,9 +24,6 @@ import matteroverdrive.matter_network.tasks.MatterNetworkTaskReplicatePattern;
 import matteroverdrive.util.TimeTracker;
 import net.minecraft.util.ITickable;
 
-/**
- * Created by Simeon on 2/6/2016.
- */
 public class ComponentTaskProcessingPatternMonitor extends TaskQueueComponent<MatterNetworkTaskReplicatePattern, TileEntityMachinePatternMonitor> implements ITickable {
     public static final int REPLICATION_SEARCH_TIME = 40;
     private final TimeTracker patternSendTimeTracker;

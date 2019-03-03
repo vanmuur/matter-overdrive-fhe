@@ -20,9 +20,6 @@ package matteroverdrive.machines;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/19/2015.
- */
 public enum MachineNBTCategory {
     DATA,
     CONFIGS,

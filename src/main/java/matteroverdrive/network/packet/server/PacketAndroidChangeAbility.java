@@ -30,9 +30,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/9/2015.
- */
 public class PacketAndroidChangeAbility extends PacketAbstract {
     String ability;
 

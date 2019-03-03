@@ -28,9 +28,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 5/29/2015.
- */
 public class PacketUnlockBioticStat extends PacketAbstract {
     String name;
     int level;

@@ -30,9 +30,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import java.util.UUID;
 
-/**
- * Created by Simeon on 5/30/2015.
- */
 public class BioticStatSpeed extends AbstractBioticStat {
     private final UUID modifierID;
 

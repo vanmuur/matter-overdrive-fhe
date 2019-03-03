@@ -42,9 +42,6 @@ import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Simeon on 5/7/2015.
- */
 public class VersionCheckerHandler implements IConfigSubscriber {
     public static final String[] mirrors = new String[]{Reference.VERSIONS_CHECK_URL};
     final String regex = "([0-9]+)\\.([0-9]+)\\.([0-9]+)\\.([0-9]+)";

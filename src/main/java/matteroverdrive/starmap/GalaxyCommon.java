@@ -30,9 +30,6 @@ import java.util.HashMap;
 import java.util.Random;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 7/18/2015.
- */
 public abstract class GalaxyCommon {
     protected final Random random;
     protected final HashMap<UUID, Planet> homePlanets;

@@ -26,9 +26,6 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 1/31/2016.
- */
 public class ElementParallaxBackground extends MOElementBase implements IParallaxElement {
     private float texU;
     private float texV;

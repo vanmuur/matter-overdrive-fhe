@@ -27,9 +27,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class BlockMatterAnalyzer extends MOBlockMachine<TileEntityMachineMatterAnalyzer> {
     public static float MACHINE_VOLUME;
 /*    private IIcon iconTop;

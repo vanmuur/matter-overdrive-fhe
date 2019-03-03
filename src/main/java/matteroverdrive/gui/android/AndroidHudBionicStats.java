@@ -32,9 +32,6 @@ import net.minecraft.item.ItemStack;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 9/9/2015.
- */
 public class AndroidHudBionicStats extends AndroidHudElement {
     private static final int STATS_PER_ROW = 6;
     private int lastHeightCount = 0;

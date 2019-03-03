@@ -41,9 +41,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public class GuiDataPad extends MOGuiBase {
     public static final ResourceLocation BG = new ResourceLocation(Reference.PATH_GUI + "pad.png");
     public MOElementButtonScaled abandonQuestButton;

@@ -29,9 +29,6 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 3/14/2015.
- */
 public class MatterConnectionElement extends MOElementBase {
     public static final ResourceLocation texture = new ResourceLocation(Reference.PATH_ELEMENTS + "side_slot_bg.png");
 

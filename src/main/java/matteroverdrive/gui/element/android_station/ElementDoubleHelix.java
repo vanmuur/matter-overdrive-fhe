@@ -34,9 +34,6 @@ import java.util.List;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 1/31/2016.
- */
 public class ElementDoubleHelix extends MOElementBase {
     private float size;
     private float fov = 50;

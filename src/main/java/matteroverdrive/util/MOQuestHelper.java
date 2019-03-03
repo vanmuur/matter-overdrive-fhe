@@ -22,9 +22,6 @@ import matteroverdrive.api.quest.QuestStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.util.Constants;
 
-/**
- * Created by Simeon on 2/13/2016.
- */
 public class MOQuestHelper {
     public static BlockPos getPosition(QuestStack questStack) {
         if (questStack.getTagCompound() != null) {

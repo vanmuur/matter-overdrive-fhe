@@ -28,9 +28,6 @@ import net.minecraft.village.MerchantRecipeList;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 5/30/2015.
- */
 public class TradeHandlerMadScientist //implements VillagerRegistry.VillagerProfession
 {
     //@Override

@@ -46,9 +46,6 @@ import java.awt.*;
 
 import static matteroverdrive.util.MOBlockHelper.getAboveSide;
 
-/**
- * Created by Simeon on 5/12/2015.
- */
 public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachineEnergy implements IMOTickable {
     public static Color color1 = new Color(0xFFFFFF);
     public static Color color2 = new Color(0xFF0000);
@@ -150,7 +147,7 @@ public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachin
 
     @Override
     public float soundVolume() {
-        return (float) Math.max(Math.max(getBeamColorR(), getBeamColorG()), getBeamColorB()) * 0.5f;
+        return getPercentage() * 0.5f;
     }
 
     public double getBeamColorR() {

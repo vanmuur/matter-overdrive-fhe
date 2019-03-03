@@ -29,9 +29,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 12/30/2015.
- */
 public class PacketSyncTaskQueue extends TileEntityUpdatePacket {
     int queueID;
     ByteBuf byteBuf;

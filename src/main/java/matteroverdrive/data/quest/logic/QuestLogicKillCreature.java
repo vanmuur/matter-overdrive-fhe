@@ -40,9 +40,6 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class QuestLogicKillCreature extends AbstractQuestLogic {
     String regex;
     ItemStack killWithItemStack;
@@ -180,7 +177,7 @@ public class QuestLogicKillCreature extends AbstractQuestLogic {
         } else {
             String entityName = EntityList.getEntityString(entity);
             for (String type : creatureTypes) {
-                if (entityName.equalsIgnoreCase(type)) {
+                if (entityName != null && entityName.equalsIgnoreCase(type)) {
                     return true;
                 }
             }

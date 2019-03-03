@@ -43,9 +43,6 @@ import net.minecraft.world.World;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 3/16/2015.
- */
 public class TileEntityMachineMatterAnalyzer extends MOTileEntityMachineEnergy implements ISidedInventory, IMatterNetworkClient, IMatterNetworkConnection, IMatterNetworkDispatcher {
     public static final int ENERGY_STORAGE = 512000;
     public static final int ENERGY_TRANSFER = 1024;

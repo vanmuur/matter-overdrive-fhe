@@ -47,9 +47,6 @@ import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public class DataPad extends MOBaseItem implements IBlockScanner {
     @SideOnly(Side.CLIENT)
     private static MachineSound scanningSound;
@@ -307,14 +304,14 @@ public class DataPad extends MOBaseItem implements IBlockScanner {
         if (itemStack.getTagCompound() != null && itemStack.getTagCompound().hasKey("whitelist", Constants.NBT.TAG_LIST)) {
             NBTTagList tagList = itemStack.getTagCompound().getTagList("whitelist", Constants.NBT.TAG_STRING);
             for (int i = 0; i < tagList.tagCount(); i++) {
-                if (tagList.getStringTagAt(i).equals(state.getBlock().getRegistryName())) {
+                if (tagList.getStringTagAt(i).equals(state.getBlock().getRegistryName().toString())) {
                     return true;
                 }
             }
 
             return false;
         }
-        return true;
+        return false;
     }
 
     public boolean hasGui(ItemStack itemStack) {

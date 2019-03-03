@@ -41,9 +41,6 @@ import net.minecraft.util.SoundCategory;
 import java.util.EnumSet;
 import java.util.Random;
 
-/**
- * Created by Simeon on 2/6/2016.
- */
 public class ComponentTaskProcessingReplicator extends TaskQueueComponent<MatterNetworkTaskReplicatePattern, TileEntityMachineReplicator> implements ITickable {
     public static final double FAIL_CHANCE = 0.005;
     public static int REPLICATE_SPEED_PER_MATTER = 120;

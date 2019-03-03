@@ -27,9 +27,6 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.lwjgl.input.Keyboard;
 
-/**
- * Created by Simeon on 4/17/2015.
- */
 public class TooltipHandler {
     @SubscribeEvent
     public void onItemTooltip(ItemTooltipEvent event) {

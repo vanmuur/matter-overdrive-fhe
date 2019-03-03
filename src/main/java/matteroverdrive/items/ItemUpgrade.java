@@ -37,9 +37,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Simeon on 4/10/2015.
- */
 public class ItemUpgrade extends MOBaseItem implements IUpgrade, IAdvancedModelProvider {
     public static final String[] subItemNames = {"base", "speed", "power", "failsafe", "range", "power_storage", "hyper_speed", "matter_storage"};
 

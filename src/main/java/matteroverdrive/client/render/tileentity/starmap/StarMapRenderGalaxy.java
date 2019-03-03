@@ -36,9 +36,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import static org.lwjgl.opengl.GL11.GL_QUADS;
 import static org.lwjgl.opengl.GL11.glLineWidth;
 
-/**
- * Created by Simeon on 6/17/2015.
- */
 @SideOnly(Side.CLIENT)
 public class StarMapRenderGalaxy extends StarMapRendererStars {
     @Override

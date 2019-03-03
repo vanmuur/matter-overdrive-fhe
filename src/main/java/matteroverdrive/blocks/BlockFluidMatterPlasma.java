@@ -28,9 +28,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
-/**
- * Created by Simeon on 8/20/2015.
- */
 public class BlockFluidMatterPlasma extends BlockFluidClassic {
     public BlockFluidMatterPlasma(Fluid fluid, Material material) {
         super(fluid, material);

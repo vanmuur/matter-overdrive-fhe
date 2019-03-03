@@ -39,9 +39,6 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 5/10/2015.
- */
 public class SecurityProtocol extends MOBaseItem implements IAdvancedModelProvider {
 
     public static final String[] types = new String[]{"empty", "claim", "access", "remove"};

@@ -24,9 +24,6 @@ import matteroverdrive.container.MOBaseContainer;
 import matteroverdrive.gui.pages.MatterNetworkConfigPage;
 import matteroverdrive.machines.MOTileEntityMachine;
 
-/**
- * Created by Simeon on 7/17/2015.
- */
 public abstract class MOGuiNetworkMachine<T extends MOTileEntityMachine & IMatterNetworkConnection> extends MOGuiMachine<T> {
 
     public MOGuiNetworkMachine(ContainerMachine<T> container, T machine) {

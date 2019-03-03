@@ -23,9 +23,6 @@ import matteroverdrive.entity.android_player.AndroidPlayer;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-/**
- * Created by Simeon on 6/3/2015.
- */
 public class BioticStatEqualizer extends AbstractBioticStat {
     public BioticStatEqualizer(String name, int xp) {
         super(name, xp);

@@ -23,9 +23,6 @@ import matteroverdrive.util.MOStringHelper;
 import matteroverdrive.util.RenderUtils;
 import matteroverdrive.util.math.MOMathHelper;
 
-/**
- * Created by Simeon on 3/13/2015.
- */
 public class ElementGrid extends ElementBaseGroup {
     private int maxWidth;
     private float scrollYSmooth = 0;

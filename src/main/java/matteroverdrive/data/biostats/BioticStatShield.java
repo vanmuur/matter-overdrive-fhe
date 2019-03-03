@@ -46,9 +46,6 @@ import java.util.EnumSet;
 import java.util.Random;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 6/9/2015.
- */
 public class BioticStatShield extends AbstractBioticStat implements IConfigSubscriber {
     private static final int SHIELD_COOLDOWN = 20 * 16;
     private static final int SHIELD_TIME = 20 * 8;

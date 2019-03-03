@@ -29,9 +29,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Map;
 
-/**
- * Created by Simeon on 4/9/2015.
- */
 public class UpgradeSlot extends Slot {
     private IUpgradeable upgradeable;
 

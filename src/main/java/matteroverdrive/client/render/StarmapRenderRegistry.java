@@ -29,9 +29,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Simeon on 7/25/2015.
- */
 public class StarmapRenderRegistry implements IStarmapRenderRegistry {
     final Map<Class<? extends SpaceBody>, Collection<ISpaceBodyHoloRenderer>> map;
 

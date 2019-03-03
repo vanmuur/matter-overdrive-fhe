@@ -34,9 +34,6 @@ import org.lwjgl.opengl.GL11;
 
 import java.text.DecimalFormat;
 
-/**
- * Created by Simeon on 2/17/2016.
- */
 public class WeaponLayerAmmoRender implements IWeaponLayer {
     public static final ResourceLocation ammoBackground = new ResourceLocation(Reference.PATH_ELEMENTS + "ammo_background.png");
 

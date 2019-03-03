@@ -28,9 +28,6 @@ import net.minecraft.entity.player.EntityPlayer;
 
 import javax.annotation.Nullable;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class AndroidTargetSelector implements Predicate<Entity> {
     private final EntityRougeAndroidMob mob;
 

@@ -35,9 +35,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 5/5/2015.
- */
 public class PacketMatterScannerGetDatabase extends TileEntityUpdatePacket {
     List<ItemPattern> list;
 

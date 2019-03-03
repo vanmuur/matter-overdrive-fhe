@@ -25,9 +25,6 @@ import net.minecraft.tileentity.TileEntity;
 import java.util.ArrayList;
 import java.util.Collection;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class TileEntityInventory extends Inventory {
     final TileEntity entity;
 

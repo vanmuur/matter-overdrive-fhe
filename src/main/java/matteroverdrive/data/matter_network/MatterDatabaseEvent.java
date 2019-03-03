@@ -20,9 +20,6 @@ package matteroverdrive.data.matter_network;
 
 import matteroverdrive.api.matter.IMatterDatabase;
 
-/**
- * Created by Simeon on 1/30/2016.
- */
 public class MatterDatabaseEvent {
     public final IMatterDatabase database;
 

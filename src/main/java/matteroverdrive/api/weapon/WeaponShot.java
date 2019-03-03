@@ -20,9 +20,6 @@ package matteroverdrive.api.weapon;
 
 import io.netty.buffer.ByteBuf;
 
-/**
- * Created by Simeon on 10/22/2015.
- */
 public class WeaponShot {
     protected int seed;
     protected float damage;

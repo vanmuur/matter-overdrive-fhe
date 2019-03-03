@@ -26,9 +26,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
-/**
- * Created by Simeon on 11/26/2015.
- */
 public class MOModelRenderColored extends ModelRenderer {
     boolean disableLighting;
     Color color;

@@ -23,9 +23,6 @@ import org.w3c.dom.Element;
 
 import java.util.Map;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public interface IGuideElement {
     void setGUI(MOGuiBase gui);
 

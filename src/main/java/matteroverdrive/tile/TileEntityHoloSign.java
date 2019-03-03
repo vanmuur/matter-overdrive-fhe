@@ -30,9 +30,6 @@ import net.minecraft.util.SoundEvent;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 8/15/2015.
- */
 public class TileEntityHoloSign extends MOTileEntityMachine {
     private String text = "";
 

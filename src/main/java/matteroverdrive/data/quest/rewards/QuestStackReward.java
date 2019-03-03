@@ -31,9 +31,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTBase;
 import net.minecraft.nbt.NBTTagCompound;
 
-/**
- * Created by Simeon on 1/3/2016.
- */
 public class QuestStackReward implements IQuestReward {
     QuestStack questStack;
     String questName;

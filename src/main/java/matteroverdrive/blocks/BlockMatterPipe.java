@@ -26,9 +26,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 3/7/2015.
- */
 public class BlockMatterPipe extends BlockPipe<TileEntityMatterPipe> {
     public BlockMatterPipe(Material material, String name) {
         super(material, name);

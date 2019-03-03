@@ -27,9 +27,6 @@ import matteroverdrive.network.packet.PacketAbstract;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 1/1/2016.
- */
 public class PacketBioticActionKey extends PacketAbstract {
     public PacketBioticActionKey() {
     }

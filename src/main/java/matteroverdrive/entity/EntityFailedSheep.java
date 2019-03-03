@@ -24,9 +24,6 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 5/29/2015.
- */
 public class EntityFailedSheep extends EntitySheep {
     public EntityFailedSheep(World world, EntitySheep sheep) {
         super(world);

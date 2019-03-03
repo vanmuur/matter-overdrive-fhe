@@ -23,9 +23,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 6/26/2015.
- */
 public abstract class PlanetAbstractGen implements ISpaceBodyGen<Planet> {
     byte type;
     int buildingSpaces, fleetSpaces;

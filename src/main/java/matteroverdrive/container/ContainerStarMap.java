@@ -22,9 +22,6 @@ import matteroverdrive.tile.TileEntityMachineStarMap;
 import matteroverdrive.util.MOContainerHelper;
 import net.minecraft.entity.player.InventoryPlayer;
 
-/**
- * Created by Simeon on 6/15/2015.
- */
 public class ContainerStarMap extends ContainerMachine<TileEntityMachineStarMap> {
     public ContainerStarMap() {
         super();

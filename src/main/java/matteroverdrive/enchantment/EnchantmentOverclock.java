@@ -24,9 +24,6 @@ import net.minecraft.enchantment.EnumEnchantmentType;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 8/7/2015.
- */
 public class EnchantmentOverclock extends Enchantment {
     public EnchantmentOverclock(Enchantment.Rarity rarity) {
         super(rarity, EnumEnchantmentType.ALL, new EntityEquipmentSlot[]{EntityEquipmentSlot.MAINHAND, EntityEquipmentSlot.OFFHAND});

@@ -22,9 +22,6 @@ import matteroverdrive.api.dialog.IDialogNpc;
 import matteroverdrive.entity.player.MOPlayerCapabilityProvider;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 8/12/2015.
- */
 public class DialogMessageHumanOnly extends DialogMessage {
     public DialogMessageHumanOnly() {
         super();

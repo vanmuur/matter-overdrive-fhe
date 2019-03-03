@@ -27,9 +27,6 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 6/17/2015.
- */
 @SideOnly(Side.CLIENT)
 public class GalaxyClient extends GalaxyCommon {
     //region Private Vars

@@ -32,9 +32,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 5/30/2015.
- */
 public class BioticStatHighJump extends AbstractBioticStat implements IConfigSubscriber {
 
     private static int ENERGY_PER_JUMP = 1024;

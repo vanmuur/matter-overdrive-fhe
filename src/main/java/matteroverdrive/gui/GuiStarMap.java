@@ -47,9 +47,6 @@ import java.util.Collection;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 6/12/2015.
- */
 public class GuiStarMap extends MOGuiMachine<TileEntityMachineStarMap> {
     public static ScaleTexture BG = new ScaleTexture(new ResourceLocation(Reference.PATH_GUI + "star_map.png"), 255, 141).setOffsets(213, 34, 42, 94);
     private Minecraft mc;

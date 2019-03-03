@@ -22,9 +22,6 @@ import matteroverdrive.Reference;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
 
-/**
- * Created by Simeon on 11/1/2015.
- */
 public class FluidMoltenTritanium extends Fluid {
     public FluidMoltenTritanium(String fluidName) {
         super(fluidName, new ResourceLocation(Reference.MOD_ID, "fluids/molten_tritanium/still"), new ResourceLocation(Reference.MOD_ID, "fluids/molten_tritanium/flowing"));

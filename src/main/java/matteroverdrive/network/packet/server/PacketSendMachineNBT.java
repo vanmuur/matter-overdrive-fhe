@@ -35,9 +35,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 8/15/2015.
- */
 public class PacketSendMachineNBT extends TileEntityUpdatePacket {
     NBTTagCompound data;
     int cattegories;

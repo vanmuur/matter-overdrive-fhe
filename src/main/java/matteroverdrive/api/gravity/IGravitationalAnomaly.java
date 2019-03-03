@@ -20,9 +20,6 @@ package matteroverdrive.api.gravity;
 
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Created by Simeon on 10/14/2015.
- */
 public interface IGravitationalAnomaly {
     BlockPos getPosition();
 

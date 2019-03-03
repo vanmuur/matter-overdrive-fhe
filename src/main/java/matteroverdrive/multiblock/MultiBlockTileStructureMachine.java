@@ -24,9 +24,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 
-/**
- * Created by Simeon on 10/30/2015.
- */
 public class MultiBlockTileStructureMachine extends MultiBlockTileStructureAbstract {
     private final HashSet<IMultiBlockTile> tiles = new HashSet<>();
     private MOTileEntityMachine machine;

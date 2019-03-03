@@ -35,9 +35,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 11/25/2015.
- */
 public class PacketQuestActions extends PacketAbstract {
     public static final int QUEST_ACTION_ABONDON = 0;
     public static final int QUEST_ACTION_COMPLETE = 1;

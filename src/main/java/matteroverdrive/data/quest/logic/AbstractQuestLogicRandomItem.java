@@ -30,9 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 12/24/2015.
- */
 public abstract class AbstractQuestLogicRandomItem extends AbstractQuestLogic {
     QuestItem[] items;
     boolean randomItem;

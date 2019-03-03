@@ -24,9 +24,6 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 import org.w3c.dom.Element;
 
-/**
- * Created by Simeon on 8/31/2015.
- */
 public class GuideElementImage extends GuideElementAbstract {
     ResourceLocation location;
     int imageWidth;

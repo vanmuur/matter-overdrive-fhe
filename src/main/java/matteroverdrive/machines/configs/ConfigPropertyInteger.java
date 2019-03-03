@@ -20,9 +20,6 @@ package matteroverdrive.machines.configs;
 
 import net.minecraft.nbt.NBTTagCompound;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public class ConfigPropertyInteger extends ConfigPropertyAbstract {
     private final int min;
     private final int max;

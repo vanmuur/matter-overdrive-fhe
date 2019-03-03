@@ -41,9 +41,6 @@ import net.minecraftforge.fml.common.Loader;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 2/4/2016.
- */
 public class BlockPylon extends MOBlockContainer<TileEntityMachineDimensionalPylon> implements IWrenchable {
     public static final PropertyEnum<MultiblockType> TYPE = PropertyEnum.create("type", MultiblockType.class);
     public static final PropertyBool CTM = PropertyBool.create("ctm");

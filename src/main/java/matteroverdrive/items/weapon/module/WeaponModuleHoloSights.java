@@ -29,9 +29,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 2/18/2016.
- */
 public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponScope {
     public WeaponModuleHoloSights(String name) {
         super(name);

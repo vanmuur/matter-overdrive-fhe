@@ -31,9 +31,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class EntityRogueAndroid implements IConfigSubscriber {
     public static final HashSet<Integer> dimensionBlacklist = new HashSet<>();
     public static final HashSet<Integer> dimensionWhitelist = new HashSet<>();

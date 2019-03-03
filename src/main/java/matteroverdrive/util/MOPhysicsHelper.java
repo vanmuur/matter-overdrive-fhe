@@ -30,9 +30,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 3/7/2015.
- */
 public class MOPhysicsHelper {
     public static boolean insideBounds(Vec3d pos, AxisAlignedBB bounds) {
         return bounds.minX <= pos.x && bounds.minY <= pos.y && bounds.minZ <= pos.z && bounds.maxX >= pos.x && bounds.maxY >= pos.y && bounds.maxZ >= pos.z;

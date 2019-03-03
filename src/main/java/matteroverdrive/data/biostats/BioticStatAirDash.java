@@ -30,9 +30,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 2/10/2016.
- */
 public class BioticStatAirDash extends AbstractBioticStat {
     @SideOnly(Side.CLIENT)
     private int lastClickTime;

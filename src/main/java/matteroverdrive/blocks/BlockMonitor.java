@@ -36,9 +36,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public abstract class BlockMonitor<TE extends TileEntity> extends MOBlockMachine<TE> {
     public BlockMonitor(Material material, String name) {
         super(material, name);

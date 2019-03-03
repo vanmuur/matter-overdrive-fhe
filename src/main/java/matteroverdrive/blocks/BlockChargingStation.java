@@ -37,9 +37,6 @@ import net.minecraftforge.fml.common.Loader;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-/**
- * Created by Simeon on 7/8/2015.
- */
 public class BlockChargingStation extends MOBlockMachine<TileEntityMachineChargingStation> {
     public static final PropertyBool CTM = PropertyBool.create("ctm");
 

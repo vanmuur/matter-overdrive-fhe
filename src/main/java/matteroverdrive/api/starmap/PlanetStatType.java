@@ -18,9 +18,6 @@
 
 package matteroverdrive.api.starmap;
 
-/**
- * Created by Simeon on 12/19/2015.
- */
 public enum PlanetStatType {
     FLEET_SIZE("fleet_size"),
     BUILDINGS_SIZE("building_size"),

@@ -27,9 +27,6 @@ import net.minecraftforge.energy.IEnergyStorage;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 4/7/2015.
- */
 public class MOElementEnergy extends MOElementBase {
     protected int energyRequired;
     protected int energyRequiredPerTick;

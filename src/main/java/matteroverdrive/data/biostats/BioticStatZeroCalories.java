@@ -23,9 +23,6 @@ import matteroverdrive.entity.android_player.AndroidPlayer;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
-/**
- * Created by Simeon on 2/2/2016.
- */
 public class BioticStatZeroCalories extends AbstractBioticStat {
     private final static int ENERGY_FOOD_MULTIPLY = 256;
 

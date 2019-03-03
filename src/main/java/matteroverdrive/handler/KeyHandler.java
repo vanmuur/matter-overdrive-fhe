@@ -33,9 +33,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 
-/**
- * Created by Simeon on 3/6/2015.
- */
 @SideOnly(Side.CLIENT)
 public class KeyHandler {
     public static final int MATTER_SCANNER_GUI = 0;

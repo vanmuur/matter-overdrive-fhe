@@ -24,9 +24,6 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/26/2015.
- */
 public class WeightedRandomMOWorldGenBuilding extends WeightedRandom.Item {
     public final MOWorldGenBuilding worldGenBuilding;
 

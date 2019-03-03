@@ -22,9 +22,6 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 @SideOnly(Side.CLIENT)
 public class HoloIcon {
     private TextureAtlasSprite icon;

@@ -25,9 +25,6 @@ import matteroverdrive.matter_network.components.MatterNetworkComponentClient;
 import matteroverdrive.matter_network.tasks.MatterNetworkTaskStorePattern;
 import matteroverdrive.util.TimeTracker;
 
-/**
- * Created by Simeon on 7/13/2015.
- */
 public class ComponentMatterNetworkAnalyzer extends MatterNetworkComponentClient<TileEntityMachineMatterAnalyzer> {
     public static final int TASK_SEARH_DELAY = 40;
     private final TimeTracker taskSearchTimer;

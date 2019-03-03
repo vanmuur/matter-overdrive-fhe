@@ -28,9 +28,6 @@ import net.minecraft.client.renderer.GlStateManager;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 4/21/2015.
- */
 public class ElementTaskList extends MOElementListBox {
     MatterNetworkTaskQueue<? extends MatterNetworkTask> taskQueue;
     List<String> lastTooltip;

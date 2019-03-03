@@ -18,9 +18,6 @@
 
 package matteroverdrive.data;
 
-/**
- * Created by Simeon on 8/30/2015.
- */
 public class Bounds {
     private int minX;
     private int minY;

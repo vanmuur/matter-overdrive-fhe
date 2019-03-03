@@ -33,9 +33,6 @@ import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.text.DecimalFormat;
 
-/**
- * Created by Simeon on 4/6/2015.
- */
 public class MOStringHelper {
     public static final String MORE_INFO = TextFormatting.RESET.toString() + TextFormatting.GRAY + "Hold " + TextFormatting.ITALIC + TextFormatting.YELLOW + "Shift" + TextFormatting.RESET.toString() + TextFormatting.GRAY + " for Details.";
 

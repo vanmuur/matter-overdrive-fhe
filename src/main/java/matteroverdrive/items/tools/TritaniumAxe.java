@@ -25,9 +25,6 @@ import matteroverdrive.init.MatterOverdriveItems;
 import net.minecraft.item.ItemAxe;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 11/1/2015.
- */
 public class TritaniumAxe extends ItemAxe implements ItemModelProvider {
     public TritaniumAxe(String name) {
         super(MatterOverdriveItems.TOOL_MATERIAL_TRITANIUM, MatterOverdriveItems.TOOL_MATERIAL_TRITANIUM.getAttackDamage(), -3.1f);

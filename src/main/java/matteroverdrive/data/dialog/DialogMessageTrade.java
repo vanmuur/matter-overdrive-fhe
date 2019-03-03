@@ -23,9 +23,6 @@ import matteroverdrive.api.dialog.IDialogNpc;
 import net.minecraft.entity.IMerchant;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 8/10/2015.
- */
 public class DialogMessageTrade extends DialogMessage {
     public DialogMessageTrade(JsonObject object) {
         super(object);

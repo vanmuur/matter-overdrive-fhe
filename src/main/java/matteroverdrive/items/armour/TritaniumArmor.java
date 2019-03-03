@@ -36,9 +36,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 11/1/2015.
- */
 public class TritaniumArmor extends ItemArmor implements ItemModelProvider {
     public TritaniumArmor(String name, ArmorMaterial armorMaterial, int renderIndex, EntityEquipmentSlot slot) {
         super(armorMaterial, renderIndex, slot);

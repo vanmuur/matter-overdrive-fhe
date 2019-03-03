@@ -103,9 +103,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 4/17/2015.
- */
 public class RenderHandler {
     public static final Function<ResourceLocation, TextureAtlasSprite> modelTextureBakeFunc = new Function<ResourceLocation, TextureAtlasSprite>() {
         @Nullable

@@ -44,9 +44,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 6/17/2015.
- */
 public class GalaxyServer extends GalaxyCommon implements IConfigSubscriber {
     //region Static Vars
     public static final int GALAXY_VERSION = 1;

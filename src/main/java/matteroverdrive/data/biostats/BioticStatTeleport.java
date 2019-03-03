@@ -47,9 +47,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.Collections;
 import java.util.HashSet;
 
-/**
- * Created by Simeon on 5/29/2015.
- */
 public class BioticStatTeleport extends AbstractBioticStat implements IConfigSubscriber {
 
     public static final int TELEPORT_DELAY = 40;

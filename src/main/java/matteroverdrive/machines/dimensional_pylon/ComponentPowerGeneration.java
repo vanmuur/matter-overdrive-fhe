@@ -55,9 +55,6 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 2/10/2016.
- */
 public class ComponentPowerGeneration extends MachineComponentAbstract<TileEntityMachineDimensionalPylon> implements ITickable {
     public static int CHARGE_DECREASE_ON_HIT = 16;
     public static int CHARGE_INCREASE_RATE = 64;

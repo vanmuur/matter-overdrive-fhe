@@ -39,9 +39,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.EnumSet;
 import java.util.Optional;
 
-/**
- * Created by Simeon on 11/9/2015.
- */
 public class TileEntityInscriber extends MOTileEntityMachineEnergy {
     private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerUsage, UpgradeTypes.Speed, UpgradeTypes.PowerStorage, UpgradeTypes.PowerTransfer);
     public static int MAIN_INPUT_SLOT_ID, SEC_INPUT_SLOT_ID, OUTPUT_SLOT_ID;

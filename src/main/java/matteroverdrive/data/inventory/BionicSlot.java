@@ -24,9 +24,6 @@ import matteroverdrive.proxy.ClientProxy;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class BionicSlot extends Slot {
     public static final String[] names = {"head", "arms", "legs", "chest", "other", "battery"};
     private final int type;

@@ -27,9 +27,6 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
-/**
- * Created by Simeon on 4/13/2015.
- */
 public class ElementModelPreview extends MOElementBase {
     ItemStack itemStack;
 

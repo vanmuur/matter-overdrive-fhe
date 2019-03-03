@@ -31,9 +31,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 7/10/2015.
- */
 public class BioticStatCloak extends AbstractBioticStat implements IConfigSubscriber {
     private static int ENERGY_PER_TICK = 128;
 

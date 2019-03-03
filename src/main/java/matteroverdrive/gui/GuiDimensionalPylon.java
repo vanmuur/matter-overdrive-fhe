@@ -30,9 +30,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 
 import java.text.DecimalFormat;
 
-/**
- * Created by Simeon on 2/12/2016.
- */
 public class GuiDimensionalPylon extends MOGuiMachine<TileEntityMachineDimensionalPylon> {
     ElementDoubleCircleBar powerBar;
     DecimalFormat format;

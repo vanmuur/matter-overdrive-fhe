@@ -42,9 +42,6 @@ import java.util.Random;
 import static org.lwjgl.opengl.GL11.GL_ONE;
 import static org.lwjgl.opengl.GL11.GL_QUADS;
 
-/**
- * Created by Simeon on 5/27/2015.
- */
 public abstract class TileEntityRendererStation<T extends MOTileEntityMachine> extends TileEntitySpecialRenderer<T> implements IConfigSubscriber {
     public static final ResourceLocation glowTexture = new ResourceLocation(Reference.PATH_FX + "hologram_beam.png");
     final Random fliker;

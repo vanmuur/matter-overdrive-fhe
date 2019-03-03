@@ -24,9 +24,6 @@ import matteroverdrive.gui.element.ElementBaseGroup;
 import matteroverdrive.gui.element.ElementTaskList;
 import matteroverdrive.matter_network.MatterNetworkTaskQueue;
 
-/**
- * Created by Simeon on 4/21/2015.
- */
 public class PageTasks extends ElementBaseGroup {
     private ElementTaskList taskList;
 

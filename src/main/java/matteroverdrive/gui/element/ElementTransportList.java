@@ -24,9 +24,6 @@ import matteroverdrive.gui.MOGuiBase;
 import matteroverdrive.gui.events.IListHandler;
 import matteroverdrive.machines.transporter.TileEntityMachineTransporter;
 
-/**
- * Created by Simeon on 5/5/2015.
- */
 public class ElementTransportList extends MOElementListBox {
     TileEntityMachineTransporter transporter;
 

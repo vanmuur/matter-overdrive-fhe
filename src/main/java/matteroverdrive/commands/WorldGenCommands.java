@@ -32,9 +32,6 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Simeon on 1/5/2016.
- */
 public class WorldGenCommands extends CommandBase {
 
     @Override

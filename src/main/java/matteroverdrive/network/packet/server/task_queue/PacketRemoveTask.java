@@ -29,9 +29,6 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
-/**
- * Created by Simeon on 4/28/2015.
- */
 public class PacketRemoveTask extends TileEntityUpdatePacket {
     int taskIndex;
     byte queueID;

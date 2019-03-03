@@ -25,9 +25,6 @@ import net.minecraft.inventory.IContainerListener;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 5/17/2015.
- */
 public class ContainerFusionReactor extends ContainerMachine<TileEntityMachineFusionReactorController> {
     private int energyPerTick;
 

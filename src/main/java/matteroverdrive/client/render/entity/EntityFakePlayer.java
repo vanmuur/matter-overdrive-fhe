@@ -23,9 +23,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 8/9/2015.
- */
 public class EntityFakePlayer extends EntityPlayer {
     public EntityFakePlayer(World world, GameProfile gameProfile) {
         super(world, gameProfile);

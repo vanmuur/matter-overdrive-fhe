@@ -28,9 +28,6 @@ import net.minecraftforge.event.entity.living.LivingHurtEvent;
 
 import java.text.DecimalFormat;
 
-/**
- * Created by Simeon on 5/29/2015.
- */
 public class BioticStatNanoArmor extends AbstractBioticStat {
     public BioticStatNanoArmor(String name, int xp) {
         super(name, xp);

@@ -35,9 +35,6 @@ import net.minecraftforge.energy.CapabilityEnergy;
 import javax.annotation.Nonnull;
 import java.util.*;
 
-/**
- * Created by Simeon on 11/16/2015.
- */
 public class WeaponFactory {
     public static final int MAX_LOOT_LEVEL = 3;
     public final List<WeightedRandomItemStack> weapons;

@@ -18,9 +18,6 @@
 
 package matteroverdrive.client.render;
 
-/**
- * Created by Simeon on 12/8/2015.
- */
 public class WeaponModuleModelRegistry {
 	/*Map<String,WavefrontObject> models;
 

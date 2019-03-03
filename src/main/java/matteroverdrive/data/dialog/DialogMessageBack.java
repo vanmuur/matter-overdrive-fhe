@@ -27,9 +27,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 8/10/2015.
- */
 public class DialogMessageBack extends DialogMessage {
     public DialogMessageBack(JsonObject object) {
         super(object);

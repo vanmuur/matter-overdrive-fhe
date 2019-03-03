@@ -29,9 +29,6 @@ import matteroverdrive.machines.pattern_storage.TileEntityMachinePatternStorage;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 
-/**
- * Created by Simeon on 3/27/2015.
- */
 public class GuiPatternStorage extends MOGuiMachine<TileEntityMachinePatternStorage> {
     MOElementEnergy energyElement;
 

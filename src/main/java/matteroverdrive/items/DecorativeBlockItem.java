@@ -31,9 +31,6 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-/**
- * Created by Simeon on 11/27/2015.
- */
 public class DecorativeBlockItem extends ItemBlock {
     public DecorativeBlockItem(Block block) {
         super(block);

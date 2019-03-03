@@ -20,9 +20,6 @@ package matteroverdrive.machines.configs;
 
 import java.util.Map;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public interface IConfigurable {
     Map<String, IConfigProperty> getValues();
 

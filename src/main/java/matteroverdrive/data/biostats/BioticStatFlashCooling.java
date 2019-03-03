@@ -36,9 +36,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import java.text.DecimalFormat;
 import java.util.Random;
 
-/**
- * Created by Simeon on 1/1/2016.
- */
 public class BioticStatFlashCooling extends AbstractBioticStat {
     private static final float COOLDOWN_CHANGE = 0.2f;
     private static final int ENERGY_PER_COOLDOWN = 1024;

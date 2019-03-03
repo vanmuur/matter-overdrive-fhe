@@ -67,9 +67,6 @@ import javax.annotation.Nullable;
 import java.text.DecimalFormat;
 import java.util.List;
 
-/**
- * Created by Simeon on 7/26/2015.
- */
 public abstract class EnergyWeapon extends MOItemEnergyContainer implements IWeapon {
 
     public static final String CUSTOM_DAMAGE_TAG = "CustomDamage";

@@ -40,9 +40,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 8/9/2015.
- */
 public class DialogMessage implements IDialogMessage, IDialogMessageSeedable {
     protected static Random random = new Random();
     protected String[] messages;

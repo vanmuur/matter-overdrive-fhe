@@ -29,9 +29,6 @@ import net.minecraft.world.World;
 
 import java.util.ArrayList;
 
-/**
- * Created by Simeon on 5/14/2015.
- */
 public class BlockFusionReactorCoil extends MOBlock implements IDismantleable {
 
     public BlockFusionReactorCoil(Material material, String name) {

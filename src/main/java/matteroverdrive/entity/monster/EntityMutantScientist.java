@@ -25,9 +25,6 @@ import net.minecraft.entity.ai.*;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.world.World;
 
-/**
- * Created by Simeon on 11/27/2015.
- */
 public class EntityMutantScientist extends EntityMob {
     public EntityMutantScientist(World p_i1738_1_) {
         super(p_i1738_1_);

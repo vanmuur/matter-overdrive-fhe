@@ -23,9 +23,6 @@ import matteroverdrive.tile.pipes.TileEntityPipe;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 
-/**
- * Created by Simeon on 3/7/2015.
- */
 public class TileEntityRendererNetworkPipe extends TileEntityRendererPipe {
 
     public TileEntityRendererNetworkPipe() {

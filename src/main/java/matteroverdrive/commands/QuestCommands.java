@@ -37,9 +37,6 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/19/2015.
- */
 public class QuestCommands extends CommandBase {
     private final Random random = new Random();
 

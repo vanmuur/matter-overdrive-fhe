@@ -39,9 +39,6 @@ import org.lwjgl.util.glu.Sphere;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 9/8/2015.
- */
 public class AndroidHudMinimap extends AndroidHudElement {
     private final Sphere sphere;
     private final Cylinder cylinder;

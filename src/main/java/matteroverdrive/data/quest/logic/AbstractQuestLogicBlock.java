@@ -24,9 +24,6 @@ import matteroverdrive.data.quest.QuestItem;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
 
-/**
- * Created by Simeon on 1/5/2016.
- */
 public abstract class AbstractQuestLogicBlock extends AbstractQuestLogic {
     protected QuestBlock block;
     protected QuestItem blockStack;

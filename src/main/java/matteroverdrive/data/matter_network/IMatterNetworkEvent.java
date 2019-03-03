@@ -21,9 +21,6 @@ package matteroverdrive.data.matter_network;
 import matteroverdrive.api.matter_network.IMatterNetworkClient;
 import matteroverdrive.api.network.MatterNetworkTask;
 
-/**
- * Created by Simeon on 1/29/2016.
- */
 public interface IMatterNetworkEvent {
     class ClientAdded implements IMatterNetworkEvent {
         public final IMatterNetworkClient client;

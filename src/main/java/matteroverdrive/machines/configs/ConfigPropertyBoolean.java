@@ -20,9 +20,6 @@ package matteroverdrive.machines.configs;
 
 import net.minecraft.nbt.NBTTagCompound;
 
-/**
- * Created by Simeon on 8/16/2015.
- */
 public class ConfigPropertyBoolean extends ConfigPropertyAbstract {
 
     private boolean value;

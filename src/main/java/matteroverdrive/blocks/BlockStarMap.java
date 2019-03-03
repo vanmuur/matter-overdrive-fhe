@@ -32,9 +32,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 public class BlockStarMap extends MOBlockMachine<TileEntityMachineStarMap> {
     public BlockStarMap(Material material, String name) {
         super(material, name);

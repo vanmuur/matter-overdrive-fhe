@@ -39,9 +39,6 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
 
-/**
- * Created by Simeon on 8/15/2015.
- */
 public class BlockHoloSign extends BlockMonitor<TileEntityHoloSign> implements IDismantleable {
 
     public BlockHoloSign(Material material, String name) {
@@ -50,50 +47,6 @@ public class BlockHoloSign extends BlockMonitor<TileEntityHoloSign> implements I
         this.setHardness(20f);
         setHasRotation();
     }
-
-	/*    @Override
-	@SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int meta)
-    {
-        if (side == meta)
-        {
-            MatterOverdriveIcons.Monitor_back.setType(0);
-            return MatterOverdriveIcons.Monitor_back;
-        }
-        return MatterOverdriveIcons.Base;
-    }*/
-
-    /*@Override
-	@SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        this.blockIcon = MatterOverdriveIcons.Monitor_back;
-        iconConnectedTexture = new IconConnectedTexture(this.blockIcon);
-    }*/    /*@Override
-    @SideOnly(Side.CLIENT)
-    public AxisAlignedBB getSelectedBoundingBoxFromPool(World world, int x, int y, int z)
-    {
-        this.setBlockBoundsBasedOnState(world, x, y, z);
-        return super.getSelectedBoundingBoxFromPool(world, x, y, z);
-    }
-
-    @Override
-    public int getRenderType()
-    {
-        return MOBlockRenderer.renderID;
-    }
-
-    @Override
-    public boolean renderAsNormalBlock()
-    {
-        return false;
-    }
-
-    @Override
-    public boolean getBlocksMovement(IBlockAccess world, int x, int y, int z)
-    {
-        return true;
-    }*/
 
     @Override
     public Class<TileEntityHoloSign> getTileEntityClass() {

@@ -21,10 +21,15 @@ package matteroverdrive.client.render;
 import matteroverdrive.Reference;
 import matteroverdrive.api.IScannable;
 import matteroverdrive.api.inventory.IBlockScanner;
+import matteroverdrive.api.matter.IMatterDatabase;
 import matteroverdrive.client.RenderHandler;
+import matteroverdrive.client.data.Color;
 import matteroverdrive.client.render.tileentity.TileEntityRendererPatternMonitor;
+import matteroverdrive.data.matter_network.ItemPattern;
 import matteroverdrive.entity.player.MOPlayerCapabilityProvider;
+import matteroverdrive.items.MatterScanner;
 import matteroverdrive.proxy.ClientProxy;
+import matteroverdrive.util.MatterDatabaseHelper;
 import matteroverdrive.util.MatterHelper;
 import matteroverdrive.util.RenderUtils;
 import net.minecraft.block.state.IBlockState;
@@ -35,6 +40,7 @@ import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -49,9 +55,6 @@ import java.util.List;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 5/11/2015.
- */
 public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
     public final ResourceLocation spinnerTexture = new ResourceLocation(Reference.PATH_ELEMENTS + "spinner.png");
     private final DecimalFormat healthFormater = new DecimalFormat("#.##");
@@ -105,7 +108,7 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
             renderInfo(Minecraft.getMinecraft().player, heldItem, event.getPartialTicks());
             GlStateManager.popMatrix();
         } else if (MOPlayerCapabilityProvider.GetAndroidCapability(Minecraft.getMinecraft().player).isAndroid()) {
-            renderInfo(Minecraft.getMinecraft().player, Minecraft.getMinecraft().objectMouseOver, null, event.getPartialTicks());
+            renderInfo(Minecraft.getMinecraft().player, Minecraft.getMinecraft().objectMouseOver, ItemStack.EMPTY, event.getPartialTicks());
         }
     }
 
@@ -125,12 +128,21 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
         RenderUtils.applyColor(Reference.COLOR_HOLO);
 
         if (position != null) {
-
-            if (position.typeOfHit == RayTraceResult.Type.BLOCK) {
-
+            if (scanner.getItem() instanceof MatterScanner) {
+                if (position.typeOfHit == RayTraceResult.Type.BLOCK) {
+                    IBlockState blockState = player.world.getBlockState(position.getBlockPos());
+                    if (blockState.getBlock() != Blocks.AIR) {
+                        if (!MatterScanner.isLinked(scanner)) {
+                            renderLinkInfo(position, player, playerPos, scanner);
+                        } else {
+                            renderBlockInfo(blockState, position, player, playerPos, scanner, scanner.isEmpty());
+                        }
+                    }
+                }
+            } else if (position.typeOfHit == RayTraceResult.Type.BLOCK) {
                 IBlockState blockState = player.world.getBlockState(position.getBlockPos());
-                if (blockState != null) {
-                    renderBlockInfo(blockState, position, player, playerPos, scanner, scanner == null);
+                if (blockState.getBlock() != Blocks.AIR) {
+                    renderBlockInfo(blockState, position, player, playerPos, scanner, scanner.isEmpty());
                 }
             } else if (position.typeOfHit == RayTraceResult.Type.ENTITY) {
                 if (position.entityHit != null) {
@@ -143,8 +155,42 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
         GlStateManager.popAttrib();
     }
 
+    private void renderLinkInfo(RayTraceResult position, EntityPlayer player, Vec3d playerPos, ItemStack scanner) {
+        double offset = 0;
+        EnumFacing side = position.sideHit;
+
+        List<String> infos = new ArrayList<>();
+        infos.add("Unable to connect to");
+        infos.add("Pattern Storage");
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(
+                position.getBlockPos().getX() + 0.5 + (Math.abs(side.getDirectionVec().getX()) * (position.hitVec.x - 0.5 - position.getBlockPos().getX())) - playerPos.x,
+                position.getBlockPos().getY() + 0.5 + (Math.abs(side.getDirectionVec().getY()) * (position.hitVec.y - 0.5 - position.getBlockPos().getY())) - playerPos.y + player.getEyeHeight(),
+                position.getBlockPos().getZ() + 0.5 + (Math.abs(side.getDirectionVec().getZ()) * (position.hitVec.z - 0.5 - position.getBlockPos().getZ())) - playerPos.z
+        );
+        rotateFromSide(side, player.rotationYaw);
+        GlStateManager.translate(-0.5, -0.5, -offset);
+        drawInfoPlane(0, Reference.COLOR_HOLO_RED);
+
+        GlStateManager.pushMatrix();
+        String text = "Unlinked";
+        int width = fontRenderer().getStringWidth(text);
+        GlStateManager.translate(0.5, 0.5, -0.05);
+        GlStateManager.scale(0.01, 0.01, 0.01);
+        fontRenderer().drawString(text, -width / 2, -40, Reference.COLOR_HOLO_RED.getColor());
+
+        for (int i = 0; i < infos.size(); i++) {
+            width = fontRenderer().getStringWidth(infos.get(i));
+            fontRenderer().drawString(infos.get(i), -width / 2, -24 + 16 * i, Reference.COLOR_HOLO_RED.getColor());
+        }
+
+        GlStateManager.popMatrix();
+
+        GlStateManager.popMatrix();
+    }
+
     private void renderBlockInfo(IBlockState block, RayTraceResult position, EntityPlayer player, Vec3d playerPos, ItemStack scanner, boolean infoOnly) {
-        double offset = 0.1;
+        double offset = 0;
         EnumFacing side = position.sideHit;
         List<String> infos = new ArrayList<>();
         if (block instanceof IScannable) {
@@ -157,10 +203,14 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
         }
 
         GlStateManager.pushMatrix();
-        GlStateManager.translate(side.getDirectionVec().getX() * 0.5 + (position.getBlockPos().getX() + 0.5) - playerPos.x, side.getDirectionVec().getY() * 0.5 + (position.getBlockPos().getY() + 0.5) - playerPos.y + player.getEyeHeight(), side.getDirectionVec().getZ() * 0.5 + (position.getBlockPos().getZ() + 0.5) - playerPos.z);
+        GlStateManager.translate(
+                position.getBlockPos().getX() + 0.5 + (Math.abs(side.getDirectionVec().getX()) * (position.hitVec.x - 0.5 - position.getBlockPos().getX())) - playerPos.x,
+                position.getBlockPos().getY() + 0.5 + (Math.abs(side.getDirectionVec().getY()) * (position.hitVec.y - 0.5 - position.getBlockPos().getY())) - playerPos.y + player.getEyeHeight(),
+                position.getBlockPos().getZ() + 0.5 + (Math.abs(side.getDirectionVec().getZ()) * (position.hitVec.z - 0.5 - position.getBlockPos().getZ())) - playerPos.z
+        );
         rotateFromSide(side, player.rotationYaw);
         GlStateManager.translate(-0.5, -0.5, -offset);
-        drawInfoPlane(0);
+        drawInfoPlane(0, Reference.COLOR_HOLO);
 
         ItemStack blockItemStack = block.getBlock().getPickBlock(block, position, player.world, position.getBlockPos(), player);
 
@@ -183,20 +233,57 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
         }
 
         if (!(block instanceof IScannable) && scanner != null) {
-            drawProgressBar(scanner, player);
+            drawProgressBar(scanner, player, position);
         }
         GlStateManager.popMatrix();
     }
 
-    private void drawProgressBar(ItemStack scanner, EntityPlayer player) {
+    private void drawProgressBar(ItemStack scanner, EntityPlayer player, RayTraceResult position) {
         GlStateManager.pushMatrix();
         renderer().bindTexture(spinnerTexture);
 
         int count = player.getItemInUseCount();
         int maxCount = scanner.getMaxItemUseDuration();
 
-        GlStateManager.alphaFunc(GL_GREATER, (float) count / (float) maxCount);
-        RenderUtils.applyColorWithMultipy(Reference.COLOR_HOLO, 0.5f);
+        float ref = 1 - ((float) count / (float) maxCount);
+
+        Color color = Reference.COLOR_HOLO_RED;
+        int i1 = Reference.COLOR_HOLO_RED.getColor();
+        int i2 = Reference.COLOR_HOLO_GREEN.getColor();
+        int a1 = (i1 >> 24 & 0xff);
+        int r1 = ((i1 & 0xff0000) >> 16);
+        int g1 = ((i1 & 0xff00) >> 8);
+        int b1 = (i1 & 0xff);
+
+        int a2 = (i2 >> 24 & 0xff);
+        int r2 = ((i2 & 0xff0000) >> 16);
+        int g2 = ((i2 & 0xff00) >> 8);
+        int b2 = (i2 & 0xff);
+        float ratio = ref;
+        float iRatio = 1.0f - ratio;
+
+        int a = (int)((a1 * iRatio) + (a2 * ratio));
+        int r = (int)((r1 * iRatio) + (r2 * ratio));
+        int g = (int)((g1 * iRatio) + (g2 * ratio));
+        int b = (int)((b1 * iRatio) + (b2 * ratio));
+
+        color = new Color( a << 24 | r << 16 | g << 8 | b );
+
+        if (ref >= 1) {
+            if (scanner.getItem() instanceof MatterScanner) {
+                IMatterDatabase database = MatterScanner.getLink(player.world, scanner);
+                if (database != null) {
+                    ItemPattern pattern = database.getPattern(MatterDatabaseHelper.GetItemStackFromWorld(player.world, position.getBlockPos()));
+                    if (pattern != null) {
+                        ref = 1 - pattern.getProgressF();
+                        color = pattern.getProgress() == 100 ? Reference.COLOR_HOLO : Reference.COLOR_HOLO_YELLOW;
+                    }
+                }
+            }
+        }
+
+        GlStateManager.alphaFunc(GL_GREATER, ref);
+        RenderUtils.applyColorWithMultipy(color, 0.5f);
         RenderUtils.drawPlane(0.35, 0.45, -0.1, 0.3, 0.3);
         GlStateManager.popMatrix();
     }
@@ -219,14 +306,14 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
                 GlStateManager.translate(1, 0, 0);
                 GlStateManager.rotate(180, 0, 0, 1);
                 GlStateManager.translate(-0.5, -0.5, -offset);
-                drawInfoPlane(0.5);
+                drawInfoPlane(0.5, Reference.COLOR_HOLO);
                 drawInfoList(name, infos);
                 GlStateManager.popMatrix();
             }
         }
     }
 
-    private void drawInfoPlane(double opacity) {
+    private void drawInfoPlane(double opacity, Color color) {
         if (opacity > 0) {
             GlStateManager.blendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
             GlStateManager.disableTexture2D();
@@ -236,7 +323,7 @@ public class RenderMatterScannerInfoHandler implements IWorldLastRenderer {
         }
 
         GlStateManager.blendFunc(GL_ONE, GL_ONE_MINUS_SRC_COLOR);
-        RenderUtils.applyColorWithMultipy(Reference.COLOR_HOLO, 0.05f);
+        RenderUtils.applyColorWithMultipy(color, 0.05f);
         renderer().bindTexture(TileEntityRendererPatternMonitor.screenTextureBack);
         RenderUtils.drawPlane(0, 0, -0.01, 1, 1);
     }

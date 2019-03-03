@@ -30,9 +30,6 @@ import net.minecraft.world.biome.Biome;
 
 import java.util.Random;
 
-/**
- * Created by Simeon on 11/18/2015.
- */
 public class MOSandPit extends MOWorldGenBuilding {
     private int airLeeway;
 

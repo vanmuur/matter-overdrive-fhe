@@ -37,9 +37,6 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.*;
 
-/**
- * Created by Simeon on 3/23/2015.
- */
 public class MOWorldGen implements IWorldGenerator, IConfigSubscriber {
     private static final int TRITANIUM_VEINS_PER_CHUNK = 10;
     private static final int TRITANIUM_VEIN_SIZE = 6;

@@ -37,9 +37,6 @@ import org.apache.logging.log4j.Level;
 
 import java.lang.reflect.Constructor;
 
-/**
- * Created by Simeon on 2/13/2016.
- */
 public class EntityReward implements IQuestReward {
     private String entityId;
     private int count;

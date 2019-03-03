@@ -41,9 +41,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 public class TileEntityMachineStarMap extends MOTileEntityMachineEnergy {
     GalacticPosition position;
     GalacticPosition destination;

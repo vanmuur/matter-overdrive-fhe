@@ -51,9 +51,6 @@ import java.util.Random;
 
 import static org.lwjgl.opengl.GL11.GL_ONE;
 
-/**
- * Created by Simeon on 6/13/2015.
- */
 @SideOnly(Side.CLIENT)
 public class RenderWeaponsBeam extends RenderBeam<EntityPlayer> {
     private static final ResourceLocation beamTexture = new ResourceLocation(Reference.PATH_FX + "plasmabeam.png");

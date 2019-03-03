@@ -28,9 +28,6 @@ import javax.annotation.Nullable;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * Created by Simeon on 12/10/2015.
- */
 public class EntityAINearestTarget<T extends EntityLivingBase> extends EntityAITarget {
     private final Class targetClass;
     private final int targetChance;

@@ -25,9 +25,6 @@ import matteroverdrive.entity.player.MOPlayerCapabilityProvider;
 import matteroverdrive.entity.player.OverdriveExtendedProperties;
 import net.minecraft.entity.player.EntityPlayer;
 
-/**
- * Created by Simeon on 11/22/2015.
- */
 public class DialogMessageQuestOnObjectivesCompleted extends DialogMessage {
     QuestStack questStack;
     int[] completedObjectives;

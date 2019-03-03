@@ -24,9 +24,6 @@ import net.minecraft.nbt.NBTTagCompound;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 1/9/2016.
- */
 public interface IAndroid extends IInventory {
     String EXT_PROP_NAME = "AndroidPlayer";
 

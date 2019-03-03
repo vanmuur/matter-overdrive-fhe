@@ -34,9 +34,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.EnumSet;
 
-/**
- * Created by Simeon on 5/26/2015.
- */
 public class PacketSyncAndroid extends PacketAbstract {
     public static final int SYNC_ALL = -1;
     public static final int SYNC_BATTERY = 0;

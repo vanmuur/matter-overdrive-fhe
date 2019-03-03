@@ -31,9 +31,6 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import java.text.DecimalFormat;
 import java.util.UUID;
 
-/**
- * Created by Simeon on 6/30/2015.
- */
 public class BioticStatAttack extends AbstractBioticStat {
     private final UUID modifierID = UUID.fromString("caf3f2ba-75f5-4f2f-84b9-ddfab1fcef25");
 

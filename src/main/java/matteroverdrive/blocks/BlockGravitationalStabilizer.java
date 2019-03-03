@@ -29,9 +29,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 5/12/2015.
- */
 public class BlockGravitationalStabilizer extends MOBlockMachine<TileEntityMachineGravitationalStabilizer> {
     public BlockGravitationalStabilizer(Material material, String name) {
         super(material, name);

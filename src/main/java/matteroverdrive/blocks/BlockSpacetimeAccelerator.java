@@ -29,9 +29,6 @@ import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
 
-/**
- * Created by Simeon on 1/22/2016.
- */
 public class BlockSpacetimeAccelerator extends MOBlockMachine<TileEntityMachineSpacetimeAccelerator> {
     public boolean showWave = true;
 

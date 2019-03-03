@@ -25,9 +25,6 @@ import net.minecraft.util.ResourceLocation;
 
 import javax.vecmath.Vector2f;
 
-/**
- * Created by Simeon on 3/7/2015.
- */
 public class TileEntityRendererMatterPipe extends TileEntityRendererPipe {
     public TileEntityRendererMatterPipe() {
         texture = new ResourceLocation(Reference.PATH_BLOCKS + "matter_pipe.png");

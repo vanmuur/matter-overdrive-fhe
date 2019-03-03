@@ -22,9 +22,6 @@ import matteroverdrive.client.render.HoloIcon;
 import matteroverdrive.container.IButtonHandler;
 import matteroverdrive.gui.MOGuiBase;
 
-/**
- * Created by Simeon on 8/28/2015.
- */
 public class ElementStatesHoloIcons extends MOElementButtonScaled {
     HoloIcon[] states;
     int selectedState;

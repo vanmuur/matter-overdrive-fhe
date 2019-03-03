@@ -30,9 +30,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 3/18/2015.
- */
 @SideOnly(Side.CLIENT)
 public class ElementScanProgress extends MOElementBase {
     private static float NoiseSize = 0.1f;

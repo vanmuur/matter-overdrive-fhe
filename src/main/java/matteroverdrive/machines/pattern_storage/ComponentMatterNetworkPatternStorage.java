@@ -23,9 +23,6 @@ import matteroverdrive.data.matter_network.IMatterNetworkEvent;
 import matteroverdrive.matter_network.components.MatterNetworkComponentClient;
 import matteroverdrive.matter_network.tasks.MatterNetworkTaskStorePattern;
 
-/**
- * Created by Simeon on 7/15/2015.
- */
 public class ComponentMatterNetworkPatternStorage extends MatterNetworkComponentClient<TileEntityMachinePatternStorage> {
     public ComponentMatterNetworkPatternStorage(TileEntityMachinePatternStorage patternStorage) {
         super(patternStorage);

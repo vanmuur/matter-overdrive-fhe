@@ -21,9 +21,6 @@ package matteroverdrive.guide;
 import net.minecraft.client.renderer.GlStateManager;
 import org.w3c.dom.Element;
 
-/**
- * Created by Simeon on 8/30/2015.
- */
 public class GuideElementTitle extends GuideElementTextAbstract {
     String title;
     double size = 3;

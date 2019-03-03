@@ -32,9 +32,6 @@ import java.util.List;
 
 import static org.lwjgl.opengl.GL11.*;
 
-/**
- * Created by Simeon on 4/8/2015.
- */
 public abstract class MOElementBase {
     protected final MOGuiBase gui;
     public MOElementBase parent;

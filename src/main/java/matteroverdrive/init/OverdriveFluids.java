@@ -23,9 +23,6 @@ import matteroverdrive.fluids.FluidMoltenTritanium;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-/**
- * Created by Simeon on 8/20/2015.
- */
 public class OverdriveFluids {
     public static FluidMatterPlasma matterPlasma;
     public static FluidMoltenTritanium moltenTritanium;

@@ -60,9 +60,6 @@ import net.minecraft.world.World;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * Created by Simeon on 3/27/2015.
- */
 public class TileEntityMachinePatternStorage extends MOTileEntityMachineEnergy implements IMatterNetworkClient, IMatterDatabase, IScannable, IMatterNetworkConnection, IMatterNetworkDispatcher {
     public static final int TASK_PROCESS_DELAY = 40;
     private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerStorage, UpgradeTypes.PowerUsage);
@@ -252,7 +249,7 @@ public class TileEntityMachinePatternStorage extends MOTileEntityMachineEnergy i
         }
 
         for (int s = 0; s < pattern_storage_slots.length; s++) {
-            if (inventory.getStackInSlot(pattern_storage_slots[s]) != null) {
+            if (!inventory.getStackInSlot(pattern_storage_slots[s]).isEmpty()) {
                 ItemStack storageStack = inventory.getStackInSlot(pattern_storage_slots[s]);
                 IMatterPatternStorage storage = (IMatterPatternStorage) inventory.getStackInSlot(pattern_storage_slots[s]).getItem();
                 for (int i = 0; i < storage.getCapacity(storageStack); i++) {
@@ -329,7 +326,7 @@ public class TileEntityMachinePatternStorage extends MOTileEntityMachineEnergy i
     @Override
     public ItemStack getPatternStorage(int slot) {
         ItemStack storageStack = inventory.getStackInSlot(pattern_storage_slots[slot]);
-        if (storageStack != null && storageStack.getItem() instanceof IMatterPatternStorage) {
+        if (!storageStack.isEmpty() && storageStack.getItem() instanceof IMatterPatternStorage) {
             return storageStack;
         }
         return null;

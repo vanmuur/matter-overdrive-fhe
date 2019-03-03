@@ -18,9 +18,6 @@
 
 package matteroverdrive.api.android;
 
-/**
- * Created by Simeon on 7/20/2015.
- */
 public interface IAndroidStatRegistry {
     /**
      * Used to register Bionic stats in the Matter overdrive Registry

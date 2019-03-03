@@ -26,9 +26,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by Simeon on 6/21/2015.
- */
 public class WeightedRandomSpaceGen<T extends SpaceBody> {
     final Random random;
     final List<ISpaceBodyGen<T>> collection;

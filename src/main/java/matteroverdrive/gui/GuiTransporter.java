@@ -28,9 +28,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 
-/**
- * Created by Simeon on 5/3/2015.
- */
 public class GuiTransporter extends MOGuiMachine<TileEntityMachineTransporter> {
     MOElementEnergy energy;
     ElementMatterStored matterStored;

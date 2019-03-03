@@ -49,9 +49,6 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
-/**
- * Created by Simeon on 5/9/2015.
- */
 public class PlayerEventHandler {
     public final List<EntityPlayerMP> players;
     private final VersionCheckerHandler versionCheckerHandler;

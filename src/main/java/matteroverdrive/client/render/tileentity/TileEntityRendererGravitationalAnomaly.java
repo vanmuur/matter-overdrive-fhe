@@ -31,9 +31,6 @@ import org.lwjgl.util.glu.Sphere;
 import static org.lwjgl.opengl.GL11.GL_ONE_MINUS_SRC_ALPHA;
 import static org.lwjgl.opengl.GL11.GL_SRC_ALPHA;
 
-/**
- * Created by Simeon on 5/12/2015.
- */
 public class TileEntityRendererGravitationalAnomaly extends TileEntitySpecialRenderer<TileEntityGravitationalAnomaly> {
     public static final ResourceLocation core = new ResourceLocation(Reference.PATH_BLOCKS + "gravitational_anomaly_core.png");
     public static final ResourceLocation anti = new ResourceLocation(Reference.PATH_BLOCKS + "anti_gravitational_anomaly_core.png");

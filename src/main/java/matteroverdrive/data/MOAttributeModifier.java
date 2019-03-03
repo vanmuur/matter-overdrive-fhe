@@ -22,9 +22,6 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 
 import java.util.UUID;
 
-/**
- * Created by Simeon on 6/4/2015.
- */
 public class MOAttributeModifier extends AttributeModifier {
     double value;
 

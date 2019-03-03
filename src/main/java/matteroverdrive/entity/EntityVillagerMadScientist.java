@@ -57,9 +57,6 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 
-/**
- * Created by Simeon on 5/30/2015.
- */
 public class EntityVillagerMadScientist extends EntityVillager implements IDialogNpc, IDialogQuestGiver {
     private static final DataParameter<Boolean> VARIANT = EntityDataManager.createKey(EntityVillagerMadScientist.class, DataSerializers.BOOLEAN);
     public static DialogMessage cocktailOfAscensionComplete;

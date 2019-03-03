@@ -22,9 +22,6 @@ import matteroverdrive.client.data.Color;
 import matteroverdrive.entity.android_player.AndroidPlayer;
 import net.minecraft.client.gui.ScaledResolution;
 
-/**
- * Created by Simeon on 9/8/2015.
- */
 public interface IAndroidHudElement {
     boolean isVisible(AndroidPlayer android);
 
