@@ -129,20 +129,13 @@ public class MatterOverdriveBlocks {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         blocks.forEach(b -> event.getRegistry().register(b));
-        MatterOverdriveBlocks.blocks.stream().filter(block -> block instanceof OreDictItem).forEach(block -> ((OreDictItem) block).registerOreDict());
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         items.forEach(i -> event.getRegistry().register(i));
         MatterOverdriveItems.items.stream().filter(item -> item instanceof OreDictItem).forEach(item -> ((OreDictItem) item).registerOreDict());
-    }
-
-    @SubscribeEvent
-    public static void registerItems(ItemTooltipEvent event) {
-        for (int i : OreDictionary.getOreIDs(event.getItemStack())) {
-            event.getToolTip().add("- " + OreDictionary.getOreName(i));
-        }
+        MatterOverdriveBlocks.blocks.stream().filter(block -> block instanceof OreDictItem).forEach(block -> ((OreDictItem) block).registerOreDict());
     }
 
     public void init() {
