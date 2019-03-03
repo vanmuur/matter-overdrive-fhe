@@ -78,7 +78,7 @@ public class EntityRogueAndroid implements IConfigSubscriber {
 
     private static void loadBiomeBlacklist(ConfigurationHandler config) {
         biomesBlacklist.clear();
-        String[] blacklist = config.config.getStringList("biome.blacklist", ConfigurationHandler.CATEGORY_ENTITIES + ".rogue_android", new String[]{"Hell", "Sky", "MushroomIsland", "MushroomIslandShore"}, "Rogue Android biome blacklist");
+        String[] blacklist = config.config.getStringList("biome.blacklist", ConfigurationHandler.CATEGORY_ENTITIES + ".rogue_android", new String[]{"minecraft:hell", "minecraft:sky", "minecraft:mushroom_island", "minecraft:mushroom_island_shore"}, "Rogue Android biome blacklist");
         for (String aBlacklist : blacklist) {
             biomesBlacklist.add(aBlacklist.toLowerCase());
         }
