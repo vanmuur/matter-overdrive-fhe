@@ -87,10 +87,11 @@ item.matteroverdrive.weapon_handle.name=Weapon Handle
 item.matteroverdrive.plasma_core.name=Plasma Core
 item.matteroverdrive.portable_decomposer.name=Portable Decomposer
 item.matteroverdrive.portable_decomposer.details=Decomposes picked up items into Matter Plasma
-item.matteroverdrive.record.matteroverdrive.transformation.desc=BoxCat Games - Trace Route
+item.record.matteroverdrive.transformation.desc=BoxCat Games - Trace Route
 item.matteroverdrive.trilithium_crystal.name=Pure Trilithium Crystal
 item.matteroverdrive.artifact.name=Unknown Artifact
 item.matteroverdrive.quantum_fold_manipulator.name=Quantum Fold Manipulator
+item.matteroverdrive.matter.name=Matter
 
 #///////////// Upgrades ////////////
 item.matteroverdrive.upgrade.speed.name=Speed Upgrade
@@ -110,10 +111,12 @@ item.matteroverdrive.weapon_module_barrel.heal.name=Regenerative Converter
 item.matteroverdrive.weapon_module_barrel.doomsday.name=Degenerative Explosive Focusing Matrix (Doomsday)
 item.matteroverdrive.weapon_module_barrel.block.name=Voxel Exaggerating Nullification Obliteration Matrix (VENOM)
 item.matteroverdrive.weapon_module_ricochet.name=Shot Rebound Module
+item.matteroverdrive.weapon_module_holo_sights.name=Holo Sight
 item.matteroverdrive.sniper_scope.name=Sniper Scope
 
 
 item.overdrivef.info.configured=Configured
+item.info.configured=Configured
 
 ##########################################################################################################
 # Tile Entities
@@ -193,6 +196,7 @@ tile.android_spawner.name=Rogue Android Spawner
 #///////////// Fluids ////////////
 tile.matter_plasma.name=Matter Plasma
 tile.molten_tritanium.name=Molten Tritanium
+tile.null.name=Fluid
 
 
 #///////////// Fusion Reactor ////////////
@@ -250,10 +254,10 @@ entity.matteroverdrive.failed_chicken.name=Failed Chicken
 entity.matteroverdrive.failed_cow.name=Failed Cow
 entity.matteroverdrive.failed_sheep.name=Failed Sheep
 entity.matteroverdrive.mad_scientist.name=Mad Scientist
-entitymatteroverdrive..mad_scientist.name=Mad Scientist
 entity.matteroverdrive.mad_scientist.junkie.name=Mad Scientist Junkie
 entity.matteroverdrive.ranged_rogue_android.name=Ranged Rogue Android
 entity.matteroverdrive.mutant_scientist.name=Mutant Scientist
+entity.drone.name=Drone
 
 entity.rogue_android.name=Melee Rogue Android
 entity.failed_pig.name=Failed Pig
@@ -449,6 +453,7 @@ gui.charging_station.name=Charging Station
 gui.weapon_station.name=Weapon Station
 gui.inscriber.name=Molecular Inscriber
 gui.contract_market.name=Contracts
+gui.dimensional_pylon.name=Dimension Reactor
 
 #//////////// Other ///////////////
 gui.redstone_mode.high=High
@@ -457,6 +462,11 @@ gui.redstone_mode.disabled=Disabled
 gui.config.redstone=Redstone
 gui.config.owner=Owner
 gui.config.mnet.address=Address
+
+gui.config.spawn_amount=Spawn amount
+gui.config.spawn_range=Spawn radius
+gui.config.spawn_delay=Spawn Delay [20t=1s]
+item.transport_flash_drive.name=Transport Flash Drive Slot
 
 gui.android_hud.transforming.line.0=Booting up System
 gui.android_hud.transforming.line.1=Constructing Neural Pathways
