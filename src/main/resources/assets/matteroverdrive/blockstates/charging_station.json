@@ -4,47 +4,54 @@
     "model": "matteroverdrive:charging_station.obj",
     "custom": {
       "flip-v": true
-    },
-    "textures": {
     }
   },
   "variants": {
     "facing": {
+	
       "north": {
         "transform": {
-          "rotation": [{"x": 0}, {"y": 180}, {"z": 0}],
-          "translation": [-0.5, 0, -0.5]
+          "rotation": [{"x": 0}, {"y": 90}, {"z": 0}],
+          "translation": [0.5, 0, -0.5]
         }
       },
+	  
       "south": {
-        "transform": {
-          "translation": [0.5, 0, 0.5]
-        }
-      },
-      "west": {
         "transform": {
           "rotation": [{"x": 0}, {"y": 270}, {"z": 0}],
           "translation": [-0.5, 0, 0.5]
         }
       },
-      "east": {
+	  
+      "west": {
         "transform": {
-          "rotation": [{"x": 0}, {"y": 90}, {"z": 0}],
-          "translation": [0.5, 0, -0.5]
-        }
-      }
-    },
-    "ctm": {
-      "true": {
-        "submodel": {
-          "ctm": {
-            "custom": {
-              "flip-v": true
-            },
-            "model": "matteroverdrive:charging_station_overlay.obj"
-          }
+          "rotation": [{"x": 0}, {"y": 180}, {"z": 0}],
+          "translation": [-0.5, 0, -0.5]
         }
       },
+	  
+      "east": {
+        "transform": {
+          "rotation": [{"x": 0}, {"y": 0}, {"z": 0}],
+          "translation": [0.5, 0, 0.5]
+        }
+      },
+	  
+      "up": {
+        "transform": {
+          "translation": [0.5, 0, 0.5]
+        }
+      },
+	  
+      "down": {
+        "transform": {
+          "translation": [0.5, 0, 0.5]
+        }
+      }
+	  
+    },
+    "ctm": {
+      "true": {},
       "false":{}
     },
     "inventory": [{
@@ -63,13 +70,13 @@
         },
         "thirdperson_righthand": {
           "rotation": [ {"x": 75}, {"y": 45}, {"z": 0} ],
-          "translation": [ 0, 2.5, 0 ],
+          "translation": [ 0.25, 0, 0 ],
           "scale": 0.375,
           "post-rotation": [ {"x": 0}, {"y": 0}, {"z": 0} ]
         },
         "thirdperson_lefthand": {
           "rotation": [ {"x": 75}, {"y": 45}, {"z": 0} ],
-          "translation": [ 0, 2.5, 0 ],
+          "translation": [ 0, -0.25, 0.1 ],
           "scale": 0.375,
           "post-rotation": [ {"x": 0}, {"y": 0}, {"z": 0} ]
         },
