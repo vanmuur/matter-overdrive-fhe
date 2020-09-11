@@ -17,6 +17,8 @@
     "facing=south": { "model": "matteroverdrive:base/orientable","y": 180 },
     "facing=west":  { "model": "matteroverdrive:base/orientable","y": 270 },
     "facing=east":  { "model": "matteroverdrive:base/orientable","y": 90 },
+    "facing=up": { "model": "matteroverdrive:base/orientable"},
+    "facing=down": { "model": "matteroverdrive:base/orientable"},
     "inventory": {
       "model": "matteroverdrive:base/orientable",
       "transform": "forge:default-block"

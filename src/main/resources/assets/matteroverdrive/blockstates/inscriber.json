@@ -4,53 +4,55 @@
     "model": "matteroverdrive:inscriber.obj",
     "custom":{
       "flip-v": true
-    },
-    "textures": {
-
     }
   },
   "variants": {
-    "normal": {
-      "model": "matteroverdrive:inscriber.obj"
-    },
-    "ctm": {
-      "true": {
-        "submodel": {
-          "ctm": {
-            "custom": {
-              "flip-v": true
-            },
-            "model": "matteroverdrive:inscriber_overlay.obj"
-          }
-        }
-      },
-      "false":{}
-    },
     "facing":{
+	
       "north":{
         "transform": {
           "rotation": {
-            "y":180
+            "y": 0
           }
         }
       },
-      "south":{
-
+	  
+      "south": {
+        "transform": {
+          "rotation": {
+            "y": 180
+          }
+        }
       },
+	  
       "west": {
+        "transform": {
+          "rotation": {
+            "y": 90
+          }
+        }
+      },
+	  
+      "east":{
         "transform": {
           "rotation": {
             "y": 270
           }
         }
       },
-      "east":{
-        "transform": {
-          "rotation": {
-            "y":90
-          }
-        }
+	  
+      "up":{
+
+      },
+	  
+      "down":{
+
       }
+	  
+    },
+    "ctm": {
+      "true": {},
+      "false":{}
     },
     "inventory": {
       "model": "matteroverdrive:inscriber.obj",

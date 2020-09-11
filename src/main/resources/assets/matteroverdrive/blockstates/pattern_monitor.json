@@ -9,6 +9,8 @@
     "facing=south": { "model": "matteroverdrive:pattern_monitor","y": 180 },
     "facing=west":  { "model": "matteroverdrive:pattern_monitor","y": 270 },
     "facing=east":  { "model": "matteroverdrive:pattern_monitor","y": 90 },
+    "facing=up": { "model": "matteroverdrive:pattern_monitor","x": 270 },
+    "facing=down": { "model": "matteroverdrive:pattern_monitor","x": 90 },
     "inventory": {
       "model": "matteroverdrive:pattern_monitor",
       "transform": "forge:default-block"

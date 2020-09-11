@@ -4,42 +4,32 @@
     "model": "matteroverdrive:pylon.obj",
     "custom":{
       "flip-v": true
-    },
-    "textures": {
-
     }
   },
   "variants": {
-    "normal": {
-      "model": "matteroverdrive:pylon.obj"
-    },
-    "ctm": {
-      "true": {
-        "submodel": {
-          "ctm": {
-            "custom": {
-              "flip-v": true
-            },
-            "model": "matteroverdrive:pylon_overlay.obj"
-          }
-        }
-      },
-      "false":{}
-    },
     "type":{
+	
       "normal": {
         "model": "cube_all",
         "textures": {
           "all": "matteroverdrive:blocks/construction_block"
         }
       },
+	  
       "dummy": {
         "model": "cube_all"
       },
+	  
       "main":{
         "model": "matteroverdrive:pylon.obj"
       }
     },
+	
+    "ctm": {
+      "true": {},
+      "false":{}
+    },
+	
     "inventory": {
       "model": "cube_all",
       "transform": "forge:default-block",

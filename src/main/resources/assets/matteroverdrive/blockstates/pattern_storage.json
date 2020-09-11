@@ -4,16 +4,11 @@
     "model": "matteroverdrive:pattern_storage.obj",
     "custom":{
       "flip-v": true
-    },
-    "textures": {
-
     }
   },
   "variants": {
-    "normal": {
-      "model": "matteroverdrive:pattern_storage.obj"
-    },
     "facing":{
+	
       "north":{
         "transform": {
           "rotation": {
@@ -21,9 +16,11 @@
           }
         }
       },
+	  
       "south":{
 
       },
+	  
       "west": {
         "transform": {
           "rotation": {
@@ -31,12 +28,21 @@
           }
         }
       },
+	  
       "east":{
         "transform": {
           "rotation": {
             "y":90
           }
         }
+      },
+	  
+      "up":{
+
+      },
+	  
+      "down":{
+
       }
     },
     "inventory": {
