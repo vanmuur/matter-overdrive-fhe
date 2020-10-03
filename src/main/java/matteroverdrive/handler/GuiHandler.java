@@ -91,6 +91,7 @@ public class GuiHandler implements IGuiHandler {
             registerGuiAndContainer(TileEntityAndroidSpawner.class, GuiAndroidSpawner.class, ContainerAndroidSpawner.class);
             registerGui(TileEntityMachineSpacetimeAccelerator.class, GuiSpacetimeAccelerator.class);
             registerGuiAndContainer(TileEntityMachineDimensionalPylon.class, GuiDimensionalPylon.class, ContainerDimensionalPylon.class);
+            registerGui(TileEntityMicrowave.class, GuiMicrowave.class);
         }
     }
 

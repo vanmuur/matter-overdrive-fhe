@@ -66,6 +66,7 @@ public class MOGuiMachine<T extends MOTileEntityMachine> extends MOGuiBase {
         for (Slot slot : machine.getInventoryContainer().getSlots()) {
             if (slot instanceof UpgradeSlot) {
                 hasUpgrades = true;
+                break;
             }
         }
         if (hasUpgrades) {

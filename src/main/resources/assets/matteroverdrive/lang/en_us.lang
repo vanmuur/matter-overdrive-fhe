@@ -190,6 +190,7 @@ tile.gravitational_anomaly.name=Gravitational Anomaly
 tile.gravitational_stabilizer.name=Gravitational Stabilizer
 tile.gravitational_stabilizer.details=Used to suppress the effects of Gravitational Anomalies
 tile.matter_recycler.name=Matter Recycler
+tile.microwave.name=Microwave
 tile.matter_recycler.details=Used to recycle items, ready for decomposing
 tile.android_spawner.name=Rogue Android Spawner
 
@@ -448,6 +449,7 @@ gui.solar_panel.name=Solar Panel
 gui.pattern_monitor.name=Network Pattern Monitor
 gui.network_switch.name=Network Switch
 gui.recycler.name=Matter Recycler
+gui.microwave.name=Microwave
 gui.fusion_reactor.name=Fusion Reactor
 gui.charging_station.name=Charging Station
 gui.weapon_station.name=Weapon Station

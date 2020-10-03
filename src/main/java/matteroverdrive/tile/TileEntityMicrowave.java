@@ -1,36 +1,36 @@
 package matteroverdrive.tile;
 
 import matteroverdrive.api.inventory.UpgradeTypes;
-import matteroverdrive.data.recipes.InscriberRecipe;
 import matteroverdrive.data.Inventory;
-import matteroverdrive.data.inventory.InscriberSlot;
 import matteroverdrive.data.inventory.RemoveOnlySlot;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import matteroverdrive.data.inventory.SlotRecycler;
+import matteroverdrive.data.recipes.MicrowaveRecipe;
+import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.machines.MachineNBTCategory;
 import matteroverdrive.machines.events.MachineEvent;
-import matteroverdrive.data.recipes.MicrowaveRecipe;
-import net.minecraft.util.SoundEvent;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.item.ItemStack;
-import matteroverdrive.init.MatterOverdriveRecipes;
-import matteroverdrive.init.MatterOverdriveSounds;
-import net.minecraft.util.math.MathHelper;
 import matteroverdrive.util.math.MOMathHelper;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.EnumSet;
-import java.util.Optional;
 
 public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
     private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerUsage, UpgradeTypes.Speed,
             UpgradeTypes.PowerStorage, UpgradeTypes.PowerTransfer);
-    public static int MAIN_INPUT_SLOT_ID, SEC_INPUT_SLOT_ID, OUTPUT_SLOT_ID;
+
+    public int INPUT_SLOT_ID, OUTPUT_SLOT_ID;
+
     @SideOnly(Side.CLIENT)
     private float nextHeadX, nextHeadY;
     @SideOnly(Side.CLIENT)
     private float lastHeadX, lastHeadY;
     @SideOnly(Side.CLIENT)
+
     private float headAnimationTime;
     private int cookTime;
     private MicrowaveRecipe cachedRecipe;
@@ -46,8 +46,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
 
     @Override
     protected void RegisterSlots(Inventory inventory) {
-        MAIN_INPUT_SLOT_ID = inventory.AddSlot(new InscriberSlot(true, false).setSendToClient(true));
-        SEC_INPUT_SLOT_ID = inventory.AddSlot(new InscriberSlot(true, true));
+        INPUT_SLOT_ID = inventory.AddSlot(new SlotRecycler(true).setSendToClient(true));
         OUTPUT_SLOT_ID = inventory.AddSlot(new RemoveOnlySlot(false).setSendToClient(true));
         super.RegisterSlots(inventory);
     }
@@ -57,7 +56,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
         return outputStack.isEmpty() || (cachedRecipe != null && outputStack.isItemEqual(cachedRecipe.getOutput(this)));
     }
 
-    public void inscribeItem() {
+    public void cookItem() {
         if (cachedRecipe != null && canPutInOutput()) {
             ItemStack outputSlot = inventory.getStackInSlot(OUTPUT_SLOT_ID);
             if (!outputSlot.isEmpty()) {
@@ -66,8 +65,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
                 inventory.setInventorySlotContents(OUTPUT_SLOT_ID, cachedRecipe.getOutput(this));
             }
 
-            inventory.decrStackSize(MAIN_INPUT_SLOT_ID, 1);
-            inventory.decrStackSize(SEC_INPUT_SLOT_ID, 1);
+            inventory.decrStackSize(INPUT_SLOT_ID, 1);
 
             calculateRecipe();
         }
@@ -197,34 +195,40 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
     }
 
     public void calculateRecipe() {
-        ItemStack mainStack = inventory.getStackInSlot(MAIN_INPUT_SLOT_ID);
+        ItemStack mainStack = inventory.getStackInSlot(INPUT_SLOT_ID);
 
         if (!mainStack.isEmpty()) {
             // Replace by Minecraft food recipes.
+
+            Optional<Recipe> recipe =
 
             // Optional<InscriberRecipe> recipe =
             // MatterOverdriveRecipes.INSCRIBER.get(this);
             // cachedRecipe = recipe.orElse(null);
             return;
         }
+
         cachedRecipe = null;
     }
 
     @Override
     public ItemStack decrStackSize(int slot, int size) {
         ItemStack stack = super.decrStackSize(slot, size);
+
         calculateRecipe();
+
         return stack;
     }
 
     public void setInventorySlotContents(int slot, ItemStack itemStack) {
         super.setInventorySlotContents(slot, itemStack);
+
         calculateRecipe();
     }
 
     @Override
     public int[] getSlotsForFace(EnumFacing side) {
-        return new int[] { MAIN_INPUT_SLOT_ID, SEC_INPUT_SLOT_ID, OUTPUT_SLOT_ID };
+        return new int[] { INPUT_SLOT_ID, OUTPUT_SLOT_ID };
     }
 
     protected void manageCooking() {
@@ -248,21 +252,6 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
 
         if (!this.isCooking()) {
             this.cookTime = 0;
-        }
-    }
-
-    public void cookItem() {
-        if (cachedRecipe != null && canPutInOutput()) {
-            ItemStack outputSlot = inventory.getStackInSlot(OUTPUT_SLOT_ID);
-            if (!outputSlot.isEmpty()) {
-                outputSlot.grow(1);
-            } else {
-                inventory.setInventorySlotContents(OUTPUT_SLOT_ID, cachedRecipe.getOutput(this));
-            }
-
-            inventory.decrStackSize(MAIN_INPUT_SLOT_ID, 1);
-
-            calculateRecipe();
         }
     }
 }
