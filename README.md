@@ -31,3 +31,22 @@ Although it may seem overpowered, Matter Overdrive takes a more realistic approa
 
 
 ![Matter Overdrive Blocks and Items](https://media-elerium.cursecdn.com/attachments/210/237/main_screenshot.png)
+
+Mini-Changelog (from VanMuur):
+
+1. Turned Pattern Storage 180 degrees when placing so the front is facing you, like all other machines.
+2. Updated all machines to accept the Matter Network Cable from any side, not just the back.
+
+Issues:
+
+1. Attempted to get matter storage pipes to attach to more than just the back of the replicator. It connects, but nothing transfers.
+
+Todo:
+
+1. Allow energy transfer across matter network cables. That way connectivity and power go over one set of cables.
+2. Make the microwave able to "cook" food like furnaces do, getting power from RF. If ores are put in the microwave, make it explode.
+
+Unreleased:
+
+1. Created the TileEntity for the Microwave in preparation for getting it to work. It still doesn't have proper functionality yet.
+
