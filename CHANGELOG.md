@@ -3,6 +3,16 @@ MatterOverdrive - Changelog
 
 Unreleased
 ----------
+* Still working on the microwave. (VanMuur)
+* Created the TileEntity for the Microwave and associated helper classes. (VanMuur)
+* Updated README.md with mini-changelog. (VanMuur)
+* Updated comments WRT drawScreen in TileEntityRendererPatternMonitor.java. (VanMuur)
+* More fixes. (VanMuur)
+* Updating pattern monitor to have number of stored patterns displayed.  Also updated the network pipes to connect properly. (VanMuur)
+* Attempting to update the Pattern Storage to allow connections from any side. (VanMuur)
+* Updated hasCapability and getCapability to use an if statement instead of the || construct to see if that fixes sidedness of the energy input. (VanMuur)
+* Updated the block state for Pattern Storage to be rotated 180 degrees. (VanMuur)
+* Changed the volume level of the decomposer. (VanMuur)
 * Updated gradle.build to reflect new versions and dependency locations. (VanMuur)
 * - (BuildTools)
 * renamed/animated/changed texture (BuildTools)

@@ -200,7 +200,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
         if (!mainStack.isEmpty()) {
             // Replace by Minecraft food recipes.
 
-            Optional<Recipe> recipe =
+//            Optional<Recipe> recipe =
 
             // Optional<InscriberRecipe> recipe =
             // MatterOverdriveRecipes.INSCRIBER.get(this);
