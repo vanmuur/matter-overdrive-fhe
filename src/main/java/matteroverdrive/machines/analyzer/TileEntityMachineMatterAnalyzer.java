@@ -106,8 +106,12 @@ public class TileEntityMachineMatterAnalyzer extends MOTileEntityMachineEnergy i
 
     @Override
     public boolean canConnectFromSide(IBlockState blockState, EnumFacing side) {
-        EnumFacing facing = blockState.getValue(MOBlock.PROPERTY_DIRECTION);
-        return facing.getOpposite() == side;
+        // Allow ANY connection to connect.
+        return true;
+
+        // Only allow rear connections to connect.
+//        EnumFacing facing = blockState.getValue(MOBlock.PROPERTY_DIRECTION);
+//        return facing.getOpposite() == side;
     }
 
     @Override
