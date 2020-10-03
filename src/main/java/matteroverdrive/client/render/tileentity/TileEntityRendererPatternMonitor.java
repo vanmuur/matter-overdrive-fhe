@@ -39,11 +39,12 @@ public class TileEntityRendererPatternMonitor extends TileEntityRendererMonitor<
 
         int patternCount = 0;
 
-        if (tileEntity.getNetwork() != null && tileEntity.getConnectedDatabases() != null) {
-            for (IMatterDatabase database: tileEntity.getConnectedDatabases()) {
-                patternCount += database.getPatternStorageCount();
-            }
-        }
+//        // tileEntity.getNetwork() is always null.
+//        if (tileEntity.getNetwork() != null && tileEntity.getConnectedDatabases() != null) {
+//            for (IMatterDatabase database: tileEntity.getConnectedDatabases()) {
+//                patternCount += database.getPatternStorageCount();
+//            }
+//        }
 
         RenderUtils.drawPlane(1);
         GlStateManager.pushMatrix();
