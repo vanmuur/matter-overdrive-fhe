@@ -10,15 +10,14 @@
     "facing":{
 	
       "north":{
+      },
+	  
+      "south":{
         "transform": {
           "rotation": {
             "y":180
           }
         }
-      },
-	  
-      "south":{
-
       },
 	  
       "west": {
