@@ -39,7 +39,7 @@ public class TileEntityRendererPatternMonitor extends TileEntityRendererMonitor<
 
         int patternCount = 0;
 
-//        // tileEntity.getNetwork() is always null.
+//        // tileEntity.getNetwork() is always null. Maybe because of the sidedness of the call? I.E. client vs. server.
 //        if (tileEntity.getNetwork() != null && tileEntity.getConnectedDatabases() != null) {
 //            for (IMatterDatabase database: tileEntity.getConnectedDatabases()) {
 //                patternCount += database.getPatternStorageCount();
