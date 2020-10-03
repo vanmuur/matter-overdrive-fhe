@@ -79,10 +79,12 @@ public abstract class MOTileEntityMachineEnergy extends MOTileEntityMachine {
         if (isCharging()) {
             if (!this.world.isRemote) {
                 int emptyEnergySpace = getFreeEnergySpace();
-                int maxEnergyCanSpare = MOEnergyHelper.extractEnergyFromContainer(this.inventory.getStackInSlot(energySlotID), emptyEnergySpace, true);
+                int maxEnergyCanSpare = MOEnergyHelper.extractEnergyFromContainer(
+                        this.inventory.getStackInSlot(energySlotID), emptyEnergySpace, true);
 
                 if (emptyEnergySpace > 0 && maxEnergyCanSpare > 0) {
-                    getEnergyStorage().receiveEnergy(MOEnergyHelper.extractEnergyFromContainer(this.inventory.getStackInSlot(energySlotID), emptyEnergySpace, false), false);
+                    getEnergyStorage().receiveEnergy(MOEnergyHelper.extractEnergyFromContainer(
+                            this.inventory.getStackInSlot(energySlotID), emptyEnergySpace, false), false);
                 }
             }
         }
@@ -91,7 +93,8 @@ public abstract class MOTileEntityMachineEnergy extends MOTileEntityMachine {
     public boolean isCharging() {
         return !this.inventory.getStackInSlot(energySlotID).isEmpty()
                 && MOEnergyHelper.isEnergyContainerItem(this.inventory.getStackInSlot(energySlotID))
-                && this.inventory.getStackInSlot(energySlotID).getCapability(CapabilityEnergy.ENERGY, null).extractEnergy(getFreeEnergySpace(), true) > 0;
+                && this.inventory.getStackInSlot(energySlotID).getCapability(CapabilityEnergy.ENERGY, null)
+                        .extractEnergy(getFreeEnergySpace(), true) > 0;
     }
 
     public int getEnergySlotID() {
@@ -107,7 +110,9 @@ public abstract class MOTileEntityMachineEnergy extends MOTileEntityMachine {
     }
 
     public void UpdateClientPower() {
-        MatterOverdrive.NETWORK.sendToAllAround(new PacketPowerUpdate(this), new NetworkRegistry.TargetPoint(world.provider.getDimension(), getPos().getX(), getPos().getY(), getPos().getZ(), ENERGY_CLIENT_SYNC_RANGE));
+        MatterOverdrive.NETWORK.sendToAllAround(new PacketPowerUpdate(this),
+                new NetworkRegistry.TargetPoint(world.provider.getDimension(), getPos().getX(), getPos().getY(),
+                        getPos().getZ(), ENERGY_CLIENT_SYNC_RANGE));
     }
 
     @Override
@@ -139,13 +144,21 @@ public abstract class MOTileEntityMachineEnergy extends MOTileEntityMachine {
 
     @Override
     public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing) {
-        return capability == CapabilityEnergy.ENERGY || super.hasCapability(capability, facing);
+        if (capability == CapabilityEnergy.ENERGY) {
+            return true;
+        }
+
+        return super.hasCapability(capability, facing);
     }
 
     @Nonnull
     @Override
     @SuppressWarnings("unchecked")
     public <T> T getCapability(@Nonnull Capability<T> capability, @Nullable EnumFacing facing) {
-        return capability == CapabilityEnergy.ENERGY ? CapabilityEnergy.ENERGY.cast(energyStorage) : super.getCapability(capability, facing);
+        if (capability == CapabilityEnergy.ENERGY) {
+            return CapabilityEnergy.ENERGY.cast(energyStorage);
+        }
+
+        return super.getCapability(capability, facing);
     }
 }
