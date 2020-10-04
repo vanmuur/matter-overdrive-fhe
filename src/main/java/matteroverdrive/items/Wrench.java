@@ -29,6 +29,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -45,13 +47,17 @@ public class Wrench extends MOBaseItem {
         ItemStack stack = player.getHeldItem(hand);
         IBlockState state = world.getBlockState(pos);
         EnumActionResult result = EnumActionResult.PASS;
+
         if (!state.getBlock().isAir(state, world, pos)) {
             PlayerInteractEvent e = new PlayerInteractEvent.RightClickBlock(player, hand, pos, side, new Vec3d(hitX, hitY, hitZ));
             if (MinecraftForge.EVENT_BUS.post(e) || e.getResult() == Event.Result.DENY) {
                 return EnumActionResult.FAIL;
             }
+
             if (player.isSneaking() && state.getBlock() instanceof IDismantleable && ((IDismantleable) state.getBlock()).canDismantle(player, world, pos)) {
                 if (!world.isRemote) {
+                    player.sendMessage(new TextComponentString(state.getBlock().getLocalizedName()));
+
                     ((IDismantleable) state.getBlock()).dismantleBlock(player, world, pos, false);
                 }
                 result = EnumActionResult.SUCCESS;
@@ -70,5 +76,11 @@ public class Wrench extends MOBaseItem {
     @Override
     public boolean hasDetails(ItemStack stack) {
         return true;
+    }
+
+    private void DisplayInfo(EntityPlayer player, String msg, TextFormatting formatting) {
+        if (player != null && !msg.isEmpty()) {
+            player.sendStatusMessage(new TextComponentString(formatting + msg), true);
+        }
     }
 }

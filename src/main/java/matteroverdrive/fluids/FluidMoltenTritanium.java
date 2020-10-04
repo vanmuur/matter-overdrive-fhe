@@ -29,5 +29,4 @@ public class FluidMoltenTritanium extends Fluid {
         setLuminosity(15);
         setTemperature(2000);
     }
-
 }

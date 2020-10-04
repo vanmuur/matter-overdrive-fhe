@@ -28,11 +28,11 @@ import net.minecraft.world.World;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fluids.Fluid;
 
-public class BlockFluidMatterPlasma extends BlockFluidClassic {
-    public BlockFluidMatterPlasma(Fluid fluid, Material material) {
+public class BlockFluidMoltenTritanium extends BlockFluidClassic {
+    public BlockFluidMoltenTritanium(Fluid fluid, Material material) {
         super(fluid, material);
-        setTranslationKey("matter_plasma");
-        setRegistryName(new ResourceLocation(Reference.MOD_ID, "matter_plasma"));
+        setTranslationKey("molten_tritanium");
+        setRegistryName(new ResourceLocation(Reference.MOD_ID, "molten_tritanium"));
     }
 
     /*@Override

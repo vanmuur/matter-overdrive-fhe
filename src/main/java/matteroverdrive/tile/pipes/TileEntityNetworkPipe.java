@@ -32,9 +32,15 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.relauncher.Side;
 
-public class TileEntityNetworkPipe extends TileEntityPipe implements IMatterNetworkConnection {
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+public class TileEntityNetworkPipe extends TileEntityPipe implements IMatterNetworkConnection, IEnergyStorage {
 
     private MatterNetwork matterNetwork;
 
@@ -222,5 +228,35 @@ public class TileEntityNetworkPipe extends TileEntityPipe implements IMatterNetw
     @Override
     public void setNetwork(MatterNetwork network) {
         matterNetwork = network;
+    }
+
+    @Override
+    public int receiveEnergy(int maxReceive, boolean simulate) {
+        return 0;
+    }
+
+    @Override
+    public int extractEnergy(int i, boolean b) {
+        return 0;
+    }
+
+    @Override
+    public int getEnergyStored() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxEnergyStored() {
+        return 0;
+    }
+
+    @Override
+    public boolean canExtract() {
+        return true;
+    }
+
+    @Override
+    public boolean canReceive() {
+        return true;
     }
 }

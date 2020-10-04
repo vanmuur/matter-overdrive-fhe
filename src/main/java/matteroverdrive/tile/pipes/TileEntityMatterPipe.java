@@ -84,6 +84,9 @@ public class TileEntityMatterPipe extends TileEntityPipe implements IFluidPipe {
             for (IFluidPipe pipe : getNetwork().getNodes()) {
                 for (EnumFacing direction : EnumFacing.VALUES) {
                     TileEntity handler = pipe.getTile().getWorld().getTileEntity(pipe.getTile().getPos().offset(direction));
+
+                    System.out.println("Checking handler in direction " + direction + ": " + handler);
+
                     if (handler != null && handler.hasCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, direction.getOpposite()) && !(handler instanceof IFluidPipe)) {
                         int amount = storage.extractMatter(handler.getCapability(CapabilityFluidHandler.FLUID_HANDLER_CAPABILITY, direction.getOpposite()).fill(new FluidStack(OverdriveFluids.matterPlasma, storage.getMatterStored()), true), false);
                         if (amount != 0) {

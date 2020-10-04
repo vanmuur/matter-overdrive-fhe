@@ -189,14 +189,13 @@ tile.gravitational_anomaly.name=Gravitational Anomaly
 tile.gravitational_stabilizer.name=Gravitational Stabilizer
 tile.gravitational_stabilizer.details=Used to suppress the effects of Gravitational Anomalies
 tile.matter_recycler.name=Matter Recycler
-tile.microwave.name=Microwave
 tile.matter_recycler.details=Used to recycle items, ready for decomposing
 tile.android_spawner.name=Rogue Android Spawner
 
 #///////////// Fluids ////////////
 tile.matter_plasma.name=Matter Plasma
 tile.molten_tritanium.name=Molten Tritanium
-tile.null.name=Fluid
+#tile.null.name=Fluid
 
 
 #///////////// Fusion Reactor ////////////
@@ -368,7 +367,6 @@ weaponstat.block_damage.name=Block Damage
 weaponstat.explosion_damage.name=Explosion Damage
 weaponstat.fire_rate.name=Fire Rate
 weaponstat.heal.name=Heal
-weaponstat.range.name=Range
 weaponstat.ricochet.name=Ricochet
 weaponstat.max_heat.name=Max Heat
 weaponstat.accuracy.name=Accuracy
@@ -631,6 +629,11 @@ alert.new_update=A new version is available!
 # Enchantments
 
 enchantment.matteroverdrive.weapon.damage=Overclock
+
+##########################################################################################################
+# Fluids
+fluid.matter_plasma=Matter Plasma
+fluid.molten_tritanium=Molten Tritanium
 
 ##########################################################################################################
 # Guides

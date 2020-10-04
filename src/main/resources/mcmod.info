@@ -1,7 +1,7 @@
 [
   {
     "modid": "matteroverdrive",
-    "name": "MatterOverdrive: Legacy Edition",
+    "name": "MatterOverdrive: Fixed Horizon Edition",
     "description": "A mod that dwells within matter and energy.",
     "version": "${version}",
     "mcversion": "${mcversion}",
@@ -13,7 +13,9 @@
       "Buuz135",
       "Simeon Radivoev",
       "Shadowfacts",
-      "Dev_Osmium"
+      "Dev_Osmium",
+      "VanMuur",
+      "Gandalf360one"
     ],
     "credits": "",
     "logoFile": "/mo_logo.png"

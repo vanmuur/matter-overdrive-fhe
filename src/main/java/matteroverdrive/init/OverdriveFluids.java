@@ -30,6 +30,7 @@ public class OverdriveFluids {
     public static void init(FMLPreInitializationEvent event) {
         matterPlasma = new FluidMatterPlasma("matter_plasma");
         FluidRegistry.registerFluid(matterPlasma);
+        FluidRegistry.addBucketForFluid(matterPlasma);
 
         moltenTritanium = new FluidMoltenTritanium("molten_tritanium");
         FluidRegistry.registerFluid(moltenTritanium);

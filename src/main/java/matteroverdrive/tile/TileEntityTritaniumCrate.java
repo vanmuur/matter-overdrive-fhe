@@ -18,6 +18,7 @@
 
 package matteroverdrive.tile;
 
+import matteroverdrive.api.wrench.IDismantleable;
 import matteroverdrive.data.TileEntityInventory;
 import matteroverdrive.data.inventory.CrateSlot;
 import matteroverdrive.machines.MachineNBTCategory;
@@ -32,25 +33,35 @@ import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.List;
 
 public class TileEntityTritaniumCrate extends MOTileEntity implements IInventory, IInteractionObject {
     final TileEntityInventory inventory;
 
     public TileEntityTritaniumCrate() {
         inventory = new TileEntityInventory(this, MOStringHelper.translateToLocal("container.tritanium_crate"));
+
         for (int i = 0; i < 54; i++) {
             CrateSlot slot = new CrateSlot(false);
             inventory.AddSlot(slot);
         }
+    }
+
+    public int getInventorySize() {
+        return 54;
     }
 
     @Override
@@ -211,5 +222,43 @@ public class TileEntityTritaniumCrate extends MOTileEntity implements IInventory
     @Override
     public String getGuiID() {
         return "minecraft:chest";
+    }
+
+    public void readInv(NBTTagCompound nbt) {
+        NBTTagList invList = nbt.getTagList("inventory", 10);
+
+        for (int i=0; i<invList.tagCount(); i++) {
+            NBTTagCompound itemTag = invList.getCompoundTagAt(i);
+
+            int slot = itemTag.getByte("Slot");
+
+            if (slot >= 0 && slot < inventory.getSlots().size()) {
+                inventory.setInventorySlotContents(slot, new ItemStack(itemTag));
+            }
+        }
+    }
+
+    public void writeInv(NBTTagCompound nbt, EntityPlayer player) {
+        boolean write = false;
+
+        NBTTagList invList = new NBTTagList();
+
+        for (int i=0; i<inventory.getSlots().size(); i++) {
+            if (inventory.getStackInSlot(i).isEmpty()) {
+                continue;
+            }
+
+            NBTTagCompound itemTag = new NBTTagCompound();
+
+            itemTag.setByte("Slot", (byte)i);
+
+            player.sendMessage(new TextComponentString("Writing out item: " + inventory.getStackInSlot(i).getDisplayName()));
+
+            inventory.getStackInSlot(i).writeToNBT(itemTag);
+
+            invList.appendTag(itemTag);
+        }
+
+        nbt.setTag("inventory", invList);
     }
 }

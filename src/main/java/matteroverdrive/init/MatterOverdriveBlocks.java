@@ -177,7 +177,8 @@ public class MatterOverdriveBlocks {
 
 //		Fluids
         blockMatterPlasma = register(new BlockFluidMatterPlasma(OverdriveFluids.matterPlasma, Material.WATER));
-        blockMoltenTritanium = register((BlockFluidClassic) new BlockFluidClassic(OverdriveFluids.moltenTritanium, Material.LAVA).setRegistryName(new ResourceLocation(Reference.MOD_ID, "molten_tritanium")));
+//        blockMoltenTritanium = register((BlockFluidClassic) new BlockFluidClassic(OverdriveFluids.moltenTritanium, Material.LAVA).setRegistryName(new ResourceLocation(Reference.MOD_ID, "molten_tritanium")));
+        blockMoltenTritanium = register(new BlockFluidMoltenTritanium(OverdriveFluids.moltenTritanium, Material.LAVA));
 
 //		Storage
         tritaniumCrate = register(new BlockTritaniumCrate(TRITANIUM, "tritanium_crate"));

@@ -3,6 +3,9 @@ MatterOverdrive - Changelog
 
 Unreleased
 ----------
+* Update en_us.lang (Gandalf360one)
+* Fixing the Tritanium Crate to drop items on wrench. Need to have it keep the items with the wrench. (VanMuur)
+* Commented out non-working code for now. (VanMuur)
 * Still working on the microwave. (VanMuur)
 * Created the TileEntity for the Microwave and associated helper classes. (VanMuur)
 * Updated README.md with mini-changelog. (VanMuur)
