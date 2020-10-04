@@ -20,7 +20,10 @@ package matteroverdrive.items;
 
 import matteroverdrive.api.matter.IMatterPatternStorage;
 import matteroverdrive.data.matter_network.ItemPattern;
+import matteroverdrive.handler.ConfigurationHandler;
 import matteroverdrive.items.includes.MOBaseItem;
+import matteroverdrive.util.IConfigSubscriber;
+import matteroverdrive.util.MOLog;
 import matteroverdrive.util.MatterDatabaseHelper;
 import matteroverdrive.util.MatterHelper;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,19 +32,22 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import org.apache.logging.log4j.Level;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class PatternDrive extends MOBaseItem implements IMatterPatternStorage {
+public class PatternDrive extends MOBaseItem implements IMatterPatternStorage, IConfigSubscriber {
     /*private IIcon storageFull;
     private IIcon storagePartiallyFull;*/
     final int capacity;
 
+    private static int driveStackSize = 1;
+
     public PatternDrive(String name, int capacity) {
         super(name);
         this.capacity = capacity;
-        this.setMaxStackSize(1);
+        this.setMaxStackSize(driveStackSize);
     }
 
     /*@Override
@@ -167,5 +173,14 @@ public class PatternDrive extends MOBaseItem implements IMatterPatternStorage {
             clearStorage(itemStack);
         }
         return itemStack;
+    }
+
+    @Override
+    public void onConfigChanged(ConfigurationHandler config) {
+        driveStackSize = config.getInt("drive_stack_size", ConfigurationHandler.CATEGORY_MACHINES, 1, "The stack size of the Pattern Drive.");
+
+        MOLog.log(Level.INFO, "Setting pattern drive stack size to %d.", driveStackSize);
+
+        this.setMaxStackSize(driveStackSize);
     }
 }

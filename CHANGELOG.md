@@ -3,6 +3,7 @@ MatterOverdrive - Changelog
 
 Unreleased
 ----------
+* Updated matter plasma fluid block and molten tritanium fluid blocks to have translation keys. (Old function is setUnlocalizedName). (VanMuur)
 * Update en_us.lang (Gandalf360one)
 * Fixing the Tritanium Crate to drop items on wrench. Need to have it keep the items with the wrench. (VanMuur)
 * Commented out non-working code for now. (VanMuur)
