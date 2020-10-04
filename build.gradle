@@ -16,40 +16,40 @@ plugins {
     id 'maven'
     id 'maven-publish'
     id 'java'
-    id 'net.minecrell.licenser' version '0.4.1'
+//    id 'net.minecrell.licenser' version '0.4.1'
     id "com.hrznstudio.cursegradle" version "1.1.0"
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'com.selesse.git.changelog'
 apply plugin: 'java'
 
-defaultTasks 'licenseFormat'
+//defaultTasks 'licenseFormat'
 
 def BUILD_NUMBER = System.getenv("BUILD_NUMBER") ?: "0"
-def mod_version = "0.7.0.$BUILD_NUMBER"
+def mod_version = "0.1.0.$BUILD_NUMBER"
 
 version = "1.12.2-$mod_version"
 
 group= "matteroverdrive"
-archivesBaseName = "MatterOverdrive"
+archivesBaseName = "MatterOverdrive-FHE";
 
 static def getCurrentYear() {
     def date = new Date()
     return date.format('yyyy')
 }
 
-license {
-    ext {
-        name = "MatterOverdrive: Fixed Horizon Edition"
-        organization = "Horizon Studio"
-        email = "contact@hrznstudio.com"
-        url = "https://hrznstudio.com"
-        year = getCurrentYear()
-    }
-
-    header = file('HEADER')
-    include '**/*.java'
-}
+//license {
+//    ext {
+//        name = "MatterOverdrive: Fixed Horizon Edition"
+//        organization = "Horizon Studio"
+//        email = "contact@hrznstudio.com"
+//        url = "https://hrznstudio.com"
+//        year = getCurrentYear()
+//    }
+//
+//    header = file('HEADER')
+//    include '**/*.java'
+//}
 
 changelog {
     title = "${archivesBaseName} - Changelog"

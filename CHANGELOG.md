@@ -1,8 +1,10 @@
-MatterOverdrive - Changelog
-===========================
+MatterOverdrive-FHE - Changelog
+===============================
 
 Unreleased
 ----------
+* Removed MatterOverdrive-ChangedVersionNumber.zip file. (VanMuur)
+* First attempt add adding pattern drive stack config. It's not picknig it up. (VanMuur)
 * Updated matter plasma fluid block and molten tritanium fluid blocks to have translation keys. (Old function is setUnlocalizedName). (VanMuur)
 * Update en_us.lang (Gandalf360one)
 * Fixing the Tritanium Crate to drop items on wrench. Need to have it keep the items with the wrench. (VanMuur)
