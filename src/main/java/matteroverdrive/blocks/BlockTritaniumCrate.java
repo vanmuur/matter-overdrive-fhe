@@ -18,6 +18,7 @@
 
 package matteroverdrive.blocks;
 
+import matteroverdrive.api.wrench.IDismantleable;
 import matteroverdrive.blocks.includes.MOBlock;
 import matteroverdrive.blocks.includes.MOBlockMachine;
 import matteroverdrive.data.Inventory;
@@ -27,6 +28,7 @@ import matteroverdrive.util.MOBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -37,8 +39,9 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 
-public class BlockTritaniumCrate extends MOBlockMachine<TileEntityTritaniumCrate> {
+public class BlockTritaniumCrate extends MOBlockMachine<TileEntityTritaniumCrate> implements IDismantleable {
 
     private static final AxisAlignedBB BOX_NORTH_SOUTH = new AxisAlignedBB(0, 0, 2 / 16d, 1, 12 / 16d, 14 / 16d);
     private static final AxisAlignedBB BOX_EAST_WEST = new AxisAlignedBB(2 / 16d, 0, 0, 14 / 16d, 12 / 16d, 1);
@@ -106,5 +109,27 @@ public class BlockTritaniumCrate extends MOBlockMachine<TileEntityTritaniumCrate
             return machine.getInventory();
         }
         return null;
+    }
+
+    @Override
+    public boolean canDismantle(EntityPlayer player, World world, BlockPos pos) {
+        return true;
+    }
+
+    @Override
+    public ArrayList<ItemStack> dismantleBlock(EntityPlayer player, World world, BlockPos pos, boolean returnDrops) {
+        TileEntity tile = world.getTileEntity(pos);
+
+        ItemStack s = new ItemStack(this);
+
+        if (tile instanceof TileEntityTritaniumCrate) {
+            IBlockState state = world.getBlockState(pos);
+
+            state.getBlock().harvestBlock(world, player, pos, state, world.getTileEntity(pos), ItemStack.EMPTY);
+
+            state.getBlock().removedByPlayer(state, world, pos, player, false);
+        }
+
+        return new ArrayList<>();
     }
 }
