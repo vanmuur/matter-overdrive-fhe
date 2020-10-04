@@ -115,7 +115,6 @@ item.matteroverdrive.weapon_module_holo_sights.name=Holo Sight
 item.matteroverdrive.sniper_scope.name=Sniper Scope
 
 
-item.overdrivef.info.configured=Configured
 item.info.configured=Configured
 
 ##########################################################################################################
@@ -248,17 +247,7 @@ tile.tritanium_crate_green.name=Green Tritanium Crate
 tile.tritanium_crate_red.name=Red Tritanium Crate
 tile.tritanium_crate_black.name=Black Tritanium Crate
 
-#///////////// Entities /////////////////
-entity.matteroverdrive.rogue_android.name=Melee Rogue Android
-entity.matteroverdrive.failed_pig.name=Failed Pig
-entity.matteroverdrive.failed_chicken.name=Failed Chicken
-entity.matteroverdrive.failed_cow.name=Failed Cow
-entity.matteroverdrive.failed_sheep.name=Failed Sheep
-entity.matteroverdrive.mad_scientist.name=Mad Scientist
-entity.matteroverdrive.mad_scientist.junkie.name=Mad Scientist Junkie
-entity.matteroverdrive.ranged_rogue_android.name=Ranged Rogue Android
-entity.matteroverdrive.mutant_scientist.name=Mutant Scientist
-entity.drone.name=Drone
+#///////////// Entities /////////////////<-->
 
 entity.rogue_android.name=Melee Rogue Android
 entity.failed_pig.name=Failed Pig
@@ -269,6 +258,7 @@ entity.mad_scientist.name=Mad Scientist
 entity.mad_scientist.junkie.name=Mad Scientist Junkie
 entity.ranged_rogue_android.name=Ranged Rogue Android
 entity.mutant_scientist.name=Mutant Scientist
+entity.drone.name=Drone
 
 #///////////// Decorative ////////////////////
 tile.decorative.stripes.name=Yellow Stripes
@@ -641,11 +631,6 @@ alert.new_update=A new version is available!
 # Enchantments
 
 enchantment.matteroverdrive.weapon.damage=Overclock
-
-###############################################################################################################
-# Fluids
-fluid.matter_plasma=Matter Plasma
-fluid.molten_tritanium=Molten Tritanium
 
 ##########################################################################################################
 # Guides
