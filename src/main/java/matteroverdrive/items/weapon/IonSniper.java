@@ -271,7 +271,7 @@ public class IonSniper extends EnergyWeapon {
     @Override
     @SideOnly(Side.CLIENT)
     public boolean isWeaponZoomed(EntityLivingBase entityPlayer, ItemStack weapon) {
-        return Mouse.isButtonDown(1) && entityPlayer.isHandActive() && entityPlayer.getActiveHand() == EnumHand.MAIN_HAND;
+        return entityPlayer.isHandActive() && entityPlayer.getActiveHand() == EnumHand.MAIN_HAND;
     }
 
     @Override
