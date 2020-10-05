@@ -22,7 +22,6 @@ import matteroverdrive.api.inventory.UpgradeTypes;
 import matteroverdrive.api.matter.IMatterDatabase;
 import matteroverdrive.api.matter_network.IMatterNetworkClient;
 import matteroverdrive.api.network.MatterNetworkTaskState;
-import matteroverdrive.data.MachineEnergyStorage;
 import matteroverdrive.data.matter_network.IMatterNetworkEvent;
 import matteroverdrive.data.matter_network.ItemPattern;
 import matteroverdrive.handler.SoundHandler;

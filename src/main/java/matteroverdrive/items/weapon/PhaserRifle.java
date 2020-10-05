@@ -40,12 +40,14 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.util.vector.Vector2f;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 public class PhaserRifle extends EnergyWeapon {
@@ -137,16 +139,18 @@ public class PhaserRifle extends EnergyWeapon {
     }
 
     @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, @Nonnull EnumHand hand) {
         ItemStack itemStackIn = playerIn.getHeldItem(hand);
         if (hand == EnumHand.OFF_HAND) {
             return ActionResult.newResult(EnumActionResult.PASS, itemStackIn);
         }
         playerIn.setActiveHand(hand);
+
         if (worldIn.isRemote) {
-            //for(int i = 0; i < 3; i++)
-            //Minecraft.getMinecraft().entityRenderer.itemRenderer.updateEquippedItem();
+//            for(int i = 0; i < 3; i++)
+//                Minecraft.getMinecraft().entityRenderer.itemRenderer.updateEquippedItem();
         }
+
         return ActionResult.newResult(EnumActionResult.SUCCESS, itemStackIn);
     }
 
@@ -168,7 +172,10 @@ public class PhaserRifle extends EnergyWeapon {
     @Override
     @SideOnly(Side.CLIENT)
     public boolean isWeaponZoomed(EntityLivingBase entityPlayer, ItemStack weapon) {
-        return Mouse.isButtonDown(1) && entityPlayer.isHandActive() && entityPlayer.getActiveHand() == EnumHand.MAIN_HAND;
+        // Fix the requirement to have the button down for a "right click".
+        return entityPlayer.isHandActive() && entityPlayer.getActiveHand() == EnumHand.MAIN_HAND;
+
+//        return Mouse.isButtonDown(1) && entityPlayer.isHandActive() && entityPlayer.getActiveHand() == EnumHand.MAIN_HAND;
     }
 
     @Override
