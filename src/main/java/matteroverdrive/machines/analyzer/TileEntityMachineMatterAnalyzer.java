@@ -23,8 +23,6 @@ import matteroverdrive.api.matter_network.IMatterNetworkClient;
 import matteroverdrive.api.matter_network.IMatterNetworkConnection;
 import matteroverdrive.api.network.IMatterNetworkDispatcher;
 import matteroverdrive.api.transport.IGridNode;
-import matteroverdrive.blocks.BlockMatterAnalyzer;
-import matteroverdrive.blocks.includes.MOBlock;
 import matteroverdrive.data.Inventory;
 import matteroverdrive.data.inventory.MatterSlot;
 import matteroverdrive.data.transport.MatterNetwork;
@@ -35,7 +33,6 @@ import matteroverdrive.matter_network.MatterNetworkTaskQueue;
 import matteroverdrive.matter_network.components.MatterNetworkComponentClient;
 import matteroverdrive.tile.MOTileEntityMachineEnergy;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
@@ -53,7 +50,6 @@ public class TileEntityMachineMatterAnalyzer extends MOTileEntityMachineEnergy i
     private ComponentMatterNetworkAnalyzer networkComponent;
     private ComponentMatterNetworkConfigs componentMatterNetworkConfigs;
     private ComponentTaskProcessingAnalyzer taskProcessingComponent;
-    private boolean lastState = false;
 
     public TileEntityMachineMatterAnalyzer() {
         super(4);
@@ -206,17 +202,5 @@ public class TileEntityMachineMatterAnalyzer extends MOTileEntityMachineEnergy i
     @Override
     public int getTaskQueueCount() {
         return 1;
-    }
-
-    public void update() {
-        super.update();
-
-        if (this.taskProcessingComponent.isAnalyzing() != lastState) {
-            BlockMatterAnalyzer.setState(this.taskProcessingComponent.isAnalyzing(), this.world, this.pos);
-
-            lastState = this.taskProcessingComponent.isAnalyzing();
-
-            this.markDirty();
-        }
     }
 }

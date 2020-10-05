@@ -66,8 +66,7 @@ public class MatterOverdriveBlocks {
     public BlockMatterPipe heavy_matter_pipe;
     public BlockNetworkPipe network_pipe;
     public BlockNetworkRouter network_router;
-    public BlockMatterAnalyzer matter_analyzer_on;
-    public BlockMatterAnalyzer matter_analyzer_off;
+    public BlockMatterAnalyzer matter_analyzer;
     public BlockPatternMonitor pattern_monitor;
     public BlockPatternStorage pattern_storage;
     public BlockNetworkSwitch network_switch;
@@ -158,8 +157,7 @@ public class MatterOverdriveBlocks {
         heavy_matter_pipe = register(new BlockHeavyMatterPipe(TRITANIUM, "heavy_matter_pipe"));
         network_pipe = register(new BlockNetworkPipe(TRITANIUM, "network_pipe"));
         network_router = register(new BlockNetworkRouter(TRITANIUM, "network_router"));
-        matter_analyzer_on = register(new BlockMatterAnalyzer(TRITANIUM, "matter_analyzer_on"), false);
-        matter_analyzer_off = register(new BlockMatterAnalyzer(TRITANIUM, "matter_analyzer_off"));
+        matter_analyzer = register(new BlockMatterAnalyzer(TRITANIUM, "matter_analyzer"));
         pattern_monitor = register(new BlockPatternMonitor(TRITANIUM, "pattern_monitor"));
         pattern_storage = register(new BlockPatternStorage(TRITANIUM, "pattern_storage"));
         network_switch = register(new BlockNetworkSwitch(TRITANIUM, "network_switch"));

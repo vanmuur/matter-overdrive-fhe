@@ -3,6 +3,7 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Fixed state on the Analyzer. Turns out it was dropping its inventory every time due to the way setBlockState() works. (VanMuur)
 * Got the Analyzer's front face properly updating when analyzing starts and stops, but it spits out extra items every time there's a state change. (VanMuur)
 * Update en_us.lang (Gandalf360one)
 * Update recycler_side_anim.png.mcmeta (Gandalf360one)
