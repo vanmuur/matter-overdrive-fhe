@@ -66,7 +66,7 @@ public class MOWorldGenUnderwaterBase extends MOWorldGenBuilding {
         addMapping(0xc05e5e, Blocks.FLOWER_POT);
         addMapping(0x4d8dd3, MatterOverdrive.BLOCKS.pattern_monitor);
         addMapping(0xdb9c3a, MatterOverdrive.BLOCKS.holoSign);
-        addMapping(0x68b68c, MatterOverdrive.BLOCKS.matter_analyzer);
+        addMapping(0x68b68c, MatterOverdrive.BLOCKS.matter_analyzer_off);
         addMapping(0x2cb0c7, MatterOverdrive.BLOCKS.starMap);
         addMapping(0x1b2ff7, MatterOverdrive.BLOCKS.network_pipe);
         addMapping(0x5eaab, MatterOverdrive.BLOCKS.tritaniumCrate);

@@ -3,8 +3,24 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Update en_us.lang (Gandalf360one)
+* Update recycler_side_anim.png.mcmeta (Gandalf360one)
+* Add files via upload (Gandalf360one)
+* Delete recycler_side.png.mcmeta (Gandalf360one)
+* Delete recycler_side.png (Gandalf360one)
+* Update analyzer_front_anim.png.mcmeta (Gandalf360one)
+* Add files via upload (Gandalf360one)
+* Delete analyzer_front.png.mcmeta (Gandalf360one)
+* Delete analyzer_front.png (Gandalf360one)
+* Removed licensing for now in the gradle.build file, as it's complaining about a lot of files and won't let a "./gradlew build" complete. (VanMuur)
+
+0.1.0 (2020-10-04 11:29:48 -0400)
+---------------------------------
 * Removed MatterOverdrive-ChangedVersionNumber.zip file. (VanMuur)
 * First attempt add adding pattern drive stack config. It's not picknig it up. (VanMuur)
+
+0.1 (2020-10-04 10:09:31 -0400)
+-------------------------------
 * Updated matter plasma fluid block and molten tritanium fluid blocks to have translation keys. (Old function is setUnlocalizedName). (VanMuur)
 * Update en_us.lang (Gandalf360one)
 * Fixing the Tritanium Crate to drop items on wrench. Need to have it keep the items with the wrench. (VanMuur)

@@ -99,7 +99,13 @@ public class TileEntityMachineMatterRecycler extends MOTileEntityMachineEnergy {
                         this.recycleItem();
                     }
                 }
+
+//                world.setBlockState(getPos(), world.getBlockState(getPos()).withProperty(BlockMatterRecycler.RECYCLING, BlockMatterRecycler.RecycleState.RECYCLE_ON));
+            } else {
+//                world.setBlockState(getPos(), world.getBlockState(getPos()).withProperty(BlockMatterRecycler.RECYCLING, BlockMatterRecycler.RecycleState.RECYCLE_OFF));
             }
+
+            this.markDirty();
         }
 
         if (!this.isRecycling()) {

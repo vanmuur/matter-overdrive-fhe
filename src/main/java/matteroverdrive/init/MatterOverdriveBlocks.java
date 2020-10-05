@@ -19,7 +19,6 @@
 package matteroverdrive.init;
 
 import matteroverdrive.MatterOverdrive;
-import matteroverdrive.Reference;
 import matteroverdrive.api.internal.IItemBlockFactory;
 import matteroverdrive.api.internal.OreDictItem;
 import matteroverdrive.blocks.*;
@@ -38,13 +37,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemColored;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fluids.BlockFluidClassic;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,6 +50,7 @@ public class MatterOverdriveBlocks {
     public static final List<IRecipe> recipes = new ArrayList<>();
     public static List<Block> blocks = new ArrayList<>();
     public static List<Item> items = new ArrayList<>();
+
     public final MaterialTritanium TRITANIUM = new MaterialTritanium(MapColor.CLAY);
     //	Materials
     public DilithiumOre dilithium_ore;
@@ -69,7 +66,8 @@ public class MatterOverdriveBlocks {
     public BlockMatterPipe heavy_matter_pipe;
     public BlockNetworkPipe network_pipe;
     public BlockNetworkRouter network_router;
-    public BlockMatterAnalyzer matter_analyzer;
+    public BlockMatterAnalyzer matter_analyzer_on;
+    public BlockMatterAnalyzer matter_analyzer_off;
     public BlockPatternMonitor pattern_monitor;
     public BlockPatternStorage pattern_storage;
     public BlockNetworkSwitch network_switch;
@@ -160,7 +158,8 @@ public class MatterOverdriveBlocks {
         heavy_matter_pipe = register(new BlockHeavyMatterPipe(TRITANIUM, "heavy_matter_pipe"));
         network_pipe = register(new BlockNetworkPipe(TRITANIUM, "network_pipe"));
         network_router = register(new BlockNetworkRouter(TRITANIUM, "network_router"));
-        matter_analyzer = register(new BlockMatterAnalyzer(TRITANIUM, "matter_analyzer"));
+        matter_analyzer_on = register(new BlockMatterAnalyzer(TRITANIUM, "matter_analyzer_on"), false);
+        matter_analyzer_off = register(new BlockMatterAnalyzer(TRITANIUM, "matter_analyzer_off"));
         pattern_monitor = register(new BlockPatternMonitor(TRITANIUM, "pattern_monitor"));
         pattern_storage = register(new BlockPatternStorage(TRITANIUM, "pattern_storage"));
         network_switch = register(new BlockNetworkSwitch(TRITANIUM, "network_switch"));
@@ -249,16 +248,36 @@ public class MatterOverdriveBlocks {
             itemBlock = new ItemBlock(block);
             itemBlock.setRegistryName(block.getRegistryName());
         }
-        return register(block, itemBlock);
+        return register(block, itemBlock, true);
     }
 
-    protected <T extends Block> T register(T block, ItemBlock itemBlock) {
+    protected <T extends Block> T register(T block, boolean addToItems) {
+        ItemBlock itemBlock;
+        if (block instanceof IItemBlockFactory) {
+            itemBlock = ((IItemBlockFactory) block).createItemBlock();
+        } else if (block instanceof MOBlockMachine) {
+            itemBlock = new MOMachineBlockItem(block);
+        } else if (block instanceof BlockDecorativeColored) {
+            itemBlock = new ItemColored(block, false);
+            itemBlock.setRegistryName(block.getRegistryName());
+        } else {
+            itemBlock = new ItemBlock(block);
+            itemBlock.setRegistryName(block.getRegistryName());
+        }
+        return register(block, itemBlock, addToItems);
+    }
+
+    protected <T extends Block> T register(T block, ItemBlock itemBlock, boolean addToItems) {
         if (block instanceof IConfigSubscriber) {
             MatterOverdrive.CONFIG_HANDLER.subscribe((IConfigSubscriber) block);
         }
         registeredCount++;
         blocks.add(block);
-        items.add(itemBlock);
+
+        if (addToItems) {
+            items.add(itemBlock);
+        }
+
         return block;
     }
 }

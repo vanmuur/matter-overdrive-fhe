@@ -18,11 +18,16 @@
 
 package matteroverdrive.blocks;
 
+import matteroverdrive.MatterOverdrive;
 import matteroverdrive.blocks.includes.MOBlockMachine;
 import matteroverdrive.machines.analyzer.TileEntityMachineMatterAnalyzer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -107,4 +112,33 @@ public class BlockMatterAnalyzer extends MOBlockMachine<TileEntityMachineMatterA
     {
         return MOBlockRenderer.renderID;
     }*/
+
+    public static void setState(boolean active, World worldIn, BlockPos pos) {
+        IBlockState iBlockState = worldIn.getBlockState(pos);
+
+        TileEntity tileentity = worldIn.getTileEntity(pos);
+
+        if (active) {
+            worldIn.setBlockState(pos, MatterOverdrive.BLOCKS.matter_analyzer_on.getDefaultState().withProperty(PROPERTY_DIRECTION, iBlockState.getValue(PROPERTY_DIRECTION)), 3);
+        } else {
+            worldIn.setBlockState(pos, MatterOverdrive.BLOCKS.matter_analyzer_off.getDefaultState().withProperty(PROPERTY_DIRECTION, iBlockState.getValue(PROPERTY_DIRECTION)), 3);
+        }
+
+        if (tileentity != null) {
+            tileentity.validate();
+
+            worldIn.setTileEntity(pos, tileentity);
+        }
+    }
+
+    @Override
+    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
+    {
+        return this.getDefaultState().withProperty(PROPERTY_DIRECTION, placer.getHorizontalFacing().getOpposite());
+    }
+
+    @Override
+    public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
+        return new ItemStack(MatterOverdrive.BLOCKS.matter_analyzer_off);
+    }
 }

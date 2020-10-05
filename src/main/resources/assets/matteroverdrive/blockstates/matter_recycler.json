@@ -8,17 +8,32 @@
       "side": "matteroverdrive:blocks/recycler_side",
       "particle": "matteroverdrive:blocks/recycler_side",
       "front": "matteroverdrive:blocks/recycler_side",
-      "back": "matteroverdrive:blocks/recycler_side"
+      "back": "matteroverdrive:blocks/recycler_side",
+      "bottom_on": "matteroverdrive:blocks/vent2",
+      "top_on": "matteroverdrive:blocks/decomposer_top",
+      "side_on": "matteroverdrive:blocks/recycler_side",
+      "particle_on": "matteroverdrive:blocks/recycler_side",
+      "front_on": "matteroverdrive:blocks/recycler_side",
+      "back_on": "matteroverdrive:blocks/recycler_side"
     }
   },
   "variants": {
     "normal": {"model": "matteroverdrive:base/orientable"},
-    "facing=north": { "model": "matteroverdrive:base/orientable"},
-    "facing=south": { "model": "matteroverdrive:base/orientable","y": 180 },
-    "facing=west":  { "model": "matteroverdrive:base/orientable","y": 270 },
-    "facing=east":  { "model": "matteroverdrive:base/orientable","y": 90 },
-    "facing=up": { "model": "matteroverdrive:base/orientable"},
-    "facing=down": { "model": "matteroverdrive:base/orientable"},
+
+    "facing=north,recycling=off": { "model": "matteroverdrive:base/orientable"},
+    "facing=south,recycling=off": { "model": "matteroverdrive:base/orientable","y": 180 },
+    "facing=west,recycling=off":  { "model": "matteroverdrive:base/orientable","y": 270 },
+    "facing=east,recycling=off":  { "model": "matteroverdrive:base/orientable","y": 90 },
+    "facing=up,recycling=off": { "model": "matteroverdrive:base/orientable"},
+    "facing=down,recycling=off": { "model": "matteroverdrive:base/orientable"},
+
+    "facing=north,recycling=on": { "model": "matteroverdrive:base/orientable_on"},
+    "facing=south,recycling=on": { "model": "matteroverdrive:base/orientable_on","y": 180 },
+    "facing=west,recycling=on":  { "model": "matteroverdrive:base/orientable_on","y": 270 },
+    "facing=east,recycling=on":  { "model": "matteroverdrive:base/orientable_on","y": 90 },
+    "facing=up,recycling=on": { "model": "matteroverdrive:base/orientable_on"},
+    "facing=down,recycling=on": { "model": "matteroverdrive:base/orientable_on"},
+
     "inventory": {
       "model": "matteroverdrive:base/orientable",
       "transform": "forge:default-block"

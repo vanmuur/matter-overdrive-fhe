@@ -64,7 +64,7 @@ public class MatterOverdriveGuides {
         addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.replicator).setGroup("machines"), 0, 0);
         addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.decomposer).setGroup("machines"), 1, 0);
         addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.recycler).setGroup("machines"), 0, 1);
-        addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.matter_analyzer).setGroup("machines"), 1, 1);
+        addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.matter_analyzer_off).setGroup("machines"), 1, 1);
         addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.pattern_storage).setGroup("machines"), 0, 2);
         addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.pattern_monitor).setGroup("machines"), 1, 2);
         addEntry(generalCategory, new MOGuideEntryBlock(MatterOverdrive.BLOCKS.transporter).setGroup("machines"), 0, 3);

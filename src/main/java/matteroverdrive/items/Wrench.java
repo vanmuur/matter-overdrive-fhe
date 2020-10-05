@@ -56,7 +56,7 @@ public class Wrench extends MOBaseItem {
 
             if (player.isSneaking() && state.getBlock() instanceof IDismantleable && ((IDismantleable) state.getBlock()).canDismantle(player, world, pos)) {
                 if (!world.isRemote) {
-                    player.sendMessage(new TextComponentString(state.getBlock().getLocalizedName()));
+//                    player.sendMessage(new TextComponentString(state.getBlock().getLocalizedName()));
 
                     ((IDismantleable) state.getBlock()).dismantleBlock(player, world, pos, false);
                 }

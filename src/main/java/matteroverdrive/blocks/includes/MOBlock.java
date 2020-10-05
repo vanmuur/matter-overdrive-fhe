@@ -63,7 +63,11 @@ public class MOBlock extends Block implements ItemModelProvider {
         this.fullBlock = getDefaultState().isOpaqueCube();
         this.lightOpacity = fullBlock ? 255 : 0;
         this.setTranslationKey(name);
-        setCreativeTab(MatterOverdrive.TAB_OVERDRIVE);
+
+        if (! name.equals("matter_analyzer_on")) {
+            setCreativeTab(MatterOverdrive.TAB_OVERDRIVE);
+        }
+
         rotationType = RotationType.FOUR_WAY;
     }
 
