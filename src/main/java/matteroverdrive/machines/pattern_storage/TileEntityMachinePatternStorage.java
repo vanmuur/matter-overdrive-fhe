@@ -95,7 +95,7 @@ public class TileEntityMachinePatternStorage extends MOTileEntityMachineEnergy i
             }
         } else {
             if (isActive() && random.nextFloat() < 0.2f && getBlockType(BlockPatternStorage.class) != null && getBlockType(BlockPatternStorage.class).hasVentParticles && world.getBlockState(getPos()).getBlock() == MatterOverdrive.BLOCKS.pattern_storage) {
-                SpawnVentParticles(0.03f, world.getBlockState(getPos()).getValue(MOBlock.PROPERTY_DIRECTION).getOpposite(), 1);
+                SpawnVentParticles(0.03f, world.getBlockState(getPos()).getValue(MOBlock.PROPERTY_DIRECTION), 1);
             }
         }
     }

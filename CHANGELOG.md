@@ -3,6 +3,7 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Fixed the Ion Sniper zoom. (VanMuur)
 * Fixed the phaser rifle zoom. (VanMuur)
 * Removed everything that dealt with the dual-nature of the Matter Analyzer. It just doesn't scale with the upgrades and other options. (VanMuur)
 * Fixed state on the Analyzer. Turns out it was dropping its inventory every time due to the way setBlockState() works. (VanMuur)
