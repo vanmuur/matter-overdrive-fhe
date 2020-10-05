@@ -3,6 +3,7 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Got the Analyzer's front face properly updating when analyzing starts and stops, but it spits out extra items every time there's a state change. (VanMuur)
 * Update en_us.lang (Gandalf360one)
 * Update recycler_side_anim.png.mcmeta (Gandalf360one)
 * Add files via upload (Gandalf360one)

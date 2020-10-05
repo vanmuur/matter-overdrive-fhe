@@ -24,6 +24,7 @@ import matteroverdrive.machines.analyzer.TileEntityMachineMatterAnalyzer;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -37,6 +38,8 @@ public class BlockMatterAnalyzer extends MOBlockMachine<TileEntityMachineMatterA
 /*    private IIcon iconTop;
 	private IIcon iconFront;
     private IIcon iconFronAnim;*/
+
+    private static boolean keepInventory;
 
     public BlockMatterAnalyzer(Material material, String name) {
         super(material, name);
@@ -118,11 +121,15 @@ public class BlockMatterAnalyzer extends MOBlockMachine<TileEntityMachineMatterA
 
         TileEntity tileentity = worldIn.getTileEntity(pos);
 
+        keepInventory = true;
+
         if (active) {
             worldIn.setBlockState(pos, MatterOverdrive.BLOCKS.matter_analyzer_on.getDefaultState().withProperty(PROPERTY_DIRECTION, iBlockState.getValue(PROPERTY_DIRECTION)), 3);
         } else {
             worldIn.setBlockState(pos, MatterOverdrive.BLOCKS.matter_analyzer_off.getDefaultState().withProperty(PROPERTY_DIRECTION, iBlockState.getValue(PROPERTY_DIRECTION)), 3);
         }
+
+        keepInventory = false;
 
         if (tileentity != null) {
             tileentity.validate();
@@ -140,5 +147,19 @@ public class BlockMatterAnalyzer extends MOBlockMachine<TileEntityMachineMatterA
     @Override
     public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
         return new ItemStack(MatterOverdrive.BLOCKS.matter_analyzer_off);
+    }
+
+    @Override
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
+    {
+        if (!keepInventory) {
+            TileEntityMachineMatterAnalyzer tileentity = (TileEntityMachineMatterAnalyzer) worldIn.getTileEntity(pos);
+
+            if (tileentity != null) {
+                InventoryHelper.dropInventoryItems(worldIn, pos, tileentity);
+                worldIn.updateComparatorOutputLevel(pos, this);
+                super.breakBlock(worldIn, pos, state);
+            }
+        }
     }
 }
