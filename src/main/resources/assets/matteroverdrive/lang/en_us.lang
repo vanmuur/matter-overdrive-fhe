@@ -112,6 +112,9 @@ item.matteroverdrive.weapon_module_barrel.doomsday.name=Degenerative Explosive F
 item.matteroverdrive.weapon_module_barrel.block.name=Voxel Exaggerating Nullification Obliteration Matrix (VENOM)
 item.matteroverdrive.weapon_module_ricochet.name=Shot Rebound Module
 item.matteroverdrive.weapon_module_holo_sights.name=Holo Sight
+item.matteroverdrive.weapon_module_holo_sights.normal.name=Holo Sight
+item.matteroverdrive.weapon_module_holo_sights.wide.name=Holo Sight - Wide
+item.matteroverdrive.weapon_module_holo_sights.small.name=Holo Sight - Small
 item.matteroverdrive.sniper_scope.name=Sniper Scope
 
 

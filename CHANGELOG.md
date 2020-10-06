@@ -3,6 +3,7 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Fixed Pattern Storage vent particle effects. It was coming out the other side of the block. Now the block is rotated 180 degrees. (VanMuur)
 * Fixed the Ion Sniper zoom. (VanMuur)
 * Fixed the phaser rifle zoom. (VanMuur)
 * Removed everything that dealt with the dual-nature of the Matter Analyzer. It just doesn't scale with the upgrades and other options. (VanMuur)
