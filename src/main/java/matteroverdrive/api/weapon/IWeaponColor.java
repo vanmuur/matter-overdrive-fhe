@@ -20,6 +20,6 @@ package matteroverdrive.api.weapon;
 
 import net.minecraft.item.ItemStack;
 
-public interface IWeaponColor extends IWeaponModule {
+public interface IWeaponColor extends IWeaponModuleTest {
     int getColor(ItemStack module, ItemStack weapon);
 }

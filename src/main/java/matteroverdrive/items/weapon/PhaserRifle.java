@@ -20,6 +20,7 @@ package matteroverdrive.items.weapon;
 
 import matteroverdrive.Reference;
 import matteroverdrive.api.weapon.IWeaponModule;
+import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.api.weapon.WeaponShot;
 import matteroverdrive.client.sound.MOPositionedSound;
 import matteroverdrive.client.sound.WeaponSound;
@@ -132,7 +133,7 @@ public class PhaserRifle extends EnergyWeapon {
 
     @Override
     public boolean supportsModule(ItemStack weapon, ItemStack module) {
-        if (module != null && module.getItem() instanceof IWeaponModule && ((IWeaponModule) module.getItem()).getSlot(module) == Reference.MODULE_BARREL) {
+        if (module != null && module.getItem() instanceof IWeaponModuleTest && ((IWeaponModuleTest) module.getItem()).getSlot(module) == Reference.MODULE_BARREL) {
             return module.getItemDamage() != WeaponModuleBarrel.HEAL_BARREL_ID;
         }
         return true;

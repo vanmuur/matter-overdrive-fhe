@@ -21,6 +21,7 @@ package matteroverdrive.client.render.weapons.modules;
 import com.google.common.collect.ImmutableMap;
 import matteroverdrive.Reference;
 import matteroverdrive.api.weapon.IWeaponModule;
+import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.client.RenderHandler;
 import matteroverdrive.client.render.weapons.WeaponRenderHandler;
 import matteroverdrive.client.resources.data.WeaponMetadataSection;
@@ -65,7 +66,19 @@ public class ModuleHoloSightsRender extends ModuleRenderAbstract {
             GlStateManager.translate(0.012, 0.012, 0);
             GlStateManager.rotate(180, 0, 0, 1);
             GlStateManager.translate(-0.012, -0.012, 0);
-            RenderUtils.bindTexture(((IWeaponModule) moduleStack.getItem()).getModelTexture(moduleStack));
+            if (moduleStack.getItem() instanceof IWeaponModule) {
+                ResourceLocation location = ((IWeaponModule) moduleStack.getItem()).getModelTexture(moduleStack);
+
+                if (location != null) {
+                    RenderUtils.bindTexture(location);
+                }
+            } else if (moduleStack.getItem() instanceof IWeaponModuleTest) {
+                ResourceLocation location = ((IWeaponModuleTest) moduleStack.getItem()).getModelTexture(moduleStack);
+
+                if (location != null) {
+                    RenderUtils.bindTexture(location);
+                }
+            }
             RenderUtils.drawPlane(0.024, 0.024);
             GlStateManager.disableBlend();
             GlStateManager.enableLighting();

@@ -51,7 +51,6 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
 //        }
 //    }
 
-    @Override
     public void getSubItems(CreativeTabs tab, List<ItemStack> subItems) {
         if (isInCreativeTab(tab)) {
             for (int i = 0; i < subItemNames.length; i++) {
@@ -80,9 +79,11 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
 
     @Override
     public ResourceLocation getModelTexture(ItemStack module) {
-        System.out.println("Getting texture for model texture with item damage of: " + module.getItemDamage());
+//        System.out.println("Getting texture for model texture with item damage of: " + module.getItemDamage());
+//
+//        return new ResourceLocation(Reference.PATH_ELEMENTS + String.format("holo_sight_%s.png", module.getItemDamage()));
 
-        return new ResourceLocation(Reference.PATH_ELEMENTS + String.format("holo_sight_%s.png", module.getItemDamage()));
+        return null;
     }
 
     @Override
@@ -101,7 +102,7 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
      */
     @Override
     public String getTranslationKey(ItemStack stack) {
-        int i = MathHelper.clamp(stack.getItemDamage(), 0, 2);
+        int i = MathHelper.clamp(stack.getItemDamage(), 0, subItemNames.length-1);
 
         return super.getTranslationKey() + "." + subItemNames[i];
     }

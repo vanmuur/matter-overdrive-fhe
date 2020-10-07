@@ -19,10 +19,7 @@
 package matteroverdrive.util;
 
 import matteroverdrive.Reference;
-import matteroverdrive.api.weapon.IWeapon;
-import matteroverdrive.api.weapon.IWeaponColor;
-import matteroverdrive.api.weapon.IWeaponModule;
-import matteroverdrive.api.weapon.IWeaponStat;
+import matteroverdrive.api.weapon.*;
 import matteroverdrive.items.weapon.module.WeaponModuleColor;
 import net.minecraft.item.ItemStack;
 
@@ -59,11 +56,12 @@ public class WeaponHelper {
     public static float modifyStat(IWeaponStat stat, ItemStack weapon, float original) {
         if (isWeapon(weapon)) {
             List<ItemStack> itemStacks = MOInventoryHelper.getStacks(weapon);
-            if (itemStacks != null) {
-                for (ItemStack module : itemStacks) {
-                    if (module != null && module.getItem() instanceof IWeaponModule) {
-                        original = ((IWeaponModule) module.getItem()).modifyWeaponStat(stat, module, weapon, original);
-                    }
+
+            for (ItemStack module : itemStacks) {
+                if (module != null && module.getItem() instanceof IWeaponModule) {
+                    original = ((IWeaponModule) module.getItem()).modifyWeaponStat(stat, module, weapon, original);
+                } else if (module != null && module.getItem() instanceof IWeaponModuleTest) {
+                    original = ((IWeaponModuleTest) module.getItem()).modifyWeaponStat(stat, module, weapon, original);
                 }
             }
         }
@@ -76,14 +74,18 @@ public class WeaponHelper {
             for (ItemStack module : MOInventoryHelper.getStacks(weapon)) {
                 if (module != null && module.getItem() instanceof IWeaponModule) {
                     statValue = ((IWeaponModule) module.getItem()).modifyWeaponStat(stat, module, weapon, statValue);
+                } else if (module != null && module.getItem() instanceof IWeaponModuleTest) {
+                    statValue = ((IWeaponModuleTest) module.getItem()).modifyWeaponStat(stat, module, weapon, statValue);
                 }
+
             }
         }
         return statValue != 1f;
     }
 
     public static boolean isWeaponModule(ItemStack itemStack) {
-        return !itemStack.isEmpty() && itemStack.getItem() instanceof IWeaponModule;
+        return (!itemStack.isEmpty() && itemStack.getItem() instanceof IWeaponModule) ||
+               (!itemStack.isEmpty() && itemStack.getItem() instanceof IWeaponModuleTest);
     }
 
     public static boolean isWeapon(ItemStack itemStack) {

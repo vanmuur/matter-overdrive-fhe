@@ -19,6 +19,7 @@
 package matteroverdrive.client.render.weapons;
 
 import matteroverdrive.api.weapon.IWeaponModule;
+import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.client.RenderHandler;
 import matteroverdrive.client.render.weapons.layers.IWeaponLayer;
 import matteroverdrive.client.render.weapons.modules.IModuleRender;
@@ -64,7 +65,7 @@ import java.util.Map;
 @SideOnly(Side.CLIENT)
 public class WeaponRenderHandler {
     private final Minecraft mc = Minecraft.getMinecraft();
-    private final Map<Class<? extends IWeaponModule>, IModuleRender> moduleRenders;
+    private final Map<Class<? extends IWeaponModuleTest>, IModuleRender> moduleRenders;
     private final List<IWeaponLayer> weaponLayers;
 
     public WeaponRenderHandler() {
@@ -318,7 +319,7 @@ public class WeaponRenderHandler {
         }
     }
 
-    public void addModuleRender(Class<? extends IWeaponModule> moduleClass, IModuleRender render) {
+    public void addModuleRender(Class<? extends IWeaponModuleTest> moduleClass, IModuleRender render) {
         this.moduleRenders.put(moduleClass, render);
     }
 

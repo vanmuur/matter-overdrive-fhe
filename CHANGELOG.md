@@ -3,6 +3,7 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Attempting to get Holo Sights set up as sub-types. The subtypes are not registering properly, though, in the creative tabs. (VanMuur)
 * Fixed Pattern Storage vent particle effects. It was coming out the other side of the block. Now the block is rotated 180 degrees. (VanMuur)
 * Fixed the Ion Sniper zoom. (VanMuur)
 * Fixed the phaser rifle zoom. (VanMuur)
