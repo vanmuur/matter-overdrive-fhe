@@ -1,12 +1,19 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
-Unreleased
-----------
+v0.1.1 (2020-10-11 13:04:23 -0400)
+----------------------------------
+* Trying to fix up the gradle.yml file. (VanMuur)
+* Trying to fix up the gradle.yml file. (VanMuur)
+* Trying to get autobuilds to build on a tag release. (VanMuur)
+* Updating workflow to run on push of tag. (VanMuur)
+* Changing to only run on new tag create. (VanMuur)
+* Holo sights are now renamed properly, and are working in-game. (VanMuur)
 * Holosights are now working. Commit before swapping old holo sights and new ones. (VanMuur)
-
-refs/heads/main (2020-10-07 09:47:33 -0400)
--------------------------------------------
+* Updating tag name for the release. (VanMuur)
+* Fixing spelling mistake. (VanMuur)
+* Trying to get build release to work. (VanMuur)
+* Uploading build artifacts on release. (VanMuur)
 * Trying to get a build to release. (VanMuur)
 * Fixing gradle.yaml file. (VanMuur)
 * Fixed issue in gradle.yaml (VanMuur)
