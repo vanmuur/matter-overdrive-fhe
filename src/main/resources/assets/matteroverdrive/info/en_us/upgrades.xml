@@ -64,8 +64,14 @@
     </page>
     <page class="padded-page">
         <title size="2" class="matter-text small-title">Matter Storage Upgrade</title>
-        <text class="matter-text text-block">The Matter Storage Upgrade is used to increase the Matter Storage of Machinese.</text>
+        <text class="matter-text text-block">The Matter Storage Upgrade is used to increase the Matter Storage of Machines.</text>
         <recipe item="[item name=upgrade meta=7]" style="float:left"></recipe>
         <details item="[item name=upgrade meta=7]" style="margin-left:16px;margin-top:8px"></details>
+    </page>
+    <page class="padded-page">
+        <title size="2" class="matter-text small-title">Muffler Upgrade</title>
+        <text class="matter-text text-block">The Muffler upgrade allows you to stop machines from making any sound.</text>
+        <recipe item="[item name=upgrade meta=8]" style="float:left"></recipe>
+        <details item="[item name=upgrade meta=8]" style="margin-left:16px;margin-top:8px"></details>
     </page>
 </entry>

@@ -36,6 +36,7 @@ import matteroverdrive.util.StackUtils;
 import net.minecraft.inventory.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.TextFormatting;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -82,8 +83,8 @@ public class PageUpgrades extends ElementBaseGroup {
                         if (guiMachine.getMachine().isAffectedByUpgrade(entry.getKey())) {
                             double multiply = upgradeHandler != null ? upgradeHandler.affectUpgrade(entry.getKey(), entry.getValue()) : entry.getValue();
                             if (upgradesMap.containsKey(entry.getKey())) {
-                                double previusValue = upgradesMap.get(entry.getKey());
-                                multiply = upgradeHandler.affectUpgrade(entry.getKey(), upgradeHandler != null ? upgradeHandler.affectUpgrade(entry.getKey(), previusValue * multiply) : previusValue * multiply);
+                                double previousValue = upgradesMap.get(entry.getKey());
+                                multiply = upgradeHandler.affectUpgrade(entry.getKey(), upgradeHandler != null ? upgradeHandler.affectUpgrade(entry.getKey(), previousValue * multiply) : previousValue * multiply);
                                 upgradesMap.put(entry.getKey(), multiply);
                             } else {
                                 upgradesMap.put(entry.getKey(), multiply);
@@ -98,7 +99,11 @@ public class PageUpgrades extends ElementBaseGroup {
 
         for (final Map.Entry<UpgradeTypes, Double> entry : upgradesMap.entrySet()) {
             if (guiMachine.getMachine().isAffectedByUpgrade(entry.getKey())) {
-                infos.add(MOStringHelper.toInfo(entry.getKey(), entry.getValue()));
+                if (entry.getKey() == UpgradeTypes.Muffler) {
+                    infos.add(TextFormatting.GREEN + "Muffling");
+                } else {
+                    infos.add(MOStringHelper.toInfo(entry.getKey(), entry.getValue()));
+                }
             }
         }
 

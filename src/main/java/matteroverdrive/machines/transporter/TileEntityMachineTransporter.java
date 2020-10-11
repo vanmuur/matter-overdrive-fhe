@@ -72,7 +72,7 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
     public static final int ENERGY_STORAGE = 1024000;
     public static final int MAX_ENERGY_EXTRACT = 32000;
     public static final int ENERGY_PER_UNIT = 16;
-    private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerUsage, UpgradeTypes.Speed, UpgradeTypes.Range, UpgradeTypes.PowerStorage);
+    private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerUsage, UpgradeTypes.Speed, UpgradeTypes.Range, UpgradeTypes.PowerStorage, UpgradeTypes.Muffler);
     private static final int TRANSPORT_RANGE = 32;
     public final List<TransportLocation> locations;
     public int selectedLocation;

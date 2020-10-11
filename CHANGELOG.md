@@ -1,6 +1,12 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.2 (2020-10-11 16:51:13 -0400)
+----------------------------------
+* Fixing version number in build. (VanMuur)
+* Fixed version number with build. (VanMuur)
+* First edition of the sound muffler. (VanMuur)
+
 v0.1.1 (2020-10-11 14:18:24 -0400)
 ----------------------------------
 * Fixing release version number issue. (VanMuur)

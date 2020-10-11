@@ -91,18 +91,14 @@ public class TileEntityMachineDecomposer extends MOTileEntityMachineMatter imple
     // If we have the muffler upgrade, say we don't have sound.
     @Override
     public boolean hasSound() {
-//        return true;
-
-//        MOLog.info("Muffle amount is: " + getUpgradeMultiply(UpgradeTypes.Muffler));
-
-        // Invalidate here?
-
-        return getUpgradeMultiply(UpgradeTypes.Muffler) != 2d;
+        return true;
     }
 
     @Override
     public float soundVolume() {
-        if (getUpgradeMultiply(UpgradeTypes.Muffler) == 2d) {
+        ItemStack stack = this.getStackInSlot(INPUT_SLOT_ID);
+
+        if (getUpgradeMultiply(UpgradeTypes.Muffler) == 2d || stack.isEmpty()) {
             return 0.0f;
         }
 

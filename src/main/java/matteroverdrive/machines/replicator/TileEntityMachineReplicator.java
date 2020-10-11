@@ -66,7 +66,7 @@ public class TileEntityMachineReplicator extends MOTileEntityMachineMatter imple
     public static final int REPLICATION_ANIMATION_TIME = 60;
     public static final int RADIATION_DAMAGE_DELAY = 5;
     public static final int RADIATION_RANGE = 8;
-    private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerStorage, UpgradeTypes.Speed, UpgradeTypes.Fail, UpgradeTypes.PowerUsage, UpgradeTypes.MatterStorage);
+    private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerStorage, UpgradeTypes.Speed, UpgradeTypes.Fail, UpgradeTypes.PowerUsage, UpgradeTypes.MatterStorage, UpgradeTypes.Muffler);
     public static int MATTER_STORAGE = 1024;
     public static int ENERGY_STORAGE = 512000;
     public int OUTPUT_SLOT_ID = 0;

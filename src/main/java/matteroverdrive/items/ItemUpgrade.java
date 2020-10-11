@@ -68,7 +68,10 @@ public class ItemUpgrade extends MOBaseItem implements IUpgrade, IAdvancedModelP
     public void addDetails(ItemStack itemstack, EntityPlayer player, @Nullable World worldIn, List<String> infos) {
         Map<UpgradeTypes, Double> stats = getUpgrades(itemstack);
         for (final Map.Entry<UpgradeTypes, Double> entry : stats.entrySet()) {
-            infos.add(MOStringHelper.toInfo(entry.getKey(), entry.getValue()));
+            // Don't put any tooltip for the Muffler. It's pretty obvious what it does.
+            if (entry.getKey() != UpgradeTypes.Muffler) {
+                infos.add(MOStringHelper.toInfo(entry.getKey(), entry.getValue()));
+            }
         }
     }
 
