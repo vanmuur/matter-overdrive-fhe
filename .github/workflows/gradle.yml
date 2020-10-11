@@ -3,11 +3,16 @@
 
 name: Build 
 
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  create:
+    tag:
+      - v*
 
 jobs:
   build:
