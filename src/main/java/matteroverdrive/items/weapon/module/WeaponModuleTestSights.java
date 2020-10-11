@@ -3,6 +3,7 @@ package matteroverdrive.items.weapon.module;
 import matteroverdrive.Reference;
 import matteroverdrive.api.weapon.IWeaponScope;
 import matteroverdrive.items.IAdvancedModelProvider;
+import matteroverdrive.util.MOLog;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
@@ -12,7 +13,7 @@ import net.minecraft.util.math.MathHelper;
 import javax.annotation.Nonnull;
 
 public class WeaponModuleTestSights extends WeaponModuleTestBase implements IWeaponScope, IAdvancedModelProvider {
-    public static final String[] subItemNames = {"normal", "small", "wide"};
+    public static final String[] subItemNames = {"normal", "wide", "small"};
 
     public WeaponModuleTestSights(String name) {
         super(name);
@@ -32,10 +33,12 @@ public class WeaponModuleTestSights extends WeaponModuleTestBase implements IWea
 
     @Override
     public void getSubItems(@Nonnull CreativeTabs creativeTabs, @Nonnull NonNullList<ItemStack> list) {
-        if (isInCreativeTab(creativeTabs)) {
-            for (int i=0; i<subItemNames.length; i++) {
-                list.add(new ItemStack(this, 1, i));
-            }
+        if (!isInCreativeTab(creativeTabs)) {
+            return;
+        }
+
+        for (int i=0; i<subItemNames.length; i++) {
+            list.add(new ItemStack(this, 1, i));
         }
     }
 
@@ -48,17 +51,27 @@ public class WeaponModuleTestSights extends WeaponModuleTestBase implements IWea
 
     @Override
     public String getModelPath() {
-        return null;
-    }
+        return Reference.PATH_MODEL_ITEMS + "weapon_model_holo_sights.obj";
+    };
 
     @Override
     public ResourceLocation getModelTexture(ItemStack module) {
-        return new ResourceLocation(Reference.PATH_ELEMENTS + String.format("holo_sight_%s.png", module.getItemDamage()));
+        ResourceLocation resource = new ResourceLocation(Reference.PATH_ELEMENTS + String.format("holo_sight_%d.png", module.getItemDamage()));
+
+        MOLog.warn("Resource location is: " + resource.toString());
+
+        return resource;
     }
 
     @Override
     public String getModelName(ItemStack module) {
-        return null;
+        int i = MathHelper.clamp(module.getItemDamage(), 0, subItemNames.length - 1);
+
+        String mName = super.getTranslationKey() + "_" + subItemNames[i];
+
+        MOLog.info("The current model name is: {}", mName);
+
+        return super.getTranslationKey() + "_" + subItemNames[i];
     }
 
     @Override

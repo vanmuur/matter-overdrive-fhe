@@ -22,6 +22,7 @@ import matteroverdrive.MatterOverdrive;
 import matteroverdrive.Reference;
 import matteroverdrive.api.weapon.IWeapon;
 import matteroverdrive.api.weapon.IWeaponModule;
+import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.data.WeightedRandomItemStack;
 import matteroverdrive.items.includes.EnergyContainer;
 import matteroverdrive.items.weapon.EnergyWeapon;
@@ -245,8 +246,8 @@ public class WeaponFactory {
         public WeightedRandomWeaponModule(ItemStack weaponModule, int weight, int minLevel, int maxLevel) {
             super(weight);
             if (weaponModule != null) {
-                if (weaponModule.getItem() instanceof IWeaponModule) {
-                    this.slotID = ((IWeaponModule) weaponModule.getItem()).getSlot(weaponModule);
+                if (weaponModule.getItem() instanceof IWeaponModuleTest) {
+                    this.slotID = ((IWeaponModuleTest) weaponModule.getItem()).getSlot(weaponModule);
                 } else if (weaponModule.hasCapability(CapabilityEnergy.ENERGY, null)) {
                     this.slotID = Reference.MODULE_BATTERY;
                 }

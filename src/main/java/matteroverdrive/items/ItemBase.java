@@ -20,6 +20,7 @@ package matteroverdrive.items;
 
 import matteroverdrive.api.internal.ItemModelProvider;
 import matteroverdrive.client.ClientUtil;
+import matteroverdrive.util.MOLog;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -42,10 +43,16 @@ public class ItemBase extends Item implements ItemModelProvider {
             String[] subNames = ((IAdvancedModelProvider) this).getSubNames();
             for (int i = 0; i < subNames.length; i++) {
                 String sub = subNames[i];
+
+                MOLog.info("Adding resource location for: '" + getRegistryName() + "_" + sub + "'");
+
                 ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(getRegistryName() + "_" + sub, "inventory"));
             }
             return;
         }
+
+        MOLog.info(getRegistryName()+ " has subtypes: " + getHasSubtypes());
+
         if (!getHasSubtypes())
             ClientUtil.registerModel(this, getRegistryName().toString());
         else {

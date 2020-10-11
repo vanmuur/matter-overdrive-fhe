@@ -1,8 +1,14 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
-Unreleased
-----------
+refs/heads/main (2020-10-07 09:47:33 -0400)
+-------------------------------------------
+* Trying to get a build to release. (VanMuur)
+* Fixing gradle.yaml file. (VanMuur)
+* Fixed issue in gradle.yaml (VanMuur)
+* Updated gradle.yaml file to upload artifacts. (VanMuur)
+* Created gradle.yaml. (VanMuur)
+* Updated to IWeaponModuleTest to figure out how modules work. (VanMuur)
 * Attempting to get Holo Sights set up as sub-types. The subtypes are not registering properly, though, in the creative tabs. (VanMuur)
 * Fixed Pattern Storage vent particle effects. It was coming out the other side of the block. Now the block is rotated 180 degrees. (VanMuur)
 * Fixed the Ion Sniper zoom. (VanMuur)

@@ -19,7 +19,6 @@
 package matteroverdrive.items.weapon.module;
 
 import matteroverdrive.MatterOverdrive;
-import matteroverdrive.api.weapon.IWeaponModule;
 import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.api.weapon.IWeaponStat;
 import matteroverdrive.items.includes.MOBaseItem;

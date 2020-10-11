@@ -56,6 +56,7 @@ import matteroverdrive.init.OverdriveBioticStats;
 import matteroverdrive.items.weapon.module.WeaponModuleColor;
 import matteroverdrive.items.weapon.module.WeaponModuleHoloSights;
 import matteroverdrive.items.weapon.module.WeaponModuleSniperScope;
+import matteroverdrive.items.weapon.module.WeaponModuleTestSights;
 import matteroverdrive.machines.fusionReactorController.TileEntityMachineFusionReactorController;
 import matteroverdrive.machines.pattern_monitor.TileEntityMachinePatternMonitor;
 import matteroverdrive.machines.pattern_storage.TileEntityMachinePatternStorage;
@@ -316,6 +317,7 @@ public class RenderHandler {
     public void registerWeaponModuleRenders() {
         weaponRenderHandler.addModuleRender(WeaponModuleSniperScope.class, moduleSniperScopeRender);
         weaponRenderHandler.addModuleRender(WeaponModuleHoloSights.class, moduleHoloSightsRender);
+        weaponRenderHandler.addModuleRenderTest(WeaponModuleTestSights.class, moduleHoloSightsRender);
     }
 
     public void registerWeaponLayers() {

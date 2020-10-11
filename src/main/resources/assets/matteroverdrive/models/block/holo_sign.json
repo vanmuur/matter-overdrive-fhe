@@ -18,5 +18,9 @@
         "down": { "texture": "#side", "uv": [ 0.0, 0.0, 16.0, 5.0 ] , "cullface":"down"}
       }
     }
-  ]
+  ],
+  "ctm": {
+    "model": { "model":  "cube" },
+    "face": "matteroverdrive:ctm/holo_monitor.cf"
+  }
 }

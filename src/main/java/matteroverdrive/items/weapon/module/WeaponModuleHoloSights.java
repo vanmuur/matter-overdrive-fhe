@@ -26,6 +26,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponScope, IAdvancedModelProvider {
@@ -100,6 +101,7 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
      * Returns the unlocalized name of this item. This version accepts an ItemStack so different stacks can have
      * different names based on their damage or NBT.
      */
+    @Nonnull
     @Override
     public String getTranslationKey(ItemStack stack) {
         int i = MathHelper.clamp(stack.getItemDamage(), 0, subItemNames.length-1);

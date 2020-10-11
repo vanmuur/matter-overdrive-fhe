@@ -66,8 +66,8 @@ public class ModuleHoloSightsRender extends ModuleRenderAbstract {
             GlStateManager.translate(0.012, 0.012, 0);
             GlStateManager.rotate(180, 0, 0, 1);
             GlStateManager.translate(-0.012, -0.012, 0);
-            if (moduleStack.getItem() instanceof IWeaponModule) {
-                ResourceLocation location = ((IWeaponModule) moduleStack.getItem()).getModelTexture(moduleStack);
+            if (moduleStack.getItem() instanceof IWeaponModuleTest) {
+                ResourceLocation location = ((IWeaponModuleTest) moduleStack.getItem()).getModelTexture(moduleStack);
 
                 if (location != null) {
                     RenderUtils.bindTexture(location);
