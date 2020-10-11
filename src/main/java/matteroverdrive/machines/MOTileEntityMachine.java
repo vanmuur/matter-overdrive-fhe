@@ -210,7 +210,7 @@ public abstract class MOTileEntityMachine extends MOTileEntity implements IMOTil
                 if (sound == null) {
                     float soundMultiply = 1;
                     if (getBlockType() instanceof MOBlockMachine) {
-                        soundMultiply = ((MOBlockMachine) getBlockType()).volume;
+                        soundMultiply = ((MOBlockMachine<?>) getBlockType()).volume;
                     }
                     if (soundMultiply > 0) {
                         sound = new MachineSound(getSound(), SoundCategory.BLOCKS, getPos(), soundVolume() * soundMultiply, 1);

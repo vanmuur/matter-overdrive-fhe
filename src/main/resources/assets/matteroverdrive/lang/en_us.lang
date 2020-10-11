@@ -101,6 +101,7 @@ item.matteroverdrive.upgrade.range.name=Range Upgrade
 item.matteroverdrive.upgrade.power_storage.name=Power Storage Upgrade
 item.matteroverdrive.upgrade.hyper_speed.name=Hyper Speed Upgrade
 item.matteroverdrive.upgrade.matter_storage.name=Matter Storage Upgrade
+item.matteroverdrive.upgrade.muffler.name=Muffler Upgrade
 
 #///////////// Weapon Modules ///////
 item.matteroverdrive.weapon_module_color.name=Color Module
@@ -361,6 +362,7 @@ upgradetype.Range.name=Range
 upgradetype.PowerStorage.name=Power Storage
 upgradetype.MatterStorage.name=Matter Storage
 upgradetype.MatterUsage.name=Matter Usage
+upgradetype.Muffler.name=Muffling
 
 ##########################################################################################################
 # Weapon Stats

@@ -1,8 +1,12 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
-v0.1.1 (2020-10-11 13:04:23 -0400)
+v0.1.1 (2020-10-11 14:18:24 -0400)
 ----------------------------------
+* Fixing release version number issue. (VanMuur)
+* Attempting to fix release number issue. (VanMuur)
+* Fixed workflow version number issue. (VanMuur)
+* Fixing reversed sights issue. (VanMuur)
 * Trying to fix up the gradle.yml file. (VanMuur)
 * Trying to fix up the gradle.yml file. (VanMuur)
 * Trying to get autobuilds to build on a tag release. (VanMuur)

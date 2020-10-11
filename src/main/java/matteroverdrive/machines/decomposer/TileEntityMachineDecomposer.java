@@ -28,6 +28,7 @@ import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.machines.MachineNBTCategory;
 import matteroverdrive.machines.events.MachineEvent;
 import matteroverdrive.tile.MOTileEntityMachineMatter;
+import matteroverdrive.util.MOLog;
 import matteroverdrive.util.MatterHelper;
 import matteroverdrive.util.TimeTracker;
 import net.minecraft.inventory.ISidedInventory;
@@ -48,7 +49,7 @@ public class TileEntityMachineDecomposer extends MOTileEntityMachineMatter imple
     public static int ENERGY_STORAGE = 512000;
     public static int DECEOPOSE_SPEED_PER_MATTER = 80;
     public static int DECOMPOSE_ENERGY_PER_MATTER = 6000;
-    private static EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.Fail, UpgradeTypes.MatterStorage, UpgradeTypes.MatterTransfer, UpgradeTypes.PowerStorage, UpgradeTypes.PowerUsage, UpgradeTypes.Speed);
+    private static EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.Fail, UpgradeTypes.MatterStorage, UpgradeTypes.MatterTransfer, UpgradeTypes.PowerStorage, UpgradeTypes.PowerUsage, UpgradeTypes.Speed, UpgradeTypes.Muffler);
     private final TimeTracker time;
     public int INPUT_SLOT_ID;
     public int OUTPUT_SLOT_ID;
@@ -87,14 +88,25 @@ public class TileEntityMachineDecomposer extends MOTileEntityMachineMatter imple
         return MatterOverdriveSounds.decomposer;
     }
 
+    // If we have the muffler upgrade, say we don't have sound.
     @Override
     public boolean hasSound() {
-        return true;
+//        return true;
+
+//        MOLog.info("Muffle amount is: " + getUpgradeMultiply(UpgradeTypes.Muffler));
+
+        // Invalidate here?
+
+        return getUpgradeMultiply(UpgradeTypes.Muffler) != 2d;
     }
 
     @Override
     public float soundVolume() {
-        return 0.1f;
+        if (getUpgradeMultiply(UpgradeTypes.Muffler) == 2d) {
+            return 0.0f;
+        }
+
+        return 0.3f;
     }
 
     private void manageExtract() {

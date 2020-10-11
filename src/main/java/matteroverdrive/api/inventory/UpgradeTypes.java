@@ -67,5 +67,9 @@ public enum UpgradeTypes {
      * The Matter Usage of the machine
      */
     MatterUsage,
-    Other
+    Other,
+    /**
+     * To silence a machine
+     */
+    Muffler
 }

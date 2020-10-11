@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ItemUpgrade extends MOBaseItem implements IUpgrade, IAdvancedModelProvider {
-    public static final String[] subItemNames = {"base", "speed", "power", "failsafe", "range", "power_storage", "hyper_speed", "matter_storage"};
+    public static final String[] subItemNames = {"base", "speed", "power", "failsafe", "range", "power_storage", "hyper_speed", "matter_storage", "muffler"};
 
     public ItemUpgrade(String name) {
         super(name);
@@ -150,6 +150,11 @@ public class ItemUpgrade extends MOBaseItem implements IUpgrade, IAdvancedModelP
                 break;
             case 7:
                 upgrades.put(UpgradeTypes.MatterStorage, 2d);
+                break;
+
+            // Muffler
+            case 8:
+                upgrades.put(UpgradeTypes.Muffler, 2d);
         }
         return upgrades;
     }
@@ -177,6 +182,9 @@ public class ItemUpgrade extends MOBaseItem implements IUpgrade, IAdvancedModelP
                 return UpgradeTypes.Speed;
             case 7:
                 return UpgradeTypes.MatterStorage;
+            // Muffler.
+            case 8:
+                return UpgradeTypes.Muffler;
         }
         return null;
     }
