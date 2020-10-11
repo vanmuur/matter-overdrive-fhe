@@ -200,8 +200,9 @@ tile.android_spawner.name=Rogue Android Spawner
 
 #///////////// Fluids ////////////
 tile.matter_plasma.name=Matter Plasma
+fluid.matter_plasma=Matter Plasma
 tile.molten_tritanium.name=Molten Tritanium
-tile.null.name=Fluid
+fluid.molten_tritanium=Molten Tritanium
 
 
 #///////////// Fusion Reactor ////////////
