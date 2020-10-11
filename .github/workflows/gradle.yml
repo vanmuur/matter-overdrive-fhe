@@ -10,8 +10,8 @@ name: Build
 #     branches: [ main ]
 
 on:
-  create:
-    tag:
+  push:
+    tags:
       - v*
 
 jobs:
