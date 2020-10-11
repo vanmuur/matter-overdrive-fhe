@@ -19,7 +19,6 @@
 package matteroverdrive.client.render.weapons;
 
 import matteroverdrive.api.weapon.IWeaponModule;
-import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.client.RenderHandler;
 import matteroverdrive.client.render.weapons.layers.IWeaponLayer;
 import matteroverdrive.client.render.weapons.modules.IModuleRender;
@@ -65,12 +64,10 @@ import java.util.Map;
 @SideOnly(Side.CLIENT)
 public class WeaponRenderHandler {
     private final Minecraft mc = Minecraft.getMinecraft();
-    private final Map<Class<? extends IWeaponModuleTest>, IModuleRender> moduleRendersTest;
     private final Map<Class<? extends IWeaponModule>, IModuleRender> moduleRenders;
     private final List<IWeaponLayer> weaponLayers;
 
     public WeaponRenderHandler() {
-        this.moduleRendersTest = new HashMap<>();
         this.moduleRenders = new HashMap<>();
         weaponLayers = new ArrayList<>();
     }
@@ -164,18 +161,10 @@ public class WeaponRenderHandler {
         for (IModuleRender render : moduleRenders.values()) {
             render.onModelBake(textureMap, renderHandler);
         }
-
-        for (IModuleRender render : moduleRendersTest.values()) {
-            render.onModelBake(textureMap, renderHandler);
-        }
     }
 
     public void onTextureStich(TextureMap textureMap, RenderHandler renderHandler) {
         for (IModuleRender render : moduleRenders.values()) {
-            render.onTextureStich(textureMap, renderHandler);
-        }
-
-        for (IModuleRender render : moduleRendersTest.values()) {
             render.onTextureStich(textureMap, renderHandler);
         }
     }
@@ -213,11 +202,6 @@ public class WeaponRenderHandler {
                 if (render != null) {
                     render.transformWeapon(weaponMeta, weapon, module, ticks, zoomValue);
                 }
-
-                render = moduleRendersTest.get(module.getItem().getClass());
-                if (render != null) {
-                    render.transformWeapon(weaponMeta, weapon, module, ticks, zoomValue);
-                }
             }
         }
     }
@@ -226,13 +210,6 @@ public class WeaponRenderHandler {
         if (modules != null) {
             for (ItemStack module : modules) {
                 IModuleRender render = moduleRenders.get(module.getItem().getClass());
-                if (render != null) {
-                    GlStateManager.pushMatrix();
-                    render.renderModule(weaponMeta, weapon, module, ticks);
-                    GlStateManager.popMatrix();
-                }
-
-                render = moduleRendersTest.get(module.getItem().getClass());
                 if (render != null) {
                     GlStateManager.pushMatrix();
                     render.renderModule(weaponMeta, weapon, module, ticks);
@@ -339,10 +316,6 @@ public class WeaponRenderHandler {
             GlStateManager.rotate(-f * 14.0F, 0.0F, 0.0F, 1.0F);
             GlStateManager.rotate(f2, 0.0F, 1.0F, 0.0F);
         }
-    }
-
-    public void addModuleRenderTest(Class<? extends IWeaponModuleTest> moduleClass, IModuleRender render) {
-        this.moduleRendersTest.put(moduleClass, render);
     }
 
     public void addModuleRender(Class<? extends IWeaponModule> moduleClass, IModuleRender render) {

@@ -1,6 +1,10 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+Unreleased
+----------
+* Holosights are now working. Commit before swapping old holo sights and new ones. (VanMuur)
+
 refs/heads/main (2020-10-07 09:47:33 -0400)
 -------------------------------------------
 * Trying to get a build to release. (VanMuur)

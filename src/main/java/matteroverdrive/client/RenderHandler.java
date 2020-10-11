@@ -56,7 +56,6 @@ import matteroverdrive.init.OverdriveBioticStats;
 import matteroverdrive.items.weapon.module.WeaponModuleColor;
 import matteroverdrive.items.weapon.module.WeaponModuleHoloSights;
 import matteroverdrive.items.weapon.module.WeaponModuleSniperScope;
-import matteroverdrive.items.weapon.module.WeaponModuleTestSights;
 import matteroverdrive.machines.fusionReactorController.TileEntityMachineFusionReactorController;
 import matteroverdrive.machines.pattern_monitor.TileEntityMachinePatternMonitor;
 import matteroverdrive.machines.pattern_storage.TileEntityMachinePatternStorage;
@@ -88,7 +87,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.event.*;
 import net.minecraftforge.client.model.IModel;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.client.model.obj.OBJModel;
 import net.minecraftforge.common.MinecraftForge;
@@ -317,7 +315,6 @@ public class RenderHandler {
     public void registerWeaponModuleRenders() {
         weaponRenderHandler.addModuleRender(WeaponModuleSniperScope.class, moduleSniperScopeRender);
         weaponRenderHandler.addModuleRender(WeaponModuleHoloSights.class, moduleHoloSightsRender);
-        weaponRenderHandler.addModuleRenderTest(WeaponModuleTestSights.class, moduleHoloSightsRender);
     }
 
     public void registerWeaponLayers() {

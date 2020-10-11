@@ -1,33 +1,16 @@
-/*
- * This file is part of MatterOverdrive: Legacy Edition
- * Copyright (C) 2019, Horizon Studio <contact@hrznstudio.com>, All rights reserved.
- *
- * MatterOverdrive: Legacy Edition is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * MatterOverdrive: Legacy Edition is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with Matter Overdrive.  If not, see <http://www.gnu.org/licenses>.
- */
-
 package matteroverdrive.items.weapon.module;
 
 import matteroverdrive.Reference;
 import matteroverdrive.api.weapon.IWeaponScope;
 import matteroverdrive.items.IAdvancedModelProvider;
+import matteroverdrive.util.MOLog;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 
 public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponScope, IAdvancedModelProvider {
     public static final String[] subItemNames = {"normal", "wide", "small"};
@@ -43,21 +26,53 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
         return subItemNames;
     }
 
-//    @SideOnly(Side.CLIENT)
-//    public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems) {
-//        if (isInCreativeTab(tab)) {
-//            for (int i = 0; i < 3; i++) {
-//                subItems.add(new ItemStack(itemIn, 1, i));
-//            }
-//        }
-//    }
+    @Override
+    public int getMetadata(int damage) {
+        return damage;
+    }
 
-    public void getSubItems(CreativeTabs tab, List<ItemStack> subItems) {
-        if (isInCreativeTab(tab)) {
-            for (int i = 0; i < subItemNames.length; i++) {
-                subItems.add(new ItemStack(this, 1, i));
-            }
+    @Override
+    public void getSubItems(@Nonnull CreativeTabs creativeTabs, @Nonnull NonNullList<ItemStack> list) {
+        if (!isInCreativeTab(creativeTabs)) {
+            return;
         }
+
+        for (int i=0; i<subItemNames.length; i++) {
+            list.add(new ItemStack(this, 1, i));
+        }
+    }
+
+    @Nonnull
+    @Override
+    public String getTranslationKey(ItemStack stack) {
+        int i = MathHelper.clamp(stack.getItemDamage(), 0, 3);
+        return super.getTranslationKey() + "." + subItemNames[i];
+    }
+
+    // This fixed the holo sights issue.
+    @Override
+    public String getModelPath() {
+        return Reference.PATH_MODEL_ITEMS + "weapon_model_holo_sights.obj";
+    };
+
+    @Override
+    public ResourceLocation getModelTexture(ItemStack module) {
+        ResourceLocation resource = new ResourceLocation(Reference.PATH_ELEMENTS + String.format("holo_sight_%d.png", module.getItemDamage()));
+
+        MOLog.warn("Resource location is: " + resource.toString());
+
+        return resource;
+    }
+
+    @Override
+    public String getModelName(ItemStack module) {
+        int i = MathHelper.clamp(module.getItemDamage(), 0, subItemNames.length - 1);
+
+        String mName = super.getTranslationKey() + "_" + subItemNames[i];
+
+        MOLog.info("The current model name is: {}", mName);
+
+        return super.getTranslationKey() + "_" + subItemNames[i];
     }
 
     @Override
@@ -71,41 +86,5 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
             return originalAccuracy * 0.6f;
         }
         return originalAccuracy * 0.8f;
-    }
-
-    @Override
-    public String getModelPath() {
-        return null;
-    }
-
-    @Override
-    public ResourceLocation getModelTexture(ItemStack module) {
-//        System.out.println("Getting texture for model texture with item damage of: " + module.getItemDamage());
-//
-//        return new ResourceLocation(Reference.PATH_ELEMENTS + String.format("holo_sight_%s.png", module.getItemDamage()));
-
-        return null;
-    }
-
-    @Override
-    public String getModelName(ItemStack module) {
-        return null;
-    }
-
-    @Override
-    public int getMetadata(int damage) {
-        return damage;
-    }
-
-    /**
-     * Returns the unlocalized name of this item. This version accepts an ItemStack so different stacks can have
-     * different names based on their damage or NBT.
-     */
-    @Nonnull
-    @Override
-    public String getTranslationKey(ItemStack stack) {
-        int i = MathHelper.clamp(stack.getItemDamage(), 0, subItemNames.length-1);
-
-        return super.getTranslationKey() + "." + subItemNames[i];
     }
 }

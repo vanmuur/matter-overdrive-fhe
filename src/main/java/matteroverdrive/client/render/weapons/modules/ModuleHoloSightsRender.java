@@ -20,11 +20,12 @@ package matteroverdrive.client.render.weapons.modules;
 
 import com.google.common.collect.ImmutableMap;
 import matteroverdrive.Reference;
+import matteroverdrive.api.weapon.IWeapon;
 import matteroverdrive.api.weapon.IWeaponModule;
-import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.client.RenderHandler;
 import matteroverdrive.client.render.weapons.WeaponRenderHandler;
 import matteroverdrive.client.resources.data.WeaponMetadataSection;
+import matteroverdrive.util.MOLog;
 import matteroverdrive.util.RenderUtils;
 import matteroverdrive.util.math.MOMathHelper;
 import net.minecraft.client.renderer.GlStateManager;
@@ -66,14 +67,14 @@ public class ModuleHoloSightsRender extends ModuleRenderAbstract {
             GlStateManager.translate(0.012, 0.012, 0);
             GlStateManager.rotate(180, 0, 0, 1);
             GlStateManager.translate(-0.012, -0.012, 0);
-            if (moduleStack.getItem() instanceof IWeaponModuleTest) {
-                ResourceLocation location = ((IWeaponModuleTest) moduleStack.getItem()).getModelTexture(moduleStack);
 
-                if (location != null) {
-                    RenderUtils.bindTexture(location);
-                }
-            } else if (moduleStack.getItem() instanceof IWeaponModuleTest) {
-                ResourceLocation location = ((IWeaponModuleTest) moduleStack.getItem()).getModelTexture(moduleStack);
+            MOLog.info("Module stack is: " + moduleStack.getItem());
+            MOLog.info("Module stack is a weapon module: " + (moduleStack.getItem() instanceof IWeaponModule));
+
+            if (moduleStack.getItem() instanceof IWeaponModule) {
+                ResourceLocation location = ((IWeaponModule) moduleStack.getItem()).getModelTexture(moduleStack);
+
+                MOLog.info("Rendering model from location: " + location);
 
                 if (location != null) {
                     RenderUtils.bindTexture(location);

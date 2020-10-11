@@ -19,7 +19,7 @@
 package matteroverdrive.items.weapon.module;
 
 import matteroverdrive.MatterOverdrive;
-import matteroverdrive.api.weapon.IWeaponModuleTest;
+import matteroverdrive.api.weapon.IWeaponModule;
 import matteroverdrive.api.weapon.IWeaponStat;
 import matteroverdrive.items.includes.MOBaseItem;
 import matteroverdrive.util.MOStringHelper;
@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class WeaponModuleTestBase extends MOBaseItem implements IWeaponModuleTest {
+public abstract class WeaponModuleTestBase extends MOBaseItem implements IWeaponModule {
 
     private Map<Integer, Map<IWeaponStat, Float>> metaStatMap = new HashMap<>();
 

@@ -25,7 +25,7 @@ import net.minecraft.util.ResourceLocation;
  * Created by Simeon on 4/14/2015.
  * Used by weapon modules.
  */
-public interface IWeaponModuleTest {
+public interface IWeaponModuleOld {
     /**
      * Shows the slot type the module can go into.
      *

@@ -60,8 +60,6 @@ public class WeaponHelper {
             for (ItemStack module : itemStacks) {
                 if (module != null && module.getItem() instanceof IWeaponModule) {
                     original = ((IWeaponModule) module.getItem()).modifyWeaponStat(stat, module, weapon, original);
-                } else if (module != null && module.getItem() instanceof IWeaponModuleTest) {
-                    original = ((IWeaponModuleTest) module.getItem()).modifyWeaponStat(stat, module, weapon, original);
                 }
             }
         }
@@ -74,18 +72,14 @@ public class WeaponHelper {
             for (ItemStack module : MOInventoryHelper.getStacks(weapon)) {
                 if (module != null && module.getItem() instanceof IWeaponModule) {
                     statValue = ((IWeaponModule) module.getItem()).modifyWeaponStat(stat, module, weapon, statValue);
-                } else if (module != null && module.getItem() instanceof IWeaponModuleTest) {
-                    statValue = ((IWeaponModuleTest) module.getItem()).modifyWeaponStat(stat, module, weapon, statValue);
                 }
-
             }
         }
         return statValue != 1f;
     }
 
     public static boolean isWeaponModule(ItemStack itemStack) {
-        return (!itemStack.isEmpty() && itemStack.getItem() instanceof IWeaponModule) ||
-               (!itemStack.isEmpty() && itemStack.getItem() instanceof IWeaponModuleTest);
+        return (!itemStack.isEmpty() && itemStack.getItem() instanceof IWeaponModule);
     }
 
     public static boolean isWeapon(ItemStack itemStack) {

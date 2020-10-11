@@ -21,7 +21,6 @@ package matteroverdrive.data.inventory;
 import matteroverdrive.Reference;
 import matteroverdrive.api.weapon.IWeapon;
 import matteroverdrive.api.weapon.IWeaponModule;
-import matteroverdrive.api.weapon.IWeaponModuleTest;
 import matteroverdrive.client.render.HoloIcon;
 import matteroverdrive.proxy.ClientProxy;
 import matteroverdrive.util.MOEnergyHelper;
@@ -50,11 +49,6 @@ public class ModuleSlot extends Slot {
             default:
                 if (WeaponHelper.isWeaponModule(item)) {
                     if (item.getItem() instanceof IWeaponModule && ((IWeaponModule) item.getItem()).getSlot(item) == type) {
-                        if (weaponSlot != null && !weaponSlot.getItem().isEmpty() && weaponSlot.getItem().getItem() instanceof IWeapon) {
-                            return ((IWeapon) weaponSlot.getItem().getItem()).supportsModule(weaponSlot.getItem(), item);
-                        }
-                        return true;
-                    } else if (item.getItem() instanceof IWeaponModuleTest && ((IWeaponModuleTest) item.getItem()).getSlot(item) == type) {
                         if (weaponSlot != null && !weaponSlot.getItem().isEmpty() && weaponSlot.getItem().getItem() instanceof IWeapon) {
                             return ((IWeapon) weaponSlot.getItem().getItem()).supportsModule(weaponSlot.getItem(), item);
                         }

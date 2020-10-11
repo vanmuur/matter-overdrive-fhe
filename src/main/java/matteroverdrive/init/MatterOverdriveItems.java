@@ -99,8 +99,6 @@ public class MatterOverdriveItems {
     public WeaponModuleRicochet weaponModuleRicochet;
     public WeaponModuleHoloSights weaponModuleHoloSights;
 
-    public Item sights;
-
     //	Tools
     public Wrench wrench;
     public TritaniumAxe tritaniumAxe;
@@ -199,11 +197,7 @@ public class MatterOverdriveItems {
         weapon_module_barrel = register(new WeaponModuleBarrel("weapon_module_barrel"));
         sniperScope = register(new WeaponModuleSniperScope("sniper_scope"));
         weaponModuleRicochet = register(new WeaponModuleRicochet("weapon_module_ricochet"));
-//        weaponModuleHoloSights = register(new WeaponModuleHoloSights("weapon_module_holo_sights"));
-
-        // The above have been replaced with the below. The below need to be renamed.
-
-        sights = register(new WeaponModuleTestSights("weapon_module_test_sights"));
+        weaponModuleHoloSights = register(new WeaponModuleHoloSights("weapon_module_holo_sights"));
 
 //		Tools
         wrench = register(new Wrench("tritanium_wrench"));
