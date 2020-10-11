@@ -51,8 +51,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.0.0-api.jar
-        asset_name: MatterOverdrive-FHE-1.12.2-0.1.0.0-api.jar
+        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.1.0-api.jar
+        asset_name: MatterOverdrive-FHE-1.12.2-0.1.1.0-api.jar
         asset_content_type: application/jar
 
     - name: Upload Release Asset - DEOBF
@@ -62,8 +62,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.0.0-deobf.jar
-        asset_name: MatterOverdrive-FHE-1.12.2-0.1.0.0-deobf.jar
+        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.1.0-deobf.jar
+        asset_name: MatterOverdrive-FHE-1.12.2-0.1.1.0-deobf.jar
         asset_content_type: application/jar
 
     - name: Upload Release Asset - Sources
@@ -73,8 +73,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.0.0-sources.jar
-        asset_name: MatterOverdrive-FHE-1.12.2-0.1.0.0-sources.jar
+        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.1.0-sources.jar
+        asset_name: MatterOverdrive-FHE-1.12.2-0.1.1.0-sources.jar
         asset_content_type: application/jar
 
     - name: Upload Release Asset - Universal
@@ -84,6 +84,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.0.0-universal.jar
-        asset_name: MatterOverdrive-FHE-1.12.2-0.1.0.0-universal.jar
+        asset_path: build/libs/MatterOverdrive-FHE-1.12.2-0.1.1.0-universal.jar
+        asset_name: MatterOverdrive-FHE-1.12.2-0.1.1.0-universal.jar
         asset_content_type: application/jar
