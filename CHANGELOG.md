@@ -1,8 +1,9 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
-Unreleased
-----------
+v0.1.3 (2020-10-12 15:44:06 -0400)
+----------------------------------
+* Dyeable crates work. Need to implement modded dyes still. (VanMuur)
 * Initial commit for getting dying Tritanium Crates working. (VanMuur)
 
 v0.1.2.1 (2020-10-11 19:05:50 -0400)
