@@ -18,6 +18,7 @@
 
 package matteroverdrive.blocks;
 
+import matteroverdrive.Reference;
 import matteroverdrive.api.wrench.IDismantleable;
 import matteroverdrive.blocks.includes.MOBlock;
 import matteroverdrive.blocks.includes.MOBlockMachine;
@@ -28,13 +29,17 @@ import matteroverdrive.util.MOBlockHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -90,15 +95,32 @@ public class BlockTritaniumCrate extends MOBlockMachine<TileEntityTritaniumCrate
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (worldIn.isRemote) {
             return true;
-        } else {
-            TileEntity entity = worldIn.getTileEntity(pos);
-            if (entity instanceof TileEntityTritaniumCrate) {
-                //FMLNetworkHandler.openGui(entityPlayer, MatterOverdrive.instance, GuiHandler.TRITANIUM_CRATE, world, x, y, z);
-                worldIn.playSound(null, pos.getX(), pos.getY(), pos.getZ(), MatterOverdriveSounds.blocksCrateOpen, SoundCategory.BLOCKS, 0.5f, 1);
-                playerIn.displayGUIChest(((TileEntityTritaniumCrate) entity).getInventory());
+        }
+
+        ItemStack currentitem = playerIn.getHeldItem(EnumHand.MAIN_HAND);
+
+        if (!currentitem.isEmpty()) {
+            // Compare it against the base dye item.
+            Item dye = new ItemStack(Items.DYE, 1).getItem();
+
+            if (currentitem.getItem().equals(dye)) {
+                playerIn.sendMessage(new TextComponentString("Just clicked with some dye."));
+
+                setRegistryName(new ResourceLocation(Reference.MOD_ID, "tritanium_crate_purple"));
+                this.setTranslationKey("tritanium_crate_purple");
+
                 return true;
             }
         }
+
+        TileEntity entity = worldIn.getTileEntity(pos);
+        if (entity instanceof TileEntityTritaniumCrate) {
+            //FMLNetworkHandler.openGui(entityPlayer, MatterOverdrive.instance, GuiHandler.TRITANIUM_CRATE, world, x, y, z);
+            worldIn.playSound(null, pos.getX(), pos.getY(), pos.getZ(), MatterOverdriveSounds.blocksCrateOpen, SoundCategory.BLOCKS, 0.5f, 1);
+            playerIn.displayGUIChest(((TileEntityTritaniumCrate) entity).getInventory());
+            return true;
+        }
+
         return false;
     }
 

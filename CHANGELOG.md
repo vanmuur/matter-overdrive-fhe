@@ -1,6 +1,14 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.2.1 (2020-10-11 19:05:50 -0400)
+------------------------------------
+* Fixing release workflow. (VanMuur)
+* Trying to get workflow to kick off again. (VanMuur)
+* Fixed a bug in the github workflow file. (VanMuur)
+* Fixed a bunch of things with the muffler upgrade. Works in all machines now and has a pattern. (VanMuur)
+* Update en_us.lang (Gandalf360one)
+
 v0.1.2 (2020-10-11 16:51:13 -0400)
 ----------------------------------
 * Fixing version number in build. (VanMuur)
