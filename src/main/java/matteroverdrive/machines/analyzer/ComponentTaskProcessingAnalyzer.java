@@ -31,6 +31,7 @@ import matteroverdrive.matter_network.components.TaskQueueComponent;
 import matteroverdrive.matter_network.tasks.MatterNetworkTaskStorePattern;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.SoundCategory;
 
@@ -91,7 +92,19 @@ public class ComponentTaskProcessingAnalyzer extends TaskQueueComponent<MatterNe
             addStorePatternTask(storePattern);
         }
 
-        SoundHandler.PlaySoundAt(getWorld(), MatterOverdriveSounds.scannerSuccess, SoundCategory.BLOCKS, getPos().getX(), getPos().getY(), getPos().getZ());
+        TileEntity TE = getWorld().getTileEntity(getPos());
+
+        // Make sure at that location we don't have a muffler installed.
+        if (TE != null) {
+            TileEntityMachineMatterAnalyzer temma = (TileEntityMachineMatterAnalyzer) TE;
+
+            ItemStack stack = temma.getStackInSlot(0);
+
+            if (!(temma.getUpgradeMultiply(UpgradeTypes.Muffler) == 2d || stack.isEmpty())) {
+                SoundHandler.PlaySoundAt(getWorld(), MatterOverdriveSounds.scannerSuccess, SoundCategory.BLOCKS, getPos().getX(), getPos().getY(), getPos().getZ());
+            }
+        }
+
         machine.decrStackSize(machine.input_slot, 1);
         machine.markDirty();
     }

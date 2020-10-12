@@ -28,6 +28,7 @@ import matteroverdrive.handler.SoundHandler;
 import matteroverdrive.init.MatterOverdriveCapabilities;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.machines.MachineNBTCategory;
+import matteroverdrive.machines.analyzer.TileEntityMachineMatterAnalyzer;
 import matteroverdrive.matter_network.components.TaskQueueComponent;
 import matteroverdrive.matter_network.tasks.MatterNetworkTaskReplicatePattern;
 import matteroverdrive.network.packet.client.PacketReplicationComplete;
@@ -35,6 +36,7 @@ import matteroverdrive.util.MatterHelper;
 import matteroverdrive.util.TimeTracker;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.SoundCategory;
 
@@ -88,7 +90,19 @@ public class ComponentTaskProcessingReplicator extends TaskQueueComponent<Matter
                             this.replicateTime = 0;
                             this.replicateItem(replicatePattern.getPattern(), patternStack);
                             MatterOverdrive.NETWORK.sendToDimention(new PacketReplicationComplete(machine), getWorld());
-                            SoundHandler.PlaySoundAt(getWorld(), MatterOverdriveSounds.replicateSuccess, SoundCategory.BLOCKS, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), 0.25F * machine.getBlockType(BlockReplicator.class).replication_volume, 1.0F, 0.2F, 0.8F);
+
+                            TileEntity TE = getWorld().getTileEntity(getPos());
+
+                            // Make sure at that location we don't have a muffler installed.
+                            if (TE != null) {
+                                TileEntityMachineReplicator temr = (TileEntityMachineReplicator) TE;
+
+                                ItemStack stack = temr.getStackInSlot(0);
+
+                                if (!(temr.getUpgradeMultiply(UpgradeTypes.Muffler) == 2d || stack.isEmpty())) {
+                                    SoundHandler.PlaySoundAt(getWorld(), MatterOverdriveSounds.replicateSuccess, SoundCategory.BLOCKS, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), 0.25F * machine.getBlockType(BlockReplicator.class).replication_volume, 1.0F, 0.2F, 0.8F);
+                                }
+                            }
                         }
                         if (radiationTimeTracker.hasDelayPassed(getWorld(), TileEntityMachineReplicator.RADIATION_DAMAGE_DELAY)) {
                             machine.manageRadiation();

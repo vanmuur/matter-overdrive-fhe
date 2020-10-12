@@ -29,6 +29,7 @@ import matteroverdrive.machines.events.MachineEvent;
 import matteroverdrive.proxy.ClientProxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundEvent;
@@ -147,6 +148,10 @@ public class TileEntityMachineGravitationalStabilizer extends MOTileEntityMachin
 
     @Override
     public float soundVolume() {
+        if (getUpgradeMultiply(UpgradeTypes.Muffler) == 2d) {
+            return 0.0f;
+        }
+
         return getPercentage() * 0.5f;
     }
 

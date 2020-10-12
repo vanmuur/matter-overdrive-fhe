@@ -367,6 +367,10 @@ public class TileEntityMachineReplicator extends MOTileEntityMachineMatter imple
 
     @Override
     public float soundVolume() {
+        if (getUpgradeMultiply(UpgradeTypes.Muffler) == 2d) {
+            return 0.0f;
+        }
+
         return 1;
     }
 

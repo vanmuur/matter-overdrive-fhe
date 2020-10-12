@@ -133,6 +133,12 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
 
     @Override
     public float soundVolume() {
+        ItemStack stack = this.getStackInSlot(INPUT_SLOT_ID);
+
+        if (getUpgradeMultiply(UpgradeTypes.Muffler) == 2d || stack.isEmpty()) {
+            return 0.0f;
+        }
+
         return 1;
     }
 
