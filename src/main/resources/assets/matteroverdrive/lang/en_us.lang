@@ -253,6 +253,10 @@ tile.tritanium_crate_green.name=Green Tritanium Crate
 tile.tritanium_crate_red.name=Red Tritanium Crate
 tile.tritanium_crate_black.name=Black Tritanium Crate
 
+tile.new_tritanium_crate.name=New Tritanium Crate
+tile.new_tritanium_crate_white.name=New White Tritanium Crate
+tile.new_tritanium_crate_purple.name=New Purple Tritanium Crate
+
 #///////////// Entities /////////////////<-->
 
 entity.rogue_android.name=Melee Rogue Android
@@ -698,12 +702,13 @@ color.pink=Pink
 color.lime=Lime
 color.yellow=Yellow
 color.lightBlue=Light Blue
-color.magenta=Magenta
+color.magenta=Mage
 color.orange=Orange
 color.white=White
 
 material.tritanium=Tritanium
 container.tritanium_crate=Tritanium Crate
+container.new_tritanium_crate=New Tritanium Crate
 rarity.legendary=Legendary
 
 mo.jei.time=%d seconds

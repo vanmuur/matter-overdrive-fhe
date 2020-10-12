@@ -24,6 +24,7 @@ public enum MachineNBTCategory {
     DATA,
     CONFIGS,
     INVENTORY,
+    COLOR,
     GUI;
 
     public static final EnumSet<MachineNBTCategory> ALL_OPTS = EnumSet.allOf(MachineNBTCategory.class);

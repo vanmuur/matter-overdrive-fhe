@@ -1,6 +1,10 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+Unreleased
+----------
+* Initial commit for getting dying Tritanium Crates working. (VanMuur)
+
 v0.1.2.1 (2020-10-11 19:05:50 -0400)
 ------------------------------------
 * Fixing release workflow. (VanMuur)

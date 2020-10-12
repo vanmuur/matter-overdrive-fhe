@@ -123,6 +123,11 @@ public class MatterOverdriveBlocks {
     public BlockBoundingBox boundingBox;
     private int registeredCount = 0;
 
+    // Test new crates.
+    public BlockNewTritaniumCrate new_tritanium_crate_base;
+    public BlockNewTritaniumCrate new_tritanium_crate_white;
+    public BlockNewTritaniumCrate new_tritanium_crate_purple;
+
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
         blocks.forEach(b -> event.getRegistry().register(b));
@@ -227,6 +232,9 @@ public class MatterOverdriveBlocks {
         industrialGlass = register(new BlockIndustrialGlass(Material.GLASS, "industrial_glass"));
 
         boundingBox = register(new BlockBoundingBox("bounding_box"));
+
+        // Register test crates.
+        new_tritanium_crate_base = register(new BlockNewTritaniumCrate(TRITANIUM, "new_tritanium_crate", 0));
 
         MOLog.info("Finished registering blocks");
         MOLog.info("Registered %d blocks", registeredCount);
