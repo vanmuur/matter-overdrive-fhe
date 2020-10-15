@@ -2,9 +2,8 @@ package matteroverdrive.tile;
 
 import matteroverdrive.api.inventory.UpgradeTypes;
 import matteroverdrive.data.Inventory;
+import matteroverdrive.data.inventory.FoodFurnaceSlot;
 import matteroverdrive.data.inventory.RemoveOnlySlot;
-import matteroverdrive.data.inventory.SlotRecycler;
-import matteroverdrive.data.recipes.MicrowaveRecipe;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.machines.MachineNBTCategory;
 import matteroverdrive.machines.events.MachineEvent;
@@ -17,6 +16,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
 import java.util.EnumSet;
 
 public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
@@ -33,42 +33,32 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
 
     private float headAnimationTime;
     private int cookTime;
-    private MicrowaveRecipe cachedRecipe;
+//    private MicrowaveRecipe cachedRecipe;
 
     public TileEntityMicrowave() {
         super(4);
         energyStorage.setCapacity(512000);
         energyStorage.setMaxExtract(256);
         energyStorage.setMaxReceive(256);
+
         playerSlotsHotbar = true;
         playerSlotsMain = true;
     }
 
     @Override
     protected void RegisterSlots(Inventory inventory) {
-        INPUT_SLOT_ID = inventory.AddSlot(new SlotRecycler(true).setSendToClient(true));
+        INPUT_SLOT_ID = inventory.AddSlot(new FoodFurnaceSlot(true).setSendToClient(true));
         OUTPUT_SLOT_ID = inventory.AddSlot(new RemoveOnlySlot(false).setSendToClient(true));
+
         super.RegisterSlots(inventory);
     }
 
     public boolean canPutInOutput() {
         ItemStack outputStack = inventory.getStackInSlot(OUTPUT_SLOT_ID);
-        return outputStack.isEmpty() || (cachedRecipe != null && outputStack.isItemEqual(cachedRecipe.getOutput(this)));
-    }
 
-    public void cookItem() {
-        if (cachedRecipe != null && canPutInOutput()) {
-            ItemStack outputSlot = inventory.getStackInSlot(OUTPUT_SLOT_ID);
-            if (!outputSlot.isEmpty()) {
-                outputSlot.grow(1);
-            } else {
-                inventory.setInventorySlotContents(OUTPUT_SLOT_ID, cachedRecipe.getOutput(this));
-            }
+        return outputStack.isEmpty();
 
-            inventory.decrStackSize(INPUT_SLOT_ID, 1);
-
-            calculateRecipe();
-        }
+//        return outputStack.isEmpty() || (cachedRecipe != null && outputStack.isItemEqual(cachedRecipe.getOutput(this)));
     }
 
     @Override
@@ -107,6 +97,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
         if (cachedRecipe != null) {
             return (int) (cachedRecipe.getEnergy() * getUpgradeMultiply(UpgradeTypes.PowerUsage));
         }
+
         return 0;
     }
 
@@ -114,11 +105,16 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
         if (cachedRecipe != null) {
             return (int) (cachedRecipe.getTime() * getUpgradeMultiply(UpgradeTypes.Speed));
         }
+
         return 0;
     }
 
+//    public boolean isCooking() {
+//        return cachedRecipe != null &&canPutInOutput();
+//    }
+
     public boolean isCooking() {
-        return cachedRecipe != null && canPutInOutput();
+        return canPutInOutput();
     }
 
     @Override
@@ -164,7 +160,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
     @Override
     protected void onMachineEvent(MachineEvent event) {
         if (event instanceof MachineEvent.Awake) {
-            calculateRecipe();
+//            calculateRecipe();
         }
     }
 
@@ -200,40 +196,18 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
         return MOMathHelper.Lerp(lastHeadY, nextHeadY, headAnimationTime);
     }
 
-    public void calculateRecipe() {
-        ItemStack mainStack = inventory.getStackInSlot(INPUT_SLOT_ID);
-
-        if (!mainStack.isEmpty()) {
-            // Replace by Minecraft food recipes.
-
-//            Optional<Recipe> recipe =
-
-            // Optional<InscriberRecipe> recipe =
-            // MatterOverdriveRecipes.INSCRIBER.get(this);
-            // cachedRecipe = recipe.orElse(null);
-            return;
-        }
-
-        cachedRecipe = null;
-    }
-
     @Override
     public ItemStack decrStackSize(int slot, int size) {
-        ItemStack stack = super.decrStackSize(slot, size);
-
-        calculateRecipe();
-
-        return stack;
+        return super.decrStackSize(slot, size);
     }
 
     public void setInventorySlotContents(int slot, ItemStack itemStack) {
         super.setInventorySlotContents(slot, itemStack);
-
-        calculateRecipe();
     }
 
+    @Nonnull
     @Override
-    public int[] getSlotsForFace(EnumFacing side) {
+    public int[] getSlotsForFace(@Nonnull EnumFacing side) {
         return new int[] { INPUT_SLOT_ID, OUTPUT_SLOT_ID };
     }
 
@@ -250,6 +224,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
 
                     if (this.cookTime >= getSpeed()) {
                         this.cookTime = 0;
+
                         this.cookItem();
                     }
                 }
@@ -258,6 +233,20 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
 
         if (!this.isCooking()) {
             this.cookTime = 0;
+        }
+    }
+
+    public void cookItem() {
+        if (cachedRecipe != null && canPutInOutput()) {
+            ItemStack outputSlot = inventory.getStackInSlot(OUTPUT_SLOT_ID);
+
+            if (!outputSlot.isEmpty()) {
+                outputSlot.grow(1);
+            } else {
+                inventory.setInventorySlotContents(OUTPUT_SLOT_ID, cachedRecipe.getOutput(this));
+            }
+
+            inventory.decrStackSize(INPUT_SLOT_ID, 1);
         }
     }
 }

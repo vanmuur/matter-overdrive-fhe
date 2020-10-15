@@ -32,7 +32,6 @@ import java.util.List;
 public class MicrowaveRecipe extends Recipe<TileEntityMicrowave> {
 
     private ItemStack main;
-    private ItemStack sec;
     private ItemStack output;
     private int energy;
     private int time;
@@ -42,10 +41,6 @@ public class MicrowaveRecipe extends Recipe<TileEntityMicrowave> {
 
     public ItemStack getMain() {
         return main;
-    }
-
-    public ItemStack getSec() {
-        return sec;
     }
 
     public ItemStack getOutput() {
@@ -62,10 +57,11 @@ public class MicrowaveRecipe extends Recipe<TileEntityMicrowave> {
 
     @Override
     public boolean matches(TileEntityMicrowave machine) {
-//        ItemStack primary = machine.getStackInSlot(TileEntityMicrowave.INPUT_SLOT_ID);
-//        return ItemStack.areItemsEqual(primary, this.main);
+        ItemStack primary = machine.getStackInSlot(TileEntityMicrowave.INPUT_SLOT_ID);
 
-        return true;
+        return ItemStack.areItemsEqual(primary, this.main);
+
+//        return true;
     }
 
     public ItemStack getOutput(TileEntityMicrowave machine) {
@@ -74,7 +70,7 @@ public class MicrowaveRecipe extends Recipe<TileEntityMicrowave> {
 
     @Override
     public List<ItemStack> getInputs() {
-        return ImmutableList.of(main, sec);
+        return ImmutableList.of(main);
     }
 
     @Override
@@ -90,9 +86,6 @@ public class MicrowaveRecipe extends Recipe<TileEntityMicrowave> {
                     case "primary":
                         main = getStack((Element) node);
                         break;
-                    case "secondary":
-                        sec = getStack((Element) node);
-                        break;
                     case "output":
                         output = getStack((Element) node);
                         break;
@@ -100,5 +93,4 @@ public class MicrowaveRecipe extends Recipe<TileEntityMicrowave> {
             }
         }
     }
-
 }
