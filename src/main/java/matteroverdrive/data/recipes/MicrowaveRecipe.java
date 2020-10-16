@@ -57,11 +57,11 @@ public class MicrowaveRecipe extends Recipe<TileEntityMicrowave> {
 
     @Override
     public boolean matches(TileEntityMicrowave machine) {
-        ItemStack primary = machine.getStackInSlot(TileEntityMicrowave.INPUT_SLOT_ID);
+//        ItemStack primary = machine.getStackInSlot(TileEntityMicrowave.INPUT_SLOT_ID);
+//
+//        return ItemStack.areItemsEqual(primary, this.main);
 
-        return ItemStack.areItemsEqual(primary, this.main);
-
-//        return true;
+        return true;
     }
 
     public ItemStack getOutput(TileEntityMicrowave machine) {

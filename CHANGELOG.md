@@ -1,6 +1,15 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+Unreleased
+----------
+* Saving changes before switching branches. (VanMuur)
+
+v0.1.3.1 (2020-10-12 16:40:56 -0400)
+------------------------------------
+* Updated version before pushing for build. (VanMuur)
+* Fixed muffler sounds for Analyzer, Replicator and Decomposer. (VanMuur)
+
 v0.1.3 (2020-10-12 15:44:06 -0400)
 ----------------------------------
 * Dyeable crates work. Need to implement modded dyes still. (VanMuur)

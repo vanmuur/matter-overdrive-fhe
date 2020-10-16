@@ -4,6 +4,7 @@ import matteroverdrive.api.inventory.UpgradeTypes;
 import matteroverdrive.data.Inventory;
 import matteroverdrive.data.inventory.FoodFurnaceSlot;
 import matteroverdrive.data.inventory.RemoveOnlySlot;
+import matteroverdrive.data.recipes.MicrowaveRecipe;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.machines.MachineNBTCategory;
 import matteroverdrive.machines.events.MachineEvent;
@@ -33,7 +34,7 @@ public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
 
     private float headAnimationTime;
     private int cookTime;
-//    private MicrowaveRecipe cachedRecipe;
+    private MicrowaveRecipe cachedRecipe;
 
     public TileEntityMicrowave() {
         super(4);
