@@ -22,7 +22,7 @@ import java.util.EnumSet;
 
 public class TileEntityMicrowave extends MOTileEntityMachineEnergy {
     private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerUsage, UpgradeTypes.Speed,
-            UpgradeTypes.PowerStorage, UpgradeTypes.PowerTransfer);
+            UpgradeTypes.PowerStorage, UpgradeTypes.PowerTransfer, UpgradeTypes.Muffler);
 
     public int INPUT_SLOT_ID, OUTPUT_SLOT_ID;
 

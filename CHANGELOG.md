@@ -3,6 +3,12 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Updating the gradle wrapper properties file for a new distribution URL. (VanMuur)
+
+v0.1.4 (2020-10-15 20:44:34 -0400)
+----------------------------------
+* Updated version to 0.1.4 and cleaned up PatternDrive.java file. (VanMuur)
+* Fixed pattern drives to show different textures based on how full they are. (VanMuur)
 * Saving changes before switching branches. (VanMuur)
 
 v0.1.3.1 (2020-10-12 16:40:56 -0400)

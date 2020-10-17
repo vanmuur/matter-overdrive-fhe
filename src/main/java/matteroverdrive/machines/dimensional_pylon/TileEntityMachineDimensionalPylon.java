@@ -72,6 +72,7 @@ public class TileEntityMachineDimensionalPylon extends MOTileEntityMachineMatter
     List<BlockPos> children;
     ComponentPowerGeneration powerGeneration;
     int charge;
+    private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.Muffler);
 
     public TileEntityMachineDimensionalPylon() {
         super(4);
@@ -333,7 +334,7 @@ public class TileEntityMachineDimensionalPylon extends MOTileEntityMachineMatter
 
     @Override
     public boolean isAffectedByUpgrade(UpgradeTypes type) {
-        return false;
+        return upgradeTypes.contains(type);
     }
 
     public boolean onWrenchHit(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumFacing side, float hitX, float hitY, float hitZ) {

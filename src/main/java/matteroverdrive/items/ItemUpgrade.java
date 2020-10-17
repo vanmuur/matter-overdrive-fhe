@@ -29,6 +29,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -72,6 +73,8 @@ public class ItemUpgrade extends MOBaseItem implements IUpgrade, IAdvancedModelP
             // Don't put any tooltip for the Muffler. It's pretty obvious what it does.
             if (entry.getKey() != UpgradeTypes.Muffler) {
                 infos.add(MOStringHelper.toInfo(entry.getKey(), entry.getValue()));
+            } else {
+                infos.add(TextFormatting.GREEN + MOStringHelper.translateToLocal("upgradetype.Muffler.description"));
             }
         }
     }

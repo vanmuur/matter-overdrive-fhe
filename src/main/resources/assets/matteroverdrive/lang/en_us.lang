@@ -368,6 +368,7 @@ upgradetype.PowerStorage.name=Power Storage
 upgradetype.MatterStorage.name=Matter Storage
 upgradetype.MatterUsage.name=Matter Usage
 upgradetype.Muffler.name=Muffling
+upgradetype.Muffler.description=Muffles all sound in the machine.
 
 ##########################################################################################################
 # Weapon Stats
