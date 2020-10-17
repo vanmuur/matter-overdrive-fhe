@@ -3,6 +3,7 @@ MatterOverdrive-FHE - Changelog
 
 Unreleased
 ----------
+* Fixed the sound muffler's description text, and allowed the sound muffler to be placed in the Dimensional Pylon and Microwave. (VanMuur)
 * Updating the gradle wrapper properties file for a new distribution URL. (VanMuur)
 
 v0.1.4 (2020-10-15 20:44:34 -0400)
