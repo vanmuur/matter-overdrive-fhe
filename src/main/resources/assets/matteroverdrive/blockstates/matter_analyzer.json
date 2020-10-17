@@ -7,6 +7,7 @@
       "top": "matteroverdrive:blocks/analyzer_top",
       "side": "matteroverdrive:blocks/vent2",
       "front": "matteroverdrive:blocks/analyzer_front",
+      "front_anim": "matteroverdrive:blocks/analyzer_front_anim",
       "back": "matteroverdrive:blocks/network_port",
       "particle": "matteroverdrive:blocks/analyzer_front"
     }
@@ -20,12 +21,12 @@
 	"facing=up,running=false":    { "model": "matteroverdrive:matter_analyzer" },
 	"facing=down,running=false":  { "model": "matteroverdrive:matter_analyzer" },
 
-    "facing=north,running=true":  { "model": "matteroverdrive:matter_analyzer", "textures": { "front":  "matteroverdrive:blocks/analyzer_front_anim" } },
-    "facing=south,running=true":  { "model": "matteroverdrive:matter_analyzer","y": 180 },
-    "facing=west,running=true":   { "model": "matteroverdrive:matter_analyzer","y": 270 },
-    "facing=east,running=true":   { "model": "matteroverdrive:matter_analyzer","y": 90 },
-    "facing=up,running=true":     { "model": "matteroverdrive:matter_analyzer" },
-    "facing=down,running=true":   { "model": "matteroverdrive:matter_analyzer" },
+    "facing=north,running=true":  { "model": "matteroverdrive:matter_analyzer_running" },
+    "facing=south,running=true":  { "model": "matteroverdrive:matter_analyzer_running","y": 180 },
+    "facing=west,running=true":   { "model": "matteroverdrive:matter_analyzer_running","y": 270 },
+    "facing=east,running=true":   { "model": "matteroverdrive:matter_analyzer_running","y": 90 },
+    "facing=up,running=true":     { "model": "matteroverdrive:matter_analyzer_running" },
+    "facing=down,running=true":   { "model": "matteroverdrive:matter_analyzer_running" },
     "inventory": {
       "model": "matteroverdrive:matter_analyzer",
       "transform": "forge:default-block"

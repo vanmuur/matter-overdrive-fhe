@@ -57,15 +57,11 @@ public class ComponentTaskProcessingAnalyzer extends TaskQueueComponent<MatterNe
     }
 
     private void manageAnalyze() {
-        boolean flag = false;
-
         isAnalyzing = false;
 
         if (machine.getRedstoneActive() && !machine.getStackInSlot(machine.input_slot).isEmpty() && machine.getEnergyStorage().getEnergyStored() > 0) {
             if (getTaskQueue().remaintingCapacity() > 0 && !networkHasPattern(machine.getStackInSlot(machine.input_slot))) {
                 isAnalyzing = true;
-
-                flag = true;
             }
         }
 
@@ -85,13 +81,8 @@ public class ComponentTaskProcessingAnalyzer extends TaskQueueComponent<MatterNe
             analyzeTime = 0;
         }
 
-        if (flag) {
-            System.out.println("Attempting to set the state to true.");
-
-            System.out.println("Machine's pos is: " + machine.getPos());
-
-            BlockMatterAnalyzer.setState(true, getWorld(), machine.getPos());
-        }
+        // Update the machine's state with the running state.
+        BlockMatterAnalyzer.setState(isAnalyzing, getWorld(), machine.getPos());
     }
 
     public void analyzeItem() {
