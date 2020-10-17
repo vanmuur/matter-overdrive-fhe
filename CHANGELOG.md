@@ -1,11 +1,17 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
-v0.1.4.1 (2020-10-17 10:00:34 -0400)
+Unreleased
 ----------
+* Fixing merge problems. (VanMuur)
+* Working copy of the animated matter analyzer. (VanMuur)
+* Saving state for the matter analyzer before switching branches. (VanMuur)
+
+v0.1.4.1 (2020-10-17 10:00:34 -0400)
+------------------------------------
 * Updating version number for release. (VanMuur)
 * Fixed the sound muffler's description text, and allowed the sound muffler to be placed in the Dimensional Pylon and Microwave. (VanMuur)
-* Saving state for the matter analyzer before switching branches. (VanMuur)
+* Updating the gradle wrapper properties file for a new distribution URL. (VanMuur)
 
 v0.1.4 (2020-10-15 20:44:34 -0400)
 ----------------------------------

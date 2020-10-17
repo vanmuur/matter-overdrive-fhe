@@ -36,9 +36,6 @@ import javax.annotation.Nonnull;
 
 public class BlockMatterAnalyzer extends MOBlockMachine<TileEntityMachineMatterAnalyzer> {
     public static float MACHINE_VOLUME;
-/*    private IIcon iconTop;
-	private IIcon iconFront;
-    private IIcon iconFronAnim;*/
 
     private static boolean keepInventory;
 
@@ -79,61 +76,6 @@ public class BlockMatterAnalyzer extends MOBlockMachine<TileEntityMachineMatterA
 
         worldIn.setBlockState(pos, blockState.withProperty(RUNNING, false));
     }
-
-    /*@Override
-	@SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister iconRegister)
-    {
-        this.iconFront = iconRegister.registerIcon(Reference.MOD_ID + ":" + "analyzer_front");
-        this.iconTop = iconRegister.registerIcon(Reference.MOD_ID + ":" + "analyzer_top");
-        this.iconFronAnim = iconRegister.registerIcon(Reference.MOD_ID + ":" + "analyzer_front_anim");
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int metadata)
-    {
-        if(side == 1)
-        {
-            return this.iconTop;
-        }
-        else if(side == metadata)
-        {
-            return this.iconFront;
-        }
-        else if(side == MOBlockHelper.getOppositeSide(metadata))
-        {
-            return MatterOverdriveIcons.Network_port_square;
-        }
-        else if (side == MOBlockHelper.getLeftSide(metadata) || side == MOBlockHelper.getRightSide(metadata))
-        {
-            return MatterOverdriveIcons.Vent2;
-        }
-
-        return MatterOverdriveIcons.Base;
-    }
-
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(IBlockAccess blockAccess, int x, int y, int z, int side)
-    {
-        if (side == blockAccess.getBlockMetadata(x, y, z))
-        {
-            if (blockAccess.getTileEntity(x, y, z) instanceof TileEntityMachineMatterAnalyzer)
-            {
-                if (((TileEntityMachineMatterAnalyzer) blockAccess.getTileEntity(x, y, z)).isActive())
-                {
-                    return this.iconFronAnim;
-                }
-            }
-        }
-        return this.getIcon(side, blockAccess.getBlockMetadata(x, y, z));
-    }
-
-    @Override
-    public int getRenderType()
-    {
-        return MOBlockRenderer.renderID;
-    }*/
 
     public static void setState(boolean active, World worldIn, BlockPos pos) {
         IBlockState state = worldIn.getBlockState(pos);

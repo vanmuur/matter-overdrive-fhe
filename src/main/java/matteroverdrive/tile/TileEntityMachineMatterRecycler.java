@@ -20,6 +20,8 @@ package matteroverdrive.tile;
 
 import matteroverdrive.api.inventory.UpgradeTypes;
 import matteroverdrive.api.matter.IRecyclable;
+import matteroverdrive.blocks.BlockMatterAnalyzer;
+import matteroverdrive.blocks.BlockMatterRecycler;
 import matteroverdrive.data.Inventory;
 import matteroverdrive.data.inventory.RemoveOnlySlot;
 import matteroverdrive.data.inventory.SlotRecycler;
@@ -99,11 +101,9 @@ public class TileEntityMachineMatterRecycler extends MOTileEntityMachineEnergy {
                         this.recycleItem();
                     }
                 }
-
-//                world.setBlockState(getPos(), world.getBlockState(getPos()).withProperty(BlockMatterRecycler.RECYCLING, BlockMatterRecycler.RecycleState.RECYCLE_ON));
-            } else {
-//                world.setBlockState(getPos(), world.getBlockState(getPos()).withProperty(BlockMatterRecycler.RECYCLING, BlockMatterRecycler.RecycleState.RECYCLE_OFF));
             }
+
+            BlockMatterRecycler.setState(isRecycling(), getWorld(), this.getPos());
 
             this.markDirty();
         }

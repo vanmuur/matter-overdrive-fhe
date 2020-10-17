@@ -20,6 +20,7 @@ package matteroverdrive.machines.decomposer;
 
 import matteroverdrive.MatterOverdrive;
 import matteroverdrive.api.inventory.UpgradeTypes;
+import matteroverdrive.blocks.BlockDecomposer;
 import matteroverdrive.data.Inventory;
 import matteroverdrive.data.inventory.MatterSlot;
 import matteroverdrive.data.inventory.RemoveOnlySlot;
@@ -28,7 +29,6 @@ import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.machines.MachineNBTCategory;
 import matteroverdrive.machines.events.MachineEvent;
 import matteroverdrive.tile.MOTileEntityMachineMatter;
-import matteroverdrive.util.MOLog;
 import matteroverdrive.util.MatterHelper;
 import matteroverdrive.util.TimeTracker;
 import net.minecraft.inventory.ISidedInventory;
@@ -136,6 +136,10 @@ public class TileEntityMachineDecomposer extends MOTileEntityMachineMatter imple
                     }
                 }
             }
+
+            BlockDecomposer.setState(isDecomposing(), getWorld(), this.getPos());
+
+            this.markDirty();
         }
 
         if (!this.isDecomposing()) {
