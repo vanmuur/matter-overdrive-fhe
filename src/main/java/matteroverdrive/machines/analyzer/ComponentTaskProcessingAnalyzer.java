@@ -22,6 +22,7 @@ import matteroverdrive.api.inventory.UpgradeTypes;
 import matteroverdrive.api.matter.IMatterDatabase;
 import matteroverdrive.api.matter_network.IMatterNetworkClient;
 import matteroverdrive.api.network.MatterNetworkTaskState;
+import matteroverdrive.blocks.BlockMatterAnalyzer;
 import matteroverdrive.data.matter_network.IMatterNetworkEvent;
 import matteroverdrive.data.matter_network.ItemPattern;
 import matteroverdrive.handler.SoundHandler;
@@ -56,10 +57,15 @@ public class ComponentTaskProcessingAnalyzer extends TaskQueueComponent<MatterNe
     }
 
     private void manageAnalyze() {
+        boolean flag = false;
+
         isAnalyzing = false;
+
         if (machine.getRedstoneActive() && !machine.getStackInSlot(machine.input_slot).isEmpty() && machine.getEnergyStorage().getEnergyStored() > 0) {
             if (getTaskQueue().remaintingCapacity() > 0 && !networkHasPattern(machine.getStackInSlot(machine.input_slot))) {
                 isAnalyzing = true;
+
+                flag = true;
             }
         }
 
@@ -77,6 +83,14 @@ public class ComponentTaskProcessingAnalyzer extends TaskQueueComponent<MatterNe
 
         if (!isAnalyzing()) {
             analyzeTime = 0;
+        }
+
+        if (flag) {
+            System.out.println("Attempting to set the state to true.");
+
+            System.out.println("Machine's pos is: " + machine.getPos());
+
+            BlockMatterAnalyzer.setState(true, getWorld(), machine.getPos());
         }
     }
 
