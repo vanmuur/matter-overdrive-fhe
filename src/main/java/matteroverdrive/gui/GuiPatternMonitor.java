@@ -104,7 +104,7 @@ public class GuiPatternMonitor extends MOGuiNetworkMachine<TileEntityMachinePatt
 
                         String destFilter = componentMatterNetworkConfigs.getDestinationFilter();
 
-                        if (destFilter.equals("")) {
+                        if (destFilter == null || destFilter.equals("")) {
                             MatterOverdrive.NETWORK.sendToServer(new PacketPatternMonitorAddRequest(machine, pattern, itemPattern.getAmount()));
                         } else {
                             Scanner s = new Scanner(destFilter);
