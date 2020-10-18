@@ -1,8 +1,9 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
-Unreleased
-----------
+v0.1.5 (2020-10-17 12:15:55 -0400)
+----------------------------------
+* Fixed animated textures for the decomposer and the recycler. (VanMuur)
 * Fixing merge problems. (VanMuur)
 * Working copy of the animated matter analyzer. (VanMuur)
 * Saving state for the matter analyzer before switching branches. (VanMuur)

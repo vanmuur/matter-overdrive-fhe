@@ -18,25 +18,44 @@
 
 package matteroverdrive.gui.pages;
 
+import matteroverdrive.MatterOverdrive;
 import matteroverdrive.container.slot.MOSlot;
 import matteroverdrive.gui.MOGuiMachine;
-import matteroverdrive.gui.element.ElementInventorySlot;
-import matteroverdrive.gui.element.MOElementButton;
-import matteroverdrive.gui.element.MOElementTextField;
+import matteroverdrive.gui.element.*;
 import matteroverdrive.gui.events.ITextHandler;
 import matteroverdrive.machines.components.ComponentMatterNetworkConfigs;
+import matteroverdrive.util.MOStringHelper;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagLong;
+import net.minecraft.util.math.BlockPos;
 
 public class MatterNetworkConfigPage extends AutoConfigPage implements ITextHandler {
     private ComponentMatterNetworkConfigs componentMatterNetworkConfigs;
     private ElementInventorySlot filterSlot;
     private MOElementTextField destinationTextField;
+    private MOElementButtonScaled importButton;
+    private MOElementButtonScaled clearButton;
 
     public MatterNetworkConfigPage(MOGuiMachine gui, int posX, int posY, int width, int height) {
         super(gui, posX, posY, width, height);
+
         destinationTextField = new MOElementTextField(gui, this, 4, 42, 96, 16);
         destinationTextField.setName("Destination");
         destinationTextField.setBackground(MOElementButton.HOVER_TEXTURE_DARK);
         destinationTextField.setTextOffset(4, 3);
+
+        importButton = new MOElementButtonScaled(gui, this, 0, 28 + 18 * 2, "Import", 50, 18);
+        importButton.setNormalTexture(MOElementButton.NORMAL_TEXTURE);
+        importButton.setOverTexture(MOElementButton.HOVER_TEXTURE);
+        importButton.setDisabledTexture(MOElementButton.HOVER_TEXTURE_DARK);
+        importButton.setText(MOStringHelper.translateToLocal("gui.label.button.import"));
+
+        clearButton = new MOElementButtonScaled(gui, this, 50, 28 + 18 * 2, "Clear", 50, 18);
+        clearButton.setNormalTexture(MOElementButton.NORMAL_TEXTURE);
+        clearButton.setOverTexture(MOElementButton.HOVER_TEXTURE);
+        clearButton.setDisabledTexture(MOElementButton.HOVER_TEXTURE_DARK);
+        clearButton.setText(MOStringHelper.translateToLocal("gui.label.button.clear"));
+
         this.componentMatterNetworkConfigs = gui.getMachine().getComponent(ComponentMatterNetworkConfigs.class);
         filterSlot = new ElementInventorySlot(gui, (MOSlot) machineGui.inventorySlots.getSlot(componentMatterNetworkConfigs.getDestinationFilterSlot()), 104, 37, 22, 22, "big");
     }
@@ -45,11 +64,19 @@ public class MatterNetworkConfigPage extends AutoConfigPage implements ITextHand
     public void init() {
         super.init();
         addElement(destinationTextField);
+
         if (componentMatterNetworkConfigs != null) {
             if (componentMatterNetworkConfigs.getDestinationFilter() != null) {
                 destinationTextField.setText(componentMatterNetworkConfigs.getDestinationFilter());
             }
+
             addElement(filterSlot);
+            addElement(importButton);
+            addElement(clearButton);
+
+            if (destinationTextField.getText().equals("")) {
+                clearButton.setEnabled(false);
+            }
         }
     }
 
@@ -72,5 +99,47 @@ public class MatterNetworkConfigPage extends AutoConfigPage implements ITextHand
     @Override
     public void update(int mouseX, int mouseY, float partialTicks) {
         super.update(mouseX, mouseY, partialTicks);
+    }
+
+    @Override
+    public void handleElementButtonClick(MOElementBase element, String buttonName, int mouseButton) {
+        if (buttonName.equals("Import")) {
+            ItemStack usb = filterSlot.getSlot().getStack();
+
+            if (usb != null) {
+                if (MatterOverdrive.ITEMS.networkFlashDrive.hasTarget(usb)) {
+                    BlockPos target = MatterOverdrive.ITEMS.networkFlashDrive.getTargetPosition(usb);
+
+                    componentMatterNetworkConfigs.setDestinationFilter(String.format("%d, %d, %d", target.getX(), target.getY(), target.getZ()));
+                    machineGui.getMachine().sendConfigsToServer(false);
+
+                    destinationTextField.setText(String.format("%d, %d, %d", target.getX(), target.getY(), target.getZ()));
+
+//                    machine.setSelectedLocation(MatterOverdrive.ITEMS.transportFlashDrive.getTarget(usb).add(0, 1, 0), name.getText());
+//                    machine.sendConfigsToServer(true);
+
+                    clearButton.setEnabled(true);
+
+                    updateInfo();
+                }
+            }
+        } else if (buttonName.equals("Clear")) {
+            componentMatterNetworkConfigs.setDestinationFilter("");
+            machineGui.getMachine().sendConfigsToServer(false);
+
+            destinationTextField.setText("");
+
+            clearButton.setEnabled(false);
+        }
+    }
+
+    protected void updateElementInformation() {
+        ItemStack usb = filterSlot.getSlot().getStack();
+
+        if (usb != null) {
+            BlockPos target = MatterOverdrive.ITEMS.transportFlashDrive.getTarget(usb);
+
+            boolean hasTarget = MatterOverdrive.ITEMS.transportFlashDrive.hasTarget(usb);
+        }
     }
 }

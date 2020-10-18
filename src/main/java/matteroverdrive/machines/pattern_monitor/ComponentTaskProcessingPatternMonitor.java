@@ -45,7 +45,7 @@ public class ComponentTaskProcessingPatternMonitor extends TaskQueueComponent<Ma
             MatterNetworkTaskReplicatePattern replicatePattern = getTaskQueue().peek();
             if (replicatePattern != null) {
                 if (patternSendTimeTracker.hasDelayPassed(getWorld(), REPLICATION_SEARCH_TIME)) {
-                    MatterNetworkEventReplicate.Request requestPatternReplication = new MatterNetworkEventReplicate.Request(replicatePattern.getPattern(), replicatePattern.getAmount());
+                    MatterNetworkEventReplicate.Request requestPatternReplication = new MatterNetworkEventReplicate.Request(replicatePattern.getPattern(), replicatePattern.getAmount(), replicatePattern.getDestination());
                     machine.getNetwork().post(requestPatternReplication);
                     if (requestPatternReplication.isAccepted()) {
                         getTaskQueue().dequeue();

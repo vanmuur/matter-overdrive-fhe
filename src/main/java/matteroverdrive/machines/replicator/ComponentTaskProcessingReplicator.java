@@ -71,54 +71,65 @@ public class ComponentTaskProcessingReplicator extends TaskQueueComponent<Matter
     }
 
     protected void manageReplicate() {
-
-        if (this.isReplicating()) {
-
-            if (!getWorld().isRemote) {
-
-                MatterNetworkTaskReplicatePattern replicatePattern = getTaskQueue().peek();
-                ItemStack patternStack = replicatePattern.getPattern().toItemStack(false);
-
-                if (replicatePattern.isValid(getWorld())) {
-                    if (machine.getEnergyStorage().getEnergyStored() >= getEnergyDrainPerTick()) {
-                        replicatePattern.setState(MatterNetworkTaskState.PROCESSING);
-                        this.replicateTime++;
-                        machine.getEnergyStorage().extractEnergy(getEnergyDrainPerTick(patternStack), false);
-                        int time = getSpeed(patternStack);
-
-                        if (this.replicateTime >= time) {
-                            this.replicateTime = 0;
-                            this.replicateItem(replicatePattern.getPattern(), patternStack);
-                            MatterOverdrive.NETWORK.sendToDimention(new PacketReplicationComplete(machine), getWorld());
-
-                            TileEntity TE = getWorld().getTileEntity(getPos());
-
-                            // Make sure at that location we don't have a muffler installed.
-                            if (TE != null) {
-                                TileEntityMachineReplicator temr = (TileEntityMachineReplicator) TE;
-
-                                ItemStack stack = temr.getStackInSlot(0);
-
-                                if (!(temr.getUpgradeMultiply(UpgradeTypes.Muffler) == 2d || stack.isEmpty())) {
-                                    SoundHandler.PlaySoundAt(getWorld(), MatterOverdriveSounds.replicateSuccess, SoundCategory.BLOCKS, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), 0.25F * machine.getBlockType(BlockReplicator.class).replication_volume, 1.0F, 0.2F, 0.8F);
-                                }
-                            }
-                        }
-                        if (radiationTimeTracker.hasDelayPassed(getWorld(), TileEntityMachineReplicator.RADIATION_DAMAGE_DELAY)) {
-                            machine.manageRadiation();
-                        }
-
-                        replicateProgress = (float) replicateTime / (float) time;
-                    }
-                } else {
-                    getTaskQueue().dequeue();
-                }
-            }
-        } else {
+        if (!this.isReplicating()) {
             this.replicateTime = 0;
             replicateProgress = 0;
+
+            return;
         }
 
+        if (getWorld().isRemote) {
+            return;
+        }
+
+        MatterNetworkTaskReplicatePattern replicatePattern = getTaskQueue().peek();
+        ItemStack patternStack = replicatePattern.getPattern().toItemStack(false);
+
+        System.out.println("Handling destination of: " + replicatePattern.getDestinationBlockPos());
+
+        if (!replicatePattern.isValid(getWorld())) {
+            getTaskQueue().dequeue();
+
+            return;
+        }
+
+        if (replicatePattern.hasDestination() && !machine.getPos().equals(replicatePattern.getDestinationBlockPos())) {
+            return;
+        }
+
+        if (machine.getEnergyStorage().getEnergyStored() < getEnergyDrainPerTick()) {
+            return;
+        }
+
+        replicatePattern.setState(MatterNetworkTaskState.PROCESSING);
+        this.replicateTime++;
+        machine.getEnergyStorage().extractEnergy(getEnergyDrainPerTick(patternStack), false);
+        int time = getSpeed(patternStack);
+
+        if (this.replicateTime >= time) {
+            this.replicateTime = 0;
+            this.replicateItem(replicatePattern.getPattern(), patternStack);
+            MatterOverdrive.NETWORK.sendToDimention(new PacketReplicationComplete(machine), getWorld());
+
+            TileEntity TE = getWorld().getTileEntity(getPos());
+
+            // Make sure at that location we don't have a muffler installed.
+            if (TE != null) {
+                TileEntityMachineReplicator temr = (TileEntityMachineReplicator) TE;
+
+                ItemStack stack = temr.getStackInSlot(0);
+
+                if (!(temr.getUpgradeMultiply(UpgradeTypes.Muffler) == 2d || stack.isEmpty())) {
+                    SoundHandler.PlaySoundAt(getWorld(), MatterOverdriveSounds.replicateSuccess, SoundCategory.BLOCKS, this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), 0.25F * machine.getBlockType(BlockReplicator.class).replication_volume, 1.0F, 0.2F, 0.8F);
+                }
+            }
+        }
+
+        if (radiationTimeTracker.hasDelayPassed(getWorld(), TileEntityMachineReplicator.RADIATION_DAMAGE_DELAY)) {
+            machine.manageRadiation();
+        }
+
+        replicateProgress = (float) replicateTime / (float) time;
     }
 
     private void replicateItem(ItemPattern itemPattern, ItemStack newItem) {

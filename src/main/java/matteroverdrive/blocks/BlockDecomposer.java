@@ -61,7 +61,7 @@ public class BlockDecomposer extends MOMatterEnergyStorageBlock<TileEntityMachin
 
         IBlockState blockState = worldIn.getBlockState(pos);
 
-        worldIn.setBlockState(pos, blockState.withProperty(RUNNING, false));
+        worldIn.setBlockState(pos, blockState.withProperty(RUNNING, false), 3);
     }
 
     public static void setState(boolean running, World worldIn, BlockPos pos) {

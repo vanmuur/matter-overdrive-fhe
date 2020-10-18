@@ -25,17 +25,19 @@ import net.minecraft.item.ItemStack;
 public class MatterNetworkEventReplicate implements IMatterNetworkEvent {
     public final ItemPattern pattern;
     public int amount;
+    public long destination;
 
-    public MatterNetworkEventReplicate(ItemPattern itemPattern, int amount) {
+    public MatterNetworkEventReplicate(ItemPattern itemPattern, int amount, long destination) {
         this.pattern = itemPattern;
         this.amount = amount;
+        this.destination = destination;
     }
 
     public static class Request extends MatterNetworkEventReplicate {
         private boolean accepted;
 
-        public Request(ItemPattern itemPattern, int amount) {
-            super(itemPattern, amount);
+        public Request(ItemPattern itemPattern, int amount, long destination) {
+            super(itemPattern, amount, destination);
         }
 
         public void markAccepted() {
@@ -50,8 +52,8 @@ public class MatterNetworkEventReplicate implements IMatterNetworkEvent {
     public static class Ccomplete extends MatterNetworkEventReplicate {
         public final ItemStack itemStack;
 
-        public Ccomplete(ItemStack itemStack, ItemPattern itemPattern, int amount) {
-            super(itemPattern, amount);
+        public Ccomplete(ItemStack itemStack, ItemPattern itemPattern, int amount, long destination) {
+            super(itemPattern, amount, destination);
             this.itemStack = itemStack;
         }
     }

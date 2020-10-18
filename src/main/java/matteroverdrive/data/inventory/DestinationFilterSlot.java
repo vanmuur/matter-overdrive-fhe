@@ -19,6 +19,7 @@
 package matteroverdrive.data.inventory;
 
 import matteroverdrive.client.render.HoloIcon;
+import matteroverdrive.items.NetworkFlashDrive;
 import matteroverdrive.proxy.ClientProxy;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
@@ -31,7 +32,7 @@ public class DestinationFilterSlot extends Slot {
 
     @Override
     public boolean isValidForSlot(ItemStack item) {
-        return true;
+        return item.getItem() instanceof NetworkFlashDrive;
     }
 
     @Override

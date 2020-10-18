@@ -26,15 +26,23 @@ import matteroverdrive.container.matter_network.ContainerPatternMonitor;
 import matteroverdrive.data.matter_network.ItemPattern;
 import matteroverdrive.data.matter_network.ItemPatternMapping;
 import matteroverdrive.gui.element.*;
+import matteroverdrive.gui.pages.MatterNetworkConfigPage;
 import matteroverdrive.gui.pages.PageTasks;
+import matteroverdrive.machines.components.ComponentMatterNetworkConfigs;
 import matteroverdrive.machines.pattern_monitor.TileEntityMachinePatternMonitor;
+import matteroverdrive.machines.replicator.TileEntityMachineReplicator;
 import matteroverdrive.network.packet.server.pattern_monitor.PacketPatternMonitorAddRequest;
 import matteroverdrive.network.packet.server.task_queue.PacketRemoveTask;
 import matteroverdrive.proxy.ClientProxy;
 import matteroverdrive.util.MOStringHelper;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.math.BlockPos;
+
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class GuiPatternMonitor extends MOGuiNetworkMachine<TileEntityMachinePatternMonitor> {
     MOElementButton refreshButton;
@@ -54,7 +62,8 @@ public class GuiPatternMonitor extends MOGuiNetworkMachine<TileEntityMachinePatt
         requestButton.setToolTip(MOStringHelper.translateToLocal("gui.tooltip.button.request"));
         elementGrid = new ElementPatternsGrid(this, 48, 40, 160, 110);
         searchField = new MOElementTextField(this, 41, 26, 167, 14);
-        //slotsList.addElement(refreshButton);
+
+        slotsList.addElement(refreshButton);
         slotsList.addElement(requestButton);
         //elementGrid.updateStackList(((ContainerPatternMonitor)inventorySlots).getGuiPatterns());
     }
@@ -72,13 +81,15 @@ public class GuiPatternMonitor extends MOGuiNetworkMachine<TileEntityMachinePatt
     public void initGui() {
         super.initGui();
 
-        //this.addElement(refreshButton);
+        this.addElement(refreshButton);
         //this.addElement(requestButton);
         pages.get(0).addElement(elementGrid);
         pages.get(0).addElement(searchField);
+
         AddHotbarPlayerSlots(inventorySlots, this);
     }
 
+    @Override
     public void handleElementButtonClick(MOElementBase element, String buttonName, int mouseButton) {
         super.handleElementButtonClick(element, buttonName, mouseButton);
         if (element == requestButton) {
@@ -88,7 +99,29 @@ public class GuiPatternMonitor extends MOGuiNetworkMachine<TileEntityMachinePatt
 
                     if (itemPattern.getAmount() > 0) {
                         ItemPattern pattern = itemPattern.getPatternMapping().getItemPattern().copy();
-                        MatterOverdrive.NETWORK.sendToServer(new PacketPatternMonitorAddRequest(machine, pattern, itemPattern.getAmount()));
+
+                        ComponentMatterNetworkConfigs componentMatterNetworkConfigs = this.getMachine().getComponent(ComponentMatterNetworkConfigs.class);
+
+                        String destFilter = componentMatterNetworkConfigs.getDestinationFilter();
+
+                        if (destFilter.equals("")) {
+                            MatterOverdrive.NETWORK.sendToServer(new PacketPatternMonitorAddRequest(machine, pattern, itemPattern.getAmount()));
+                        } else {
+                            Scanner s = new Scanner(destFilter);
+
+                            s.useDelimiter(", ");
+
+                            int x = s.nextInt();
+                            int y = s.nextInt();
+                            int z = s.nextInt();
+
+                            BlockPos pos = new BlockPos(x, y, z);
+
+                            System.out.println("Sending request with position of: " + pos);
+
+                            MatterOverdrive.NETWORK.sendToServer(new PacketPatternMonitorAddRequest(machine, pattern, itemPattern.getAmount(), pos));
+                        }
+
                         itemPattern.setAmount(0);
                     } else {
                         itemPattern.setExpanded(false);
