@@ -19,13 +19,11 @@
 package matteroverdrive.blocks;
 
 import matteroverdrive.api.wrench.IDismantleable;
-import matteroverdrive.blocks.includes.MOBlock;
 import matteroverdrive.tile.TileEntityHoloSign;
 import matteroverdrive.util.MOInventoryHelper;
 import matteroverdrive.util.MachineHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -61,20 +59,6 @@ public class BlockHoloSign extends BlockMonitor<TileEntityHoloSign> implements I
 
     @Override
     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block blockIn, BlockPos neighbor) {
-        boolean flag;
-        EnumFacing l = world.getBlockState(pos).getValue(MOBlock.PROPERTY_DIRECTION);
-        flag = false;
-
-        IBlockState nState = world.getBlockState(pos.offset(l));
-        if (nState.getBlockFaceShape(world, pos.offset(l), l.getOpposite()) == BlockFaceShape.SOLID) {
-            flag = true;
-        }
-
-        if (flag) {
-            this.dropBlockAsItem(world, pos, world.getBlockState(pos), 0);
-            world.setBlockToAir(pos);
-        }
-
         super.neighborChanged(state, world, pos, blockIn, neighbor);
     }
 

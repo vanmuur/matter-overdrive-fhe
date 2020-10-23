@@ -59,7 +59,7 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
     public ResourceLocation getModelTexture(ItemStack module) {
         ResourceLocation resource = new ResourceLocation(Reference.PATH_ELEMENTS + String.format("holo_sight_%d.png", module.getItemDamage()));
 
-        MOLog.warn("Resource location is: " + resource.toString());
+//        MOLog.warn("Resource location is: " + resource.toString());
 
         return resource;
     }
@@ -70,7 +70,7 @@ public class WeaponModuleHoloSights extends WeaponModuleBase implements IWeaponS
 
         String mName = super.getTranslationKey() + "_" + subItemNames[i];
 
-        MOLog.info("The current model name is: {}", mName);
+//        MOLog.info("The current model name is: {}", mName);
 
         return super.getTranslationKey() + "_" + subItemNames[i];
     }
