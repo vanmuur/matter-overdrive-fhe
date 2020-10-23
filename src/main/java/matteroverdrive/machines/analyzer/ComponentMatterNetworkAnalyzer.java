@@ -26,7 +26,7 @@ import matteroverdrive.matter_network.tasks.MatterNetworkTaskStorePattern;
 import matteroverdrive.util.TimeTracker;
 
 public class ComponentMatterNetworkAnalyzer extends MatterNetworkComponentClient<TileEntityMachineMatterAnalyzer> {
-    public static final int TASK_SEARCH_DELAY = 40;
+    public static final int TASK_SEARH_DELAY = 40;
     private final TimeTracker taskSearchTimer;
 
     public ComponentMatterNetworkAnalyzer(TileEntityMachineMatterAnalyzer analyzer) {
@@ -43,7 +43,7 @@ public class ComponentMatterNetworkAnalyzer extends MatterNetworkComponentClient
     public void update() {
         super.update();
         if (!getNodeWorld().isRemote) {
-            if (taskSearchTimer.hasDelayPassed(getNodeWorld(), TASK_SEARCH_DELAY)) {
+            if (taskSearchTimer.hasDelayPassed(getNodeWorld(), TASK_SEARH_DELAY)) {
                 manageTaskSearch();
             }
         }

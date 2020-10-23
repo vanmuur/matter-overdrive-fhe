@@ -176,7 +176,7 @@ public class TileEntityMachineFusionReactorController extends MOTileEntityMachin
             } else if (back == EnumFacing.WEST) {
                 pos = pos.rotateYaw((float) (Math.PI + Math.PI / 2));
             } else if (back == EnumFacing.EAST) {
-                pos = pos.rotateYaw((float) (Math.PI / 2));
+                pos = pos.rotatePitch((float) (Math.PI / 2));
             } else if (back == EnumFacing.UP) {
                 pos = pos.rotatePitch((float) (Math.PI / 2));
             } else if (back == EnumFacing.DOWN) {

@@ -93,7 +93,6 @@ public class ElementTaskList extends MOElementListBox {
         }
 
         MatterNetworkTask task = taskQueue.getAt(i);
-
         Minecraft.getMinecraft().fontRenderer.drawStringWithShadow(task.getName(), x + 8, y + 7, 0xFFFFFF);
     }
 
@@ -101,7 +100,7 @@ public class ElementTaskList extends MOElementListBox {
     public void drawElementTooltip(int index, int mouseX, int mouseY) {
         GlStateManager.pushMatrix();
         GlStateManager.translate(-posX, 0, 0);
-        List<String> tooltip = new ArrayList<>();
+        List tooltip = new ArrayList();
         taskQueue.getAt(index).addInfo(tooltip);
         gui.setTooltip(tooltip);
         GlStateManager.popMatrix();

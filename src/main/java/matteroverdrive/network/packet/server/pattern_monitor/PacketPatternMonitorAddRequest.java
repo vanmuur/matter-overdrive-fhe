@@ -23,44 +23,25 @@ import matteroverdrive.api.network.MatterNetworkTaskState;
 import matteroverdrive.data.matter_network.ItemPattern;
 import matteroverdrive.machines.pattern_monitor.ComponentTaskProcessingPatternMonitor;
 import matteroverdrive.machines.pattern_monitor.TileEntityMachinePatternMonitor;
-import matteroverdrive.machines.replicator.TileEntityMachineReplicator;
 import matteroverdrive.matter_network.tasks.MatterNetworkTaskReplicatePattern;
 import matteroverdrive.network.packet.TileEntityUpdatePacket;
 import matteroverdrive.network.packet.server.AbstractServerPacketHandler;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 
 public class PacketPatternMonitorAddRequest extends TileEntityUpdatePacket {
     private ItemPattern pattern;
     private int amount;
-    private long destination;
-    private String message;
 
     public PacketPatternMonitorAddRequest() {
         super();
-    }
-
-    public PacketPatternMonitorAddRequest(TileEntityMachinePatternMonitor monitor, ItemPattern pattern, int amount, BlockPos destination, String message) {
-        this(monitor, pattern, amount);
-
-        this.destination = destination.toLong();
-        this.message = message;
-    }
-
-    public PacketPatternMonitorAddRequest(TileEntityMachinePatternMonitor monitor, ItemPattern pattern, int amount, BlockPos destination) {
-        this(monitor, pattern, amount);
-
-        this.destination = destination.toLong();
     }
 
     public PacketPatternMonitorAddRequest(TileEntityMachinePatternMonitor monitor, ItemPattern pattern, int amount) {
         super(monitor);
         this.pattern = pattern;
         this.amount = amount;
-
-        this.destination = -1;
     }
 
     @Override
@@ -68,7 +49,6 @@ public class PacketPatternMonitorAddRequest extends TileEntityUpdatePacket {
         super.fromBytes(buf);
         pattern = ItemPattern.fromBuffer(buf);
         amount = buf.readShort();
-        destination = buf.readLong();
     }
 
     @Override
@@ -76,32 +56,17 @@ public class PacketPatternMonitorAddRequest extends TileEntityUpdatePacket {
         super.toBytes(buf);
         ItemPattern.writeToBuffer(buf, pattern);
         buf.writeShort(amount);
-        buf.writeLong(destination);
     }
 
     public static class ServerHandler extends AbstractServerPacketHandler<PacketPatternMonitorAddRequest> {
         @Override
         public void handleServerMessage(EntityPlayerMP player, PacketPatternMonitorAddRequest message, MessageContext ctx) {
             TileEntity entity = message.getTileEntity(player.world);
-
-            if (entity instanceof TileEntityMachinePatternMonitor) {
+            if (entity != null && entity instanceof TileEntityMachinePatternMonitor) {
                 TileEntityMachinePatternMonitor monitor = (TileEntityMachinePatternMonitor) entity;
 
                 if (monitor != null) {
-                    BlockPos pos = BlockPos.fromLong(message.destination);
-
-                    MatterNetworkTaskReplicatePattern task;
-
-                    System.out.println("Entity type: " + player.world.getTileEntity(pos).getClass().getName());
-
-                    if (! (player.world.getTileEntity(pos) instanceof TileEntityMachineReplicator)) {
-                        System.out.println("Machine is NOT a replicator.");
-                        task = new MatterNetworkTaskReplicatePattern(message.pattern, message.amount, message.destination, "Invalid destination.");
-                    } else {
-                        System.out.println("Machine IS a replicator.");
-                        task = new MatterNetworkTaskReplicatePattern(message.pattern, message.amount, message.destination);
-                    }
-
+                    MatterNetworkTaskReplicatePattern task = new MatterNetworkTaskReplicatePattern(message.pattern, message.amount);
                     task.setState(MatterNetworkTaskState.WAITING);
                     monitor.getComponent(ComponentTaskProcessingPatternMonitor.class).addReplicateTask(task);
                 }

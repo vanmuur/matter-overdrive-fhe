@@ -68,13 +68,13 @@ public class ModuleHoloSightsRender extends ModuleRenderAbstract {
             GlStateManager.rotate(180, 0, 0, 1);
             GlStateManager.translate(-0.012, -0.012, 0);
 
-//            MOLog.info("Module stack is: " + moduleStack.getItem());
-//            MOLog.info("Module stack is a weapon module: " + (moduleStack.getItem() instanceof IWeaponModule));
+            MOLog.info("Module stack is: " + moduleStack.getItem());
+            MOLog.info("Module stack is a weapon module: " + (moduleStack.getItem() instanceof IWeaponModule));
 
             if (moduleStack.getItem() instanceof IWeaponModule) {
                 ResourceLocation location = ((IWeaponModule) moduleStack.getItem()).getModelTexture(moduleStack);
 
-//                MOLog.info("Rendering model from location: " + location);
+                MOLog.info("Rendering model from location: " + location);
 
                 if (location != null) {
                     RenderUtils.bindTexture(location);

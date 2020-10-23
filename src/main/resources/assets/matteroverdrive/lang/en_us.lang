@@ -439,7 +439,6 @@ gui.label.button.scout=Send Scout
 gui.label.button.new=New
 gui.label.button.import=Import
 gui.label.button.import.too_far=Destination Too Far
-gui.label.button.clear=Clear
 gui.label.auto_line_size=Auto Line Size
 gui.label.accept=Accept
 

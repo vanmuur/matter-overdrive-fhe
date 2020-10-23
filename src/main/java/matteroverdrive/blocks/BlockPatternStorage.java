@@ -24,7 +24,6 @@ import matteroverdrive.machines.pattern_storage.TileEntityMachinePatternStorage;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -40,7 +39,6 @@ public class BlockPatternStorage extends MOBlockMachine<TileEntityMachinePattern
         this.setHarvestLevel("pickaxe", 2);
         setHasGui(true);
         setHasRotation();
-        this.setDefaultState(getBlockState().getBaseState().withProperty(PROPERTY_DIRECTION, EnumFacing.NORTH));
     }
 
     /*@Override

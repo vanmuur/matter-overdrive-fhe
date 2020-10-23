@@ -15,7 +15,7 @@ on:
       - v*
 
 env:
-  releaseNumber: '0.1.6.2'
+  releaseNumber: '0.1.6.3'
 
 jobs:
   build:

@@ -25,12 +25,8 @@ import matteroverdrive.matter_network.events.MatterNetworkEventReplicate;
 import matteroverdrive.matter_network.tasks.MatterNetworkTaskReplicatePattern;
 
 public class ComponentMatterNetworkReplicator extends MatterNetworkComponentClient<TileEntityMachineReplicator> {
-    TileEntityMachineReplicator replicatior;
-
     public ComponentMatterNetworkReplicator(TileEntityMachineReplicator replicator) {
         super(replicator);
-
-        this.replicatior = replicator;
     }
 
     @Override
@@ -41,12 +37,8 @@ public class ComponentMatterNetworkReplicator extends MatterNetworkComponentClie
     }
 
     private void onReplicationRequest(MatterNetworkEventReplicate.Request request) {
-        if (replicatior.getPos().toLong() != request.destination) {
-            return;
-        }
-
         if (!request.isAccepted()) {
-            MatterNetworkTaskReplicatePattern replicatePattern = new MatterNetworkTaskReplicatePattern(request.pattern, request.amount, request.destination);
+            MatterNetworkTaskReplicatePattern replicatePattern = new MatterNetworkTaskReplicatePattern(request.pattern, request.amount);
             replicatePattern.setState(MatterNetworkTaskState.QUEUED);
             if (rootClient.getComponent(ComponentTaskProcessingReplicator.class).addReplicationTask(replicatePattern)) {
                 request.markAccepted();

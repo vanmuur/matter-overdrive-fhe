@@ -1,6 +1,12 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.6.2 (2020-10-23 16:52:43 -0400)
+------------------------------------
+* Updating release to v0.1.6.2. (VanMuur)
+* Setting up the holo sign to have text spread across the signs if they're next to each other. (VanMuur)
+* fixed fusion reactor controller facing east (Force)
+
 v0.1.6.1 (2020-10-18 19:25:33 -0400)
 ------------------------------------
 * Updating version for bug fix. (VanMuur)

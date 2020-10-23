@@ -22,51 +22,26 @@ import matteroverdrive.api.network.MatterNetworkTask;
 import matteroverdrive.data.matter_network.ItemPattern;
 import matteroverdrive.util.MOStringHelper;
 import matteroverdrive.util.MatterHelper;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-
-import java.util.List;
 
 public class MatterNetworkTaskReplicatePattern extends MatterNetworkTask {
     ItemPattern pattern;
     int amount;
-    long destination;
-    String message;
 
     public MatterNetworkTaskReplicatePattern() {
         super();
         pattern = new ItemPattern();
     }
 
-    public MatterNetworkTaskReplicatePattern(short itemID, short itemMetadata, byte amount, long destination) {
+    public MatterNetworkTaskReplicatePattern(short itemID, short itemMetadata, byte amount) {
         pattern = new ItemPattern(itemID, itemMetadata);
         this.amount = amount;
-        this.destination = destination;
-    }
-
-    public MatterNetworkTaskReplicatePattern(short itemID, short itemMetadata, byte amount) {
-        this(itemID, itemMetadata, amount, -1);
-    }
-
-    public MatterNetworkTaskReplicatePattern(ItemPattern pattern, int amount, long destination, String message) {
-        this.pattern = pattern;
-        this.amount = amount;
-        this.destination = destination;
-        this.message = message;
-
-        System.out.println("Setting message to: " + this.message);
-    }
-
-    public MatterNetworkTaskReplicatePattern(ItemPattern pattern, int amount, long destination) {
-        this.pattern = pattern;
-        this.amount = amount;
-        this.destination = destination;
     }
 
     public MatterNetworkTaskReplicatePattern(ItemPattern pattern, int amount) {
-        this(pattern, amount, -1);
+        this.pattern = pattern;
+        this.amount = amount;
     }
 
     @Override
@@ -80,7 +55,6 @@ public class MatterNetworkTaskReplicatePattern extends MatterNetworkTask {
         if (compound != null) {
             pattern.readFromNBT(compound.getCompoundTag("Pattern"));
             amount = compound.getShort("amount");
-            destination = compound.getLong("destination");
         }
     }
 
@@ -88,7 +62,6 @@ public class MatterNetworkTaskReplicatePattern extends MatterNetworkTask {
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
         compound.setShort("amount", (short) amount);
-        compound.setLong("destination", (long) destination);
         if (compound != null) {
             NBTTagCompound tagCompound = new NBTTagCompound();
             pattern.writeToNBT(tagCompound);
@@ -100,18 +73,6 @@ public class MatterNetworkTaskReplicatePattern extends MatterNetworkTask {
     @Override
     public String getName() {
         return String.format("[%s] %s", amount, MOStringHelper.translateToLocal(pattern.getItem().getTranslationKey() + ".name"));
-    }
-
-    @Override
-    public void addInfo(List<String> list) {
-        super.addInfo(list);
-
-        list.add("OK, we're here.");
-
-        if (message != null) {
-            list.add("");
-            list.add(message);
-        }
     }
 
     public ItemPattern getPattern() {
@@ -132,22 +93,6 @@ public class MatterNetworkTaskReplicatePattern extends MatterNetworkTask {
 
     public void setAmount(int amount) {
         this.amount = amount;
-    }
-
-    public long getDestination() {
-        return this.destination;
-    }
-
-    public void setDestination(long destination) {
-        this.destination = destination;
-    }
-
-    public BlockPos getDestinationBlockPos() {
-        return BlockPos.fromLong(this.destination);
-    }
-
-    public boolean hasDestination() {
-        return this.destination != -1;
     }
 
 }
