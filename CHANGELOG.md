@@ -1,6 +1,15 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.6.1 (2020-10-18 19:25:33 -0400)
+------------------------------------
+* Updating version for bug fix. (VanMuur)
+* Fixing bug when it came to destFilter being null. (VanMuur)
+
+v0.1.6 (2020-10-18 18:53:54 -0400)
+----------------------------------
+* Initial commit of network flash drives setting destinations. (VanMuur)
+
 v0.1.5 (2020-10-17 12:15:55 -0400)
 ----------------------------------
 * Fixed animated textures for the decomposer and the recycler. (VanMuur)

@@ -85,8 +85,6 @@ public class ComponentTaskProcessingReplicator extends TaskQueueComponent<Matter
         MatterNetworkTaskReplicatePattern replicatePattern = getTaskQueue().peek();
         ItemStack patternStack = replicatePattern.getPattern().toItemStack(false);
 
-        System.out.println("Handling destination of: " + replicatePattern.getDestinationBlockPos());
-
         if (!replicatePattern.isValid(getWorld())) {
             getTaskQueue().dequeue();
 
