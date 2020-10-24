@@ -29,6 +29,7 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
@@ -48,6 +49,7 @@ public class TransportFlashDrive extends MOBaseItem {
     @SideOnly(Side.CLIENT)
     public void addDetails(ItemStack itemstack, EntityPlayer player, @Nullable World worldIn, List<String> infos) {
         super.addDetails(itemstack, player, worldIn, infos);
+
         if (hasTarget(itemstack)) {
             BlockPos target = getTarget(itemstack);
             IBlockState state = player.world.getBlockState(target);
@@ -90,6 +92,6 @@ public class TransportFlashDrive extends MOBaseItem {
     }
 
     public boolean hasTarget(ItemStack itemStack) {
-        return itemStack.hasTagCompound() && itemStack.getTagCompound().hasKey("taget", Constants.NBT.TAG_LONG);
+        return itemStack.hasTagCompound() && itemStack.getTagCompound().hasKey("target", Constants.NBT.TAG_LONG);
     }
 }

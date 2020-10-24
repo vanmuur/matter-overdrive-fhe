@@ -1,6 +1,10 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.7 (2020-10-24 12:42:36 -0400)
+----------------------------------
+* Working matter container operation. (VanMuur)
+
 v0.1.6.3 (2020-10-23 17:32:36 -0400)
 ------------------------------------
 * Fixing the Holo Sign so that it spans multiple blocks. (VanMuur)
