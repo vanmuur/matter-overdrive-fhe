@@ -1,6 +1,10 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.6.3 (2020-10-23 17:32:36 -0400)
+------------------------------------
+* Fixing the Holo Sign so that it spans multiple blocks. (VanMuur)
+
 v0.1.6.2 (2020-10-23 16:52:43 -0400)
 ------------------------------------
 * Updating release to v0.1.6.2. (VanMuur)
