@@ -18,15 +18,19 @@
 
 package matteroverdrive.items.weapon;
 
+import matteroverdrive.MatterOverdrive;
 import matteroverdrive.Reference;
 import matteroverdrive.api.weapon.IWeaponModule;
 import matteroverdrive.api.weapon.WeaponShot;
+import matteroverdrive.api.weapon.WeaponStats;
 import matteroverdrive.client.sound.MOPositionedSound;
 import matteroverdrive.client.sound.WeaponSound;
 import matteroverdrive.entity.weapon.PlasmaBolt;
+import matteroverdrive.handler.weapon.ClientWeaponHandler;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.items.weapon.module.WeaponModuleBarrel;
 import matteroverdrive.proxy.ClientProxy;
+import matteroverdrive.util.WeaponHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -301,4 +305,32 @@ public class PhaserRifle extends EnergyWeapon {
     public float getWeaponBaseAccuracy(ItemStack weapon, boolean zoomed) {
         return 1f + getHeat(weapon) / (zoomed ? 30f : 10f);
     }
+
+//    public PlasmaBolt spawnProjectile(ItemStack weapon, EntityLivingBase shooter, Vec3d position, Vec3d dir, WeaponShot shot) {
+//        //PlasmaBolt fire = new PlasmaBolt(entityPlayer.world, entityPlayer,position,dir, getWeaponScaledDamage(weapon), 2, getAccuracy(weapon, zoomed), getRange(weapon), WeaponHelper.getColor(weapon).getColor(), zoomed,seed);
+//        PlasmaBolt[] bolts = new PlasmaBolt[shot.getCount()];
+//        for (int i = 0; i < shot.getCount(); i++) {
+//            WeaponShot newShot = new WeaponShot(shot);
+//            if (shooter.world.isRemote) {
+//                newShot.setSeed(((ClientWeaponHandler) MatterOverdrive.PROXY.getWeaponHandler()).getNextShotID());
+//            } else {
+//                newShot.setSeed(shot.getSeed() + i);
+//            }
+//            newShot.setDamage(shot.getDamage() / shot.getCount());
+//            bolts[i] = new PlasmaBolt(shooter.world, shooter, position, dir, newShot, getShotSpeed(weapon, shooter));
+//            bolts[i].setWeapon(weapon);
+//            bolts[i].setRenderSize((getShotCount(weapon, shooter) / shot.getCount()) * 0.5f);
+//            bolts[i].setFireDamageMultiply(WeaponHelper.modifyStat(WeaponStats.FIRE_DAMAGE, weapon, 0));
+//            float explosionMultiply = WeaponHelper.modifyStat(WeaponStats.EXPLOSION_DAMAGE, weapon, 0);
+//            if (explosionMultiply > 0) {
+//                bolts[i].setExplodeMultiply((getWeaponBaseDamage(weapon) * 0.3f * explosionMultiply) / shot.getCount());
+//            }
+//            bolts[i].setKnockBack(0.5f);
+//            if (WeaponHelper.modifyStat(WeaponStats.RICOCHET, weapon, 0) == 1) {
+//                bolts[i].markRicochetable();
+//            }
+//            shooter.world.spawnEntity(bolts[i]);
+//        }
+//        return bolts;
+//    }
 }

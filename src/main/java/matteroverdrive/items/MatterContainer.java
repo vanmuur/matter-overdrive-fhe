@@ -121,6 +121,10 @@ public class MatterContainer extends MOBaseItem {
 
         IFluidHandler handler = tile.getCapability(FLUID_HANDLER_CAPABILITY, facing);
 
+        if (handler == null) {
+            return EnumActionResult.PASS;
+        }
+
         IMatterHandler matterStorage = tile.getCapability(MatterOverdriveCapabilities.MATTER_HANDLER, facing);
 
         if (matterStorage == null) {
@@ -129,9 +133,13 @@ public class MatterContainer extends MOBaseItem {
 
         FluidStack amountInSource = handler.drain(matterStorage.getCapacity(), false);
 
-        FluidStack available = handler.drain(amountInSource.amount, false);
+        int availableAmount = 0;
 
-        int availableAmount = available != null ? available.amount : 0;
+        if (amountInSource != null) {
+            FluidStack available = handler.drain(amountInSource.amount, false);
+
+            availableAmount = available != null ? available.amount : 0;
+        }
 
         FluidStack amount = stack.getCapability(FLUID_HANDLER_CAPABILITY, null).drain(CONTAINER_CAPACITY, false);
 
@@ -178,6 +186,10 @@ public class MatterContainer extends MOBaseItem {
         }
 
         IFluidHandler handler = tile.getCapability(FLUID_HANDLER_CAPABILITY, facing);
+
+        if (handler == null) {
+            return EnumActionResult.PASS;
+        }
 
         IMatterHandler matterStorage = tile.getCapability(MatterOverdriveCapabilities.MATTER_HANDLER, facing);
 

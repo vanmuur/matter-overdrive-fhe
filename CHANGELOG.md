@@ -1,6 +1,10 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.7.1 (2020-10-24 17:34:03 -0400)
+------------------------------------
+* Fixed a small bug with the transport flash drive. (VanMuur)
+
 v0.1.7 (2020-10-24 12:42:36 -0400)
 ----------------------------------
 * Working matter container operation. (VanMuur)

@@ -271,7 +271,11 @@ public class PlasmaBolt extends Entity implements IProjectile, IGravityEntity, I
                         }
                     }
 
+                    System.out.println("Fire damage multiply: " + fireDamageMultiply + ".");
+
                     if (fireDamageMultiply > 0) {
+                        System.out.println("Setting fire damage.");
+
                         movingobjectposition.entityHit.setFire((int) (10 * fireDamageMultiply));
                     }
 

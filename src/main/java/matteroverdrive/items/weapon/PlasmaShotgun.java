@@ -28,6 +28,7 @@ import matteroverdrive.entity.weapon.PlasmaBolt;
 import matteroverdrive.handler.weapon.ClientWeaponHandler;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.items.weapon.module.WeaponModuleBarrel;
+import matteroverdrive.items.weapon.module.WeaponModuleHoloSights;
 import matteroverdrive.network.packet.bi.PacketFirePlasmaShot;
 import matteroverdrive.proxy.ClientProxy;
 import matteroverdrive.util.WeaponHelper;
@@ -146,6 +147,9 @@ public class PlasmaShotgun extends EnergyWeapon {
             bolts[i] = new PlasmaBolt(shooter.world, shooter, position, dir, newShot, getShotSpeed(weapon, shooter));
             bolts[i].setWeapon(weapon);
             bolts[i].setRenderSize((getShotCount(weapon, shooter) / shot.getCount()) * 0.5f);
+
+            System.out.println("Fire damage multiply: " + WeaponHelper.modifyStat(WeaponStats.FIRE_DAMAGE, weapon, 0));
+
             bolts[i].setFireDamageMultiply(WeaponHelper.modifyStat(WeaponStats.FIRE_DAMAGE, weapon, 0));
             float explosionMultiply = WeaponHelper.modifyStat(WeaponStats.EXPLOSION_DAMAGE, weapon, 0);
             if (explosionMultiply > 0) {
