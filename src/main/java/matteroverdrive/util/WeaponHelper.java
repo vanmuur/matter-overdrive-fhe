@@ -59,9 +59,6 @@ public class WeaponHelper {
 
             for (ItemStack module : itemStacks) {
                 if (module != null && module.getItem() instanceof IWeaponModule) {
-                    System.out.println("HERE!!!!!!!!!!!!!!!!! Weapon module: " + module.getItem());
-                    System.out.println("Stat being checked: " + stat);
-
                     original = ((IWeaponModule) module.getItem()).modifyWeaponStat(stat, module, weapon, original);
                 }
             }

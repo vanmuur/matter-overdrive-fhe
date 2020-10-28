@@ -148,8 +148,6 @@ public class PlasmaShotgun extends EnergyWeapon {
             bolts[i].setWeapon(weapon);
             bolts[i].setRenderSize((getShotCount(weapon, shooter) / shot.getCount()) * 0.5f);
 
-            System.out.println("Fire damage multiply: " + WeaponHelper.modifyStat(WeaponStats.FIRE_DAMAGE, weapon, 0));
-
             bolts[i].setFireDamageMultiply(WeaponHelper.modifyStat(WeaponStats.FIRE_DAMAGE, weapon, 0));
             float explosionMultiply = WeaponHelper.modifyStat(WeaponStats.EXPLOSION_DAMAGE, weapon, 0);
             if (explosionMultiply > 0) {
