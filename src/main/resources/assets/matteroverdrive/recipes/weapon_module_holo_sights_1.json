@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "matteroverdrive:weapon_module_holo_sights",
+    "data": 1
+  },
+  "pattern": [
+    "GGG",
+    "GBG",
+    "GGG"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "matteroverdrive:holo_sights_base",
+      "data": 0
+    },
+    "G": {
+      "item": "#DUSTREDSTONE"
+    }
+  }
+}
