@@ -98,6 +98,7 @@ public class MatterOverdriveItems {
     public WeaponModuleSniperScope sniperScope;
     public WeaponModuleRicochet weaponModuleRicochet;
     public WeaponModuleHoloSights weaponModuleHoloSights;
+    public HoloSightsBase holoSightsBase;
 
     //	Tools
     public Wrench wrench;
@@ -198,6 +199,7 @@ public class MatterOverdriveItems {
         sniperScope = register(new WeaponModuleSniperScope("sniper_scope"));
         weaponModuleRicochet = register(new WeaponModuleRicochet("weapon_module_ricochet"));
         weaponModuleHoloSights = register(new WeaponModuleHoloSights("weapon_module_holo_sights"));
+        holoSightsBase = register(new HoloSightsBase("holo_sights_base"));
 
 //		Tools
         wrench = register(new Wrench("tritanium_wrench"));

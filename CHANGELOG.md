@@ -1,6 +1,11 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.7.2 (2020-10-28 14:34:19 -0400)
+------------------------------------
+* Removing debugging. (VanMuur)
+* Added null pointer exception handling to the container. (VanMuur)
+
 v0.1.7.1 (2020-10-24 17:34:03 -0400)
 ------------------------------------
 * Fixed a small bug with the transport flash drive. (VanMuur)

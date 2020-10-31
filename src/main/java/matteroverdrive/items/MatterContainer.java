@@ -99,6 +99,19 @@ public class MatterContainer extends MOBaseItem {
         // Stack is container, tile is destination.
 
         ItemStack stack = player.getHeldItem(hand);
+
+        ItemStack workingStack;
+
+        boolean stackSplit = false;
+
+        if (stack.getCount() == 1) {
+            workingStack = stack;
+        } else {
+            workingStack = stack.splitStack(1);
+
+            stackSplit = true;
+        }
+
         TileEntity tile = world.getTileEntity(pos);
 
         if (tile == null) {
@@ -109,7 +122,7 @@ public class MatterContainer extends MOBaseItem {
             return EnumActionResult.FAIL;
         }
 
-        IFluidHandler container = stack.getCapability(FLUID_HANDLER_CAPABILITY, null);
+        IFluidHandler container = workingStack.getCapability(FLUID_HANDLER_CAPABILITY, null);
 
         if (container == null) {
             return EnumActionResult.FAIL;
@@ -153,6 +166,10 @@ public class MatterContainer extends MOBaseItem {
         FluidStack result = handler.drain(drainAmount, true);
 
         container.fill(result, true);
+
+        if (stackSplit) {
+            player.addItemStackToInventory(workingStack);
+        }
 
         return EnumActionResult.SUCCESS;
     }

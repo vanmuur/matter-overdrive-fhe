@@ -116,6 +116,7 @@ item.matteroverdrive.weapon_module_holo_sights.name=Holo Sight
 item.matteroverdrive.weapon_module_holo_sights.normal.name=Holo Sight
 item.matteroverdrive.weapon_module_holo_sights.wide.name=Holo Sight - Wide
 item.matteroverdrive.weapon_module_holo_sights.small.name=Holo Sight - Small
+item.matteroverdrive.holo_sights_base.name=Holo Sights Base
 
 item.matteroverdrive.sniper_scope.name=Sniper Scope
 
