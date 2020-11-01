@@ -15,7 +15,7 @@
       "south":{
         "transform": {
           "rotation": {
-            "y":180
+            "y": 180
           }
         }
       },
@@ -23,7 +23,7 @@
       "west": {
         "transform": {
           "rotation": {
-            "y": 270
+            "y": 90
           }
         }
       },
@@ -31,7 +31,7 @@
       "east":{
         "transform": {
           "rotation": {
-            "y":90
+            "y": 270
           }
         }
       },
