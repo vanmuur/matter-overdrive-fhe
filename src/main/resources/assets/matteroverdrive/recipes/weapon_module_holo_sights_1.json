@@ -5,17 +5,23 @@
   },
   "pattern": [
     "GGG",
-    "GBG",
-    "GGG"
+    "TFT",
+    "TIT"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {
-    "B": {
-      "item": "matteroverdrive:holo_sights_base",
-      "data": 0
-    },
     "G": {
-      "item": "#DUSTREDSTONE"
+      "item": "minecraft:glass"
+    },
+    "T": {
+      "item": "matteroverdrive:tritanium_ingot"
+    },
+    "F": {
+      "item": "matteroverdrive:forcefield_emitter"
+    },
+    "I": {
+      "item": "matteroverdrive:isolinear_circuit",
+      "data": 1
     }
   }
 }
