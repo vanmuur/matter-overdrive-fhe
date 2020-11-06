@@ -168,7 +168,9 @@ public class MatterContainer extends MOBaseItem {
         container.fill(result, true);
 
         if (stackSplit) {
-            player.addItemStackToInventory(workingStack);
+            if (! player.addItemStackToInventory(workingStack)) {
+                player.entityDropItem(workingStack, 0.0f);
+            }
         }
 
         return EnumActionResult.SUCCESS;

@@ -1,8 +1,10 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
-Unreleased
-----------
+v0.1.7.3 (2020-10-31 14:33:27 -0400)
+------------------------------------
+* Updated version for bug fixes. (VanMuur)
+* Added recipes for the wide and small holo sights. (VanMuur)
 * Fixed matter containers to split on a stack being filled. Also added recipes for the holo sights. (VanMuur)
 
 v0.1.7.2 (2020-10-28 14:34:19 -0400)
