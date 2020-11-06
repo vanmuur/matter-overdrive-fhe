@@ -216,9 +216,9 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
     public void Teleport(Entity entity, TransportLocation position) {
         if (!MinecraftForge.EVENT_BUS.post(new MOEventTransport(getPos(), position, entity))) {
             if (entity instanceof EntityLivingBase) {
-                entity.setPositionAndUpdate(position.pos.getX(), position.pos.getY() + 1, position.pos.getZ());
+                entity.setPositionAndUpdate(position.pos.getX() + 0.5f, position.pos.getY(), position.pos.getZ() + 0.5f);
             } else {
-                entity.setPosition(position.pos.getX(), position.pos.getY() + 1, position.pos.getZ());
+                entity.setPosition(position.pos.getX() + 0.5f, position.pos.getY(), position.pos.getZ() + 0.5f);
             }
         }
     }

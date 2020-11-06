@@ -1,6 +1,11 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.7.4 (2020-11-06 17:46:34 -0500)
+------------------------------------
+* Fixed a small bug where if your inventory was full, it wouldn't dropped a filled matter container properly. (VanMuur)
+* Changed to facing for the smoke (Gandalf360one)
+
 v0.1.7.3 (2020-10-31 14:33:27 -0400)
 ------------------------------------
 * Updated version for bug fixes. (VanMuur)
