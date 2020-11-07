@@ -154,7 +154,8 @@ public class TileEntityMachineDecomposer extends MOTileEntityMachineMatter imple
                 && MatterHelper.containsMatter(this.getStackInSlot(INPUT_SLOT_ID))
                 && isItemValidForSlot(INPUT_SLOT_ID, getStackInSlot(INPUT_SLOT_ID))
                 && matter <= this.matterStorage.getCapacity() - this.matterStorage.getMatterStored()
-                && canPutInOutput(matter);
+                && canPutInOutput(matter)
+                && this.energyStorage.getEnergyStored() > 0;
     }
 
     @Override
