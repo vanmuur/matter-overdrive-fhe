@@ -1,6 +1,11 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.7.5 (2020-11-06 18:06:35 -0500)
+------------------------------------
+* Removed a log file put in the wrong directory. (VanMuur)
+* Fixed matter transporters so they didn't teleport to the wrong location. (VanMuur)
+
 v0.1.7.4 (2020-11-06 17:46:34 -0500)
 ------------------------------------
 * Fixed a small bug where if your inventory was full, it wouldn't dropped a filled matter container properly. (VanMuur)
