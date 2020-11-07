@@ -1,6 +1,15 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.7.6 (2020-11-07 09:18:03 -0500)
+------------------------------------
+* Fixing version number issue with 0.1.7.6. (VanMuur)
+* Updated version number. (VanMuur)
+* Fixed the decomposer so it won't display processing if its energy is zero. Matter containers stack split is still bugged. (VanMuur)
+* Changed recipe (Gandalf360one)
+* Changed recipe (Gandalf360one)
+* changed recdipe (Gandalf360one)
+
 v0.1.7.5 (2020-11-06 18:06:35 -0500)
 ------------------------------------
 * Removed a log file put in the wrong directory. (VanMuur)

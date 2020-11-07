@@ -26,6 +26,7 @@ import matteroverdrive.api.transport.TransportLocation;
 import matteroverdrive.data.Inventory;
 import matteroverdrive.data.inventory.TeleportFlashDriveSlot;
 import matteroverdrive.fx.ReplicatorParticle;
+import matteroverdrive.handler.ConfigurationHandler;
 import matteroverdrive.init.MatterOverdriveCapabilities;
 import matteroverdrive.init.MatterOverdriveSounds;
 import matteroverdrive.machines.MachineNBTCategory;
@@ -37,6 +38,7 @@ import matteroverdrive.util.math.MOMathHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -46,6 +48,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
@@ -66,7 +69,8 @@ import java.util.List;
 })*/
 public class TileEntityMachineTransporter extends MOTileEntityMachineMatter implements ITransportList//, IWailaBodyProvider, IPeripheral, SimpleComponent, ManagedPeripheral
 {
-    public static final int MAX_ENTETIES_PRE_TRANSPORT = 3;
+    public static int MATTER_PER_TRANSPORT = 25;
+    public static final int MAX_ENTITIES_PER_TRANSPORT = 3;
     public static final int TRANSPORT_TIME = 70;
     public static final int TRANSPORT_DELAY = 80;
     public static final int ENERGY_STORAGE = 1024000;
@@ -171,17 +175,22 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
         TransportLocation position = getSelectedLocation();
 
         if (!world.isRemote) {
-            if (getEnergyStorage().getEnergyStored() > getEnergyDrain() && entities.size() > 0 && isLocationValid(getSelectedLocation())) {
+            if (getEnergyStorage().getEnergyStored() >= getEnergyDrain() &&
+                getMatterStorage().getMatterStored() >= getMatterDrain(entities.size()) &&
+                entities.size() > 0 &&
+                isLocationValid(getSelectedLocation()) &&
+                getRedstoneActive()) {
                 if (transportTracker < world.getTotalWorldTime()) {
                     transportTimer++;
 
                     if (transportTimer >= getSpeed()) {
-                        for (int i = 0; i < Math.min(entities.size(), MAX_ENTETIES_PRE_TRANSPORT); i++) {
+                        for (int i = 0; i < Math.min(entities.size(), MAX_ENTITIES_PER_TRANSPORT); i++) {
                             Teleport(entities.get(i), position);
                             transportTracker = world.getTotalWorldTime() + getTransportDelay();
                         }
 
                         energyStorage.modifyEnergyStored(-getEnergyDrain());
+                        matterStorage.modifyMatterStored(-getMatterDrain(entities.size()));
 
                         transportTimer = 0;
                         MatterOverdrive.NETWORK.sendToDimention(new PacketSyncTransportProgress(this), world);
@@ -195,7 +204,6 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
                     MatterOverdrive.NETWORK.sendToDimention(new PacketSyncTransportProgress(this), world);
                 }
             }
-
         } else {
             if (transportTimer > 0) {
                 for (Entity entity : entities) {
@@ -299,6 +307,10 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
     public int getEnergyDrain() {
         TransportLocation location = getSelectedLocation();
         return (int) Math.round(getUpgradeMultiply(UpgradeTypes.PowerUsage) * (location.getDistance(getPos()) * ENERGY_PER_UNIT));
+    }
+
+    public int getMatterDrain(int numEntities) {
+        return MATTER_PER_TRANSPORT * numEntities;
     }
 
     private int getSpeed() {

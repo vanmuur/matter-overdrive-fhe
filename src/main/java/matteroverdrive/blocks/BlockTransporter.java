@@ -19,6 +19,7 @@
 package matteroverdrive.blocks;
 
 import matteroverdrive.blocks.includes.MOMatterEnergyStorageBlock;
+import matteroverdrive.handler.ConfigurationHandler;
 import matteroverdrive.machines.transporter.TileEntityMachineTransporter;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -46,5 +47,14 @@ public class BlockTransporter extends MOMatterEnergyStorageBlock<TileEntityMachi
     @Override
     public TileEntity createTileEntity(@Nonnull World world, @Nonnull IBlockState state) {
         return new TileEntityMachineTransporter();
+    }
+
+    @Override
+    public void onConfigChanged(ConfigurationHandler config) {
+        super.onConfigChanged(config);
+
+        TileEntityMachineTransporter.MATTER_PER_TRANSPORT = config.getMachineInt(getTranslationKey(),
+            "matter_per_entity",25, "Amount of matter to use per entity when transporting"
+        );
     }
 }

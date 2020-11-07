@@ -102,6 +102,14 @@ public class MatterContainer extends MOBaseItem {
 
         ItemStack workingStack;
 
+        if (stack.getCount() > 1) {
+            if (!world.isRemote) {
+                player.sendMessage(new TextComponentString("Please only have one container in your hand when attempting to fill or switch modes."));
+            }
+
+            return EnumActionResult.FAIL;
+        }
+
         boolean stackSplit = false;
 
         if (stack.getCount() == 1) {
@@ -167,9 +175,11 @@ public class MatterContainer extends MOBaseItem {
 
         container.fill(result, true);
 
+        // This code is bugged.
+
 //        if (stackSplit) {
 //            if (!player.addItemStackToInventory(workingStack)) {
-                player.entityDropItem(workingStack, 0.0f);
+//                player.entityDropItem(workingStack, 0.0f);
 //            }
 //        }
 
@@ -238,6 +248,11 @@ public class MatterContainer extends MOBaseItem {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, @Nonnull EnumHand hand) {
         ItemStack stack = playerIn.getHeldItem(hand);
+
+        // Don't apply commands to stacks of items.
+        if (stack.getCount() > 1) {
+            return ActionResult.newResult(EnumActionResult.FAIL, stack);
+        }
 
         this.TagCompountCheck(stack);
 
