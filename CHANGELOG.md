@@ -1,6 +1,11 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.8.1 (2020-11-08 07:45:01 -0500)
+------------------------------------
+* Updating version numbers for release. (VanMuur)
+* Made energy per unit travelled used configurable. Same with matter plasma. Added tooltips for energy and matter available in the trnasporter. Attempted to fix energy displayed bug. (VanMuur)
+
 v0.1.8 (2020-11-07 10:44:00 -0500)
 ----------------------------------
 * Updating version number for release. (VanMuur)

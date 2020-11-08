@@ -63,6 +63,13 @@ public class TransportFlashDrive extends MOBaseItem {
         ItemStack stack = player.getHeldItem(hand);
         IBlockState state = worldIn.getBlockState(pos);
         if (state.getMaterial() != Material.AIR) {
+            if (!worldIn.isRemote) {
+                player.sendMessage(
+                    new TextComponentString(
+                        String.format("Destination set to: %d, %d, %d", pos.getX(), pos.getY(), pos.getZ())
+                    )
+                );
+            }
             setTarget(stack, pos);
             return EnumActionResult.SUCCESS;
         }

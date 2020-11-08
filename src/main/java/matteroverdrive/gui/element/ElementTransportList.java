@@ -41,7 +41,8 @@ public class ElementTransportList extends MOElementListBox {
         TransportLocation position = transporter.getPositions().get(i);
 
         if (BG) {
-            if (selected && transporter.isLocationValid(position)) {
+//            if (selected && transporter.isLocationValid(position)) {
+            if (selected) {
                 MOElementButton.HOVER_TEXTURE_DARK.render(x, y, getElementWidth(i), getElementHeight(i));
             } else {
                 MOElementButton.NORMAL_TEXTURE.render(x, y, getElementWidth(i), getElementHeight(i));
@@ -99,28 +100,28 @@ public class ElementTransportList extends MOElementListBox {
     }
 
 
-    @Override
-    public boolean onMousePressed(int mouseX, int mouseY, int mouseButton) {
-        int heightChecked = 0;
-        for (int i = getFirstIndexDisplayed(); i < getElementCount(); i++) {
-            if (heightChecked > getContentHeight()) {
-                break;
-            }
-            if (shouldBeDisplayed(getElement(i))) {
-                int elementHeight = getElementHeight(i);
-                if (getContentTop() + heightChecked <= mouseY && getContentTop() + heightChecked + elementHeight >= mouseY) {
-                    TransportLocation position = transporter.getPositions().get(i);
-
-                    // Do not allow invalid locations to be selected.
-                    if (transporter.isLocationValid(position)) {
-                        setSelectedIndex(i);
-                        onElementClicked(i, mouseX - getContentLeft(), mouseY - (getContentTop() + heightChecked));
-                        break;
-                    }
-                }
-                heightChecked += elementHeight;
-            }
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onMousePressed(int mouseX, int mouseY, int mouseButton) {
+//        int heightChecked = 0;
+//        for (int i = getFirstIndexDisplayed(); i < getElementCount(); i++) {
+//            if (heightChecked > getContentHeight()) {
+//                break;
+//            }
+//            if (shouldBeDisplayed(getElement(i))) {
+//                int elementHeight = getElementHeight(i);
+//                if (getContentTop() + heightChecked <= mouseY && getContentTop() + heightChecked + elementHeight >= mouseY) {
+//                    TransportLocation position = transporter.getPositions().get(i);
+//
+//                    // Do not allow invalid locations to be selected.
+//                    if (transporter.isLocationValid(position)) {
+//                        setSelectedIndex(i);
+//                        onElementClicked(i, mouseX - getContentLeft(), mouseY - (getContentTop() + heightChecked));
+//                        break;
+//                    }
+//                }
+//                heightChecked += elementHeight;
+//            }
+//        }
+//        return true;
+//    }
 }

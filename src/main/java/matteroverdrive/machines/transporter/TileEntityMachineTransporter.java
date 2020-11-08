@@ -78,6 +78,7 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
     public static int ENERGY_PER_UNIT = 16;
     private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerUsage, UpgradeTypes.Speed, UpgradeTypes.Range, UpgradeTypes.PowerStorage, UpgradeTypes.Muffler);
     private static final int TRANSPORT_RANGE = 32;
+    public static int MATTER_STORAGE = 512;
     public final List<TransportLocation> locations;
     public int selectedLocation;
     public int usbSlotID;
@@ -90,7 +91,11 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
         energyStorage.setCapacity(ENERGY_STORAGE);
         energyStorage.setEnergy(0);
         energyStorage.setMaxExtract(MAX_ENERGY_EXTRACT);
-        matterStorage.setCapacity(512);
+
+        matterStorage.setCapacity(MATTER_STORAGE);
+        matterStorage.setMaxReceive(MATTER_STORAGE);
+        matterStorage.setMaxExtract(MATTER_STORAGE);
+
         locations = new ArrayList<>();
         selectedLocation = 0;
         playerSlotsHotbar = true;
@@ -224,10 +229,14 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
 
     public void Teleport(Entity entity, TransportLocation position) {
         if (!MinecraftForge.EVENT_BUS.post(new MOEventTransport(getPos(), position, entity))) {
+            float x = position.pos.getX() + 0.5f;
+            float y = position.pos.getY();
+            float z = position.pos.getZ() + 0.5f;
+
             if (entity instanceof EntityLivingBase) {
-                entity.setPositionAndUpdate(position.pos.getX() + 0.5f, position.pos.getY(), position.pos.getZ() + 0.5f);
+                entity.setPositionAndUpdate(x, y, z);
             } else {
-                entity.setPosition(position.pos.getX() + 0.5f, position.pos.getY(), position.pos.getZ() + 0.5f);
+                entity.setPosition(x, y, z);
             }
         }
     }
