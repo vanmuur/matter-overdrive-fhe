@@ -75,7 +75,7 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
     public static final int TRANSPORT_DELAY = 80;
     public static final int ENERGY_STORAGE = 1024000;
     public static final int MAX_ENERGY_EXTRACT = 32000;
-    public static final int ENERGY_PER_UNIT = 16;
+    public static int ENERGY_PER_UNIT = 16;
     private static final EnumSet<UpgradeTypes> upgradeTypes = EnumSet.of(UpgradeTypes.PowerUsage, UpgradeTypes.Speed, UpgradeTypes.Range, UpgradeTypes.PowerStorage, UpgradeTypes.Muffler);
     private static final int TRANSPORT_RANGE = 32;
     public final List<TransportLocation> locations;
@@ -88,6 +88,7 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
     public TileEntityMachineTransporter() {
         super(5);
         energyStorage.setCapacity(ENERGY_STORAGE);
+        energyStorage.setEnergy(0);
         energyStorage.setMaxExtract(MAX_ENERGY_EXTRACT);
         matterStorage.setCapacity(512);
         locations = new ArrayList<>();
@@ -288,11 +289,11 @@ public class TileEntityMachineTransporter extends MOTileEntityMachineMatter impl
 
         for (int i = 0; i < count; i++) {
             float speed = random.nextFloat() * 0.05f + 0.15f;
-            float height = p.y + 1 + random.nextFloat() * entity.height;
+            float height = p.y + random.nextFloat() * entity.height;
 
             Vector3f origin = new Vector3f(p.x, height, p.z);
             Vector3f pos = MOMathHelper.randomSpherePoint(origin.x, origin.y, origin.z, new Vec3d(radiusX, 0, radiusZ), random);
-            Vector3f dir = Vector3f.cross(Vector3f.sub(origin, pos, null), new Vector3f(0, 1, 0), null);
+            Vector3f dir = Vector3f.cross(Vector3f.sub(origin, pos, null), new Vector3f(0, 0, 0), null);
             dir.scale(speed);
             ReplicatorParticle replicatorParticle = new ReplicatorParticle(this.world, pos.x, pos.y, pos.z, dir.x, dir.y, dir.z);
             replicatorParticle.setCenter(origin.x, origin.y, origin.z);

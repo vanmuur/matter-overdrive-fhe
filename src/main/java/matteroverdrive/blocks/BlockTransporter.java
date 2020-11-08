@@ -56,5 +56,9 @@ public class BlockTransporter extends MOMatterEnergyStorageBlock<TileEntityMachi
         TileEntityMachineTransporter.MATTER_PER_TRANSPORT = config.getMachineInt(getTranslationKey(),
             "matter_per_entity",25, "Amount of matter to use per entity when transporting"
         );
+
+        TileEntityMachineTransporter.ENERGY_PER_UNIT = config.getMachineInt(getTranslationKey(),
+            "energy_per_unit",16, "Amount of energy to use per unit distance travelled when transporting"
+        );
     }
 }

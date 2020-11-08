@@ -23,6 +23,10 @@ import matteroverdrive.api.transport.TransportLocation;
 import matteroverdrive.gui.MOGuiBase;
 import matteroverdrive.gui.events.IListHandler;
 import matteroverdrive.machines.transporter.TileEntityMachineTransporter;
+import net.minecraft.client.renderer.GlStateManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ElementTransportList extends MOElementListBox {
     TileEntityMachineTransporter transporter;
@@ -38,9 +42,9 @@ public class ElementTransportList extends MOElementListBox {
 
         if (BG) {
             if (selected && transporter.isLocationValid(position)) {
-                MOElementButton.NORMAL_TEXTURE.render(x, y, getElementWidth(i), getElementHeight(i));
-            } else {
                 MOElementButton.HOVER_TEXTURE_DARK.render(x, y, getElementWidth(i), getElementHeight(i));
+            } else {
+                MOElementButton.NORMAL_TEXTURE.render(x, y, getElementWidth(i), getElementHeight(i));
             }
         } else {
 
@@ -52,7 +56,20 @@ public class ElementTransportList extends MOElementListBox {
 
     @Override
     public void drawElementTooltip(int index, int mouseX, int mouseY) {
+        TransportLocation position = transporter.getPositions().get(index);
 
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(-posX, 0, 0);
+        List<String> tooltip = new ArrayList<>();
+
+        if (! transporter.isLocationValid(position)) {
+            tooltip.add("Invalid destination.");
+        } else {
+            tooltip.add(String.format("[%s, %s, %s]", position.pos.getX(), position.pos.getY(), position.pos.getZ()));
+        }
+
+        gui.setTooltip(tooltip);
+        GlStateManager.popMatrix();
     }
 
     @Override
@@ -79,5 +96,31 @@ public class ElementTransportList extends MOElementListBox {
     public int getElementCount() {
 
         return transporter.getPositions().size();
+    }
+
+
+    @Override
+    public boolean onMousePressed(int mouseX, int mouseY, int mouseButton) {
+        int heightChecked = 0;
+        for (int i = getFirstIndexDisplayed(); i < getElementCount(); i++) {
+            if (heightChecked > getContentHeight()) {
+                break;
+            }
+            if (shouldBeDisplayed(getElement(i))) {
+                int elementHeight = getElementHeight(i);
+                if (getContentTop() + heightChecked <= mouseY && getContentTop() + heightChecked + elementHeight >= mouseY) {
+                    TransportLocation position = transporter.getPositions().get(i);
+
+                    // Do not allow invalid locations to be selected.
+                    if (transporter.isLocationValid(position)) {
+                        setSelectedIndex(i);
+                        onElementClicked(i, mouseX - getContentLeft(), mouseY - (getContentTop() + heightChecked));
+                        break;
+                    }
+                }
+                heightChecked += elementHeight;
+            }
+        }
+        return true;
     }
 }

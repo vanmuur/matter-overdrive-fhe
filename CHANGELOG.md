@@ -1,6 +1,11 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+v0.1.8 (2020-11-07 10:44:00 -0500)
+----------------------------------
+* Updating version number for release. (VanMuur)
+* Fixing matter transporter bugs, and disabled multiple container actions. (VanMuur)
+
 v0.1.7.6 (2020-11-07 09:18:03 -0500)
 ------------------------------------
 * Fixing version number issue with 0.1.7.6. (VanMuur)

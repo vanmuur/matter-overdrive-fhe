@@ -59,6 +59,10 @@ public class MOElementListBox extends MOElementBase {
         this(containerScreen, containerScreen, x, y, width, height);
     }
 
+    public int getFirstIndexDisplayed() {
+        return _firstIndexDisplayed;
+    }
+
     @Override
     public void updateInfo() {
 

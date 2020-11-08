@@ -43,6 +43,7 @@ public class GuiTransporter extends MOGuiMachine<TileEntityMachineTransporter> {
 
     public GuiTransporter(InventoryPlayer inventoryPlayer, TileEntityMachineTransporter machine) {
         super(ContainerFactory.createMachineContainer(machine, inventoryPlayer), machine, 225, 220);
+
         energy = new MOElementEnergy(this, xSize - 35, 50, machine.getEnergyStorage());
         matterStored = new ElementMatterStored(this, xSize - 35, 100, machine.getCapability(MatterOverdriveCapabilities.MATTER_HANDLER, null));
 
