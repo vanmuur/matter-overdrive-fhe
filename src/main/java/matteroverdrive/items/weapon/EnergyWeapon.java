@@ -301,15 +301,23 @@ public abstract class EnergyWeapon extends MOItemEnergyContainer implements IWea
         float heat = getHeat(itemStack);
         if (heat > 0) {
             float easing = MOEasing.Quart.easeOut(heat / getMaxHeat(itemStack), 0, 4, 1);
-            float newHeat = heat - easing;
-            if (newHeat < 0.001f) {
-                newHeat = 0;
+
+            if (easing > 1.0f) {
+                easing = 0.002f;
             }
+
+            // Set an arbitrary value if the ease-out is zero.
+            if (easing == 0) {
+                easing = 0.5f;
+            }
+
+            float newHeat = heat - easing;
+
             setHeat(itemStack, Math.max(0, newHeat));
         }
 
         if (isOverheated(itemStack)) {
-            if (getHeat(itemStack) < 2) {
+            if (getHeat(itemStack) < 1) {
                 setOverheated(itemStack, false);
             }
         }

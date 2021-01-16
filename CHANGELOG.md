@@ -1,6 +1,10 @@
 MatterOverdrive-FHE - Changelog
 ===============================
 
+Unreleased
+----------
+* Multiple fixes and debugging to try to get the transporter's energy bar to show properly. (VanMuur)
+
 v0.1.8.1 (2020-11-08 07:45:01 -0500)
 ------------------------------------
 * Updating version numbers for release. (VanMuur)

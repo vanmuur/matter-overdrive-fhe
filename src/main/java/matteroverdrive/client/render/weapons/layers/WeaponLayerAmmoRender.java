@@ -53,6 +53,7 @@ public class WeaponLayerAmmoRender implements IWeaponLayer {
         GlStateManager.scale(0.002, 0.002, 0.002);
         GlStateManager.translate(0, 0, -1);
         EnergyWeapon energyWeapon = (EnergyWeapon) weapon.getItem();
+
         float heatPerc = energyWeapon.getHeat(weapon) / energyWeapon.getMaxHeat(weapon);
         Color color = RenderUtils.lerp(Reference.COLOR_HOLO, Reference.COLOR_HOLO_RED, heatPerc);
         RenderUtils.applyColor(color);
